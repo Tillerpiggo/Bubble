@@ -1,0 +1,488 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "DueDateType"
+- "<"
+provides-nominal:
+- "6Bubble11DueDateTypeO"
+provides-member:
+- ["6Bubble11DueDateTypeO", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "&&"
+- "<"
+- "<="
+- "=="
+- ">"
+- ">="
+- "AssignmentPrecedence"
+- "Bool"
+- !private "Calendar"
+- "Comparable"
+- "Date"
+- "DueDateType"
+- "Equatable"
+- "Int"
+- "String"
+- "TernaryPrecedence"
+- "UIColor"
+- "Weekday"
+- !private "print"
+depends-member:
+- !private ["8CloudKit21CKRecordValueProtocolP", "firstSecond"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "init"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "weekday"]
+- !private ["s7CVarArgP", "dueNextWeekColor"]
+- !private ["s7CVarArgP", "dueThisWeekColor"]
+- !private ["s7CVarArgP", "dueTodayColor"]
+- !private ["s7CVarArgP", "dueTomorrowColor"]
+- !private ["s7CVarArgP", "lateColor"]
+- !private ["s7CVarArgP", "primaryColor"]
+- !private ["s7CVarArgP", "unscheduledColor"]
+- !private ["10Foundation8CalendarV", "dateComponents"]
+- !private ["10Foundation8CalendarV", "init"]
+- ["SL", "<"]
+- ["SL", "<="]
+- ["SL", "=="]
+- ["SL", ">"]
+- ["SL", ">="]
+- !private ["SL", "Calendar"]
+- !private ["SL", "Date"]
+- !private ["SL", "DueDateType"]
+- ["SL", ""]
+- ["SL", "_rawHashValue"]
+- ["SL", "completed"]
+- ["SL", "dueFriday"]
+- ["SL", "dueLater"]
+- ["SL", "dueMonday"]
+- ["SL", "dueNextWeek"]
+- ["SL", "dueSaturday"]
+- ["SL", "dueSunday"]
+- ["SL", "dueThursday"]
+- ["SL", "dueToday"]
+- ["SL", "dueTomorrow"]
+- ["SL", "dueTuesday"]
+- ["SL", "dueWednesday"]
+- !private ["SL", "firstSecond"]
+- ["SL", "friday"]
+- ["SL", "hash"]
+- ["SL", "hashValue"]
+- !private ["SL", "init"]
+- ["SL", "late"]
+- ["SL", "monday"]
+- !private ["SL", "print"]
+- ["SL", "saturday"]
+- !private ["SL", "section"]
+- !private ["SL", "string"]
+- ["SL", "sunday"]
+- ["SL", "thursday"]
+- ["SL", "tuesday"]
+- ["SL", "unscheduled"]
+- ["SL", "wednesday"]
+- !private ["SL", "weekday"]
+- !private ["10Foundation8CalendarV9ComponentO", "day"]
+- !private ["s28CustomDebugStringConvertibleP", "dateComponents"]
+- !private ["s28CustomDebugStringConvertibleP", "day"]
+- !private ["s28CustomDebugStringConvertibleP", "dueNextWeekColor"]
+- !private ["s28CustomDebugStringConvertibleP", "dueThisWeekColor"]
+- !private ["s28CustomDebugStringConvertibleP", "dueTodayColor"]
+- !private ["s28CustomDebugStringConvertibleP", "dueTomorrowColor"]
+- !private ["s28CustomDebugStringConvertibleP", "firstSecond"]
+- !private ["s28CustomDebugStringConvertibleP", "friday"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "lateColor"]
+- !private ["s28CustomDebugStringConvertibleP", "monday"]
+- !private ["s28CustomDebugStringConvertibleP", "primaryColor"]
+- !private ["s28CustomDebugStringConvertibleP", "saturday"]
+- !private ["s28CustomDebugStringConvertibleP", "sunday"]
+- !private ["s28CustomDebugStringConvertibleP", "thursday"]
+- !private ["s28CustomDebugStringConvertibleP", "tuesday"]
+- !private ["s28CustomDebugStringConvertibleP", "unscheduledColor"]
+- !private ["s28CustomDebugStringConvertibleP", "wednesday"]
+- !private ["s28CustomDebugStringConvertibleP", "weekday"]
+- !private ["s17CustomReflectableP", "dateComponents"]
+- !private ["s17CustomReflectableP", "day"]
+- !private ["s17CustomReflectableP", "firstSecond"]
+- !private ["s17CustomReflectableP", "friday"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "monday"]
+- !private ["s17CustomReflectableP", "saturday"]
+- !private ["s17CustomReflectableP", "sunday"]
+- !private ["s17CustomReflectableP", "thursday"]
+- !private ["s17CustomReflectableP", "tuesday"]
+- !private ["s17CustomReflectableP", "wednesday"]
+- !private ["s17CustomReflectableP", "weekday"]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "dateComponents"]
+- !private ["s23CustomStringConvertibleP", "day"]
+- !private ["s23CustomStringConvertibleP", "dueNextWeekColor"]
+- !private ["s23CustomStringConvertibleP", "dueThisWeekColor"]
+- !private ["s23CustomStringConvertibleP", "dueTodayColor"]
+- !private ["s23CustomStringConvertibleP", "dueTomorrowColor"]
+- !private ["s23CustomStringConvertibleP", "firstSecond"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "lateColor"]
+- !private ["s23CustomStringConvertibleP", "primaryColor"]
+- !private ["s23CustomStringConvertibleP", "unscheduledColor"]
+- !private ["s23CustomStringConvertibleP", "weekday"]
+- !private ["10Foundation4DateV", "firstSecond"]
+- !private ["10Foundation4DateV", "init"]
+- !private ["10Foundation4DateV", "weekday"]
+- !private ["10Foundation14DateComponentsV", "day"]
+- !private ["Se", "dateComponents"]
+- !private ["Se", "day"]
+- !private ["Se", "firstSecond"]
+- !private ["Se", "friday"]
+- !private ["Se", "init"]
+- !private ["Se", "monday"]
+- !private ["Se", "saturday"]
+- !private ["Se", "sunday"]
+- !private ["Se", "thursday"]
+- !private ["Se", "tuesday"]
+- !private ["Se", "wednesday"]
+- !private ["Se", "weekday"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
+- ["6Bubble11DueDateTypeO", "<"]
+- ["6Bubble11DueDateTypeO", "<="]
+- ["6Bubble11DueDateTypeO", "=="]
+- ["6Bubble11DueDateTypeO", ">"]
+- ["6Bubble11DueDateTypeO", ">="]
+- ["6Bubble11DueDateTypeO", "Bool"]
+- !private ["6Bubble11DueDateTypeO", "Calendar"]
+- ["6Bubble11DueDateTypeO", "Date"]
+- ["6Bubble11DueDateTypeO", "DueDateType"]
+- ["6Bubble11DueDateTypeO", "Int"]
+- ["6Bubble11DueDateTypeO", "String"]
+- ["6Bubble11DueDateTypeO", "UIColor"]
+- ["6Bubble11DueDateTypeO", "Weekday"]
+- ["6Bubble11DueDateTypeO", "__derived_enum_equals"]
+- ["6Bubble11DueDateTypeO", "_rawHashValue"]
+- ["6Bubble11DueDateTypeO", "color"]
+- ["6Bubble11DueDateTypeO", "completed"]
+- ["6Bubble11DueDateTypeO", "deinit"]
+- ["6Bubble11DueDateTypeO", "dueFriday"]
+- ["6Bubble11DueDateTypeO", "dueLater"]
+- ["6Bubble11DueDateTypeO", "dueMonday"]
+- ["6Bubble11DueDateTypeO", "dueNextWeek"]
+- ["6Bubble11DueDateTypeO", "dueSaturday"]
+- ["6Bubble11DueDateTypeO", "dueSunday"]
+- ["6Bubble11DueDateTypeO", "dueThursday"]
+- ["6Bubble11DueDateTypeO", "dueToday"]
+- ["6Bubble11DueDateTypeO", "dueTomorrow"]
+- ["6Bubble11DueDateTypeO", "dueTuesday"]
+- ["6Bubble11DueDateTypeO", "dueWednesday"]
+- ["6Bubble11DueDateTypeO", "hash"]
+- ["6Bubble11DueDateTypeO", "hashValue"]
+- ["6Bubble11DueDateTypeO", "init"]
+- ["6Bubble11DueDateTypeO", "late"]
+- !private ["6Bubble11DueDateTypeO", "print"]
+- ["6Bubble11DueDateTypeO", "section"]
+- ["6Bubble11DueDateTypeO", "string"]
+- ["6Bubble11DueDateTypeO", "unscheduled"]
+- ["6Bubble11DueDateTypeO", "weekday"]
+- !private ["SE", "dateComponents"]
+- !private ["SE", "day"]
+- !private ["SE", "firstSecond"]
+- !private ["SE", "friday"]
+- !private ["SE", "init"]
+- !private ["SE", "monday"]
+- !private ["SE", "saturday"]
+- !private ["SE", "sunday"]
+- !private ["SE", "thursday"]
+- !private ["SE", "tuesday"]
+- !private ["SE", "wednesday"]
+- !private ["SE", "weekday"]
+- ["SQ", "<"]
+- ["SQ", "<="]
+- ["SQ", "=="]
+- ["SQ", ">"]
+- ["SQ", ">="]
+- !private ["SQ", "Calendar"]
+- !private ["SQ", "Date"]
+- !private ["SQ", "DueDateType"]
+- ["SQ", ""]
+- ["SQ", "_rawHashValue"]
+- ["SQ", "completed"]
+- !private ["SQ", "dateComponents"]
+- !private ["SQ", "day"]
+- ["SQ", "dueFriday"]
+- ["SQ", "dueLater"]
+- ["SQ", "dueMonday"]
+- ["SQ", "dueNextWeek"]
+- !private ["SQ", "dueNextWeekColor"]
+- ["SQ", "dueSaturday"]
+- ["SQ", "dueSunday"]
+- !private ["SQ", "dueThisWeekColor"]
+- ["SQ", "dueThursday"]
+- ["SQ", "dueToday"]
+- !private ["SQ", "dueTodayColor"]
+- ["SQ", "dueTomorrow"]
+- !private ["SQ", "dueTomorrowColor"]
+- ["SQ", "dueTuesday"]
+- ["SQ", "dueWednesday"]
+- !private ["SQ", "firstSecond"]
+- ["SQ", "friday"]
+- !private ["SQ", "gregorian"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- !private ["SQ", "init"]
+- ["SQ", "late"]
+- !private ["SQ", "lateColor"]
+- ["SQ", "monday"]
+- !private ["SQ", "primaryColor"]
+- !private ["SQ", "print"]
+- ["SQ", "saturday"]
+- !private ["SQ", "section"]
+- !private ["SQ", "string"]
+- ["SQ", "sunday"]
+- ["SQ", "thursday"]
+- ["SQ", "tuesday"]
+- ["SQ", "unscheduled"]
+- !private ["SQ", "unscheduledColor"]
+- ["SQ", "wednesday"]
+- !private ["SQ", "weekday"]
+- !private ["s23ExpressibleByNilLiteralP", "friday"]
+- !private ["s23ExpressibleByNilLiteralP", "monday"]
+- !private ["s23ExpressibleByNilLiteralP", "saturday"]
+- !private ["s23ExpressibleByNilLiteralP", "sunday"]
+- !private ["s23ExpressibleByNilLiteralP", "thursday"]
+- !private ["s23ExpressibleByNilLiteralP", "tuesday"]
+- !private ["s23ExpressibleByNilLiteralP", "wednesday"]
+- ["SH", "<"]
+- ["SH", "<="]
+- ["SH", "=="]
+- ["SH", ">"]
+- ["SH", ">="]
+- !private ["SH", "Calendar"]
+- !private ["SH", "Date"]
+- !private ["SH", "DueDateType"]
+- ["SH", ""]
+- ["SH", "_rawHashValue"]
+- ["SH", "completed"]
+- !private ["SH", "dateComponents"]
+- !private ["SH", "day"]
+- ["SH", "dueFriday"]
+- ["SH", "dueLater"]
+- ["SH", "dueMonday"]
+- ["SH", "dueNextWeek"]
+- !private ["SH", "dueNextWeekColor"]
+- ["SH", "dueSaturday"]
+- ["SH", "dueSunday"]
+- !private ["SH", "dueThisWeekColor"]
+- ["SH", "dueThursday"]
+- ["SH", "dueToday"]
+- !private ["SH", "dueTodayColor"]
+- ["SH", "dueTomorrow"]
+- !private ["SH", "dueTomorrowColor"]
+- ["SH", "dueTuesday"]
+- ["SH", "dueWednesday"]
+- !private ["SH", "firstSecond"]
+- ["SH", "friday"]
+- !private ["SH", "gregorian"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- !private ["SH", "init"]
+- ["SH", "late"]
+- !private ["SH", "lateColor"]
+- ["SH", "monday"]
+- !private ["SH", "primaryColor"]
+- !private ["SH", "print"]
+- ["SH", "saturday"]
+- !private ["SH", "section"]
+- !private ["SH", "string"]
+- ["SH", "sunday"]
+- ["SH", "thursday"]
+- ["SH", "tuesday"]
+- ["SH", "unscheduled"]
+- !private ["SH", "unscheduledColor"]
+- ["SH", "wednesday"]
+- !private ["SH", "weekday"]
+- !private ["s6HasherV", "combine"]
+- !private ["10Foundation8CalendarV10IdentifierO", "gregorian"]
+- !private ["So8NSCodingP", "dueNextWeekColor"]
+- !private ["So8NSCodingP", "dueThisWeekColor"]
+- !private ["So8NSCodingP", "dueTodayColor"]
+- !private ["So8NSCodingP", "dueTomorrowColor"]
+- !private ["So8NSCodingP", "lateColor"]
+- !private ["So8NSCodingP", "primaryColor"]
+- !private ["So8NSCodingP", "unscheduledColor"]
+- !private ["So9NSCopyingP", "dueNextWeekColor"]
+- !private ["So9NSCopyingP", "dueThisWeekColor"]
+- !private ["So9NSCopyingP", "dueTodayColor"]
+- !private ["So9NSCopyingP", "dueTomorrowColor"]
+- !private ["So9NSCopyingP", "lateColor"]
+- !private ["So9NSCopyingP", "primaryColor"]
+- !private ["So9NSCopyingP", "unscheduledColor"]
+- !private ["So21NSItemProviderReadingP", "dueNextWeekColor"]
+- !private ["So21NSItemProviderReadingP", "dueThisWeekColor"]
+- !private ["So21NSItemProviderReadingP", "dueTodayColor"]
+- !private ["So21NSItemProviderReadingP", "dueTomorrowColor"]
+- !private ["So21NSItemProviderReadingP", "lateColor"]
+- !private ["So21NSItemProviderReadingP", "primaryColor"]
+- !private ["So21NSItemProviderReadingP", "unscheduledColor"]
+- !private ["So21NSItemProviderWritingP", "dueNextWeekColor"]
+- !private ["So21NSItemProviderWritingP", "dueThisWeekColor"]
+- !private ["So21NSItemProviderWritingP", "dueTodayColor"]
+- !private ["So21NSItemProviderWritingP", "dueTomorrowColor"]
+- !private ["So21NSItemProviderWritingP", "lateColor"]
+- !private ["So21NSItemProviderWritingP", "primaryColor"]
+- !private ["So21NSItemProviderWritingP", "unscheduledColor"]
+- !private ["So8NSObjectC", "dueNextWeekColor"]
+- !private ["So8NSObjectC", "dueThisWeekColor"]
+- !private ["So8NSObjectC", "dueTodayColor"]
+- !private ["So8NSObjectC", "dueTomorrowColor"]
+- !private ["So8NSObjectC", "lateColor"]
+- !private ["So8NSObjectC", "primaryColor"]
+- !private ["So8NSObjectC", "unscheduledColor"]
+- !private ["So8NSObjectP", "dueNextWeekColor"]
+- !private ["So8NSObjectP", "dueThisWeekColor"]
+- !private ["So8NSObjectP", "dueTodayColor"]
+- !private ["So8NSObjectP", "dueTomorrowColor"]
+- !private ["So8NSObjectP", "lateColor"]
+- !private ["So8NSObjectP", "primaryColor"]
+- !private ["So8NSObjectP", "unscheduledColor"]
+- !private ["So14NSSecureCodingP", "dueNextWeekColor"]
+- !private ["So14NSSecureCodingP", "dueThisWeekColor"]
+- !private ["So14NSSecureCodingP", "dueTodayColor"]
+- !private ["So14NSSecureCodingP", "dueTomorrowColor"]
+- !private ["So14NSSecureCodingP", "lateColor"]
+- !private ["So14NSSecureCodingP", "primaryColor"]
+- !private ["So14NSSecureCodingP", "unscheduledColor"]
+- !private ["Sq", "friday"]
+- !private ["Sq", "monday"]
+- !private ["Sq", "saturday"]
+- !private ["Sq", "sunday"]
+- !private ["Sq", "thursday"]
+- !private ["Sq", "tuesday"]
+- !private ["Sq", "wednesday"]
+- !private ["10Foundation20ReferenceConvertibleP", "dateComponents"]
+- !private ["10Foundation20ReferenceConvertibleP", "day"]
+- !private ["10Foundation20ReferenceConvertibleP", "firstSecond"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "weekday"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["So7UIColorC", "dueNextWeekColor"]
+- !private ["So7UIColorC", "dueThisWeekColor"]
+- !private ["So7UIColorC", "dueTodayColor"]
+- !private ["So7UIColorC", "dueTomorrowColor"]
+- !private ["So7UIColorC", "lateColor"]
+- !private ["So7UIColorC", "primaryColor"]
+- !private ["So7UIColorC", "unscheduledColor"]
+- ["6Bubble7WeekdayO", "friday"]
+- ["6Bubble7WeekdayO", "monday"]
+- ["6Bubble7WeekdayO", "saturday"]
+- !private ["6Bubble7WeekdayO", "string"]
+- ["6Bubble7WeekdayO", "sunday"]
+- ["6Bubble7WeekdayO", "thursday"]
+- ["6Bubble7WeekdayO", "tuesday"]
+- ["6Bubble7WeekdayO", "wednesday"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "firstSecond"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "init"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "weekday"]
+- !private ["s26_ExpressibleByColorLiteralP", "dueNextWeekColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "dueThisWeekColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "dueTodayColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "dueTomorrowColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "lateColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "primaryColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "unscheduledColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dueNextWeekColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dueThisWeekColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dueTodayColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dueTomorrowColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lateColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "primaryColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "unscheduledColor"]
+- !private ["10Foundation14_MutableBoxingP", "dateComponents"]
+- !private ["10Foundation14_MutableBoxingP", "day"]
+- !private ["10Foundation14_MutableBoxingP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "dateComponents"]
+- !private ["s21_ObjectiveCBridgeableP", "day"]
+- !private ["s21_ObjectiveCBridgeableP", "firstSecond"]
+- !private ["s21_ObjectiveCBridgeableP", "friday"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "monday"]
+- !private ["s21_ObjectiveCBridgeableP", "saturday"]
+- !private ["s21_ObjectiveCBridgeableP", "sunday"]
+- !private ["s21_ObjectiveCBridgeableP", "thursday"]
+- !private ["s21_ObjectiveCBridgeableP", "tuesday"]
+- !private ["s21_ObjectiveCBridgeableP", "wednesday"]
+- !private ["s21_ObjectiveCBridgeableP", "weekday"]
+depends-nominal:
+- !private "8CloudKit21CKRecordValueProtocolP"
+- !private "s7CVarArgP"
+- !private "10Foundation8CalendarV"
+- "SL"
+- !private "10Foundation8CalendarV9ComponentO"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "10Foundation4DateV"
+- !private "10Foundation14DateComponentsV"
+- !private "Se"
+- !private "s26DefaultStringInterpolationV"
+- "6Bubble11DueDateTypeO"
+- !private "SE"
+- "SQ"
+- !private "s23ExpressibleByNilLiteralP"
+- "SH"
+- !private "s6HasherV"
+- !private "10Foundation8CalendarV10IdentifierO"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So8NSObjectC"
+- !private "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "Sq"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "s27StringInterpolationProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "So7UIColorC"
+- "6Bubble7WeekdayO"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s26_ExpressibleByColorLiteralP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "10Foundation14_MutableBoxingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CloudKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "f9e836f7e08cc36e3fb337165479b00f"

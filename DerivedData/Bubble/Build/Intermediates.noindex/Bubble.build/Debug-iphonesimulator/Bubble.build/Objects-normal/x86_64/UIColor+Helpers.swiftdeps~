@@ -1,0 +1,261 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Theme"
+provides-nominal:
+- "6Bubble5ThemeC"
+provides-member:
+- ["6Bubble5ThemeC", ""]
+- ["So7UIColorC", ""]
+- ["So7UIColorC", "theme"]
+- ["So7UIColorC", "init"]
+- ["So7UIColorC", "primaryColor"]
+- ["So7UIColorC", "highlightColor"]
+- ["So7UIColorC", "contentColor"]
+- ["So7UIColorC", "destructiveColor"]
+- ["So7UIColorC", "backgroundColor"]
+- ["So7UIColorC", "separatorColor"]
+- ["So7UIColorC", "nothingDueColor"]
+- ["So7UIColorC", "lateColor"]
+- ["So7UIColorC", "unscheduledColor"]
+- ["So7UIColorC", "dueTomorrowColor"]
+- ["So7UIColorC", "dueThisWeekColor"]
+- ["So7UIColorC", "dueNextWeekColor"]
+- ["So7UIColorC", "textColor"]
+- ["So7UIColorC", "secondaryTextColor"]
+- ["So7UIColorC", "navigationBarTintColor"]
+- ["So7UIColorC", "tintColor"]
+- ["So7UIColorC", "titleColor"]
+- ["So7UIColorC", "sectionColor"]
+- ["So7UIColorC", "tabBarTintColor"]
+- ["So7UIColorC", "dueTodayColor"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "/"
+- !private "??"
+- "AssignmentPrecedence"
+- "CGFloat"
+- "Theme"
+- "UIColor"
+depends-member:
+- ["s7CVarArgP", "Theme"]
+- !private ["s7CVarArgP", "black"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "theme"]
+- ["s7CVarArgP", "white"]
+- ["s28CustomDebugStringConvertibleP", "Theme"]
+- !private ["s28CustomDebugStringConvertibleP", "black"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "theme"]
+- ["s28CustomDebugStringConvertibleP", "white"]
+- !private ["s17CustomReflectableP", "white"]
+- ["s23CustomStringConvertibleP", "Theme"]
+- !private ["s23CustomStringConvertibleP", "black"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "theme"]
+- ["s23CustomStringConvertibleP", "white"]
+- !private ["Se", "white"]
+- !private ["SE", "white"]
+- ["SQ", "Theme"]
+- !private ["SQ", "black"]
+- !private ["SQ", "init"]
+- !private ["SQ", "theme"]
+- ["SQ", "white"]
+- !private ["s23ExpressibleByNilLiteralP", "white"]
+- ["SH", "Theme"]
+- !private ["SH", "black"]
+- !private ["SH", "init"]
+- !private ["SH", "theme"]
+- ["SH", "white"]
+- ["So8NSCodingP", "Theme"]
+- !private ["So8NSCodingP", "black"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "theme"]
+- ["So8NSCodingP", "white"]
+- ["So9NSCopyingP", "Theme"]
+- !private ["So9NSCopyingP", "black"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "theme"]
+- ["So9NSCopyingP", "white"]
+- ["So21NSItemProviderReadingP", "Theme"]
+- !private ["So21NSItemProviderReadingP", "black"]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderReadingP", "theme"]
+- ["So21NSItemProviderReadingP", "white"]
+- ["So21NSItemProviderWritingP", "Theme"]
+- !private ["So21NSItemProviderWritingP", "black"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So21NSItemProviderWritingP", "theme"]
+- ["So21NSItemProviderWritingP", "white"]
+- ["So8NSObjectC", "CGFloat"]
+- ["So8NSObjectC", "Theme"]
+- ["So8NSObjectC", "UIColor"]
+- ["So8NSObjectC", "backgroundColor"]
+- !private ["So8NSObjectC", "black"]
+- ["So8NSObjectC", "contentColor"]
+- ["So8NSObjectC", "destructiveColor"]
+- ["So8NSObjectC", "dueNextWeekColor"]
+- ["So8NSObjectC", "dueThisWeekColor"]
+- ["So8NSObjectC", "dueTodayColor"]
+- ["So8NSObjectC", "dueTomorrowColor"]
+- ["So8NSObjectC", "highlightColor"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "lateColor"]
+- ["So8NSObjectC", "navigationBarTintColor"]
+- ["So8NSObjectC", "nothingDueColor"]
+- ["So8NSObjectC", "primaryColor"]
+- ["So8NSObjectC", "secondaryTextColor"]
+- ["So8NSObjectC", "sectionColor"]
+- ["So8NSObjectC", "separatorColor"]
+- ["So8NSObjectC", "tabBarTintColor"]
+- ["So8NSObjectC", "textColor"]
+- ["So8NSObjectC", "theme"]
+- ["So8NSObjectC", "tintColor"]
+- ["So8NSObjectC", "titleColor"]
+- ["So8NSObjectC", "unscheduledColor"]
+- ["So8NSObjectC", "white"]
+- ["So8NSObjectP", "Theme"]
+- !private ["So8NSObjectP", "black"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "theme"]
+- ["So8NSObjectP", "white"]
+- ["So14NSSecureCodingP", "Theme"]
+- !private ["So14NSSecureCodingP", "black"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "theme"]
+- ["So14NSSecureCodingP", "white"]
+- !private ["Sq", "white"]
+- ["6Bubble5ThemeC", "Theme"]
+- ["6Bubble5ThemeC", "UIColor"]
+- ["6Bubble5ThemeC", "_default"]
+- ["6Bubble5ThemeC", "backgroundColor"]
+- ["6Bubble5ThemeC", "basic"]
+- ["6Bubble5ThemeC", "basicOrange"]
+- ["6Bubble5ThemeC", "basicPink"]
+- ["6Bubble5ThemeC", "blue"]
+- ["6Bubble5ThemeC", "coloredBasic"]
+- ["6Bubble5ThemeC", "contentColor"]
+- ["6Bubble5ThemeC", "dark"]
+- ["6Bubble5ThemeC", "darkBlue"]
+- ["6Bubble5ThemeC", "destructiveColor"]
+- ["6Bubble5ThemeC", "dueNextWeekColor"]
+- ["6Bubble5ThemeC", "dueThisWeekColor"]
+- ["6Bubble5ThemeC", "dueTodayColor"]
+- ["6Bubble5ThemeC", "dueTomorrowColor"]
+- ["6Bubble5ThemeC", "experimental"]
+- ["6Bubble5ThemeC", "good"]
+- ["6Bubble5ThemeC", "green"]
+- ["6Bubble5ThemeC", "highlightColor"]
+- ["6Bubble5ThemeC", "iOS"]
+- ["6Bubble5ThemeC", "init"]
+- ["6Bubble5ThemeC", "lateColor"]
+- ["6Bubble5ThemeC", "llama"]
+- ["6Bubble5ThemeC", "lowkey"]
+- ["6Bubble5ThemeC", "navigationBarTintColor"]
+- ["6Bubble5ThemeC", "nothingDueColor"]
+- ["6Bubble5ThemeC", "primaryColor"]
+- ["6Bubble5ThemeC", "red"]
+- ["6Bubble5ThemeC", "secondaryTextColor"]
+- ["6Bubble5ThemeC", "sectionColor"]
+- ["6Bubble5ThemeC", "separatorColor"]
+- ["6Bubble5ThemeC", "tabBarTintColor"]
+- ["6Bubble5ThemeC", "textColor"]
+- ["6Bubble5ThemeC", "tintColor"]
+- ["6Bubble5ThemeC", "titleColor"]
+- ["6Bubble5ThemeC", "unscheduledColor"]
+- ["So7UIColorC", "CGFloat"]
+- ["So7UIColorC", "Theme"]
+- ["So7UIColorC", "UIColor"]
+- ["So7UIColorC", "backgroundColor"]
+- !private ["So7UIColorC", "black"]
+- ["So7UIColorC", "contentColor"]
+- ["So7UIColorC", "destructiveColor"]
+- ["So7UIColorC", "dueNextWeekColor"]
+- ["So7UIColorC", "dueThisWeekColor"]
+- ["So7UIColorC", "dueTodayColor"]
+- ["So7UIColorC", "dueTomorrowColor"]
+- ["So7UIColorC", "highlightColor"]
+- ["So7UIColorC", "init"]
+- ["So7UIColorC", "lateColor"]
+- ["So7UIColorC", "navigationBarTintColor"]
+- ["So7UIColorC", "nothingDueColor"]
+- ["So7UIColorC", "primaryColor"]
+- ["So7UIColorC", "secondaryTextColor"]
+- ["So7UIColorC", "sectionColor"]
+- ["So7UIColorC", "separatorColor"]
+- ["So7UIColorC", "tabBarTintColor"]
+- ["So7UIColorC", "textColor"]
+- ["So7UIColorC", "theme"]
+- ["So7UIColorC", "tintColor"]
+- ["So7UIColorC", "titleColor"]
+- ["So7UIColorC", "unscheduledColor"]
+- ["So7UIColorC", "white"]
+- ["s26_ExpressibleByColorLiteralP", "Theme"]
+- !private ["s26_ExpressibleByColorLiteralP", "black"]
+- !private ["s26_ExpressibleByColorLiteralP", "init"]
+- !private ["s26_ExpressibleByColorLiteralP", "theme"]
+- ["s26_ExpressibleByColorLiteralP", "white"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "Theme"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "black"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "theme"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "white"]
+- !private ["s21_ObjectiveCBridgeableP", "white"]
+depends-nominal:
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- !private "s23ExpressibleByNilLiteralP"
+- "SH"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So21NSItemProviderReadingP"
+- "So21NSItemProviderWritingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "So14NSSecureCodingP"
+- !private "Sq"
+- "6Bubble5ThemeC"
+- "So7UIColorC"
+- "s26_ExpressibleByColorLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CloudKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "cd0ba6478b61d3f1014c87e5a9b16d0c"

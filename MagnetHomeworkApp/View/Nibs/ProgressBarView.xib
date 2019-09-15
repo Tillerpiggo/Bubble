@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressBarView" customModule="Bubble" customModuleProvider="target">
+            <connections>
+                <outlet property="progressBarBackgroundView" destination="rXh-2n-LIA" id="t4s-4g-QyP"/>
+                <outlet property="progressView" destination="j7O-Qk-atl" id="VkR-WQ-nEt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXh-2n-LIA">
+                    <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7O-Qk-atl">
+                            <rect key="frame" x="0.0" y="0.0" width="207" height="818"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="j7O-Qk-atl" secondAttribute="bottom" id="4jj-0q-f5T"/>
+                        <constraint firstItem="j7O-Qk-atl" firstAttribute="top" secondItem="rXh-2n-LIA" secondAttribute="top" id="7ue-Pe-NvI"/>
+                        <constraint firstItem="j7O-Qk-atl" firstAttribute="width" secondItem="rXh-2n-LIA" secondAttribute="width" multiplier="0.5" id="Sa6-D7-moA"/>
+                        <constraint firstItem="j7O-Qk-atl" firstAttribute="leading" secondItem="rXh-2n-LIA" secondAttribute="leading" id="pGP-ZL-zzK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rXh-2n-LIA" secondAttribute="trailing" id="1Za-Uo-4Qr"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rXh-2n-LIA" secondAttribute="bottom" constant="5" id="6ea-Jx-Qnf"/>
+                <constraint firstItem="rXh-2n-LIA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="C96-ZH-2gE"/>
+                <constraint firstItem="rXh-2n-LIA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zCl-4X-rQM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="65.625"/>
+        </view>
+    </objects>
+</document>

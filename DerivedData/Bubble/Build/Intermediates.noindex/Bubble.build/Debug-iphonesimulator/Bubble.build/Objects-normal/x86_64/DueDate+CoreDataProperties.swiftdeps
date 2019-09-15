@@ -1,0 +1,189 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["6Bubble7DueDateC", ""]
+- ["6Bubble7DueDateC", "fetchRequest"]
+- ["6Bubble7DueDateC", "date"]
+- ["6Bubble7DueDateC", "owningAssignment"]
+provides-dynamic-lookup:
+- "date"
+- "owningAssignment"
+depends-top-level:
+- "Assignment"
+- "CastingPrecedence"
+- "DueDate"
+- "NSDate"
+- "NSFetchRequest"
+depends-member:
+- !private ["s7CVarArgP", "NSFetchRequest"]
+- !private ["s7CVarArgP", "didAccessValue"]
+- !private ["s7CVarArgP", "didChangeValue"]
+- !private ["s7CVarArgP", "dueDateChanged"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "primitiveValue"]
+- !private ["s7CVarArgP", "setPrimitiveValue"]
+- !private ["s7CVarArgP", "willAccessValue"]
+- !private ["s7CVarArgP", "willChangeValue"]
+- !private ["s28CustomDebugStringConvertibleP", "NSFetchRequest"]
+- !private ["s28CustomDebugStringConvertibleP", "didAccessValue"]
+- !private ["s28CustomDebugStringConvertibleP", "didChangeValue"]
+- !private ["s28CustomDebugStringConvertibleP", "dueDateChanged"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "primitiveValue"]
+- !private ["s28CustomDebugStringConvertibleP", "setPrimitiveValue"]
+- !private ["s28CustomDebugStringConvertibleP", "willAccessValue"]
+- !private ["s28CustomDebugStringConvertibleP", "willChangeValue"]
+- !private ["s23CustomStringConvertibleP", "NSFetchRequest"]
+- !private ["s23CustomStringConvertibleP", "didAccessValue"]
+- !private ["s23CustomStringConvertibleP", "didChangeValue"]
+- !private ["s23CustomStringConvertibleP", "dueDateChanged"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "primitiveValue"]
+- !private ["s23CustomStringConvertibleP", "setPrimitiveValue"]
+- !private ["s23CustomStringConvertibleP", "willAccessValue"]
+- !private ["s23CustomStringConvertibleP", "willChangeValue"]
+- ["6Bubble7DueDateC", "Assignment"]
+- ["6Bubble7DueDateC", "DueDate"]
+- ["6Bubble7DueDateC", "NSDate"]
+- ["6Bubble7DueDateC", "NSFetchRequest"]
+- ["6Bubble7DueDateC", "date"]
+- ["6Bubble7DueDateC", "deinit"]
+- !private ["6Bubble7DueDateC", "didAccessValue"]
+- !private ["6Bubble7DueDateC", "didChangeValue"]
+- !private ["6Bubble7DueDateC", "dueDateChanged"]
+- ["6Bubble7DueDateC", "fetchRequest"]
+- ["6Bubble7DueDateC", "owningAssignment"]
+- !private ["6Bubble7DueDateC", "primitiveValue"]
+- !private ["6Bubble7DueDateC", "setPrimitiveValue"]
+- !private ["6Bubble7DueDateC", "willAccessValue"]
+- !private ["6Bubble7DueDateC", "willChangeValue"]
+- !private ["SQ", "NSFetchRequest"]
+- !private ["SQ", "didAccessValue"]
+- !private ["SQ", "didChangeValue"]
+- !private ["SQ", "dueDateChanged"]
+- !private ["SQ", "init"]
+- !private ["SQ", "primitiveValue"]
+- !private ["SQ", "setPrimitiveValue"]
+- !private ["SQ", "willAccessValue"]
+- !private ["SQ", "willChangeValue"]
+- !private ["SH", "NSFetchRequest"]
+- !private ["SH", "didAccessValue"]
+- !private ["SH", "didChangeValue"]
+- !private ["SH", "dueDateChanged"]
+- !private ["SH", "init"]
+- !private ["SH", "primitiveValue"]
+- !private ["SH", "setPrimitiveValue"]
+- !private ["SH", "willAccessValue"]
+- !private ["SH", "willChangeValue"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So14NSFetchRequestC", "init"]
+- !private ["So20NSFetchRequestResultP", "NSFetchRequest"]
+- !private ["So20NSFetchRequestResultP", "didAccessValue"]
+- !private ["So20NSFetchRequestResultP", "didChangeValue"]
+- !private ["So20NSFetchRequestResultP", "dueDateChanged"]
+- !private ["So20NSFetchRequestResultP", "primitiveValue"]
+- !private ["So20NSFetchRequestResultP", "setPrimitiveValue"]
+- !private ["So20NSFetchRequestResultP", "willAccessValue"]
+- !private ["So20NSFetchRequestResultP", "willChangeValue"]
+- ["So15NSManagedObjectC", "Assignment"]
+- ["So15NSManagedObjectC", "DueDate"]
+- ["So15NSManagedObjectC", "NSDate"]
+- ["So15NSManagedObjectC", "NSFetchRequest"]
+- ["So15NSManagedObjectC", "date"]
+- !private ["So15NSManagedObjectC", "didAccessValue"]
+- !private ["So15NSManagedObjectC", "didChangeValue"]
+- !private ["So15NSManagedObjectC", "dueDateChanged"]
+- ["So15NSManagedObjectC", "fetchRequest"]
+- ["So15NSManagedObjectC", "owningAssignment"]
+- !private ["So15NSManagedObjectC", "primitiveValue"]
+- !private ["So15NSManagedObjectC", "setPrimitiveValue"]
+- !private ["So15NSManagedObjectC", "willAccessValue"]
+- !private ["So15NSManagedObjectC", "willChangeValue"]
+- ["So8NSObjectC", "Assignment"]
+- ["So8NSObjectC", "DueDate"]
+- ["So8NSObjectC", "NSDate"]
+- ["So8NSObjectC", "NSFetchRequest"]
+- ["So8NSObjectC", "date"]
+- !private ["So8NSObjectC", "didAccessValue"]
+- !private ["So8NSObjectC", "didChangeValue"]
+- !private ["So8NSObjectC", "dueDateChanged"]
+- ["So8NSObjectC", "fetchRequest"]
+- !private ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "owningAssignment"]
+- !private ["So8NSObjectC", "primitiveValue"]
+- !private ["So8NSObjectC", "setPrimitiveValue"]
+- !private ["So8NSObjectC", "willAccessValue"]
+- !private ["So8NSObjectC", "willChangeValue"]
+- !private ["So8NSObjectP", "NSFetchRequest"]
+- !private ["So8NSObjectP", "didAccessValue"]
+- !private ["So8NSObjectP", "didChangeValue"]
+- !private ["So8NSObjectP", "dueDateChanged"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "primitiveValue"]
+- !private ["So8NSObjectP", "setPrimitiveValue"]
+- !private ["So8NSObjectP", "willAccessValue"]
+- !private ["So8NSObjectP", "willChangeValue"]
+- !private ["So24NSPersistentStoreRequestC", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSFetchRequest"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "didAccessValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "didChangeValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dueDateChanged"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "primitiveValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setPrimitiveValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "willAccessValue"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "willChangeValue"]
+depends-nominal:
+- !private "s7CVarArgP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s23CustomStringConvertibleP"
+- "6Bubble7DueDateC"
+- !private "SQ"
+- !private "SH"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So14NSFetchRequestC"
+- !private "So20NSFetchRequestResultP"
+- "So15NSManagedObjectC"
+- "So8NSObjectC"
+- !private "So8NSObjectP"
+- !private "So24NSPersistentStoreRequestC"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CloudKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "984a574d2fea0d3be3e0dc7d1b539b9a"

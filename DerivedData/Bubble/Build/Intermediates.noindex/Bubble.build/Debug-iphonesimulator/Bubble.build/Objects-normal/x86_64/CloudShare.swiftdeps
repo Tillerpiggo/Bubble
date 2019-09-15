@@ -1,0 +1,193 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "CloudShare"
+provides-nominal:
+- "6Bubble10CloudShareC"
+provides-member:
+- ["6Bubble10CloudShareC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Bool"
+- "BooleanLiteralType"
+- "CKRecord"
+- "CKShare"
+- "CloudShare"
+- "CloudUploadable"
+- !private "print"
+depends-member:
+- ["So8CKRecordC", "Bool"]
+- ["So8CKRecordC", "CKRecord"]
+- ["So8CKRecordC", "ckRecord"]
+- ["So8CKRecordC", "init"]
+- !private ["So8CKRecordC", "init"]
+- ["So8CKRecordC", "isSynced"]
+- !private ["So8CKRecordC", "print"]
+- ["So8CKRecordC", "update"]
+- ["So23CKRecordKeyValueSettingP", ""]
+- ["So23CKRecordKeyValueSettingP", "ckRecord"]
+- !private ["So23CKRecordKeyValueSettingP", "init"]
+- !private ["So23CKRecordKeyValueSettingP", "init"]
+- ["So23CKRecordKeyValueSettingP", "isSynced"]
+- !private ["So23CKRecordKeyValueSettingP", "print"]
+- ["So23CKRecordKeyValueSettingP", "update"]
+- ["So7CKShareC", "Bool"]
+- ["So7CKShareC", "CKRecord"]
+- ["So7CKShareC", ""]
+- ["So7CKShareC", "ckRecord"]
+- ["So7CKShareC", "init"]
+- !private ["So7CKShareC", "init"]
+- ["So7CKShareC", "isSynced"]
+- !private ["So7CKShareC", "print"]
+- ["So7CKShareC", "update"]
+- ["s7CVarArgP", ""]
+- ["s7CVarArgP", "ckRecord"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "init"]
+- ["s7CVarArgP", "isSynced"]
+- !private ["s7CVarArgP", "print"]
+- ["s7CVarArgP", "update"]
+- ["6Bubble10CloudShareC", "Bool"]
+- ["6Bubble10CloudShareC", "CKRecord"]
+- ["6Bubble10CloudShareC", "ckRecord"]
+- ["6Bubble10CloudShareC", "deinit"]
+- ["6Bubble10CloudShareC", "init"]
+- ["6Bubble10CloudShareC", "isSynced"]
+- !private ["6Bubble10CloudShareC", "print"]
+- ["6Bubble10CloudShareC", "update"]
+- ["6Bubble15CloudUploadableP", ""]
+- ["6Bubble15CloudUploadableP", "ckRecord"]
+- ["6Bubble15CloudUploadableP", "isSynced"]
+- !private ["6Bubble15CloudUploadableP", "print"]
+- ["6Bubble15CloudUploadableP", "update"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "ckRecord"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "isSynced"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- ["s28CustomDebugStringConvertibleP", "update"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "ckRecord"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "isSynced"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- ["s23CustomStringConvertibleP", "update"]
+- ["SQ", ""]
+- ["SQ", "ckRecord"]
+- !private ["SQ", "init"]
+- !private ["SQ", "init"]
+- ["SQ", "isSynced"]
+- !private ["SQ", "print"]
+- ["SQ", "update"]
+- ["SH", ""]
+- ["SH", "ckRecord"]
+- !private ["SH", "init"]
+- !private ["SH", "init"]
+- ["SH", "isSynced"]
+- !private ["SH", "print"]
+- ["SH", "update"]
+- ["So8NSCodingP", ""]
+- ["So8NSCodingP", "ckRecord"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "init"]
+- ["So8NSCodingP", "isSynced"]
+- !private ["So8NSCodingP", "print"]
+- ["So8NSCodingP", "update"]
+- ["So9NSCopyingP", ""]
+- ["So9NSCopyingP", "ckRecord"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "init"]
+- ["So9NSCopyingP", "isSynced"]
+- !private ["So9NSCopyingP", "print"]
+- ["So9NSCopyingP", "update"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "CKRecord"]
+- ["So8NSObjectC", "ckRecord"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "isSynced"]
+- !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "update"]
+- ["So8NSObjectP", ""]
+- ["So8NSObjectP", "ckRecord"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "init"]
+- ["So8NSObjectP", "isSynced"]
+- !private ["So8NSObjectP", "print"]
+- ["So8NSObjectP", "update"]
+- ["So14NSSecureCodingP", ""]
+- ["So14NSSecureCodingP", "ckRecord"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "init"]
+- ["So14NSSecureCodingP", "isSynced"]
+- !private ["So14NSSecureCodingP", "print"]
+- ["So14NSSecureCodingP", "update"]
+- ["ST", ""]
+- ["ST", "ckRecord"]
+- !private ["ST", "init"]
+- !private ["ST", "init"]
+- ["ST", "isSynced"]
+- !private ["ST", "print"]
+- ["ST", "update"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- ["10Foundation27_KeyValueCodingAndObservingP", "ckRecord"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "isSynced"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "update"]
+depends-nominal:
+- "So8CKRecordC"
+- "So23CKRecordKeyValueSettingP"
+- "So7CKShareC"
+- "s7CVarArgP"
+- "6Bubble10CloudShareC"
+- "6Bubble15CloudUploadableP"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "SQ"
+- "SH"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "So14NSSecureCodingP"
+- "ST"
+- "10Foundation27_KeyValueCodingAndObservingP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CloudKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.4.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "d0e7775d5f5a938619505f3901831d52"
