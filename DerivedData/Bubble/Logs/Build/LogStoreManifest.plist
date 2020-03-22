@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>5798888A-B4A2-4F16-B05B-F768D838E6B4</key>
+		<key>AD851995-969C-48C0-BCAC-C2AFC03B960A</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,9 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>5798888A-B4A2-4F16-B05B-F768D838E6B4.xcactivitylog</string>
+			<string>AD851995-969C-48C0-BCAC-C2AFC03B960A.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -30,13 +32,47 @@
 			<key>signature</key>
 			<string>Build Bubble</string>
 			<key>timeStartedRecording</key>
-			<real>589389551.68470001</real>
+			<real>606382400.81388795</real>
 			<key>timeStoppedRecording</key>
-			<real>589389560.80848706</real>
+			<real>606382402.30534697</real>
 			<key>title</key>
 			<string>Build Bubble</string>
 			<key>uniqueIdentifier</key>
-			<string>5798888A-B4A2-4F16-B05B-F768D838E6B4</string>
+			<string>AD851995-969C-48C0-BCAC-C2AFC03B960A</string>
+		</dict>
+		<key>FC6C6301-2C29-4F3F-A456-30E04CE5DFAF</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FC6C6301-2C29-4F3F-A456-30E04CE5DFAF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Bubble project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Bubble</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Bubble</string>
+			<key>timeStartedRecording</key>
+			<real>606382422.35819399</real>
+			<key>timeStoppedRecording</key>
+			<real>606382424.05352497</real>
+			<key>title</key>
+			<string>Build Bubble</string>
+			<key>uniqueIdentifier</key>
+			<string>FC6C6301-2C29-4F3F-A456-30E04CE5DFAF</string>
 		</dict>
 	</dict>
 </dict>

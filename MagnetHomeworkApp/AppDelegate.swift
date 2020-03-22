@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         application.applicationIconBadgeNumber = 0
         
+        /*
         if let tabBarController = window?.rootViewController as? UITabBarController,
             let navigationController = tabBarController.viewControllers?.first as? UINavigationController,
             let classTableViewController = navigationController.topViewController as? ClassTableViewController,
@@ -55,6 +56,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             classTableViewControllerReference = classTableViewController
         }
+        */
+        
+        if let addAssignmentViewController = window?.rootViewController as? AddAssignmentViewController {
+            addAssignmentViewController.cloudController = cloudController
+            addAssignmentViewController.coreDataController = coreDataController
+        }
+        
         
         // Try to register for notifications
         UNUserNotificationCenter.current().delegate = self
@@ -99,7 +107,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                         // classTableViewController.openClass(withRecordID: cloudKitShareMetadata.rootRecordID)
                         print("Tried to open class (not currently implemented)")
                     }
-                    
                 }
             }
         }

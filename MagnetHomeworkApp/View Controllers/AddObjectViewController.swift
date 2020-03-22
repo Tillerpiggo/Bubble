@@ -13,13 +13,19 @@ import CloudKit
 class AddObjectViewController: ConnectionViewController, AddObjectViewDelegate, UITextFieldDelegate, UITextDragDelegate, UIScrollViewDelegate {
     
     // MARK: - Variables
-    
     @IBOutlet weak var addObjectView: AddObjectView!
     
     var doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(AddObjectViewController.donePressed(sender:)))
     
-    // MARK: - ViewDidLoad
+    override var canBecomeFirstResponder: Bool { return true }
+    /*
+    override var inputAccessoryView: UIView? {
+        return addObjectView
+    }
+ */
     
+    
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         configureAddObjectView()
@@ -36,8 +42,8 @@ class AddObjectViewController: ConnectionViewController, AddObjectViewDelegate, 
             connectionView.layer.zPosition = 1
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)),
-                                               name: UIResponder.keyboardDidShowNotification, object: nil)
+       // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)),
+       //                                        name: UIResponder.keyboardDidShowNotification, object: nil)
         
     }
     
@@ -126,6 +132,7 @@ class AddObjectViewController: ConnectionViewController, AddObjectViewDelegate, 
         return true
     }
     
+    /*
     @objc func keyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
@@ -135,6 +142,7 @@ class AddObjectViewController: ConnectionViewController, AddObjectViewDelegate, 
             //addObjectView.frame.origin.y -= keyboardHeight
         }
     }
+ */
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         addObjectView.textField.resignFirstResponder()

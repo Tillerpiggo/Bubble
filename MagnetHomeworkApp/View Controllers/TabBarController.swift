@@ -8,10 +8,17 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class AddAssignmentTabBarController: UITabBarController {
     
     var cloudController: CloudController!
     var coreDataController: CoreDataController!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Load addAssignmentView from nib
+        
+    }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) {
         if let viewController = viewController as? ToDoTableViewController {
@@ -19,4 +26,5 @@ class TabBarController: UITabBarController {
             viewController.coreDataController = coreDataController
         }
     }
+    
 }
