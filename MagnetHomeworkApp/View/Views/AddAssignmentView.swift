@@ -11,12 +11,15 @@ import UIKit
 class AddAssignmentView: View {
     
     // MARK: - Subviews
-    lazy var contentView: UIView = { UIView(frame: self.frame) }()
     
-    lazy var textField: TextField = {
-        let textField = TextField()
+    var contentView = UIView()
+    
+    private var shadowLayer: CAShapeLayer!
+    
+    lazy var textField: RoundedExpandingTextView = {
+        let textField = RoundedExpandingTextView()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Assignment name"
+        textField.placeholder = "Add assignment here..."
         
         return textField
     }()
@@ -24,6 +27,7 @@ class AddAssignmentView: View {
     lazy var doneButton: UIButton = {
         let doneButton = UIButton()
         doneButton.titleLabel?.text = "Done"
+        doneButton.titleLabel?.textColor = .systemBlue
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         
         return doneButton
@@ -50,59 +54,87 @@ class AddAssignmentView: View {
 fileprivate extension AddAssignmentView {
     
     func addSubviews() {
-        //addSubview(contentView)
-        
+        addSubview(contentView)
+        contentView.backgroundColor = .white
         // Add all other contents to contentView
-        addSubview(textField)
-        addSubview(doneButton)
+        contentView.addSubview(textField)
+        contentView.addSubview(doneButton)
     }
     
     func addConstraints() {
-        let views: [String: Any] = ["contentView": contentView, "textField": textField, "doneButton": doneButton]
+        let views: [String: Any] = ["textField": textField, "doneButton": doneButton]
         
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[textField]-16-[doneButton]-16-|", metrics: nil, views: views)
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-12-[textField]-16-[doneButton(60@1000)]-12-|", metrics: nil, views: views)
         addConstraints(horizontalConstraints)
         
-        //addContentViewConstraints(withViews: views)
-        addTextFieldConstraints(withViews: views)
+        addContentViewConstraints()
+        addTextFieldConstraints()
         addDoneButtonConstraints(withViews: views)
     }
     
-    func addContentViewConstraints(withViews views: [String: Any]) {
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[contentView]-0-|", metrics: nil, views: views)
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[contentView]-0-|", metrics: nil, views: views)
-        
-        addConstraints(horizontalConstraints)
-        addConstraints(verticalConstraints)
+    func addContentViewConstraints() {
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
-    func addTextFieldConstraints(withViews views: [String: Any]) {
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-16-[textField(36@1000)]", metrics: nil, views: views)
-        addConstraints(verticalConstraints)
+    func addTextFieldConstraints() {
+        [
+            textField.topAnchor.constraint(equalTo: topAnchor, constant: 12.0),
+            textField.heightAnchor.constraint(greaterThanOrEqualToConstant: 24.0)
+        ].forEach { $0.isActive = true }
     }
     
     func addDoneButtonConstraints(withViews views: [String: Any]) {
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[doneButton(48@1000)]", metrics: nil, views: views)
-        addConstraints(verticalConstraints)
+        [
+            doneButton.topAnchor.constraint(equalTo: textField.topAnchor)
+        ].forEach { $0.isActive = true }
     }
     
     func setVisuals() {
         // Does stuff like round the view, add a shadow, set background color, etc.
         
         // Round corners
-        layer.masksToBounds = true
+        contentView.layer.masksToBounds = true
         
         let roundedTopMaskLayer = CAShapeLayer()
-        //let shadowBounds = CGRect(x: bounds.x, y: bounds.y, width: bounds.width, height: bounds.height + 50)
-        roundedTopMaskLayer.path = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 24, height: 24)).cgPath
-        layer.mask = roundedTopMaskLayer
         
-        contentView.backgroundColor = .gray
+        roundedTopMaskLayer.path = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 24, height: 24)).cgPath
+        contentView.layer.mask = roundedTopMaskLayer
+        contentView.backgroundColor = .white
+        
+        backgroundColor = .clear
         
         // Add shadow
-        backgroundColor = .black
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.2
-        layer.shadowRadius = 20
+        if shadowLayer == nil { // Make sure not to add extra shadows/repeat this function
+            shadowLayer = CAShapeLayer()
+            
+            let shadowHeight: CGFloat = 24
+            
+            // This stops the shadow from showing on the bottom and breaking the illusion.
+            let shadowBounds = CGRect(x: bounds.minX, y: bounds.minY - shadowHeight + 30, width: bounds.width, height: shadowHeight)
+            let shadowPath = UIBezierPath(rect: shadowBounds)
+            
+            //shadowLayer.path = shadowPath.cgPath
+            shadowLayer.fillColor = UIColor.clear.cgColor
+            
+            shadowLayer.shadowColor = UIColor.black.cgColor
+            shadowLayer.shadowPath = shadowPath.cgPath
+            shadowLayer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+            shadowLayer.shadowOpacity = 0.3
+            shadowLayer.shadowRadius = 16
+            
+            // Add a mask so that the shadow only shows on the top
+            let cutOutBottomMask = CAShapeLayer()
+            let cutOutBottomBounds = CGRect(x: bounds.minX, y: 1000, width: bounds.width, height: 400)
+            let cutOutBottomPath = UIBezierPath(rect: cutOutBottomBounds).cgPath
+            cutOutBottomMask.path = cutOutBottomPath
+            //shadowLayer.mask = cutOutBottomMask
+            
+            layer.insertSublayer(shadowLayer, at: 0)
+            
+        }
     }
 }

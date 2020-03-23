@@ -15,10 +15,10 @@ class AddAssignmentViewController: UIViewController {
     
     var addAssignmentViewHeightConstraint: NSLayoutConstraint = NSLayoutConstraint() // Placeholder value since inits are annoying. This must be set later
     
-    private var addAssignmentViewHeight: CGFloat = 72
+    private var addAssignmentViewHeight: CGFloat = 60
     var addAssignmentView = AddAssignmentView()
     
-    //override var canBecomeFirstResponder: Bool { return true }
+    override var canBecomeFirstResponder: Bool { return true }
     override var inputAccessoryView: UIView? {
         return addAssignmentView
     }
@@ -28,7 +28,8 @@ class AddAssignmentViewController: UIViewController {
         
         // Add views:
         view.addSubview(addAssignmentView)
-        setVisuals()
+        view.backgroundColor = .white
+        //setVisuals()
         
         // Register for keyboard notifications:
         //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -77,8 +78,9 @@ class AddAssignmentViewController: UIViewController {
         addAssignmentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         addAssignmentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        addAssignmentViewHeightConstraint = NSLayoutConstraint(item: addAssignmentView, attribute: .height, relatedBy: .equal, toItem: .none, attribute: .height, multiplier: 1.0, constant: addAssignmentViewHeight)
-        //print("SAFE AREA INSETS: \(view.safeAreaInsets.bottom)")
+        
+        addAssignmentViewHeightConstraint = NSLayoutConstraint(item: addAssignmentView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: .none, attribute: .height, multiplier: 1.0, constant: addAssignmentViewHeight + view.safeAreaInsets.bottom)
+        print("SAFE AREA INSETS: \(view.safeAreaInsets.bottom)")
         addAssignmentView.addConstraint(addAssignmentViewHeightConstraint)
     }
     
@@ -100,6 +102,7 @@ class AddAssignmentViewController: UIViewController {
     
     private func setVisuals() {
         // Add shadow to addAssignmentView
+        
         
         // Add shadow
         let shadowLayer = CAShapeLayer()

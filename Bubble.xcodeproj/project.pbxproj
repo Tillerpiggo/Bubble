@@ -43,7 +43,8 @@
 		238D15B92208CB6D00178183 /* ConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238D15B82208CB6D00178183 /* ConnectionView.xib */; };
 		238D15BB2208D78600178183 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D15BA2208D78600178183 /* ConnectionView.swift */; };
 		238D15BD2208D8D000178183 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D15BC2208D8D000178183 /* ConnectionViewController.swift */; };
-		239607D224273F3400AC4E00 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239607D124273F3400AC4E00 /* TextField.swift */; };
+		239607D224273F3400AC4E00 /* RoundedExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239607D124273F3400AC4E00 /* RoundedExpandingTextView.swift */; };
+		239607D62428637A00AC4E00 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239607D52428637A00AC4E00 /* PlaceholderTextView.swift */; };
 		23AB27DC23223572008C0FBD /* ProgressBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23AB27DB23223572008C0FBD /* ProgressBarView.xib */; };
 		23AB27DE2322AA54008C0FBD /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB27DD2322AA54008C0FBD /* ProgressBarView.swift */; };
 		23AF675521EAFB6C003029D2 /* AssignmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23AF675421EAFB6C003029D2 /* AssignmentCell.xib */; };
@@ -124,7 +125,8 @@
 		238D15B82208CB6D00178183 /* ConnectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectionView.xib; sourceTree = "<group>"; };
 		238D15BA2208D78600178183 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		238D15BC2208D8D000178183 /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
-		239607D124273F3400AC4E00 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		239607D124273F3400AC4E00 /* RoundedExpandingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedExpandingTextView.swift; sourceTree = "<group>"; };
+		239607D52428637A00AC4E00 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		23AB27DB23223572008C0FBD /* ProgressBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressBarView.xib; sourceTree = "<group>"; };
 		23AB27DD2322AA54008C0FBD /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		23AF675421EAFB6C003029D2 /* AssignmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignmentCell.xib; sourceTree = "<group>"; };
@@ -241,7 +243,8 @@
 				238D15BA2208D78600178183 /* ConnectionView.swift */,
 				23AB27DD2322AA54008C0FBD /* ProgressBarView.swift */,
 				231BA778232EFB0B008429E1 /* AddAssignmentView.swift */,
-				239607D124273F3400AC4E00 /* TextField.swift */,
+				239607D124273F3400AC4E00 /* RoundedExpandingTextView.swift */,
+				239607D52428637A00AC4E00 /* PlaceholderTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -658,7 +661,7 @@
 				23580D54218E286600434DD9 /* AssignmentTableViewCell.swift in Sources */,
 				23CD10B121814F9B0034FFA7 /* CoreDataController.swift in Sources */,
 				23CD109121803C530034FFA7 /* AppDelegate.swift in Sources */,
-				239607D224273F3400AC4E00 /* TextField.swift in Sources */,
+				239607D224273F3400AC4E00 /* RoundedExpandingTextView.swift in Sources */,
 				23CD10BD2181A0660034FFA7 /* Class+CoreDataClass.swift in Sources */,
 				2310CF4321A8877E00A995FB /* AssignmentHeaderFooterView.swift in Sources */,
 				23580D4C218E164100434DD9 /* ToDo+CoreDataProperties.swift in Sources */,
@@ -668,6 +671,7 @@
 				2329382221E3280F00E5FC69 /* TabBarController.swift in Sources */,
 				23BDC67C2426C85A00736D39 /* View.swift in Sources */,
 				23F4C9E0219283EA00D00D05 /* CAGradientLayer+Helpers.swift in Sources */,
+				239607D62428637A00AC4E00 /* PlaceholderTextView.swift in Sources */,
 				23AB27DE2322AA54008C0FBD /* ProgressBarView.swift in Sources */,
 				23CD10AA21803E4D0034FFA7 /* CloudController.swift in Sources */,
 				238D15BD2208D8D000178183 /* ConnectionViewController.swift in Sources */,
