@@ -78,7 +78,7 @@ class AddAssignmentViewController: UIViewController {
         addAssignmentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         addAssignmentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        addAssignmentViewHeightConstraint = NSLayoutConstraint(item: addAssignmentView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: .none, attribute: .height, multiplier: 1.0, constant: addAssignmentViewHeight)
+        //addAssignmentViewHeightConstraint = NSLayoutConstraint(item: addAssignmentView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: .none, attribute: .height, multiplier: 1.0, constant: addAssignmentViewHeight)
         print("SAFE AREA INSETS: \(view.safeAreaInsets.bottom)")
         //addAssignmentView.addConstraint(addAssignmentViewHeightConstraint)
     }

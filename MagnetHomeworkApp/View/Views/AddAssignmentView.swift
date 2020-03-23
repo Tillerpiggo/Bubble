@@ -118,15 +118,18 @@ fileprivate extension AddAssignmentView {
         
         self.backgroundColor = .clear
         
+        
         // Add shadow
+        let shadowHeight: CGFloat = 24
+        
+        // This stops the shadow from showing on the bottom and breaking the illusion.
+        let shadowBounds = CGRect(x: bounds.minX, y: bounds.minY - shadowHeight + 30, width: bounds.width, height: shadowHeight)
+        let shadowPath = UIBezierPath(rect: shadowBounds)
+        
         if shadowLayer == nil { // Make sure not to add extra shadows/repeat this function
             shadowLayer = CAShapeLayer()
             
-            let shadowHeight: CGFloat = 24
             
-            // This stops the shadow from showing on the bottom and breaking the illusion.
-            let shadowBounds = CGRect(x: bounds.minX, y: bounds.minY - shadowHeight + 30, width: bounds.width, height: shadowHeight)
-            let shadowPath = UIBezierPath(rect: shadowBounds)
             
             //shadowLayer.path = shadowPath.cgPath
             shadowLayer.fillColor = UIColor.clear.cgColor
@@ -138,14 +141,49 @@ fileprivate extension AddAssignmentView {
             shadowLayer.shadowRadius = 16
             
             // Add a mask so that the shadow only shows on the top
+            /*
             let cutOutBottomMask = CAShapeLayer()
             let cutOutBottomBounds = CGRect(x: bounds.minX, y: 1000, width: bounds.width, height: 400)
             let cutOutBottomPath = UIBezierPath(rect: cutOutBottomBounds).cgPath
             cutOutBottomMask.path = cutOutBottomPath
-            //shadowLayer.mask = cutOutBottomMask
+ */
+            // Animate the shadow when it changes/moves
+            let transition = CATransition()
+            transition.duration = 0.3
+            transition.type = CATransitionType.push
+            shadowLayer.add(transition, forKey: "transition")
             
             layer.insertSublayer(shadowLayer, at: 0)
+        } else {
+            /*
+            // animate the shadow over 0.3 seconds to the desired new bounds
+            let animation = CABasicAnimation(keyPath: "bounds")
+            animation.fromValue = shadowLayer.bounds
+            animation.toValue = shadowBounds
+            animation.timingFunction = CAMediaTimingFunction(name: .default)
+            animation.duration = 0.3
             
+            shadowLayer.add(animation, forKey: nil)
+            */
+            // Note for tomorrow: this does something, but it's not shadows
+            
+            /*
+            CATransaction.begin()
+            if let animation = layer.animation(forKey: "position") {
+                CATransaction.setAnimationDuration(animation.duration)
+                CATransaction.setAnimationTimingFunction(animation.timingFunction)
+                print("THIS IS NOT TRIGGERING... I NEED IT TO")
+            } else {
+                CATransaction.disableActions()
+            }
+            shadowLayer.frame = bounds
+            
+            //shadowLayer.shadowPath = shadowPath.cgPath
+            
+            CATransaction.commit()
+ */
         }
+        
+        // Figure out how to animate shadow with everything
     }
 }

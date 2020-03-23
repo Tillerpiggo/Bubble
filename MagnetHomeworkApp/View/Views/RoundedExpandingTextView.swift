@@ -114,7 +114,17 @@ extension RoundedExpandingTextView: UITextViewDelegate {
         // Get the height of the text view
         textView.constraints.forEach { (constraint) in
             if constraint.firstAttribute == .height {
+                //let constantDidChange = (constraint.constant != estimatedSize.height)
+                
                 constraint.constant = estimatedSize.height
+                
+                /*
+                // Animate the change
+                UIView.animate(withDuration: 0.15, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
+                    self.superview?.layoutIfNeeded()
+                })
+ */
+                
                 print("estimatedSize.height: \(estimatedSize.height)")
             }
         }
