@@ -74,23 +74,34 @@ fileprivate extension AddAssignmentView {
     
     func addContentViewConstraints() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
     func addTextFieldConstraints() {
+        /*
         [
-            textField.topAnchor.constraint(equalTo: topAnchor, constant: 12.0),
-            textField.heightAnchor.constraint(greaterThanOrEqualToConstant: 24.0)
+            textField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12.0),
+            textField.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor, constant: 12.0)
         ].forEach { $0.isActive = true }
+ */
+        
+        let topConstraint = NSLayoutConstraint(item: textField, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 12.0)
+        let bottomConstraint = NSLayoutConstraint(item: contentView, attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: textField, attribute: .bottom, multiplier: 1.0, constant: 12.0)
+        contentView.addConstraint(topConstraint)
+        contentView.addConstraint(bottomConstraint)
     }
     
     func addDoneButtonConstraints(withViews views: [String: Any]) {
         [
-            doneButton.topAnchor.constraint(equalTo: textField.topAnchor)
+            doneButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12.0)
         ].forEach { $0.isActive = true }
+        
+        let topConstraint = NSLayoutConstraint(item: doneButton, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 12.0)
+        contentView.addConstraint(topConstraint)
     }
     
     func setVisuals() {
@@ -105,7 +116,7 @@ fileprivate extension AddAssignmentView {
         contentView.layer.mask = roundedTopMaskLayer
         contentView.backgroundColor = .white
         
-        backgroundColor = .clear
+        self.backgroundColor = .clear
         
         // Add shadow
         if shadowLayer == nil { // Make sure not to add extra shadows/repeat this function
