@@ -8,26 +8,38 @@
 
 import UIKit
 
+protocol AddAssignmentViewDelegate {
+    func doneButtonPressed(withText text: String)
+}
+
 class AddAssignmentView: View {
     
     // MARK: - Subviews
     
     var contentView = UIView()
+    var delegate: AddAssignmentViewDelegate?
     
     private var shadowLayer: CAShapeLayer!
     
-    lazy var textField: RoundedExpandingTextView = {
-        let textField = RoundedExpandingTextView()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Add assignment here..."
+    lazy var roundedExpandingTextView: RoundedExpandingTextView = {
+        let roundedExpandingTextView = RoundedExpandingTextView()
+        roundedExpandingTextView.translatesAutoresizingMaskIntoConstraints = false
+        roundedExpandingTextView.placeholder = "Add assignment here..."
         
-        return textField
+        return roundedExpandingTextView
     }()
     
     lazy var doneButton: UIButton = {
         let doneButton = UIButton()
-        doneButton.titleLabel?.text = "Done"
-        doneButton.titleLabel?.textColor = .systemBlue
+        let blue = UIColor(red: 0.48, green: 0.64, blue: 1, alpha: 1)
+        let attributedText = NSAttributedString(string: "Done", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: blue])
+        doneButton.setAttributedTitle(attributedText, for: .normal)
+        
+        // Add actions
+        doneButton.addTarget(self, action: #selector(doneButtonTouchedDown), for: .touchDown)
+        doneButton.addTarget(self, action: #selector(doneButtonTouchedUpInside), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(doneButtonTouchDraggedOutside), for: .touchDragOutside)
+        
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         
         return doneButton
@@ -36,6 +48,13 @@ class AddAssignmentView: View {
     override var intrinsicContentSize: CGSize {
         //preferred content size, calculate it if some internal state changes
         return CGSize.zero
+    }
+    
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        if let window = self.window {
+            self.bottomAnchor.constraint(lessThanOrEqualToSystemSpacingBelow: window.safeAreaLayoutGuide.bottomAnchor, multiplier: 1.0).isActive = true
+        }
     }
     
     // The common initialization. Setup subviews and properties and constraints, etc.
@@ -57,14 +76,14 @@ fileprivate extension AddAssignmentView {
         addSubview(contentView)
         contentView.backgroundColor = .white
         // Add all other contents to contentView
-        contentView.addSubview(textField)
+        contentView.addSubview(roundedExpandingTextView)
         contentView.addSubview(doneButton)
     }
     
     func addConstraints() {
-        let views: [String: Any] = ["textField": textField, "doneButton": doneButton]
+        let views: [String: Any] = ["textField": roundedExpandingTextView, "doneButton": doneButton]
         
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-12-[textField]-16-[doneButton(60@1000)]-12-|", metrics: nil, views: views)
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-12-[textField]-12-[doneButton(60@1000)]-12-|", metrics: nil, views: views)
         addConstraints(horizontalConstraints)
         
         addContentViewConstraints()
@@ -81,27 +100,19 @@ fileprivate extension AddAssignmentView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
+    // TODO: Maybe make this more concise
     func addTextFieldConstraints() {
-        /*
-        [
-            textField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12.0),
-            textField.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor, constant: 12.0)
-        ].forEach { $0.isActive = true }
- */
-        
-        let topConstraint = NSLayoutConstraint(item: textField, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 12.0)
-        let bottomConstraint = NSLayoutConstraint(item: contentView, attribute: .bottom, relatedBy: .greaterThanOrEqual, toItem: textField, attribute: .bottom, multiplier: 1.0, constant: 12.0)
+        let topConstraint = NSLayoutConstraint(item: roundedExpandingTextView, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 12.0)
+        let bottomConstraint = NSLayoutConstraint(item: contentView, attribute: .bottom, relatedBy: .equal, toItem: roundedExpandingTextView, attribute: .bottom, multiplier: 1.0, constant: 12.0)
         contentView.addConstraint(topConstraint)
         contentView.addConstraint(bottomConstraint)
     }
     
     func addDoneButtonConstraints(withViews views: [String: Any]) {
-        [
-            doneButton.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12.0)
-        ].forEach { $0.isActive = true }
-        
-        let topConstraint = NSLayoutConstraint(item: doneButton, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 12.0)
-        contentView.addConstraint(topConstraint)
+        //let topConstraint = NSLayoutConstraint(item: doneButton, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 12.0)
+        let bottomConstraint = NSLayoutConstraint(item: doneButton, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: -12.0)
+        //contentView.addConstraint(topConstraint)
+        contentView.addConstraint(bottomConstraint)
     }
     
     func setVisuals() {
@@ -185,5 +196,32 @@ fileprivate extension AddAssignmentView {
         }
         
         // Figure out how to animate shadow with everything
+    }
+    
+    @objc func doneButtonTouchedUpInside() {
+        print("DONE BUTTON PRESSED")
+        
+        // "release" bounce animation w/ payoff of a glow effect
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
+            self.doneButton.transform = .identity
+        })
+        
+        delegate?.doneButtonPressed(withText: roundedExpandingTextView.textView.text)
+        
+    }
+    
+    @objc func doneButtonTouchDraggedOutside() {
+        // "release" bounce animation slowly and calmly
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
+            self.doneButton.transform = .identity
+        })
+    }
+    
+    @objc func doneButtonTouchedDown() {
+        // Do start of bounce animation "charge up"
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
+            let shrinkTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            self.doneButton.transform = shrinkTransform
+        })
     }
 }

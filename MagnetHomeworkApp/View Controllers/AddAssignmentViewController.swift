@@ -23,24 +23,15 @@ class AddAssignmentViewController: UIViewController {
         return addAssignmentView
     }
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Add views:
         view.addSubview(addAssignmentView)
         view.backgroundColor = .white
-        //setVisuals()
         
-        // Register for keyboard notifications:
-        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // Sign up for keyboard notifications:
-        
+        addAssignmentView.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,7 +67,6 @@ class AddAssignmentViewController: UIViewController {
         
         addAssignmentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         addAssignmentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        addAssignmentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         //addAssignmentViewHeightConstraint = NSLayoutConstraint(item: addAssignmentView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: .none, attribute: .height, multiplier: 1.0, constant: addAssignmentViewHeight)
         print("SAFE AREA INSETS: \(view.safeAreaInsets.bottom)")
@@ -113,5 +103,12 @@ class AddAssignmentViewController: UIViewController {
         //shadowLayer.path = roundedTopMaskLayer.path
         
         view.layer.insertSublayer(shadowLayer, above: addAssignmentView.layer)
+    }
+}
+
+extension AddAssignmentViewController: AddAssignmentViewDelegate {
+    func doneButtonPressed(withText text: String) {
+        // Implement in subview
+        addAssignmentView.roundedExpandingTextView.textView.resignFirstResponder()
     }
 }

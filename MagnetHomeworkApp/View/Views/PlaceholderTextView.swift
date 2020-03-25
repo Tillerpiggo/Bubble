@@ -76,7 +76,7 @@ fileprivate extension PlaceholderTextView {
         
         self.font = .systemFont(ofSize: 15, weight: .semibold)
         self.backgroundColor = .clear
-        self.textColor = UIColor(white: 0.36, alpha: 1.0)
+        self.textColor = UIColor(white: 0.32, alpha: 1.0)
     }
     
     func setupNotificationObserver() {
