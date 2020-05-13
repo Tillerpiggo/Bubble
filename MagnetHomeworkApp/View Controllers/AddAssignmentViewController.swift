@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddAssignmentViewControllerDelegate {
+    func addedAssignment(_ assignment: Assignment)
+}
+
 class AddAssignmentViewController: UIViewController {
     
     var cloudController: CloudController!
@@ -17,6 +21,8 @@ class AddAssignmentViewController: UIViewController {
     
     private var addAssignmentViewHeight: CGFloat = 60
     var addAssignmentView = AddAssignmentView()
+    
+    var delegate: AddAssignmentViewControllerDelegate?
     
     override var canBecomeFirstResponder: Bool { return true }
     override var inputAccessoryView: UIView? {
@@ -110,5 +116,14 @@ extension AddAssignmentViewController: AddAssignmentViewDelegate {
     func doneButtonPressed(withText text: String) {
         // Implement in subview
         addAssignmentView.roundedExpandingTextView.textView.resignFirstResponder()
+        
+        // Add an assignment and transfer that to the next delegate:
+        
+        // Create the assignment
+        //let newAssignment = Assignment(withText: text, managedContext: coreDataController.managedContext, owningClass: <#T##Class#>, zoneID: <#T##CKRecordZone.ID#>, toDoZoneID: <#T##CKRecordZone.ID#>)
+        
+        
+        // Add it
+        //delegate?.addedAssignment(<#T##assignment: Assignment##Assignment#>)
     }
 }

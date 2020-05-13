@@ -68,7 +68,7 @@ class ClassTableViewCell: UITableViewCell {
     }
     
     func configure(withClass `class`: Class) {
-        self.`class` = `class`
+        self.class = `class`
         
         nameLabel.text = `class`.name
         nameLabel.textColor = .black

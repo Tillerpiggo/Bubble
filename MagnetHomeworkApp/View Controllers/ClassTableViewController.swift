@@ -27,7 +27,7 @@ class ClassTableViewController: AddObjectViewController {
         let sortByCreationDate = NSSortDescriptor(key: #keyPath(Class.creationDate), ascending: true)
         fetchRequest.sortDescriptors = [sortByCreationDate]
         
-        let fetchedResultsController = NSFetchedResultsController (
+        let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: coreDataController.managedContext,
             sectionNameKeyPath: nil,
@@ -111,7 +111,7 @@ class ClassTableViewController: AddObjectViewController {
             
             // Dependency injection of class
             let selectedClass = fetchedResultsController.object(at: indexPathForSelectedRow)
-            destinationViewController.`class` = selectedClass
+            destinationViewController.class = selectedClass
             
             // Dependency injection of cloud controller
             destinationViewController.cloudController = cloudController
@@ -131,7 +131,7 @@ class ClassTableViewController: AddObjectViewController {
 // MARK: - Helper Methods
 
 extension ClassTableViewController {
-    func updateWithCloud(completion: @escaping (Bool) -> Void = { (didFetchRecords) in }) {
+    func updateWithCloud(completion: @escaping (Bool) -> Void = { (didFetchChanges) in }) {
         var didFetchRecords: Bool = false
         
         let zonesDeleted: ([CKRecordZone.ID]) -> Void = { (zoneIDs) in

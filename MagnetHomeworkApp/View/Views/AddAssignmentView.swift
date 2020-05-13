@@ -12,7 +12,7 @@ protocol AddAssignmentViewDelegate {
     func doneButtonPressed(withText text: String)
 }
 
-class AddAssignmentView: View {
+class AddAssignmentView: ProgrammaticView {
     
     // MARK: - Subviews
     
@@ -20,27 +20,28 @@ class AddAssignmentView: View {
     var delegate: AddAssignmentViewDelegate?
     
     private var shadowLayer: CAShapeLayer!
+    private let doneButtonEnabledAttributedText = NSAttributedString(string: "Done", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: UIColor(red: 0.48, green: 0.64, blue: 1, alpha: 1)])
+    private let doneButtonDisabledAttributedText = NSAttributedString(string: "Done", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: UIColor(white: 0.87, alpha: 1)])
     
     lazy var roundedExpandingTextView: RoundedExpandingTextView = {
         let roundedExpandingTextView = RoundedExpandingTextView()
         roundedExpandingTextView.translatesAutoresizingMaskIntoConstraints = false
         roundedExpandingTextView.placeholder = "Add assignment here..."
+        roundedExpandingTextView.delegate = self
         
         return roundedExpandingTextView
     }()
     
-    lazy var doneButton: UIButton = {
-        let doneButton = UIButton()
-        let blue = UIColor(red: 0.48, green: 0.64, blue: 1, alpha: 1)
-        let attributedText = NSAttributedString(string: "Done", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: blue])
-        doneButton.setAttributedTitle(attributedText, for: .normal)
+    lazy var doneButton: BouncyButton = {
+        let doneButton = BouncyButton()
+        doneButton.setAttributedTitle(doneButtonEnabledAttributedText, for: .normal)
+        doneButton.setAttributedTitle(doneButtonDisabledAttributedText, for: .disabled)
         
-        // Add actions
-        doneButton.addTarget(self, action: #selector(doneButtonTouchedDown), for: .touchDown)
-        doneButton.addTarget(self, action: #selector(doneButtonTouchedUpInside), for: .touchUpInside)
-        doneButton.addTarget(self, action: #selector(doneButtonTouchDraggedOutside), for: .touchDragOutside)
+        doneButton.delegate = self
         
         doneButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        doneButton.isEnabled = false
         
         return doneButton
     }()
@@ -66,6 +67,20 @@ class AddAssignmentView: View {
     override func layoutSubviews() {
         super.layoutSubviews()
         setVisuals()
+    }
+}
+
+extension AddAssignmentView: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        UIView.animate(withDuration: 0.4) { [unowned self] in
+            self.doneButton.isEnabled = true
+        }
+    }
+}
+
+extension AddAssignmentView: BouncyButtonDelegate {
+    func buttonPressed() {
+        delegate?.doneButtonPressed(withText: roundedExpandingTextView.textView.text)
     }
 }
 
@@ -196,32 +211,5 @@ fileprivate extension AddAssignmentView {
         }
         
         // Figure out how to animate shadow with everything
-    }
-    
-    @objc func doneButtonTouchedUpInside() {
-        print("DONE BUTTON PRESSED")
-        
-        // "release" bounce animation w/ payoff of a glow effect
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
-            self.doneButton.transform = .identity
-        })
-        
-        delegate?.doneButtonPressed(withText: roundedExpandingTextView.textView.text)
-        
-    }
-    
-    @objc func doneButtonTouchDraggedOutside() {
-        // "release" bounce animation slowly and calmly
-        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
-            self.doneButton.transform = .identity
-        })
-    }
-    
-    @objc func doneButtonTouchedDown() {
-        // Do start of bounce animation "charge up"
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
-            let shrinkTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-            self.doneButton.transform = shrinkTransform
-        })
     }
 }

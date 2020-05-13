@@ -74,7 +74,7 @@ fileprivate extension PlaceholderTextView {
         setupNotificationObserver()
         addSubview(placeholderLabel)
         
-        self.font = .systemFont(ofSize: 15, weight: .semibold)
+        self.font = .systemFont(ofSize: 15, weight: .medium)
         self.backgroundColor = .clear
         self.textColor = UIColor(white: 0.32, alpha: 1.0)
     }

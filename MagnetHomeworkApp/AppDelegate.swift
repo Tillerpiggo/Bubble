@@ -63,6 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             addAssignmentViewController.coreDataController = coreDataController
         }
         
+        if let classCollectionViewController = window?.rootViewController as? ClassCollectionViewController {
+            classCollectionViewController.cloudController = cloudController
+            classCollectionViewController.coreDataController = coreDataController
+        }
+        
         
         // Try to register for notifications
         UNUserNotificationCenter.current().delegate = self
@@ -84,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         var didReceiveData: Bool = false
         
         if notification.subscriptionID == "cloudkit-privateClass-changes2" || notification.subscriptionID == "cloudkit-privateAssignment-changes2" || notification.subscriptionID == "cloudkit-sharedDatabase-changes" || notification.subscriptionID == "cloudkit-privateToDo-changes2" {
-            notificationDelegate?.fetchChanges() { (didFetchRecords) in
+            notificationDelegate?.fetchChanges() { (didFetchChanges) in
                 if !didReceiveData {
                     completionHandler(.noData)
                     didReceiveData = true

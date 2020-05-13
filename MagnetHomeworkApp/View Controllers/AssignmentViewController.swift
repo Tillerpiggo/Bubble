@@ -46,7 +46,7 @@ class AssignmentViewController: ToDoTableViewController {
     
     
     override func predicate() -> NSPredicate {
-        return NSPredicate(format: "owningClass == %@", self.`class`) // old: "owningClass == %@ && isCompleted == false" ( I removed the last thing )
+        return NSPredicate(format: "owningClass == %@", self.class) // old: "owningClass == %@ && isCompleted == false" ( I removed the last thing )
     }
     
     override func cacheName() -> String? {

@@ -11,7 +11,7 @@ import UIKit
 // This is my custom textField with a rounded background and customization how I like it. It's just a textField with a background UIView...
 // It's just made for easy reusability and consistency throughout the app
 
-class RoundedExpandingTextView: View {
+class RoundedExpandingTextView: ProgrammaticView {
     // MARK: - Subviews
     /*
     lazy var textField: UITextField = {
@@ -30,11 +30,14 @@ class RoundedExpandingTextView: View {
         return textField
     }()
  */
+    var delegate: UITextViewDelegate?
+    
     lazy var textView: PlaceholderTextView = {
         let textView = PlaceholderTextView()
         textView.isScrollEnabled = false
         
         textView.delegate = self
+        textView.returnKeyType = .done
         
         return textView
     }()
@@ -131,6 +134,6 @@ extension RoundedExpandingTextView: UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print("DID BEGIN EDITING")
+        delegate?.textViewDidBeginEditing?(textView)
     }
 }
