@@ -19,11 +19,46 @@ class AddClassCollectionViewCell: UICollectionViewCell {
         return addClassView
     }()
     
+    /*
+    // Detects if you press this view while it's a button
+    let button: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        button.backgroundColor = .blue
+        
+        return button
+    }()
+ */
+    
     // TODO: Abstract this into helper functions
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
+    
+    /*
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        
+        guard isUserInteractionEnabled else { return nil }
+        
+        guard !isHidden else { return nil }
+        
+        guard alpha >= 0.01 else { return nil }
+        
+        guard self.point(inside: point, with: event) else { return nil }
+        
+        // https://stackoverflow.com/questions/40988992/collection-view-cell-button-not-triggering-action
+        if button.point(inside: convert(point, to: button), with: event) {
+            // For some reason, while buttonPressed isn't called, this is called twice...
+            
+            return self.button
+        }
+        
+        return super.hitTest(point, with: event)
+    }
+ */
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,13 +66,18 @@ class AddClassCollectionViewCell: UICollectionViewCell {
     }
     
     func setupView() {
-        contentView.addSubview(addClassView)
+        contentView.addSubviews([addClassView])//, button])
         contentView.backgroundColor = .white
         
         addContentViewConstraints()
         addAddClassViewConstraints()
+        //addButtonConstraints()
         
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func expand() {
+        addClassView.expand()
     }
     
     //override var intrinsicContentSize: CGSize { return CGSize(width: 1, height: 1) }
@@ -46,12 +86,7 @@ class AddClassCollectionViewCell: UICollectionViewCell {
 // Helper methods:
 fileprivate extension AddClassCollectionViewCell {
     func addContentViewConstraints() {
-        [
-            contentView.topAnchor.constraint(equalTo: self.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        ].forEach { $0.isActive = true }
+        contentView.pinEdgesToView(self)
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -59,11 +94,16 @@ fileprivate extension AddClassCollectionViewCell {
     func addAddClassViewConstraints() {
         // In relation to the contentView:
         
-        [
-            addClassView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20.0),
-            addClassView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20.0),
-            addClassView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0),
-            addClassView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20.0)
-        ].forEach { $0.isActive = true }
+        addClassView.pinEdgesToView(contentView, withMargin: 20.0)
     }
+    
+    /*
+    func addButtonConstraints() {
+        button.pinEdgesToView(self)
+    }
+    
+    @objc func buttonPressed() {
+        print("The button was pressed!")
+    }
+ */
 }

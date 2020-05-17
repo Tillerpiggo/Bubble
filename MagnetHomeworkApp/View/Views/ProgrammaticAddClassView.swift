@@ -17,6 +17,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
     
     var className: String?
     var delegate: ProgrammaticAddClassViewDelegate?
+    fileprivate var isExpanded: Bool = false
     
     static let disabledColor: UIColor = UIColor(white: 0.825, alpha: 1.0)
     
@@ -47,22 +48,25 @@ class ProgrammaticAddClassView: ProgrammaticView {
         return addClassLabel
     }()
     
+    /*
     // Detects if you press this view while it's a button
     fileprivate let addClassButton: UIButton = {
         let addClassButton = UIButton()
         addClassButton.translatesAutoresizingMaskIntoConstraints = false
         
         addClassButton.addTarget(self, action: #selector(addClassButtonPressed), for: .touchUpInside)
+        addClassButton.backgroundColor = .blue
         
         return addClassButton
     }()
+ */
     
     private let cancelButton: BouncyButton = {
         let cancelButton = BouncyButton()
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let enabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .regular), .foregroundColor: UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)])
-        let disabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .regular), .foregroundColor: disabledColor])
+        let enabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)])
+        let disabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: disabledColor])
         cancelButton.setAttributedTitle(enabledCancelText, for: .normal)
         cancelButton.setAttributedTitle(disabledCancelText, for: .disabled)
         
@@ -75,7 +79,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
         let doneButton = BouncyButton()
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let enabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)])
+        let enabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: UIColor(red: 0.562, green: 0.711, blue: 1, alpha: 1)])
         let disabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: disabledColor])
         doneButton.setAttributedTitle(enabledDoneText, for: .normal)
         doneButton.setAttributedTitle(enabledDoneText, for: .disabled)
@@ -97,6 +101,42 @@ class ProgrammaticAddClassView: ProgrammaticView {
     override func setupView() {
         addSubviews()
         addConstraints()
+        
+        cancelButton.delegate = self
+        doneButton.delegate = self
+        
+        // Since it starts in the shrunken state:
+        cancelButton.isHidden = true
+        doneButton.isHidden = true
+        roundedExpandingTextView.isHidden = true
+    }
+    
+    // MARK: - Expand and shrink
+    
+    // Expand to show everything
+    func expand() {
+        guard !isExpanded else { return }
+        
+        // Increase height
+        UIView.animate(withDuration: 0.5) { [unowned self] in
+            self.cancelButton.isHidden = false
+            self.doneButton.isHidden = false
+            self.roundedExpandingTextView.isHidden = false
+            self.isExpanded = true
+        }
+    }
+    
+    // Only show the "Add Class" label
+    func shrink() {
+        guard isExpanded else { return }
+        
+        // Decrease height
+        UIView.animate(withDuration: 0.5) { [unowned self] in
+            self.cancelButton.isHidden = true
+            self.doneButton.isHidden = true
+            self.roundedExpandingTextView.isHidden = true
+            self.isExpanded = false
+        }
     }
 }
 
@@ -110,15 +150,29 @@ extension ProgrammaticAddClassView: UITextViewDelegate {
 // MARK: - Actions
 fileprivate extension ProgrammaticAddClassView {
     @objc func addClassButtonPressed() {
-        
+        expand()
+        //addClassButton.isEnabled = false
     }
     
     @objc func cancelButtonPressed() {
-        
+        shrink()
+        //addClassButton.isEnabled = true
     }
     
     @objc func doneButtonPressed() {
-        
+        shrink() // TODO: Replace this with an animation later
+        //addClassButton.isEnabled = true
+    }
+}
+
+// MARK: - BouncyButtonDelegate
+extension ProgrammaticAddClassView: BouncyButtonDelegate {
+    func buttonPressed(_ button: BouncyButton) {
+        if button == doneButton {
+            print("Done!")
+        } else if button == cancelButton {
+            print("Canceled lol")
+        }
     }
 }
 
@@ -127,53 +181,59 @@ fileprivate extension ProgrammaticAddClassView {
     
     // MARK: - Add Subviews
     func addSubviews() {
-        addSubview(backgroundView)
-        backgroundView.addSubview(addClassLabel)
+        self.addSubviews([backgroundView])//, addClassButton])
+        backgroundView.addSubviews([addClassLabel, cancelButton, doneButton, roundedExpandingTextView])
     }
     
     // MARK: - Add Constraints
     func addConstraints() {
         addBackgroundViewConstraints()
         addAddClassLabelConstraints()
+        addAddClassButtonConstraints()
+        addCancelButtonConstraints()
+        addDoneButtonConstraints()
+        addRoundedExpandingTextViewConstraints()
     }
     
     func addBackgroundViewConstraints() {
-        [
-            backgroundView.topAnchor.constraint(equalTo: self.topAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            backgroundView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 48.0) // Margins of 24.0 on each side
-        ].forEach { $0.isActive = true }
+        backgroundView.pinEdgesToView(self)
+        backgroundView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 48.0).isActive = true
     }
     
     func addAddClassLabelConstraints() {
-        
-        /*
-        [
-            addClassLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
-            addClassLabel.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor)
-        ].forEach { $0.isActive = true }
- */
-        
         [
             addClassLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 20.0),
-            addClassLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -20),
-            addClassLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 12.0),
-            addClassLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -12.0),
+            addClassLabel.bottomAnchor.constraint(equalTo: roundedExpandingTextView.topAnchor, constant: -20.0),
+            //addClassLabel.leadingAnchor.constraint(equalTo: cancelButton.trailingAnchor, constant: -20.0),
+            addClassLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
         ].forEach { $0.isActive = true }
     }
     
-    // MARK: - Expand and shrink
-    
-    // Expand to show everything
-    func expand() {
-        // Increase height
-        
+    func addAddClassButtonConstraints() {
+        //addClassButton.pinEdgesToView(self)
     }
     
-    // Only show the "Add Class" label
-    func shrink() {
-        // Decrease height
+    func addCancelButtonConstraints() {
+        [
+            cancelButton.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 20.0),
+            cancelButton.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20.0),
+            cancelButton.bottomAnchor.constraint(equalTo: roundedExpandingTextView.topAnchor, constant: -20.0)
+        ].forEach { $0.isActive = true }
+    }
+    
+    func addDoneButtonConstraints() {
+        [
+            doneButton.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 20.0),
+            doneButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20.0),
+            doneButton.bottomAnchor.constraint(equalTo: roundedExpandingTextView.topAnchor, constant: -20.0)
+        ].forEach { $0.isActive = true }
+    }
+    
+    func addRoundedExpandingTextViewConstraints() {
+        [
+            roundedExpandingTextView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -20.0),
+            roundedExpandingTextView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20.0),
+            roundedExpandingTextView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20.0)
+        ].forEach { $0.isActive = true }
     }
 }

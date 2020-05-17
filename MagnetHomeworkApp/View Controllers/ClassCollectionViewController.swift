@@ -70,13 +70,7 @@ class ClassCollectionViewController: UICollectionViewController {
         
         
         collectionView.reloadData() // Remove for optimization?
-        
-        [
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ].forEach { $0.isActive = true }
+        collectionView.pinEdgesToView(view)
     }
 }
 
@@ -190,8 +184,24 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: addClassCollectionViewCellIdentifier, for: indexPath) as! AddClassCollectionViewCell
         
         //cell.contentView.widthAnchor.constraint(equalToConstant: 600.0).isActive = true
+        //cell.button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
         return cell
+    }
+    
+    /*
+    @objc func buttonPressed() {
+        print("Button pressed; target added in collectionViewControlller")
+    }
+ */
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // TODO: Change to check for section later
+        if indexPath.row == fetchedResultsController.fetchedObjects?.count {
+            if let cell = collectionView.cellForItem(at: indexPath) as? AddClassCollectionViewCell {
+                cell.expand()
+            }
+        }
     }
 }
 

@@ -10,7 +10,7 @@
 import UIKit
 
 protocol BouncyButtonDelegate {
-    func buttonPressed()
+    func buttonPressed(_ button: BouncyButton)
 }
 
 class BouncyButton: ProgrammaticView {
@@ -53,12 +53,7 @@ class BouncyButton: ProgrammaticView {
     private func addButtonConstraints() {
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        [
-            button.topAnchor.constraint(equalTo: self.topAnchor),
-            button.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            button.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        ].forEach { $0.isActive = true }
+        button.pinEdgesToView(self)
     }
     
     // MARK: - Animations
@@ -75,7 +70,7 @@ class BouncyButton: ProgrammaticView {
             })
         })
         
-        delegate?.buttonPressed()
+        delegate?.buttonPressed(self)
     }
     
     @objc func buttonTouchDraggedOutside() {

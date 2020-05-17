@@ -26,4 +26,19 @@ extension UIView {
     func removeDropShadow() {
         layer.masksToBounds = true
     }
+    
+    func pinEdgesToView(_ otherView: UIView, withMargin margin: CGFloat = 0.0) {
+        [
+            self.topAnchor.constraint(equalTo: otherView.topAnchor, constant: margin),
+            self.bottomAnchor.constraint(equalTo: otherView.bottomAnchor, constant: -1 * margin),
+            self.leadingAnchor.constraint(equalTo: otherView.leadingAnchor, constant: margin),
+            self.trailingAnchor.constraint(equalTo: otherView.trailingAnchor, constant: -1 * margin)
+        ].forEach { $0.isActive = true }
+    }
+    
+    func addSubviews(_ subviews: [UIView]) {
+        for subview in subviews {
+            addSubview(subview)
+        }
+    }
 }

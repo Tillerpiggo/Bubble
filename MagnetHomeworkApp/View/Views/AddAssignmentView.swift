@@ -79,7 +79,7 @@ extension AddAssignmentView: UITextViewDelegate {
 }
 
 extension AddAssignmentView: BouncyButtonDelegate {
-    func buttonPressed() {
+    func buttonPressed(_ button: BouncyButton) {
         delegate?.doneButtonPressed(withText: roundedExpandingTextView.textView.text)
     }
 }
@@ -108,11 +108,7 @@ fileprivate extension AddAssignmentView {
     
     func addContentViewConstraints() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        
-        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.pinEdgesToView(self)
     }
     
     // TODO: Maybe make this more concise

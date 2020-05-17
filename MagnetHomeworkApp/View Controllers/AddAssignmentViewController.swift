@@ -59,6 +59,9 @@ class AddAssignmentViewController: UIViewController {
         case let addObjectViewController as AddObjectViewController:
             addObjectViewController.cloudController = cloudController
             addObjectViewController.coreDataController = coreDataController
+        case let classCollectionViewController as ClassCollectionViewController:
+            classCollectionViewController.cloudController = cloudController
+            classCollectionViewController.coreDataController = coreDataController
         default:
             break
         }
