@@ -16,6 +16,7 @@ protocol BouncyButtonDelegate {
 class BouncyButton: ProgrammaticView {
     
     var delegate: BouncyButtonDelegate?
+    let animator = Animator()
     
     lazy var button: UIButton = {
         let button = UIButton()
@@ -58,6 +59,7 @@ class BouncyButton: ProgrammaticView {
     
     // MARK: - Animations
     @objc func buttonTouchedUpInside() {
+        
         // "release" bounce animation w/ payoff
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
             let expandTransform = CGAffineTransform(scaleX: 1.01, y: 1.01)
@@ -69,29 +71,43 @@ class BouncyButton: ProgrammaticView {
                 //self.button.isEnabled = false
             })
         })
+ 
+        //animator.animateSpringRelease(on: button)
         
         delegate?.buttonPressed(self)
     }
     
     @objc func buttonTouchDraggedOutside() {
+        
+        /*
         // "release" bounce animation slowly and gently (longer time)
         UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
             self.button.transform = .identity
         })
+ */
+        DispatchQueue.main.async { self.animator.animateSpringGentleRelease(on: self.button) }
     }
     
     @objc func buttonTouchDraggedInside() {
+        /*
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
             let shrinkTransform = CGAffineTransform(scaleX: 0.88, y: 0.88)
             self.button.transform = shrinkTransform
         })
+ */
+ 
+        DispatchQueue.main.async { self.animator.animateSpringChargeUp(on: self.button) }
     }
     
     @objc func buttonTouchedDown() {
+        /*
         // Do start of bounce animation "charge up"
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
             let shrinkTransform = CGAffineTransform(scaleX: 0.88, y: 0.88)
             self.button.transform = shrinkTransform
         })
+ */
+ 
+        //DispatchQueue.main.async { self.animator.animateSpringChargeUp(on: self.button) }
     }
 }
