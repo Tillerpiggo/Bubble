@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class AddClassCollectionViewCell: UICollectionViewCell {
+    
+    var dynamicViewDelegate: DynamicViewDelegate?
+    
     let addClassView: ProgrammaticAddClassView = {
         let addClassView = ProgrammaticAddClassView()
         addClassView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +74,7 @@ class AddClassCollectionViewCell: UICollectionViewCell {
         
         addContentViewConstraints()
         addAddClassViewConstraints()
+        addClassView.dynamicViewDelegate = self
         //addButtonConstraints()
         
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -81,6 +85,13 @@ class AddClassCollectionViewCell: UICollectionViewCell {
     }
     
     //override var intrinsicContentSize: CGSize { return CGSize(width: 1, height: 1) }
+}
+
+// MARK: - Dynamic View Delegate
+extension AddClassCollectionViewCell: DynamicViewDelegate {
+    func sizeChanged() {
+        dynamicViewDelegate?.sizeChanged()
+    }
 }
 
 // Helper methods:
@@ -94,7 +105,7 @@ fileprivate extension AddClassCollectionViewCell {
     func addAddClassViewConstraints() {
         // In relation to the contentView:
         
-        addClassView.pinEdgesToView(contentView, withMargin: 20.0)
+        addClassView.pinEdgesToView(contentView, withMargin: 12.0)
     }
     
     /*

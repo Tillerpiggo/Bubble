@@ -11,6 +11,12 @@ import UIKit
 // This is my custom textField with a rounded background and customization how I like it. It's just a textField with a background UIView...
 // It's just made for easy reusability and consistency throughout the app
 
+// A protocol for views that change in size.
+// TODO: - move this to a better location
+protocol DynamicViewDelegate {
+    func sizeChanged()
+}
+
 class RoundedExpandingTextView: ProgrammaticView {
     // MARK: - Subviews
     /*
@@ -31,10 +37,14 @@ class RoundedExpandingTextView: ProgrammaticView {
     }()
  */
     var delegate: UITextViewDelegate?
+    var dynamicViewDelegate: DynamicViewDelegate?
+    private var lastEstimatedSize: CGSize?
     
     lazy var textView: PlaceholderTextView = {
         let textView = PlaceholderTextView()
         textView.isScrollEnabled = false
+        textView.textColor = UIColor(white: 0.3, alpha: 1.0)
+        textView.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         
         textView.delegate = self
         textView.returnKeyType = .done
@@ -114,6 +124,7 @@ extension RoundedExpandingTextView: UITextViewDelegate {
         let size = CGSize(width: self.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         
+        
         // Get the height of the text view
         textView.constraints.forEach { (constraint) in
             if constraint.firstAttribute == .height {
@@ -123,14 +134,25 @@ extension RoundedExpandingTextView: UITextViewDelegate {
                 
                 
                 
+                
                 // Animate the change
                 UIView.animate(withDuration: 0.15, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
                     self.superview?.layoutIfNeeded()
                 })
                 
+                if let lastEstimatedSize = lastEstimatedSize {
+                    if estimatedSize != lastEstimatedSize {
+                        dynamicViewDelegate?.sizeChanged()
+                    }
+                } else { // If there is no lastEstimatedSize (this is the first time), might as well update just to be thorough
+                    dynamicViewDelegate?.sizeChanged()
+                }
+                
                 print("estimatedSize.height: \(estimatedSize.height)")
             }
         }
+        
+        lastEstimatedSize = estimatedSize
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

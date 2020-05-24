@@ -186,6 +186,9 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
         //cell.contentView.widthAnchor.constraint(equalToConstant: 600.0).isActive = true
         //cell.button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
+        // TODO: Add an if statement to check that this is the addClassView (unless the other views happen to be dynamic)
+        cell.dynamicViewDelegate = self
+        
         return cell
     }
     
@@ -484,5 +487,14 @@ fileprivate extension ClassCollectionViewController {
         alertController.addAction(okAction)
         
         present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Dynamic View Delegate
+extension ClassCollectionViewController: DynamicViewDelegate {
+    func sizeChanged() {
+        UIView.animate(withDuration: 0.15, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
+            self.collectionViewLayout.invalidateLayout()
+        })
     }
 }
