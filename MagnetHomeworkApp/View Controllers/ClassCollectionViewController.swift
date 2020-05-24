@@ -493,8 +493,6 @@ fileprivate extension ClassCollectionViewController {
 // MARK: - Dynamic View Delegate
 extension ClassCollectionViewController: DynamicViewDelegate {
     func sizeChanged() {
-        UIView.animate(withDuration: 0.15, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
-            self.collectionViewLayout.invalidateLayout()
-        })
+        self.collectionViewLayout.invalidateLayout()
     }
 }
