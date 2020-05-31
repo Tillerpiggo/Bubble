@@ -70,12 +70,44 @@ class RoundedExpandingTextView: ProgrammaticView {
     override func layoutSubviews() {
         setVisuals()
     }
+    
+    func clear() {
+        textView.text = ""
+    }
+    
+    func dismiss() {
+        textView.resignFirstResponder()
+    }
+
+    var text: String {
+        return textView.text
+    }
 }
 
 // MARK: - UITextFieldDelegate
 extension RoundedExpandingTextView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == "\n" {
+            textField.resignFirstResponder()
+            return false
+        } else {
+            return true
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

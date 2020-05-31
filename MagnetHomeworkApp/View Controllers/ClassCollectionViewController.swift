@@ -245,6 +245,7 @@ fileprivate extension ClassCollectionViewController {
         }
         
         // MARK: - Save Changes
+        // TODO: - Abstract this into a different class
         let saveChanges: ([CKRecord], [CKRecord.ID], DatabaseType) -> Void =
         { (recordsChanged, recordIDsDeleted, databaseType) in
             self.saveChanges(recordsChanged: recordsChanged, recordIDsDeleted: recordIDsDeleted, databaseType: databaseType, fetchedChanges:
