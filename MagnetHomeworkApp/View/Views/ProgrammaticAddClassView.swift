@@ -51,7 +51,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
     
     
     // Detects if you press this view while it's a button
-    fileprivate let expandButton: UIButton = {
+    let expandButton: UIButton = {
         let expandButton = UIButton()
         expandButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -134,6 +134,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
     func expand() {
         print("isExpanded: \(isExpanded)")
         guard !isExpanded else { return }
+        self.isExpanded = true
         
         let partialSizeTransform = CGAffineTransform(scaleX: 0.85, y: 0.85)
         
@@ -153,10 +154,10 @@ class ProgrammaticAddClassView: ProgrammaticView {
         // Set initial constraints
         //setRoundedExpandingTextViewConstraints(to: .expanding)
         titleTextViewHeightConstraint?.isActive = false
-        self.dynamicViewDelegate?.sizeChanged()
+        //self.dynamicViewDelegate?.sizeChanged()
         
         self.expandButton.isEnabled = false
-        self.isExpanded = true
+        
         
         addClassLabelCenterYConstraint?.isActive = false
         
@@ -166,7 +167,9 @@ class ProgrammaticAddClassView: ProgrammaticView {
         self.titleTextViewHeightConstraint?.constant = 30.0
         self.titleTextViewHeightConstraint?.isActive = true
  */
-        setNeedsLayout()
+        //setNeedsLayout()
+        
+        
         
         // Increase height
         UIView.animate(withDuration: 0.5, animations: { [unowned self] in
@@ -184,12 +187,12 @@ class ProgrammaticAddClassView: ProgrammaticView {
             
             
             //self.heightConstraint?.constant = 200.0
-            self.layoutIfNeeded()
-            self.dynamicViewDelegate?.sizeChanged()
+            //self.layoutIfNeeded()
             
+            //self.dynamicViewDelegate?.sizeChanged()
             
         }, completion: { (bool) in
-            self.dynamicViewDelegate?.sizeChanged()
+            //self.dynamicViewDelegate?.sizeChanged()
         })
     }
     
@@ -197,6 +200,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
     func shrink() {
         print("isExpanded: \(isExpanded)")
         guard isExpanded else { return }
+        
         
         let zeroSizeTransform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
         
@@ -209,9 +213,11 @@ class ProgrammaticAddClassView: ProgrammaticView {
         titleTextViewHeightConstraint?.isActive = true
         
         self.expandButton.isEnabled = true
-        self.isExpanded = false
+        
         
         addClassLabelCenterYConstraint?.isActive = true
+        
+        self.dynamicViewDelegate?.sizeChanged()
         
         // Decrease height
         
@@ -226,7 +232,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
             self.titleTextViewTopConstraint?.constant = 16.0
             self.titleTextViewBottomConstraint?.constant = -16.0
  */
-            self.dynamicViewDelegate?.sizeChanged()
+            
             
             //self.heightConstraint?.constant = 64.0
             self.layoutIfNeeded()
@@ -234,9 +240,11 @@ class ProgrammaticAddClassView: ProgrammaticView {
         }, completion: { (bool) in
             self.cancelButton.isHidden = true
             self.doneButton.isHidden = true
+            
+            self.isExpanded = false
             //self.roundedExpandingTextView.isHidden = true
             
-            self.dynamicViewDelegate?.sizeChanged()
+            //self.dynamicViewDelegate?.sizeChanged()
         })
     }
     

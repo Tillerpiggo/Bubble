@@ -186,17 +186,20 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
         //cell.contentView.widthAnchor.constraint(equalToConstant: 600.0).isActive = true
         //cell.button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
+        cell.addClassView.expandButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        
         // TODO: Add an if statement to check that this is the addClassView (unless the other views happen to be dynamic)
         cell.dynamicViewDelegate = self
         
         return cell
     }
     
-    /*
+    
     @objc func buttonPressed() {
         print("Button pressed; target added in collectionViewControlller")
+        let addClassViewCell = collectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as! AddClassCollectionViewCell
+        addClassViewCell.expand()
     }
- */
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: Change to check for section later
@@ -494,6 +497,6 @@ fileprivate extension ClassCollectionViewController {
 // MARK: - Dynamic View Delegate
 extension ClassCollectionViewController: DynamicViewDelegate {
     func sizeChanged() {
-        self.collectionViewLayout.invalidateLayout()
+        self.collectionView.performBatchUpdates({})
     }
 }
