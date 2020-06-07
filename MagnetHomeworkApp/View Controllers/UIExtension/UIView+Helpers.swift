@@ -41,4 +41,44 @@ extension UIView {
             addSubview(subview)
         }
     }
+    
+    // Make it faster to add constraints
+    func addConstraints(top: NSLayoutAnchor<NSLayoutYAxisAnchor>?, bottom: NSLayoutAnchor<NSLayoutYAxisAnchor>?, leading: NSLayoutAnchor<NSLayoutXAxisAnchor>?, trailing: NSLayoutAnchor<NSLayoutXAxisAnchor>?, topConstant: CGFloat, bottomConstant: CGFloat, leadingConstant: CGFloat, trailingConstant: CGFloat, widthConstant: CGFloat?, heightConstant: CGFloat?, priority: UILayoutPriority? = nil) {
+        
+        if let top = top {
+            let constraint = topAnchor.constraint(equalTo: top, constant: topConstant)
+            if let priority = priority { constraint.priority = priority }
+            constraint.isActive = true
+        }
+        
+        if let bottom = bottom {
+            let constraint = bottomAnchor.constraint(equalTo: bottom, constant: -1 * bottomConstant)
+            if let priority = priority { constraint.priority = priority }
+            constraint.isActive = true
+        }
+        
+        if let leading = leading {
+            let constraint = leadingAnchor.constraint(equalTo: leading, constant: leadingConstant)
+            if let priority = priority { constraint.priority = priority }
+            constraint.isActive = true
+        }
+        
+        if let trailing = trailing {
+            let constraint = trailingAnchor.constraint(equalTo: trailing, constant: -1 * trailingConstant)
+            if let priority = priority { constraint.priority = priority }
+            constraint.isActive = true
+        }
+        
+        if let width = widthConstant {
+            let constraint = widthAnchor.constraint(equalToConstant: width)
+            if let priority = priority { constraint.priority = priority }
+            constraint.isActive = true
+        }
+        
+        if let height = heightConstant {
+            let constraint = heightAnchor.constraint(equalToConstant: height)
+            if let priority = priority { constraint.priority = priority }
+            constraint.isActive = true
+        }
+    }
 }

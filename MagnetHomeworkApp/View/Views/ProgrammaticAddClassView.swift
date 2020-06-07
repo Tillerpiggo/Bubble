@@ -92,9 +92,6 @@ class ProgrammaticAddClassView: ProgrammaticView {
         let titleTextView = RoundedExpandingTextView()
         titleTextView.translatesAutoresizingMaskIntoConstraints = false
         titleTextView.placeholder = "Enter class name..."
-        //titleTextView.layer.cornerRadius = 20.0
-        //titleTextView.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        
         titleTextView.delegate = self
         
         return titleTextView
@@ -103,25 +100,12 @@ class ProgrammaticAddClassView: ProgrammaticView {
     override func setupView() {
         addSubviews()
         
-        
-        //titleTextViewHeightConstraint!.isActive = false
-        
         cancelButton.delegate = self
         doneButton.delegate = self
         
-        /*
-        // Since it starts in the shrunken state:
-        cancelButton.isHidden = true
-        doneButton.isHidden = true
-        roundedExpandingTextView.isHidden = true
- */
         let zeroSizeTransform = CGAffineTransform(scaleX: 0.0, y: 0.0)
         self.cancelButton.transform = zeroSizeTransform
         self.doneButton.transform = zeroSizeTransform
-        //self.roundedExpandingTextView.transform = zeroSizeTransform
-        
-        //titleTextViewHeightConstraint?.isActive = false
-        //titleTextViewHeightConstraint?.isActive = true
     }
     
     override func didMoveToSuperview() {
@@ -137,41 +121,20 @@ class ProgrammaticAddClassView: ProgrammaticView {
         guard !isExpanded else { return }
         self.isExpanded = true
         
-        //self.layoutIfNeeded()
-        
         let partialSizeTransform = CGAffineTransform(scaleX: 0.85, y: 0.85)
         
         self.cancelButton.transform = partialSizeTransform
         self.doneButton.transform = partialSizeTransform
-        //self.roundedExpandingTextView.transform = zeroSizeTransform
-        //roundedExpandingTextView.layer.opacity = 0.0
+        
         self.cancelButton.layer.opacity = 0.0
         self.doneButton.layer.opacity = 0.0
         
         
         self.cancelButton.isHidden = false
         self.doneButton.isHidden = false
-        //self.roundedExpandingTextView.isHidden = false
-        
-        // Fade in roundedExpandingTextView while making it horizontally bigger
-        // Set initial constraints
-        //setRoundedExpandingTextViewConstraints(to: .expanding)
-        
-        //self.dynamicViewDelegate?.sizeChanged()
         
         self.expandButton.isEnabled = false
         
-        
-        
-        
-        //self.titleTextViewHeightConstraint?.isActive = false
-        //self.addClassLabelCenterYConstraint?.isActive = false
-        /*
-        self.titleTextViewHeightConstraint?.isActive = false
-        self.titleTextViewHeightConstraint?.constant = 30.0
-        self.titleTextViewHeightConstraint?.isActive = true
- */
-        //setNeedsLayout()
         
         self.titleTextViewHeightConstraint?.constant = 40.0 // Not animating for some reason
         self.addClassLabelCenterYConstraint?.priority = UILayoutPriority(1)
@@ -191,7 +154,6 @@ class ProgrammaticAddClassView: ProgrammaticView {
             
             
         }, completion: { (bool) in
-            //self.dynamicViewDelegate?.sizeChanged()
         })
     }
     
@@ -202,16 +164,6 @@ class ProgrammaticAddClassView: ProgrammaticView {
         
         
         let zeroSizeTransform = CGAffineTransform(scaleX: 0.0001, y: 0.0001)
-        
-        //setRoundedExpandingTextViewConstraints(to: .expanded)
-        
-        /*
-        titleTextView.resignFirstResponder()
-        self.resignFirstResponder()
-        self.superview?.resignFirstResponder()
- */
-        
-        
         
         self.expandButton.isEnabled = true
         
@@ -228,34 +180,16 @@ class ProgrammaticAddClassView: ProgrammaticView {
         UIView.animate(withDuration: 0.5, animations: { [unowned self] in
             self.cancelButton.layer.opacity = 0.0
             self.doneButton.layer.opacity = 0.0
-            //self.roundedExpandingTextView.transform = zeroSizeTransform
-            //self.setRoundedExpandingTextViewConstraints(to: .expanding)
-            
-            /*
-            self.titleTextViewHeightConstraint?.constant = 0.0
-            self.titleTextViewTopConstraint?.constant = 16.0
-            self.titleTextViewBottomConstraint?.constant = -16.0
- */
-            
             
             self.dynamicViewDelegate?.sizeChanged()
-            
-            //self.heightConstraint?.constant = 64.0
             self.layoutIfNeeded()
             
         }, completion: { (bool) in
-            //self.cancelButton.isHidden = true
-            //self.doneButton.isHidden = true
-            
             self.isExpanded = false
-            //self.roundedExpandingTextView.isHidden = true
-            
-            //self.dynamicViewDelegate?.sizeChanged()
         })
     }
     
     // MARK: - Constraints
-    //var roundedExpandingTextViewTopConstraint, roundedExpandingTextViewBottomConstraint, roundedExpandingTextViewLeadingConstraint, roundedExpandingTextViewTrailingConstraint, roundedExpandingTextViewWidthConstraint, roundedExpandingTextViewHeightConstraint: NSLayoutConstraint?
     var titleTextViewTopConstraint, titleTextViewBottomConstraint, titleTextViewHeightConstraint: NSLayoutConstraint?
     var addClassLabelCenterYConstraint: NSLayoutConstraint?
 }
@@ -328,30 +262,20 @@ fileprivate extension ProgrammaticAddClassView {
         addExpandButtonConstraints()
         addCancelButtonConstraints()
         addDoneButtonConstraints()
-        //addRoundedExpandingTextViewConstraints()
         addTitleTextViewConstraints()
     }
     
     func addBackgroundViewConstraints() {
         backgroundView.pinEdgesToView(self)
-        backgroundView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32.0).isActive = true
-        
-        //self.heightConstraint = NSLayoutConstraint(item: backgroundView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 64)
-        //backgroundView.addConstraint(self.heightConstraint!)
-        //backgroundView.heightAnchor.constraint(equalToConstant: 500).isActive = true
+        //backgroundView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32.0).isActive = true
     }
     
     
     func addAddClassLabelConstraints() {
         [
-            addClassLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 20.0),
-            //addClassLabel.bottomAnchor.constraint(equalTo: titleTextView.topAnchor, constant: -20.0),
-            //addClassLabel.leadingAnchor.constraint(equalTo: cancelButton.trailingAnchor, constant: -20.0),
+            addClassLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24.0),
             addClassLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
         ].forEach { $0.isActive = true }
-        
-        //addClassLabelCenterYConstraint = addClassLabel.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor)
-        addClassLabelCenterYConstraint?.isActive = true
     }
     
     func addExpandButtonConstraints() {
@@ -359,153 +283,19 @@ fileprivate extension ProgrammaticAddClassView {
     }
     
     func addCancelButtonConstraints() {
-        [
-            cancelButton.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 14.0),
-            cancelButton.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20.0),
-            //cancelButton.bottomAnchor.constraint(equalTo: titleTextView.topAnchor, constant: -20.0)
-        ].forEach { $0.isActive = true }
+        cancelButton.addConstraints(top: nil, bottom: nil, leading: backgroundView.leadingAnchor, trailing: addClassLabel.leadingAnchor, topConstant: 0, bottomConstant: 0, leadingConstant: 20, trailingConstant: 12, widthConstant: nil, heightConstant: nil)
+        cancelButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        cancelButton.centerYAnchor.constraint(equalTo: addClassLabel.centerYAnchor).isActive = true
     }
     
     func addDoneButtonConstraints() {
-        [
-            doneButton.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 14.0),
-            doneButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20.0),
-            //doneButton.bottomAnchor.constraint(equalTo: titleTextView.topAnchor, constant: -20.0)
-        ].forEach { $0.isActive = true }
+        doneButton.addConstraints(top: nil, bottom: nil, leading: addClassLabel.trailingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 14, bottomConstant: 0, leadingConstant: 0, trailingConstant: 20, widthConstant: nil, heightConstant: nil)
+        doneButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        doneButton.centerYAnchor.constraint(equalTo: addClassLabel.centerYAnchor).isActive = true
     }
-    
-    /*
-    func addRoundedExpandingTextViewConstraints() {
-        // Filler constraints
-        let fillerConstraint = NSLayoutConstraint(item: roundedExpandingTextView, attribute: .centerX, relatedBy: .equal, toItem: roundedExpandingTextView, attribute: .centerX, multiplier: 1.0, constant: 20.0)
-        
-        //roundedExpandingTextViewTopConstraint = fillerConstraint
-        //roundedExpandingTextViewBottomConstraint = fillerConstraint
-        //roundedExpandingTextViewLeadingConstraint = fillerConstraint
-        //roundedExpandingTextViewTrailingConstraint = fillerConstraint
-        //roundedExpandingTextViewWidthConstraint = fillerConstraint
-        //roundedExpandingTextViewHeightConstraint = fillerConstraint
-        
-        
-        guard
-            let top = roundedExpandingTextViewTopConstraint,
-            let bottom = roundedExpandingTextViewBottomConstraint,
-            let leading = roundedExpandingTextViewLeadingConstraint,
-            let trailing = roundedExpandingTextViewTrailingConstraint,
-            let width = roundedExpandingTextViewWidthConstraint,
-            let height = roundedExpandingTextViewHeightConstraint
-        else { return }
-        
-        roundedExpandingTextView.addConstraints([top, bottom, leading, trailing, width, height])
-    }
- */
     
     func addTitleTextViewConstraints() {
-        titleTextViewTopConstraint = NSLayoutConstraint(item: titleTextView, attribute: .top, relatedBy: .equal, toItem: addClassLabel, attribute: .bottom, multiplier: 1.0, constant: 16.0)
-        titleTextViewBottomConstraint = NSLayoutConstraint(item: titleTextView, attribute: .bottom, relatedBy: .equal, toItem: backgroundView, attribute: .bottom, multiplier: 1.0, constant: -16.0)
-        
+        titleTextView.addConstraints(top: addClassLabel.bottomAnchor, bottom: backgroundView.bottomAnchor, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 16, bottomConstant: 16, leadingConstant: 20, trailingConstant: 20, widthConstant: nil, heightConstant: nil)
         titleTextViewHeightConstraint = titleTextView.heightAnchor.constraint(equalToConstant: 0.0)
-        //titleTextViewHeightConstraint?.isActive = true
-        
-        //NSLayoutConstraint.activate([titleTextViewTopConstraint!, titleTextViewBottomConstraint!])//, titleTextViewHeightConstraint!])//titleTextViewHeightConstraint!])
-        [
-            titleTextViewTopConstraint!,
-            titleTextViewBottomConstraint!
-        ].forEach {
-            $0.isActive = true
-            //$0.priority = UILayoutPriority(500)
-        }
-        
-        //self.addConstraints([titleTextViewTopConstraint!, titleTextViewBottomConstraint!, titleTextViewHeightConstraint!])
-        
-        [
-            titleTextView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20.0),
-            titleTextView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20.0)
-        ].forEach { $0.isActive = true }
-        
-        //NSLayoutConstraint.deactivate([titleTextViewHeightConstraint!])
-        
-        
-        //roundedExpandingTextView.removeConstraints(roundedExpandingTextView.constraints) // Remove all constraints
-        
-        //let animationStateTemp = AnimationState.expanded
-        
-        //roundedExpandingTextViewTopConstraint = NSLayoutConstraint(item: titleTextView, attribute: .top, relatedBy: .equal, toItem: addClassLabel, attribute: .bottom, multiplier: 1.0, constant: 20.0)
-        //roundedExpandingTextViewBottomConstraint = NSLayoutConstraint(item: titleTextView, attribute: .bottom, relatedBy: .equal, toItem: backgroundView, attribute: .bottom, multiplier: 1.0, constant: -20.0)
-        /*
-        switch animationStateTemp {
-        case .expanded:
-            
-            [
-                titleTextView.topAnchor.constraint(equalTo: addClassLabel.bottomAnchor, constant: 20.0),
-                titleTextView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -16.0),
-                titleTextView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20.0),
-                titleTextView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20.0),
-                //titleTextView.widthAnchor.constraint(equalToConstant: 100.0),
-                titleTextView.heightAnchor.constraint(equalToConstant: 0.0)
-            ].forEach { $0.isActive = true }
-            //roundedExpandingTextView.heightAnchor.constraint(equalToConstant: 0.0).isActive = false
-            //roundedExpandingTextView.widthAnchor.constraint(equalToConstant: 0.0).isActive = false
- 
-            
-            
-            /*
-            //roundedExpandingTextViewBottomConstraint = NSLayoutConstraint(item: roundedExpandingTextView, attribute: .bottom, relatedBy: .equal, toItem: backgroundView, attribute: .bottom, multiplier: 1.0, constant: -20.0)
-            roundedExpandingTextViewLeadingConstraint = NSLayoutConstraint(item: roundedExpandingTextView, attribute: .leading, relatedBy: .equal, toItem: backgroundView, attribute: .leading, multiplier: 1.0, constant: 20.0)
-            roundedExpandingTextViewTrailingConstraint = NSLayoutConstraint(item: roundedExpandingTextView, attribute: .trailing, relatedBy: .equal, toItem: backgroundView, attribute: .trailing, multiplier: 1.0, constant: -20.0)
-            
-            if let width = roundedExpandingTextViewWidthConstraint { roundedExpandingTextView.removeConstraint(width) }
-            if let height = roundedExpandingTextViewHeightConstraint { roundedExpandingTextView.removeConstraint(height) }
-            
-            roundedExpandingTextView.layer.opacity = 1.0
- */
-        case .expanding:
-            /*
-            [
-                roundedExpandingTextView.topAnchor.constraint(equalTo: addClassLabel.bottomAnchor, constant: 20.0),
-                roundedExpandingTextView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -20.0),
-                roundedExpandingTextView.widthAnchor.constraint(equalToConstant: 120.0),
-                roundedExpandingTextView.heightAnchor.constraint(equalToConstant: 0.0)
-            ]
- */
-            //roundedExpandingTextViewTopConstraint = NSLayoutConstraint(item: titleTextView, attribute: .top, relatedBy: .equal, toItem: addClassLabel, attribute: .bottom, multiplier: 1.0, constant: 20.0)
-            //roundedExpandingTextViewBottomConstraint = NSLayoutConstraint(item: roundedExpandingTextView, attribute: .bottom, relatedBy: .equal, toItem: backgroundView, attribute: .bottom, multiplier: 1.0, constant: -20.0)
-            //roundedExpandingTextViewWidthConstraint = NSLayoutConstraint(item: titleTextView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 120.0)
-            
-            //if let leading = roundedExpandingTextViewLeadingConstraint { titleTextView.removeConstraint(leading) }
-            //if let trailing = roundedExpandingTextViewTrailingConstraint { titleTextView.removeConstraint(trailing) }
-            
-            //titleTextView.layer.opacity = 0.0
-        case .hidden:
-            
-            /*
-            [
-                roundedExpandingTextView.topAnchor.constraint(equalTo: addClassLabel.bottomAnchor, constant: 20.0),
-                roundedExpandingTextView.widthAnchor.constraint(equalToConstant: 0.0),
-                roundedExpandingTextView.heightAnchor.constraint(equalToConstant: 0.0)
-            ]
- */
-            //roundedExpandingTextViewTopConstraint = NSLayoutConstraint(item: roundedExpandingTextView, attribute: .top, relatedBy: .equal, toItem: addClassLabel, attribute: .bottom, multiplier: 1.0, constant: 20.0)
-            //roundedExpandingTextViewWidthConstraint = NSLayoutConstraint(item: titleTextView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 0.0)
-            //roundedExpandingTextViewHeightConstraint = NSLayoutConstraint(item: titleTextView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0.0)
-            
-            //if let leading = roundedExpandingTextViewLeadingConstraint { titleTextView.removeConstraint(leading) }
-            //if let trailing = roundedExpandingTextViewTrailingConstraint { titleTextView.removeConstraint(trailing) }
- 
-            //titleTextView.layer.opacity = 0.0
-        }
-        
-        //constraints.forEach { $0.isActive = true }
- */
     }
-    
-    /*
-    enum AnimationState {
-        case hidden, expanding, expanded
-        
-        // hidden is when the view isn't shown (typically with width & height = 0)
-        // expanding is at the start of the expansion animation
-        // expanded is at the end of the expansion animation; when the view is completely shown
-    }
- */
 }

@@ -54,7 +54,8 @@ class AddAssignmentView: ProgrammaticView {
     override func didMoveToWindow() {
         super.didMoveToWindow()
         if let window = self.window {
-            self.bottomAnchor.constraint(lessThanOrEqualToSystemSpacingBelow: window.safeAreaLayoutGuide.bottomAnchor, multiplier: 1.0).isActive = true
+            // This makes autolayout complain; I have to find a better system (maybe just make it taller manually on rounded devices)
+            //self.bottomAnchor.constraint(lessThanOrEqualToSystemSpacingBelow: window.safeAreaLayoutGuide.bottomAnchor, multiplier: 1.0).isActive = true
         }
     }
     
