@@ -131,7 +131,6 @@ fileprivate extension RoundedExpandingTextView {
             textView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -6.0),
             textView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             textView.topAnchor.constraint(equalTo: self.topAnchor),
-            textView.heightAnchor.constraint(equalTo: self.heightAnchor, constant: 0)
         ].forEach { $0.isActive = true }
         
         textViewDidChange(textView)

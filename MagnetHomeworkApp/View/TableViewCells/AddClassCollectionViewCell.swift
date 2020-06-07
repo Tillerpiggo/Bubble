@@ -11,7 +11,8 @@ import UIKit
 
 class AddClassCollectionViewCell: UICollectionViewCell {
     
-    var dynamicViewDelegate: DynamicViewDelegate?
+    //var dynamicViewDelegate: DynamicViewDelegate?
+    var delegate: ProgrammaticAddClassViewDelegate?
     
     let addClassView: ProgrammaticAddClassView = {
         let addClassView = ProgrammaticAddClassView()
@@ -74,10 +75,11 @@ class AddClassCollectionViewCell: UICollectionViewCell {
         
         addContentViewConstraints()
         addAddClassViewConstraints()
-        addClassView.dynamicViewDelegate = self
+        //addClassView.dynamicViewDelegate = self
+        addClassView.delegate = self
         //addButtonConstraints()
         
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+       // self.contentView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func expand() {
@@ -87,11 +89,30 @@ class AddClassCollectionViewCell: UICollectionViewCell {
     //override var intrinsicContentSize: CGSize { return CGSize(width: 1, height: 1) }
 }
 
+/*
 // MARK: - Dynamic View Delegate
 extension AddClassCollectionViewCell: DynamicViewDelegate {
     func sizeChanged() {
         dynamicViewDelegate?.sizeChanged()
     }
+}
+ */
+
+// MARK: - ProgrammaticAddClassViewDelegate
+extension AddClassCollectionViewCell: ProgrammaticAddClassViewDelegate {
+    
+    func addClass(withText text: String) {
+        delegate?.addClass(withText: text)
+    }
+    
+    func didShrink() {
+        delegate?.didShrink()
+    }
+    
+    func didExpand() {
+        delegate?.didExpand()
+    }
+    
 }
 
 // Helper methods:
@@ -99,13 +120,13 @@ fileprivate extension AddClassCollectionViewCell {
     func addContentViewConstraints() {
         contentView.pinEdgesToView(self)
         
-        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = true
     }
     
     func addAddClassViewConstraints() {
         // In relation to the contentView:
         
-        addClassView.pinEdgesToView(contentView, withMargin: 12.0)
+        addClassView.pinEdgesToView(contentView, withMargin: 0.0)
     }
     
     /*
