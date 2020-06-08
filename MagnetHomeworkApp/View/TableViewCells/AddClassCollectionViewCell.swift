@@ -80,7 +80,7 @@ extension AddClassCollectionViewCell: ProgrammaticAddClassViewDelegate {
 // Helper methods:
 fileprivate extension AddClassCollectionViewCell {
     func addContentViewConstraints() {
-        self.pinEdgesToView(contentView)
+        self.pinEdgesToView(contentView, priority: 999)
         //contentView.pinEdgesToView(contentView, priority: 999)
         
         //contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +89,8 @@ fileprivate extension AddClassCollectionViewCell {
     func addAddClassViewConstraints() {
         // In relation to the contentView:
         
-        addClassView.pinEdgesToView(contentView, withMargin: 12.0, priority: 999)
+        //addClassView.pinEdgesToView(contentView, withMargin: 12.0, priority: 999)
+        contentView.pinEdgesToView(addClassView, withMargin: -12.0, priority: 999)
     }
     
     /*

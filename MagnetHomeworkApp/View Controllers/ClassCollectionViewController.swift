@@ -27,8 +27,8 @@ class ClassCollectionViewController: UICollectionViewController {
     
     // Add Class View
     private var isAddClassViewExpanded = false
-    private let addClassViewHeightShrunk: CGFloat = 80
-    private let addClassViewHeightExpanded: CGFloat = 500
+    private let addClassViewHeightShrunk: CGFloat = 160
+    private let addClassViewHeightExpanded: CGFloat = 501
     
     // MARK: - Properties
     var delegate: ClassCollectionViewControllerDelegate?
@@ -178,7 +178,6 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 5000)
         return CGSize(width: collectionView.bounds.width, height: isAddClassViewExpanded ? addClassViewHeightShrunk : addClassViewHeightExpanded)
     }
     
@@ -238,12 +237,14 @@ extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
     
     func didExpand() {
         isAddClassViewExpanded = true
-        collectionViewLayout.invalidateLayout()
+        //collectionViewLayout.invalidateLayout()
+        collectionView.performBatchUpdates({})
     }
     
     func didShrink() {
         isAddClassViewExpanded = false
-        collectionViewLayout.invalidateLayout()
+        //collectionViewLayout.invalidateLayout()
+        collectionView.performBatchUpdates({})
     }
 }
 

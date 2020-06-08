@@ -139,8 +139,10 @@ class ProgrammaticAddClassView: ProgrammaticView {
         self.titleTextView.isHidden = false
         
         self.expandButton.isEnabled = false
+        //layoutIfNeeded()
+        //setNeedsLayout()
         
-        delegate?.didExpand()
+        self.delegate?.didExpand()
         
         
         //self.titleTextViewHeightConstraint?.constant = 40.0 // Not animating for some reason
@@ -154,13 +156,6 @@ class ProgrammaticAddClassView: ProgrammaticView {
             self.doneButton.layer.opacity = 1.0
             self.titleTextView.layer.opacity = 1.0
             
-            
-            //self.dynamicViewDelegate?.sizeChanged()
-            self.layoutIfNeeded()
-            
-            
-            
-            
         }, completion: { (bool) in
         })
     }
@@ -172,7 +167,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
         
         self.expandButton.isEnabled = true
         
-        delegate?.didShrink()
+        
         
         //self.addClassLabelCenterYConstraint?.isActive = true
         
@@ -186,7 +181,8 @@ class ProgrammaticAddClassView: ProgrammaticView {
             self.titleTextView.layer.opacity = 0.0
             
             //self.dynamicViewDelegate?.sizeChanged()
-            self.layoutIfNeeded()
+            //self.layoutIfNeeded()
+            self.delegate?.didShrink()
             
         }, completion: { (bool) in
             self.isExpanded = false
@@ -257,22 +253,25 @@ fileprivate extension ProgrammaticAddClassView {
     // MARK: - Add Subviews
     func addSubviews() {
         self.addSubviews([backgroundView, expandButton])
-        backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
+        //backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
         //dynamicViewDelegate?.sizeChanged()
     }
     
     // MARK: - Add Constraints
     func addConstraints() {
         addBackgroundViewConstraints()
+        /*
         addAddClassLabelConstraints()
         addExpandButtonConstraints()
         addCancelButtonConstraints()
         addDoneButtonConstraints()
         addTitleTextViewConstraints()
+ */
     }
     
     func addBackgroundViewConstraints() {
-        backgroundView.pinEdgesToView(self)
+        //backgroundView.pinEdgesToView(self)
+        self.pinEdgesToView(backgroundView, priority: 999)
         //backgroundView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32.0).isActive = true
     }
     
