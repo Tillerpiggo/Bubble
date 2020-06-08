@@ -34,7 +34,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
         backgroundView.layer.masksToBounds = true
         
         // Add shadow
-        backgroundView.addDropShadow(color: .black, opacity: 0.15, radius: 8)
+        backgroundView.addDropShadow(color: .black, opacity: 0.10, radius: 8)
         
         return backgroundView
     }()
@@ -58,6 +58,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
         expandButton.translatesAutoresizingMaskIntoConstraints = false
         
         expandButton.addTarget(self, action: #selector(expandButtonPressed), for: .touchUpInside)
+        expandButton.backgroundColor = .blue
         
         return expandButton
     }()
@@ -124,6 +125,8 @@ class ProgrammaticAddClassView: ProgrammaticView {
         print("isExpanded: \(isExpanded)")
         guard !isExpanded else { return }
         self.isExpanded = true
+        
+        print("expanded!!!")
         
         let partialSizeTransform = CGAffineTransform(scaleX: 0.85, y: 0.85)
         
@@ -248,21 +251,21 @@ fileprivate extension ProgrammaticAddClassView {
     
     // MARK: - Add Subviews
     func addSubviews() {
-        self.addSubviews([backgroundView])
+        //self.addSubviews([backgroundView, expandButton])
+        self.addSubview(expandButton)
         
-        backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
-        //dynamicViewDelegate?.sizeChanged()
+        //backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
     }
     
     // MARK: - Add Constraints
     func addConstraints() {
-        addBackgroundViewConstraints()
+        //addBackgroundViewConstraints()
+        addExpandButtonConstraints()
         
-        addAddClassLabelConstraints()
-        //addExpandButtonConstraints()
-        addCancelButtonConstraints()
-        addDoneButtonConstraints()
-        addTitleTextViewConstraints()
+        //addAddClassLabelConstraints()
+        //addCancelButtonConstraints()
+        //addDoneButtonConstraints()
+        //addTitleTextViewConstraints()
     }
     
     func addBackgroundViewConstraints() {
@@ -281,21 +284,23 @@ fileprivate extension ProgrammaticAddClassView {
     
     func addExpandButtonConstraints() {
         //expandButton.pinEdgesToView(self)
-        //backgroundView.pinEdgesToView(expandButton, priority: 999)
+        //backgroundView.pinEdgesToView(expandButton, priority: 1000)
+        //self.pinEdgesToView(expandButton)
+        self.pinEdgesToView(expandButton)
     }
     
     func addCancelButtonConstraints() {
         //cancelButton.addConstraints(top: nil, bottom: nil, leading: backgroundView.leadingAnchor, trailing: nil, topConstant: 0, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil, priority: 999)
         cancelButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         cancelButton.centerYAnchor.constraint(equalTo: addClassLabel.centerYAnchor).isActive = true
-        cancelButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -8).isActive = true
+        //cancelButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -8).isActive = true
     }
     
     func addDoneButtonConstraints() {
         //doneButton.addConstraints(top: nil, bottom: nil, leading: nil, trailing: backgroundView.trailingAnchor, topConstant: 14, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil, priority: 999)
         doneButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         doneButton.centerYAnchor.constraint(equalTo: addClassLabel.centerYAnchor).isActive = true
-        doneButton.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor).isActive = true
+        //doneButton.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor).isActive = true
     }
     
     func addTitleTextViewConstraints() {
@@ -305,10 +310,10 @@ fileprivate extension ProgrammaticAddClassView {
         
         titleTextView.topAnchor.constraint(equalTo: addClassLabel.bottomAnchor, constant: 16).isActive = true
         titleTextView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
-        //titleTextView.widthAnchor.constraint(equalToConstant: ).isActive = true
+        titleTextView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 56).isActive = true
         print("backgroundView.frame: \(backgroundView.frame)")
         //titleTextView.addConstraints(top: nil, bottom: nil, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 0, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil)
-        titleTextView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16).isActive = true
+        //titleTextView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16).isActive = true
         //titleTextView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16).isActive = true
     }
 }
