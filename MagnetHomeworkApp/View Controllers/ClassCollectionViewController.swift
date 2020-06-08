@@ -25,6 +25,11 @@ class ClassCollectionViewController: UICollectionViewController {
     
     private var blockOperation = BlockOperation()
     
+    // Add Class View
+    private var isAddClassViewExpanded = false
+    private let addClassViewHeightShrunk: CGFloat = 80
+    private let addClassViewHeightExpanded: CGFloat = 500
+    
     // MARK: - Properties
     var delegate: ClassCollectionViewControllerDelegate?
     
@@ -173,7 +178,8 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 440)
+        return CGSize(width: collectionView.bounds.width, height: 5000)
+        return CGSize(width: collectionView.bounds.width, height: isAddClassViewExpanded ? addClassViewHeightShrunk : addClassViewHeightExpanded)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -191,6 +197,7 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
         
         // TODO: Add an if statement to check that this is the addClassView (unless the other views happen to be dynamic)
         //cell.dynamicViewDelegate = self
+        cell.delegate = self
         
         return cell
     }
@@ -219,6 +226,24 @@ extension ClassCollectionViewController: NotificationDelegate {
         self.updateWithCloud { (didFetchRecords) in
             completion(didFetchRecords)
         }
+    }
+}
+
+// MARK: - ProgrammaticAddClassViewDelegate
+extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
+    
+    func addClass(withText text: String) {
+        // TODO: - actually add a class
+    }
+    
+    func didExpand() {
+        isAddClassViewExpanded = true
+        collectionViewLayout.invalidateLayout()
+    }
+    
+    func didShrink() {
+        isAddClassViewExpanded = false
+        collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -495,9 +520,11 @@ fileprivate extension ClassCollectionViewController {
     }
 }
 
+/*
 // MARK: - Dynamic View Delegate
 extension ClassCollectionViewController: DynamicViewDelegate {
     func sizeChanged() {
         self.collectionView.performBatchUpdates({})
     }
 }
+ */
