@@ -193,6 +193,7 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
         //cell.button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
         cell.addClassView.expandButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        cell.layoutIfNeeded()
         
         // TODO: Add an if statement to check that this is the addClassView (unless the other views happen to be dynamic)
         //cell.dynamicViewDelegate = self
@@ -239,12 +240,14 @@ extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
     func didExpand() {
         isAddClassViewExpanded = true
         //collectionViewLayout.invalidateLayout()
+        collectionView.layoutIfNeeded()
         collectionView.performBatchUpdates({})
     }
     
     func didShrink() {
         isAddClassViewExpanded = false
         //collectionViewLayout.invalidateLayout()
+        collectionView.layoutIfNeeded()
         collectionView.performBatchUpdates({})
     }
 }

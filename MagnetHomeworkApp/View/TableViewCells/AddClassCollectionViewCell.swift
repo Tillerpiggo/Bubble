@@ -37,6 +37,7 @@ class AddClassCollectionViewCell: UICollectionViewCell {
     func setupView() {
         contentView.addSubviews([addClassView])//, button])
         contentView.backgroundColor = .white
+        //contentView.translatesAutoresizingMaskIntoConstraints = false
         
         addContentViewConstraints()
         addAddClassViewConstraints()
@@ -80,7 +81,7 @@ extension AddClassCollectionViewCell: ProgrammaticAddClassViewDelegate {
 // Helper methods:
 fileprivate extension AddClassCollectionViewCell {
     func addContentViewConstraints() {
-        self.pinEdgesToView(contentView, priority: 999)
+        self.pinEdgesToView(contentView)
         //contentView.pinEdgesToView(contentView, priority: 999)
         
         //contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +91,7 @@ fileprivate extension AddClassCollectionViewCell {
         // In relation to the contentView:
         
         //addClassView.pinEdgesToView(contentView, withMargin: 12.0, priority: 999)
-        contentView.pinEdgesToView(addClassView, withMargin: -12.0, priority: 999)
+        contentView.pinEdgesToView(addClassView, withMargin: -12.0)
     }
     
     /*
