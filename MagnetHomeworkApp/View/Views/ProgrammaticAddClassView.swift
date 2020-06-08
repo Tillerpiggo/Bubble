@@ -236,6 +236,13 @@ fileprivate extension ProgrammaticAddClassView {
 // MARK: - BouncyButtonDelegate
 extension ProgrammaticAddClassView: BouncyButtonDelegate {
     func buttonPressed(_ button: BouncyButton) {
+        
+        // idk why this happens but until the first time that it is activated with selectedItemAtIndexPath, it registers as either the done or cancel button being pressed. This is supposed to make it work
+        if !isExpanded {
+            expand()
+            return
+        }
+        
         if button == doneButton {
             print("Done!")
         } else if button == cancelButton {
@@ -252,20 +259,20 @@ fileprivate extension ProgrammaticAddClassView {
     // MARK: - Add Subviews
     func addSubviews() {
         //self.addSubviews([backgroundView, expandButton])
-        self.addSubview(expandButton)
+        self.addSubview(backgroundView)
         
-        //backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
+        backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
     }
     
     // MARK: - Add Constraints
     func addConstraints() {
-        //addBackgroundViewConstraints()
-        addExpandButtonConstraints()
+        addBackgroundViewConstraints()
+        //addExpandButtonConstraints()
         
-        //addAddClassLabelConstraints()
-        //addCancelButtonConstraints()
-        //addDoneButtonConstraints()
-        //addTitleTextViewConstraints()
+        addAddClassLabelConstraints()
+        addCancelButtonConstraints()
+        addDoneButtonConstraints()
+        addTitleTextViewConstraints()
     }
     
     func addBackgroundViewConstraints() {
@@ -293,14 +300,14 @@ fileprivate extension ProgrammaticAddClassView {
         //cancelButton.addConstraints(top: nil, bottom: nil, leading: backgroundView.leadingAnchor, trailing: nil, topConstant: 0, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil, priority: 999)
         cancelButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         cancelButton.centerYAnchor.constraint(equalTo: addClassLabel.centerYAnchor).isActive = true
-        //cancelButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -8).isActive = true
+        cancelButton.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 4).isActive = true
     }
     
     func addDoneButtonConstraints() {
         //doneButton.addConstraints(top: nil, bottom: nil, leading: nil, trailing: backgroundView.trailingAnchor, topConstant: 14, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil, priority: 999)
         doneButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         doneButton.centerYAnchor.constraint(equalTo: addClassLabel.centerYAnchor).isActive = true
-        //doneButton.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor).isActive = true
+        doneButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor).isActive = true
     }
     
     func addTitleTextViewConstraints() {
