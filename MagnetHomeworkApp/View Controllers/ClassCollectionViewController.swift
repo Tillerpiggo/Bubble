@@ -213,6 +213,7 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
         if indexPath.row == fetchedResultsController.fetchedObjects?.count {
             if let cell = collectionView.cellForItem(at: indexPath) as? AddClassCollectionViewCell {
                 cell.expand()
+                print("Detected it through didSelectItemAt")
             }
         }
     }

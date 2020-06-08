@@ -144,10 +144,6 @@ class ProgrammaticAddClassView: ProgrammaticView {
         
         self.delegate?.didExpand()
         
-        
-        //self.titleTextViewHeightConstraint?.constant = 40.0 // Not animating for some reason
-        //self.addClassLabelCenterYConstraint?.priority = UILayoutPriority(1)
-        
         // Increase height
         UIView.animate(withDuration: 0.5, animations: { [unowned self] in
             self.cancelButton.transform = .identity
@@ -252,21 +248,21 @@ fileprivate extension ProgrammaticAddClassView {
     
     // MARK: - Add Subviews
     func addSubviews() {
-        self.addSubviews([backgroundView, expandButton])
-        //backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
+        self.addSubviews([backgroundView])
+        
+        backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
         //dynamicViewDelegate?.sizeChanged()
     }
     
     // MARK: - Add Constraints
     func addConstraints() {
         addBackgroundViewConstraints()
-        /*
+        
         addAddClassLabelConstraints()
-        addExpandButtonConstraints()
-        addCancelButtonConstraints()
-        addDoneButtonConstraints()
-        addTitleTextViewConstraints()
- */
+        //addExpandButtonConstraints()
+        //addCancelButtonConstraints()
+        //addDoneButtonConstraints()
+        //addTitleTextViewConstraints()
     }
     
     func addBackgroundViewConstraints() {
@@ -276,11 +272,13 @@ fileprivate extension ProgrammaticAddClassView {
     }
     
     func addAddClassLabelConstraints() {
-        addClassLabel.addConstraints(top: backgroundView.topAnchor, bottom: nil, leading: cancelButton.trailingAnchor, trailing: doneButton.leadingAnchor, topConstant: 20, bottomConstant: 0, leadingConstant: 12, trailingConstant: 12, widthConstant: nil, heightConstant: nil, priority: 999)
+        //addClassLabel.addConstraints(top: backgroundView.topAnchor, bottom: nil, leading: cancelButton.trailingAnchor, trailing: doneButton.leadingAnchor, topConstant: 20, bottomConstant: 0, leadingConstant: 12, trailingConstant: 12, widthConstant: nil, heightConstant: nil, priority: 999)
+        backgroundView.addConstraints(top: addClassLabel.topAnchor, bottom: nil, leading: nil, trailing: nil, topConstant: 20, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil)
     }
     
     func addExpandButtonConstraints() {
-        expandButton.pinEdgesToView(self)
+        //expandButton.pinEdgesToView(self)
+        //backgroundView.pinEdgesToView(expandButton, priority: 999)
     }
     
     func addCancelButtonConstraints() {
@@ -296,8 +294,8 @@ fileprivate extension ProgrammaticAddClassView {
     }
     
     func addTitleTextViewConstraints() {
-        titleTextView.addConstraints(top: nil, bottom: backgroundView.bottomAnchor, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 16, bottomConstant: 16, leadingConstant: 20, trailingConstant: 20, widthConstant: nil, heightConstant: nil, priority: 999)
-        //titleTextView.addConstraints(top: addClassLabel.bottomAnchor, bottom: backgroundView.bottomAnchor, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 16, bottomConstant: 16, leadingConstant: 20, trailingConstant: 20, widthConstant: nil, heightConstant: nil, priority: 999)
+        //titleTextView.addConstraints(top: nil, bottom: backgroundView.bottomAnchor, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 16, bottomConstant: 16, leadingConstant: 20, trailingConstant: 20, widthConstant: nil, heightConstant: nil, priority: 999)
+        titleTextView.addConstraints(top: addClassLabel.bottomAnchor, bottom: backgroundView.bottomAnchor, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 16, bottomConstant: 16, leadingConstant: 20, trailingConstant: 20, widthConstant: nil, heightConstant: nil, priority: 999)
         //titleTextViewHeightConstraint = titleTextView.heightAnchor.constraint(equalToConstant: 0.0)
     }
 }
