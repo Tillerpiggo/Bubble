@@ -23,17 +23,12 @@ class ClassCollectionViewController: UICollectionViewController {
     var coreDataController: CoreDataController!
     let addClassCollectionViewCellIdentifier = "AddClassViewCell"
     
-    private var addClassViewHeight: CGFloat = 128
-    private let addClassViewHeightSmall: CGFloat = 128
-    private let addClassViewHeightExpanded: CGFloat = 800
-    
     private var blockOperation = BlockOperation()
     
     // Add Class View
     private var isAddClassViewExpanded = false
     private let addClassViewHeightShrunk: CGFloat = 86
     private let addClassViewHeightExpanded: CGFloat = UIScreen.main.bounds.height - 200
-    
     
     // MARK: - Properties
     var delegate: ClassCollectionViewControllerDelegate?
@@ -67,7 +62,8 @@ class ClassCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView.register(AddClassCollectionViewCell.self, forCellWithReuseIdentifier: addClassCollectionViewCellIdentifier)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
+        view.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
         
         updateWithCloud()
         
@@ -236,11 +232,13 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func expandAddClassView() {
-        addClassViewHeight = addClassViewHeightExpanded
+        isAddClassViewExpanded = true
+        collectionView.performBatchUpdates({})
     }
     
     func shrinkAddClassView() {
-        addClassViewHeight = addClassViewHeightSmall
+        isAddClassViewExpanded = false
+        collectionView.performBatchUpdates({})
     }
 }
 
@@ -558,20 +556,3 @@ extension ClassCollectionViewController: DynamicViewDelegate {
 }
  */
 
-extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
-    func addClass(withText text: String) {
-        // TODO: implement
-    }
-    
-    func didShrink() {
-        shrinkAddClassView()
-        collectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
-        //collectionView.performBatchUpdates({})
-    }
-    
-    func didExpand() {
-        expandAddClassView()
-        //collectionView.performBatchUpdates({})
-        collectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
-    }
-}

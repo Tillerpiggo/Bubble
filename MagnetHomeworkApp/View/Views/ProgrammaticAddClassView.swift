@@ -13,7 +13,6 @@ protocol ProgrammaticAddClassViewDelegate {
     func addClass(withText text: String)
     func didExpand()
     func didShrink()
-    func didExpand()
 }
 
 class ProgrammaticAddClassView: ProgrammaticView {
@@ -45,8 +44,8 @@ class ProgrammaticAddClassView: ProgrammaticView {
         addClassLabel.translatesAutoresizingMaskIntoConstraints = false
         
         addClassLabel.text = "Add Class"
-        addClassLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        addClassLabel.textColor = UIColor(white: 0.5, alpha: 1.0)
+        addClassLabel.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        addClassLabel.textColor = UIColor(white: 0.4, alpha: 1.0)
         addClassLabel.textAlignment = .center
         
         return addClassLabel
@@ -68,8 +67,8 @@ class ProgrammaticAddClassView: ProgrammaticView {
         let cancelButton = BouncyButton()
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let enabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)])
-        let disabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: disabledColor])
+        let enabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 17, weight: .medium), .foregroundColor: UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)])
+        let disabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 17, weight: .medium), .foregroundColor: disabledColor])
         cancelButton.setAttributedTitle(enabledCancelText, for: .normal)
         cancelButton.isHidden = true
         cancelButton.layer.opacity = 0.0
@@ -83,8 +82,8 @@ class ProgrammaticAddClassView: ProgrammaticView {
         let doneButton = BouncyButton()
         doneButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let enabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: UIColor(red: 0.562, green: 0.711, blue: 1, alpha: 1)])
-        let disabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: disabledColor])
+        let enabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 17, weight: .bold), .foregroundColor: UIColor(red: 0.562, green: 0.711, blue: 1, alpha: 1)])
+        let disabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 17, weight: .bold), .foregroundColor: disabledColor])
         doneButton.setAttributedTitle(enabledDoneText, for: .normal)
         doneButton.isHidden = true
         doneButton.layer.opacity = 0.0
@@ -114,9 +113,21 @@ class ProgrammaticAddClassView: ProgrammaticView {
         return fillerView
     }()
     
+    private let colorPickerView: ColorPickerView = {
+        let colorPickerView = ColorPickerView()
+        colorPickerView.translatesAutoresizingMaskIntoConstraints = false
+        colorPickerView.backgroundColor = .blue
+        //colorPickerView.layer.opacity = 0.0
+        //colorPickerView.isHidden = true
+        
+        return colorPickerView
+    }()
+    
     override func setupView() {
         addSubviews()
         addConstraints()
+        
+        backgroundColor = UIColor(white: 0.98, alpha: 1.0)
         
         // Set delegates
         cancelButton.delegate = self
@@ -154,6 +165,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
         self.cancelButton.isHidden = false
         self.doneButton.isHidden = false
         self.titleTextView.isHidden = false
+        //self.colorPickerView.isHidden = false
         
         self.expandButton.isEnabled = false
         //layoutIfNeeded()
@@ -169,6 +181,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
             self.doneButton.layer.opacity = 1.0
             
             self.titleTextView.layer.opacity = 1.0
+            //self.colorPickerView.layer.opacity = 1.0
             
             
             //self.dynamicViewDelegate?.sizeChanged()
@@ -177,7 +190,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
             
             
             
-        }, completion: { (bool) in
+        }, completion: { [unowned self] (bool) in
         })
     }
     
@@ -187,8 +200,6 @@ class ProgrammaticAddClassView: ProgrammaticView {
         guard isExpanded else { return }
         
         self.expandButton.isEnabled = true
-        
-        
         
         //self.addClassLabelCenterYConstraint?.isActive = true
         
@@ -200,14 +211,16 @@ class ProgrammaticAddClassView: ProgrammaticView {
             self.cancelButton.layer.opacity = 0.0
             self.doneButton.layer.opacity = 0.0
             self.titleTextView.layer.opacity = 0.0
+            self.colorPickerView.layer.opacity = 0.0
             
             //self.dynamicViewDelegate?.sizeChanged()
             //self.layoutIfNeeded()
             self.delegate?.didShrink()
             
-        }, completion: { (bool) in
+        }, completion: { [unowned self] (bool) in
             self.isExpanded = false
             self.titleTextView.isHidden = true
+            self.colorPickerView.isHidden = true
         })
     }
     
@@ -284,7 +297,7 @@ fileprivate extension ProgrammaticAddClassView {
         //self.addSubviews([backgroundView, expandButton])
         self.addSubview(backgroundView)
         
-        backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton])
+        backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton, colorPickerView])
     }
     
     // MARK: - Add Constraints
@@ -296,6 +309,7 @@ fileprivate extension ProgrammaticAddClassView {
         addCancelButtonConstraints()
         addDoneButtonConstraints()
         addTitleTextViewConstraints()
+        addColorPickerCollectionViewConstraints()
         //addFillerView()
     }
     
@@ -341,12 +355,20 @@ fileprivate extension ProgrammaticAddClassView {
         //titleTextView.addConstraints(top: addClassLabel.bottomAnchor, bottom: backgroundView.bottomAnchor, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 16, bottomConstant: 16, leadingConstant: 20, trailingConstant: 20, widthConstant: nil, heightConstant: nil, priority: 999)
         //titleTextViewHeightConstraint = titleTextView.heightAnchor.constraint(equalToConstant: 0.0)
         
-        titleTextView.topAnchor.constraint(equalTo: addClassLabel.bottomAnchor, constant: 16).isActive = true
+        titleTextView.topAnchor.constraint(equalTo: addClassLabel.bottomAnchor, constant: 20).isActive = true
         titleTextView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
-        titleTextView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 56).isActive = true
+        titleTextView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 72).isActive = true
+        titleTextView.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
         print("backgroundView.frame: \(backgroundView.frame)")
         //titleTextView.addConstraints(top: nil, bottom: nil, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 0, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil)
         //titleTextView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16).isActive = true
         //titleTextView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16).isActive = true
+    }
+    
+    func addColorPickerCollectionViewConstraints() {
+        colorPickerView.topAnchor.constraint(equalTo: titleTextView.bottomAnchor, constant: 16).isActive = true
+        colorPickerView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
+        colorPickerView.widthAnchor.constraint(equalToConstant: titleTextView.bounds.width - 32.0).isActive = true
+        colorPickerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 }

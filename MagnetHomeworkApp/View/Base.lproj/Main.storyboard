@@ -617,7 +617,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.98317746350364965" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TTh-NM-dpM" firstAttribute="leading" secondItem="g2P-x6-MyL" secondAttribute="leading" id="1K6-VF-kvH"/>
                             <constraint firstItem="TTh-NM-dpM" firstAttribute="top" secondItem="g2P-x6-MyL" secondAttribute="top" id="GyS-bZ-fSh"/>
@@ -667,6 +667,7 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Syu-3d-f21">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="375" height="668"/>
                             </collectionViewCell>

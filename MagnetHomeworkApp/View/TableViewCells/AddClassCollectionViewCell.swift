@@ -36,7 +36,7 @@ class AddClassCollectionViewCell: UICollectionViewCell {
     
     func setupView() {
         contentView.addSubviews([addClassView])//, button])
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
         //contentView.translatesAutoresizingMaskIntoConstraints = false
         
         addContentViewConstraints()
@@ -77,10 +77,6 @@ extension AddClassCollectionViewCell: ProgrammaticAddClassViewDelegate {
     
     func didExpand() {
         delegate?.didExpand()
-    }
-    
-    func didShrink() {
-        delegate?.didShrink()
     }
     
 }
