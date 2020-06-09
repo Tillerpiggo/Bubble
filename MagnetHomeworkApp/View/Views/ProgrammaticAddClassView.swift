@@ -13,6 +13,7 @@ protocol ProgrammaticAddClassViewDelegate {
     func addClass(withText text: String)
     func didExpand()
     func didShrink()
+    func didExpand()
 }
 
 class ProgrammaticAddClassView: ProgrammaticView {
@@ -70,7 +71,8 @@ class ProgrammaticAddClassView: ProgrammaticView {
         let enabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)])
         let disabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: disabledColor])
         cancelButton.setAttributedTitle(enabledCancelText, for: .normal)
-        cancelButton.setAttributedTitle(disabledCancelText, for: .disabled)
+        cancelButton.isHidden = true
+        cancelButton.layer.opacity = 0.0
         
         cancelButton.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
         
@@ -84,7 +86,8 @@ class ProgrammaticAddClassView: ProgrammaticView {
         let enabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: UIColor(red: 0.562, green: 0.711, blue: 1, alpha: 1)])
         let disabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: disabledColor])
         doneButton.setAttributedTitle(enabledDoneText, for: .normal)
-        doneButton.setAttributedTitle(enabledDoneText, for: .disabled)
+        doneButton.isHidden = true
+        doneButton.layer.opacity = 0.0
         
         doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         
@@ -98,13 +101,24 @@ class ProgrammaticAddClassView: ProgrammaticView {
         titleTextView.delegate = self
         titleTextView.isHidden = true
         titleTextView.layer.opacity = 0.0
+        titleTextView.isHidden = true
         
         return titleTextView
     }()
     
+    private let fillerView: UIView = {
+        let fillerView = UIView()
+        fillerView.backgroundColor = .clear
+        fillerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return fillerView
+    }()
+    
     override func setupView() {
         addSubviews()
+        addConstraints()
         
+        // Set delegates
         cancelButton.delegate = self
         doneButton.delegate = self
         
@@ -153,7 +167,15 @@ class ProgrammaticAddClassView: ProgrammaticView {
             self.cancelButton.layer.opacity = 1.0
             self.doneButton.transform = .identity
             self.doneButton.layer.opacity = 1.0
+            
             self.titleTextView.layer.opacity = 1.0
+            
+            
+            //self.dynamicViewDelegate?.sizeChanged()
+            //self.layoutIfNeeded()
+            
+            
+            
             
         }, completion: { (bool) in
         })
@@ -185,6 +207,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
             
         }, completion: { (bool) in
             self.isExpanded = false
+            self.titleTextView.isHidden = true
         })
     }
     
@@ -273,6 +296,7 @@ fileprivate extension ProgrammaticAddClassView {
         addCancelButtonConstraints()
         addDoneButtonConstraints()
         addTitleTextViewConstraints()
+        //addFillerView()
     }
     
     func addBackgroundViewConstraints() {

@@ -23,6 +23,10 @@ class ClassCollectionViewController: UICollectionViewController {
     var coreDataController: CoreDataController!
     let addClassCollectionViewCellIdentifier = "AddClassViewCell"
     
+    private var addClassViewHeight: CGFloat = 128
+    private let addClassViewHeightSmall: CGFloat = 128
+    private let addClassViewHeightExpanded: CGFloat = 800
+    
     private var blockOperation = BlockOperation()
     
     // Add Class View
@@ -181,6 +185,7 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: isAddClassViewExpanded ? addClassViewHeightExpanded : addClassViewHeightShrunk)
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -208,6 +213,8 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
         print("Button pressed; target added in collectionViewControlller")
         let addClassViewCell = collectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as! AddClassCollectionViewCell
         addClassViewCell.expand()
+        
+        expandAddClassView()
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -218,6 +225,22 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
                 print("Detected it through didSelectItemAt")
             }
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+
+        coordinator.animate(alongsideTransition: { (_) in
+            self.collectionViewLayout.invalidateLayout() // layout update
+        }, completion: nil)
+    }
+    
+    func expandAddClassView() {
+        addClassViewHeight = addClassViewHeightExpanded
+    }
+    
+    func shrinkAddClassView() {
+        addClassViewHeight = addClassViewHeightSmall
     }
 }
 
@@ -534,3 +557,21 @@ extension ClassCollectionViewController: DynamicViewDelegate {
     }
 }
  */
+
+extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
+    func addClass(withText text: String) {
+        // TODO: implement
+    }
+    
+    func didShrink() {
+        shrinkAddClassView()
+        collectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
+        //collectionView.performBatchUpdates({})
+    }
+    
+    func didExpand() {
+        expandAddClassView()
+        //collectionView.performBatchUpdates({})
+        collectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
+    }
+}

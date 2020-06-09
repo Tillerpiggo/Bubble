@@ -11,7 +11,7 @@ import UIKit
 
 class AddClassCollectionViewCell: UICollectionViewCell {
     
-    var dynamicViewDelegate: DynamicViewDelegate?
+    //var dynamicViewDelegate: DynamicViewDelegate?
     var delegate: ProgrammaticAddClassViewDelegate?
     
     let addClassView: ProgrammaticAddClassView = {
@@ -41,6 +41,7 @@ class AddClassCollectionViewCell: UICollectionViewCell {
         
         addContentViewConstraints()
         addAddClassViewConstraints()
+        //addClassView.dynamicViewDelegate = self
         addClassView.delegate = self
         //addButtonConstraints()
         
@@ -62,10 +63,16 @@ extension AddClassCollectionViewCell: DynamicViewDelegate {
     }
 }
  */
+
+// MARK: - ProgrammaticAddClassViewDelegate
 extension AddClassCollectionViewCell: ProgrammaticAddClassViewDelegate {
     
     func addClass(withText text: String) {
         delegate?.addClass(withText: text)
+    }
+    
+    func didShrink() {
+        delegate?.didShrink()
     }
     
     func didExpand() {

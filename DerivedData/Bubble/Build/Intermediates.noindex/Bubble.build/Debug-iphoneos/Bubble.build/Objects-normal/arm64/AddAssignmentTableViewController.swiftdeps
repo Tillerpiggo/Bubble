@@ -1,0 +1,863 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "AddAssignmentTableViewControllerDelegate"
+- "AddAssignmentTableViewController"
+provides-nominal:
+- "6Bubble40AddAssignmentTableViewControllerDelegateP"
+- "6Bubble32AddAssignmentTableViewControllerC"
+provides-member:
+- ["6Bubble40AddAssignmentTableViewControllerDelegateP", ""]
+- ["6Bubble32AddAssignmentTableViewControllerC", ""]
+provides-dynamic-lookup:
+- "cancelButtonTapped"
+- "saveButton"
+- "saveButtonTapped"
+- "tableView"
+- "textField"
+- "textFieldTextChanged"
+- "viewDidLoad"
+depends-top-level:
+- !private "!"
+- !private "??"
+- "AddAssignmentTableViewController"
+- "AddAssignmentTableViewControllerDelegate"
+- "Assignment"
+- "AssignmentPrecedence"
+- !private "BooleanLiteralType"
+- "Class"
+- "CloudController"
+- "CoreDataController"
+- "IndexPath"
+- !private "StringLiteralType"
+- "UIBarButtonItem"
+- "UITableView"
+- "UITableViewController"
+- "UITextField"
+depends-member:
+- ["6Bubble32AddAssignmentTableViewControllerC", "AddAssignmentTableViewControllerDelegate"]
+- !private ["6Bubble32AddAssignmentTableViewControllerC", "Assignment"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "Class"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "CloudController"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "CoreDataController"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "IndexPath"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "UIBarButtonItem"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "UITableView"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "UITextField"]
+- !private ["6Bubble32AddAssignmentTableViewControllerC", "cancelButtonTapped"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "cloudController"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "coreDataController"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "deinit"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "delegate"]
+- !private ["6Bubble32AddAssignmentTableViewControllerC", "dismiss"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "init"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "owningClass"]
+- !private ["6Bubble32AddAssignmentTableViewControllerC", "save"]
+- !private ["6Bubble32AddAssignmentTableViewControllerC", "saveButton"]
+- !private ["6Bubble32AddAssignmentTableViewControllerC", "saveButtonTapped"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "tableView"]
+- !private ["6Bubble32AddAssignmentTableViewControllerC", "textField"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "textFieldTextChanged"]
+- !private ["6Bubble32AddAssignmentTableViewControllerC", "updateSaveButton"]
+- ["6Bubble32AddAssignmentTableViewControllerC", "viewDidLoad"]
+- ["6Bubble40AddAssignmentTableViewControllerDelegateP", "Assignment"]
+- ["6Bubble40AddAssignmentTableViewControllerDelegateP", "addedAssignment"]
+- !private ["6Bubble10AssignmentC", "init"]
+- !private ["SK", "isEmpty"]
+- !private ["So15CALayerDelegateP", "becomeFirstResponder"]
+- !private ["So15CALayerDelegateP", "deselectRow"]
+- !private ["So15CALayerDelegateP", "text"]
+- !private ["So8CKRecordC", "recordID"]
+- !private ["So23CKRecordKeyValueSettingP", "recordID"]
+- !private ["8CloudKit21CKRecordValueProtocolP", "isEmpty"]
+- !private ["s7CVarArgP", "Assignment"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "becomeFirstResponder"]
+- !private ["s7CVarArgP", "ckRecord"]
+- !private ["s7CVarArgP", "cloudController"]
+- !private ["s7CVarArgP", "coreDataController"]
+- !private ["s7CVarArgP", "delegate"]
+- !private ["s7CVarArgP", "deselectRow"]
+- !private ["s7CVarArgP", "dismiss"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "isEmpty"]
+- !private ["s7CVarArgP", "isEnabled"]
+- !private ["s7CVarArgP", "owningClass"]
+- !private ["s7CVarArgP", "recordID"]
+- !private ["s7CVarArgP", "save"]
+- !private ["s7CVarArgP", "saveButton"]
+- !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "textField"]
+- !private ["s7CVarArgP", "updateSaveButton"]
+- !private ["s7CVarArgP", "viewDidLoad"]
+- !private ["s7CVarArgP", "zoneID"]
+- !private ["6Bubble5ClassC", "ckRecord"]
+- !private ["6Bubble5ClassC", "deinit"]
+- !private ["6Bubble15CloudControllerC", "zoneID"]
+- !private ["6Bubble15CloudUploadableP", "ckRecord"]
+- !private ["6Bubble15CloudUploadableP", "init"]
+- !private ["Sl", "isEmpty"]
+- !private ["SL", "isEmpty"]
+- !private ["6Bubble18CoreDataControllerC", "managedContext"]
+- !private ["6Bubble18CoreDataUploadableP", "ckRecord"]
+- !private ["6Bubble18CoreDataUploadableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "Assignment"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "becomeFirstResponder"]
+- !private ["s28CustomDebugStringConvertibleP", "ckRecord"]
+- !private ["s28CustomDebugStringConvertibleP", "cloudController"]
+- !private ["s28CustomDebugStringConvertibleP", "coreDataController"]
+- !private ["s28CustomDebugStringConvertibleP", "delegate"]
+- !private ["s28CustomDebugStringConvertibleP", "deselectRow"]
+- !private ["s28CustomDebugStringConvertibleP", "dismiss"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "isEmpty"]
+- !private ["s28CustomDebugStringConvertibleP", "isEnabled"]
+- !private ["s28CustomDebugStringConvertibleP", "managedContext"]
+- !private ["s28CustomDebugStringConvertibleP", "owningClass"]
+- !private ["s28CustomDebugStringConvertibleP", "recordID"]
+- !private ["s28CustomDebugStringConvertibleP", "save"]
+- !private ["s28CustomDebugStringConvertibleP", "saveButton"]
+- !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "textField"]
+- !private ["s28CustomDebugStringConvertibleP", "updateSaveButton"]
+- !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- !private ["s28CustomDebugStringConvertibleP", "zoneID"]
+- !private ["s17CustomReflectableP", "becomeFirstResponder"]
+- !private ["s17CustomReflectableP", "ckRecord"]
+- !private ["s17CustomReflectableP", "isEmpty"]
+- !private ["s17CustomReflectableP", "isEnabled"]
+- !private ["s17CustomReflectableP", "managedContext"]
+- !private ["s17CustomReflectableP", "text"]
+- !private ["s17CustomReflectableP", "zoneID"]
+- !private ["s23CustomStringConvertibleP", "Assignment"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "becomeFirstResponder"]
+- !private ["s23CustomStringConvertibleP", "ckRecord"]
+- !private ["s23CustomStringConvertibleP", "cloudController"]
+- !private ["s23CustomStringConvertibleP", "coreDataController"]
+- !private ["s23CustomStringConvertibleP", "delegate"]
+- !private ["s23CustomStringConvertibleP", "deselectRow"]
+- !private ["s23CustomStringConvertibleP", "dismiss"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "isEmpty"]
+- !private ["s23CustomStringConvertibleP", "isEnabled"]
+- !private ["s23CustomStringConvertibleP", "owningClass"]
+- !private ["s23CustomStringConvertibleP", "recordID"]
+- !private ["s23CustomStringConvertibleP", "save"]
+- !private ["s23CustomStringConvertibleP", "saveButton"]
+- !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "textField"]
+- !private ["s23CustomStringConvertibleP", "updateSaveButton"]
+- !private ["s23CustomStringConvertibleP", "viewDidLoad"]
+- !private ["s23CustomStringConvertibleP", "zoneID"]
+- !private ["Se", "becomeFirstResponder"]
+- !private ["Se", "ckRecord"]
+- !private ["Se", "isEmpty"]
+- !private ["Se", "isEnabled"]
+- !private ["Se", "managedContext"]
+- !private ["Se", "text"]
+- !private ["Se", "zoneID"]
+- !private ["SE", "becomeFirstResponder"]
+- !private ["SE", "ckRecord"]
+- !private ["SE", "isEmpty"]
+- !private ["SE", "isEnabled"]
+- !private ["SE", "managedContext"]
+- !private ["SE", "text"]
+- !private ["SE", "zoneID"]
+- !private ["SQ", "Assignment"]
+- ["SQ", ""]
+- !private ["SQ", "becomeFirstResponder"]
+- !private ["SQ", "ckRecord"]
+- !private ["SQ", "cloudController"]
+- !private ["SQ", "coreDataController"]
+- !private ["SQ", "delegate"]
+- !private ["SQ", "deselectRow"]
+- !private ["SQ", "dismiss"]
+- !private ["SQ", "init"]
+- !private ["SQ", "init"]
+- !private ["SQ", "isEmpty"]
+- !private ["SQ", "isEnabled"]
+- !private ["SQ", "managedContext"]
+- !private ["SQ", "owningClass"]
+- !private ["SQ", "recordID"]
+- !private ["SQ", "save"]
+- !private ["SQ", "saveButton"]
+- !private ["SQ", "text"]
+- !private ["SQ", "textField"]
+- !private ["SQ", "updateSaveButton"]
+- !private ["SQ", "viewDidLoad"]
+- !private ["SQ", "zoneID"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "isEmpty"]
+- !private ["s23ExpressibleByNilLiteralP", "becomeFirstResponder"]
+- !private ["s23ExpressibleByNilLiteralP", "ckRecord"]
+- !private ["s23ExpressibleByNilLiteralP", "isEnabled"]
+- !private ["s23ExpressibleByNilLiteralP", "managedContext"]
+- !private ["s23ExpressibleByNilLiteralP", "text"]
+- !private ["s23ExpressibleByNilLiteralP", "zoneID"]
+- !private ["s32ExpressibleByStringInterpolationP", "isEmpty"]
+- !private ["s26ExpressibleByStringLiteralP", "isEmpty"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "isEmpty"]
+- !private ["SH", "Assignment"]
+- ["SH", ""]
+- !private ["SH", "becomeFirstResponder"]
+- !private ["SH", "ckRecord"]
+- !private ["SH", "cloudController"]
+- !private ["SH", "coreDataController"]
+- !private ["SH", "delegate"]
+- !private ["SH", "deselectRow"]
+- !private ["SH", "dismiss"]
+- !private ["SH", "init"]
+- !private ["SH", "init"]
+- !private ["SH", "isEmpty"]
+- !private ["SH", "isEnabled"]
+- !private ["SH", "managedContext"]
+- !private ["SH", "owningClass"]
+- !private ["SH", "recordID"]
+- !private ["SH", "save"]
+- !private ["SH", "saveButton"]
+- !private ["SH", "text"]
+- !private ["SH", "textField"]
+- !private ["SH", "updateSaveButton"]
+- !private ["SH", "viewDidLoad"]
+- !private ["SH", "zoneID"]
+- !private ["So10CKRecordIDC", "zoneID"]
+- !private ["s25LosslessStringConvertibleP", "isEmpty"]
+- !private ["s10MirrorPathP", "isEmpty"]
+- !private ["So8NSCodingP", "Assignment"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "becomeFirstResponder"]
+- !private ["So8NSCodingP", "cloudController"]
+- !private ["So8NSCodingP", "coreDataController"]
+- !private ["So8NSCodingP", "delegate"]
+- !private ["So8NSCodingP", "deselectRow"]
+- !private ["So8NSCodingP", "dismiss"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "isEmpty"]
+- !private ["So8NSCodingP", "isEnabled"]
+- !private ["So8NSCodingP", "owningClass"]
+- !private ["So8NSCodingP", "recordID"]
+- !private ["So8NSCodingP", "save"]
+- !private ["So8NSCodingP", "saveButton"]
+- !private ["So8NSCodingP", "text"]
+- !private ["So8NSCodingP", "textField"]
+- !private ["So8NSCodingP", "updateSaveButton"]
+- !private ["So8NSCodingP", "viewDidLoad"]
+- !private ["So8NSCodingP", "zoneID"]
+- !private ["So9NSCopyingP", "isEmpty"]
+- !private ["So9NSCopyingP", "recordID"]
+- !private ["So9NSCopyingP", "zoneID"]
+- !private ["So26NSExtensionRequestHandlingP", "Assignment"]
+- ["So26NSExtensionRequestHandlingP", ""]
+- !private ["So26NSExtensionRequestHandlingP", "cloudController"]
+- !private ["So26NSExtensionRequestHandlingP", "coreDataController"]
+- !private ["So26NSExtensionRequestHandlingP", "delegate"]
+- !private ["So26NSExtensionRequestHandlingP", "dismiss"]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "owningClass"]
+- !private ["So26NSExtensionRequestHandlingP", "save"]
+- !private ["So26NSExtensionRequestHandlingP", "saveButton"]
+- !private ["So26NSExtensionRequestHandlingP", "textField"]
+- !private ["So26NSExtensionRequestHandlingP", "updateSaveButton"]
+- !private ["So26NSExtensionRequestHandlingP", "viewDidLoad"]
+- !private ["So20NSFetchRequestResultP", "ckRecord"]
+- !private ["So20NSFetchRequestResultP", "init"]
+- !private ["So21NSItemProviderReadingP", "isEmpty"]
+- !private ["So21NSItemProviderWritingP", "isEmpty"]
+- !private ["So15NSManagedObjectC", "ckRecord"]
+- !private ["So15NSManagedObjectC", "init"]
+- !private ["So16NSMutableCopyingP", "isEmpty"]
+- ["So8NSObjectC", "AddAssignmentTableViewControllerDelegate"]
+- !private ["So8NSObjectC", "Assignment"]
+- ["So8NSObjectC", "Class"]
+- ["So8NSObjectC", "CloudController"]
+- ["So8NSObjectC", "CoreDataController"]
+- ["So8NSObjectC", "IndexPath"]
+- ["So8NSObjectC", "UIBarButtonItem"]
+- ["So8NSObjectC", "UITableView"]
+- ["So8NSObjectC", "UITextField"]
+- !private ["So8NSObjectC", "becomeFirstResponder"]
+- ["So8NSObjectC", "cancelButtonTapped"]
+- !private ["So8NSObjectC", "ckRecord"]
+- ["So8NSObjectC", "cloudController"]
+- ["So8NSObjectC", "coreDataController"]
+- ["So8NSObjectC", "delegate"]
+- !private ["So8NSObjectC", "deselectRow"]
+- !private ["So8NSObjectC", "dismiss"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "isEmpty"]
+- !private ["So8NSObjectC", "isEnabled"]
+- ["So8NSObjectC", "owningClass"]
+- !private ["So8NSObjectC", "recordID"]
+- ["So8NSObjectC", "save"]
+- ["So8NSObjectC", "saveButton"]
+- ["So8NSObjectC", "saveButtonTapped"]
+- ["So8NSObjectC", "tableView"]
+- !private ["So8NSObjectC", "text"]
+- ["So8NSObjectC", "textField"]
+- ["So8NSObjectC", "textFieldTextChanged"]
+- ["So8NSObjectC", "updateSaveButton"]
+- ["So8NSObjectC", "viewDidLoad"]
+- !private ["So8NSObjectC", "zoneID"]
+- !private ["So8NSObjectP", "Assignment"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "becomeFirstResponder"]
+- !private ["So8NSObjectP", "ckRecord"]
+- !private ["So8NSObjectP", "cloudController"]
+- !private ["So8NSObjectP", "coreDataController"]
+- !private ["So8NSObjectP", "delegate"]
+- !private ["So8NSObjectP", "deselectRow"]
+- !private ["So8NSObjectP", "dismiss"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "isEmpty"]
+- !private ["So8NSObjectP", "isEnabled"]
+- !private ["So8NSObjectP", "owningClass"]
+- !private ["So8NSObjectP", "recordID"]
+- !private ["So8NSObjectP", "save"]
+- !private ["So8NSObjectP", "saveButton"]
+- !private ["So8NSObjectP", "text"]
+- !private ["So8NSObjectP", "textField"]
+- !private ["So8NSObjectP", "updateSaveButton"]
+- !private ["So8NSObjectP", "viewDidLoad"]
+- !private ["So8NSObjectP", "zoneID"]
+- !private ["So14NSSecureCodingP", "isEmpty"]
+- !private ["So14NSSecureCodingP", "recordID"]
+- !private ["So14NSSecureCodingP", "zoneID"]
+- !private ["So8NSStringC", "isEmpty"]
+- !private ["7Combine16ObservableObjectP", "ckRecord"]
+- !private ["7Combine16ObservableObjectP", "init"]
+- !private ["Sq", "becomeFirstResponder"]
+- !private ["Sq", "ckRecord"]
+- !private ["Sq", "isEnabled"]
+- !private ["Sq", "managedContext"]
+- !private ["Sq", "text"]
+- !private ["Sq", "zoneID"]
+- !private ["Sm", "isEmpty"]
+- !private ["ST", "isEmpty"]
+- !private ["ST", "recordID"]
+- !private ["SS", "isEmpty"]
+- !private ["Sy", "isEmpty"]
+- !private ["s16TextOutputStreamP", "isEmpty"]
+- !private ["s20TextOutputStreamableP", "isEmpty"]
+- !private ["So29UIAccessibilityIdentificationP", "becomeFirstResponder"]
+- !private ["So29UIAccessibilityIdentificationP", "deselectRow"]
+- !private ["So29UIAccessibilityIdentificationP", "isEnabled"]
+- !private ["So29UIAccessibilityIdentificationP", "text"]
+- !private ["So12UIAppearanceP", "becomeFirstResponder"]
+- !private ["So12UIAppearanceP", "deselectRow"]
+- !private ["So12UIAppearanceP", "isEnabled"]
+- !private ["So12UIAppearanceP", "text"]
+- !private ["So21UIAppearanceContainerP", "Assignment"]
+- ["So21UIAppearanceContainerP", ""]
+- !private ["So21UIAppearanceContainerP", "becomeFirstResponder"]
+- !private ["So21UIAppearanceContainerP", "cloudController"]
+- !private ["So21UIAppearanceContainerP", "coreDataController"]
+- !private ["So21UIAppearanceContainerP", "delegate"]
+- !private ["So21UIAppearanceContainerP", "deselectRow"]
+- !private ["So21UIAppearanceContainerP", "dismiss"]
+- !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "owningClass"]
+- !private ["So21UIAppearanceContainerP", "save"]
+- !private ["So21UIAppearanceContainerP", "saveButton"]
+- !private ["So21UIAppearanceContainerP", "text"]
+- !private ["So21UIAppearanceContainerP", "textField"]
+- !private ["So21UIAppearanceContainerP", "updateSaveButton"]
+- !private ["So21UIAppearanceContainerP", "viewDidLoad"]
+- !private ["So15UIBarButtonItemC", "isEnabled"]
+- !private ["So9UIBarItemC", "isEnabled"]
+- !private ["So18UIContentContainerP", "Assignment"]
+- ["So18UIContentContainerP", ""]
+- !private ["So18UIContentContainerP", "cloudController"]
+- !private ["So18UIContentContainerP", "coreDataController"]
+- !private ["So18UIContentContainerP", "delegate"]
+- !private ["So18UIContentContainerP", "dismiss"]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "owningClass"]
+- !private ["So18UIContentContainerP", "save"]
+- !private ["So18UIContentContainerP", "saveButton"]
+- !private ["So18UIContentContainerP", "textField"]
+- !private ["So18UIContentContainerP", "updateSaveButton"]
+- !private ["So18UIContentContainerP", "viewDidLoad"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "becomeFirstResponder"]
+- !private ["So30UIContentSizeCategoryAdjustingP", "text"]
+- !private ["So9UIControlC", "becomeFirstResponder"]
+- !private ["So9UIControlC", "text"]
+- !private ["So17UICoordinateSpaceP", "becomeFirstResponder"]
+- !private ["So17UICoordinateSpaceP", "deselectRow"]
+- !private ["So17UICoordinateSpaceP", "text"]
+- !private ["So23UIDataSourceTranslatingP", "deselectRow"]
+- !private ["So13UIDynamicItemP", "becomeFirstResponder"]
+- !private ["So13UIDynamicItemP", "deselectRow"]
+- !private ["So13UIDynamicItemP", "text"]
+- !private ["So18UIFocusEnvironmentP", "Assignment"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "becomeFirstResponder"]
+- !private ["So18UIFocusEnvironmentP", "cloudController"]
+- !private ["So18UIFocusEnvironmentP", "coreDataController"]
+- !private ["So18UIFocusEnvironmentP", "delegate"]
+- !private ["So18UIFocusEnvironmentP", "deselectRow"]
+- !private ["So18UIFocusEnvironmentP", "dismiss"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "owningClass"]
+- !private ["So18UIFocusEnvironmentP", "save"]
+- !private ["So18UIFocusEnvironmentP", "saveButton"]
+- !private ["So18UIFocusEnvironmentP", "text"]
+- !private ["So18UIFocusEnvironmentP", "textField"]
+- !private ["So18UIFocusEnvironmentP", "updateSaveButton"]
+- !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
+- !private ["So11UIFocusItemP", "becomeFirstResponder"]
+- !private ["So11UIFocusItemP", "deselectRow"]
+- !private ["So11UIFocusItemP", "text"]
+- !private ["So20UIFocusItemContainerP", "becomeFirstResponder"]
+- !private ["So20UIFocusItemContainerP", "deselectRow"]
+- !private ["So20UIFocusItemContainerP", "text"]
+- !private ["So30UIFocusItemScrollableContainerP", "deselectRow"]
+- !private ["So10UIKeyInputP", "becomeFirstResponder"]
+- !private ["So10UIKeyInputP", "text"]
+- !private ["So24UILargeContentViewerItemP", "becomeFirstResponder"]
+- !private ["So24UILargeContentViewerItemP", "deselectRow"]
+- !private ["So24UILargeContentViewerItemP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "Assignment"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "becomeFirstResponder"]
+- !private ["So30UIPasteConfigurationSupportingP", "cloudController"]
+- !private ["So30UIPasteConfigurationSupportingP", "coreDataController"]
+- !private ["So30UIPasteConfigurationSupportingP", "delegate"]
+- !private ["So30UIPasteConfigurationSupportingP", "deselectRow"]
+- !private ["So30UIPasteConfigurationSupportingP", "dismiss"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "owningClass"]
+- !private ["So30UIPasteConfigurationSupportingP", "save"]
+- !private ["So30UIPasteConfigurationSupportingP", "saveButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "text"]
+- !private ["So30UIPasteConfigurationSupportingP", "textField"]
+- !private ["So30UIPasteConfigurationSupportingP", "updateSaveButton"]
+- !private ["So30UIPasteConfigurationSupportingP", "viewDidLoad"]
+- ["So11UIResponderC", "AddAssignmentTableViewControllerDelegate"]
+- !private ["So11UIResponderC", "Assignment"]
+- ["So11UIResponderC", "Class"]
+- ["So11UIResponderC", "CloudController"]
+- ["So11UIResponderC", "CoreDataController"]
+- ["So11UIResponderC", "IndexPath"]
+- ["So11UIResponderC", "UIBarButtonItem"]
+- ["So11UIResponderC", "UITableView"]
+- ["So11UIResponderC", "UITextField"]
+- !private ["So11UIResponderC", "becomeFirstResponder"]
+- ["So11UIResponderC", "cancelButtonTapped"]
+- ["So11UIResponderC", "cloudController"]
+- ["So11UIResponderC", "coreDataController"]
+- ["So11UIResponderC", "delegate"]
+- !private ["So11UIResponderC", "deselectRow"]
+- !private ["So11UIResponderC", "dismiss"]
+- ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "init"]
+- ["So11UIResponderC", "owningClass"]
+- ["So11UIResponderC", "save"]
+- ["So11UIResponderC", "saveButton"]
+- ["So11UIResponderC", "saveButtonTapped"]
+- ["So11UIResponderC", "tableView"]
+- !private ["So11UIResponderC", "text"]
+- ["So11UIResponderC", "textField"]
+- ["So11UIResponderC", "textFieldTextChanged"]
+- ["So11UIResponderC", "updateSaveButton"]
+- ["So11UIResponderC", "viewDidLoad"]
+- !private ["So30UIResponderStandardEditActionsP", "Assignment"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So30UIResponderStandardEditActionsP", "becomeFirstResponder"]
+- !private ["So30UIResponderStandardEditActionsP", "cloudController"]
+- !private ["So30UIResponderStandardEditActionsP", "coreDataController"]
+- !private ["So30UIResponderStandardEditActionsP", "delegate"]
+- !private ["So30UIResponderStandardEditActionsP", "deselectRow"]
+- !private ["So30UIResponderStandardEditActionsP", "dismiss"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "owningClass"]
+- !private ["So30UIResponderStandardEditActionsP", "save"]
+- !private ["So30UIResponderStandardEditActionsP", "saveButton"]
+- !private ["So30UIResponderStandardEditActionsP", "text"]
+- !private ["So30UIResponderStandardEditActionsP", "textField"]
+- !private ["So30UIResponderStandardEditActionsP", "updateSaveButton"]
+- !private ["So30UIResponderStandardEditActionsP", "viewDidLoad"]
+- !private ["So12UIScrollViewC", "deselectRow"]
+- !private ["So20UIScrollViewDelegateP", "Assignment"]
+- ["So20UIScrollViewDelegateP", ""]
+- !private ["So20UIScrollViewDelegateP", "cloudController"]
+- !private ["So20UIScrollViewDelegateP", "coreDataController"]
+- !private ["So20UIScrollViewDelegateP", "delegate"]
+- !private ["So20UIScrollViewDelegateP", "dismiss"]
+- !private ["So20UIScrollViewDelegateP", "init"]
+- !private ["So20UIScrollViewDelegateP", "init"]
+- !private ["So20UIScrollViewDelegateP", "owningClass"]
+- !private ["So20UIScrollViewDelegateP", "save"]
+- !private ["So20UIScrollViewDelegateP", "saveButton"]
+- !private ["So20UIScrollViewDelegateP", "textField"]
+- !private ["So20UIScrollViewDelegateP", "updateSaveButton"]
+- !private ["So20UIScrollViewDelegateP", "viewDidLoad"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "deselectRow"]
+- !private ["So35UISpringLoadedInteractionSupportingP", "isEnabled"]
+- !private ["So16UIStateRestoringP", "Assignment"]
+- ["So16UIStateRestoringP", ""]
+- !private ["So16UIStateRestoringP", "cloudController"]
+- !private ["So16UIStateRestoringP", "coreDataController"]
+- !private ["So16UIStateRestoringP", "delegate"]
+- !private ["So16UIStateRestoringP", "dismiss"]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "owningClass"]
+- !private ["So16UIStateRestoringP", "save"]
+- !private ["So16UIStateRestoringP", "saveButton"]
+- !private ["So16UIStateRestoringP", "textField"]
+- !private ["So16UIStateRestoringP", "updateSaveButton"]
+- !private ["So16UIStateRestoringP", "viewDidLoad"]
+- !private ["So11UITableViewC", "deselectRow"]
+- ["So21UITableViewControllerC", "AddAssignmentTableViewControllerDelegate"]
+- !private ["So21UITableViewControllerC", "Assignment"]
+- ["So21UITableViewControllerC", "Class"]
+- ["So21UITableViewControllerC", "CloudController"]
+- ["So21UITableViewControllerC", "CoreDataController"]
+- ["So21UITableViewControllerC", "IndexPath"]
+- ["So21UITableViewControllerC", "UIBarButtonItem"]
+- ["So21UITableViewControllerC", "UITableView"]
+- ["So21UITableViewControllerC", "UITextField"]
+- ["So21UITableViewControllerC", ""]
+- ["So21UITableViewControllerC", "cancelButtonTapped"]
+- ["So21UITableViewControllerC", "cloudController"]
+- ["So21UITableViewControllerC", "coreDataController"]
+- ["So21UITableViewControllerC", "delegate"]
+- !private ["So21UITableViewControllerC", "dismiss"]
+- ["So21UITableViewControllerC", "init"]
+- !private ["So21UITableViewControllerC", "init"]
+- ["So21UITableViewControllerC", "owningClass"]
+- ["So21UITableViewControllerC", "save"]
+- ["So21UITableViewControllerC", "saveButton"]
+- ["So21UITableViewControllerC", "saveButtonTapped"]
+- ["So21UITableViewControllerC", "tableView"]
+- ["So21UITableViewControllerC", "textField"]
+- ["So21UITableViewControllerC", "textFieldTextChanged"]
+- ["So21UITableViewControllerC", "updateSaveButton"]
+- ["So21UITableViewControllerC", "viewDidLoad"]
+- !private ["So21UITableViewDataSourceP", "Assignment"]
+- ["So21UITableViewDataSourceP", ""]
+- !private ["So21UITableViewDataSourceP", "cloudController"]
+- !private ["So21UITableViewDataSourceP", "coreDataController"]
+- !private ["So21UITableViewDataSourceP", "delegate"]
+- !private ["So21UITableViewDataSourceP", "dismiss"]
+- !private ["So21UITableViewDataSourceP", "init"]
+- !private ["So21UITableViewDataSourceP", "init"]
+- !private ["So21UITableViewDataSourceP", "owningClass"]
+- !private ["So21UITableViewDataSourceP", "save"]
+- !private ["So21UITableViewDataSourceP", "saveButton"]
+- !private ["So21UITableViewDataSourceP", "textField"]
+- !private ["So21UITableViewDataSourceP", "updateSaveButton"]
+- !private ["So21UITableViewDataSourceP", "viewDidLoad"]
+- !private ["So19UITableViewDelegateP", "Assignment"]
+- ["So19UITableViewDelegateP", ""]
+- !private ["So19UITableViewDelegateP", "cloudController"]
+- !private ["So19UITableViewDelegateP", "coreDataController"]
+- !private ["So19UITableViewDelegateP", "delegate"]
+- !private ["So19UITableViewDelegateP", "dismiss"]
+- !private ["So19UITableViewDelegateP", "init"]
+- !private ["So19UITableViewDelegateP", "init"]
+- !private ["So19UITableViewDelegateP", "owningClass"]
+- !private ["So19UITableViewDelegateP", "save"]
+- !private ["So19UITableViewDelegateP", "saveButton"]
+- !private ["So19UITableViewDelegateP", "textField"]
+- !private ["So19UITableViewDelegateP", "updateSaveButton"]
+- !private ["So19UITableViewDelegateP", "viewDidLoad"]
+- !private ["So15UITextDraggableP", "becomeFirstResponder"]
+- !private ["So15UITextDraggableP", "text"]
+- !private ["So15UITextDroppableP", "becomeFirstResponder"]
+- !private ["So15UITextDroppableP", "text"]
+- !private ["So11UITextFieldC", "becomeFirstResponder"]
+- !private ["So11UITextFieldC", "text"]
+- !private ["So11UITextInputP", "becomeFirstResponder"]
+- !private ["So11UITextInputP", "text"]
+- !private ["So17UITextInputTraitsP", "becomeFirstResponder"]
+- !private ["So17UITextInputTraitsP", "text"]
+- !private ["So34UITextPasteConfigurationSupportingP", "becomeFirstResponder"]
+- !private ["So34UITextPasteConfigurationSupportingP", "text"]
+- !private ["So18UITraitEnvironmentP", "Assignment"]
+- ["So18UITraitEnvironmentP", ""]
+- !private ["So18UITraitEnvironmentP", "becomeFirstResponder"]
+- !private ["So18UITraitEnvironmentP", "cloudController"]
+- !private ["So18UITraitEnvironmentP", "coreDataController"]
+- !private ["So18UITraitEnvironmentP", "delegate"]
+- !private ["So18UITraitEnvironmentP", "deselectRow"]
+- !private ["So18UITraitEnvironmentP", "dismiss"]
+- !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "owningClass"]
+- !private ["So18UITraitEnvironmentP", "save"]
+- !private ["So18UITraitEnvironmentP", "saveButton"]
+- !private ["So18UITraitEnvironmentP", "text"]
+- !private ["So18UITraitEnvironmentP", "textField"]
+- !private ["So18UITraitEnvironmentP", "updateSaveButton"]
+- !private ["So18UITraitEnvironmentP", "viewDidLoad"]
+- !private ["So23UIUserActivityRestoringP", "Assignment"]
+- ["So23UIUserActivityRestoringP", ""]
+- !private ["So23UIUserActivityRestoringP", "becomeFirstResponder"]
+- !private ["So23UIUserActivityRestoringP", "cloudController"]
+- !private ["So23UIUserActivityRestoringP", "coreDataController"]
+- !private ["So23UIUserActivityRestoringP", "delegate"]
+- !private ["So23UIUserActivityRestoringP", "deselectRow"]
+- !private ["So23UIUserActivityRestoringP", "dismiss"]
+- !private ["So23UIUserActivityRestoringP", "init"]
+- !private ["So23UIUserActivityRestoringP", "init"]
+- !private ["So23UIUserActivityRestoringP", "owningClass"]
+- !private ["So23UIUserActivityRestoringP", "save"]
+- !private ["So23UIUserActivityRestoringP", "saveButton"]
+- !private ["So23UIUserActivityRestoringP", "text"]
+- !private ["So23UIUserActivityRestoringP", "textField"]
+- !private ["So23UIUserActivityRestoringP", "updateSaveButton"]
+- !private ["So23UIUserActivityRestoringP", "viewDidLoad"]
+- !private ["So6UIViewC", "becomeFirstResponder"]
+- !private ["So6UIViewC", "deselectRow"]
+- !private ["So6UIViewC", "text"]
+- ["So16UIViewControllerC", "AddAssignmentTableViewControllerDelegate"]
+- !private ["So16UIViewControllerC", "Assignment"]
+- ["So16UIViewControllerC", "Class"]
+- ["So16UIViewControllerC", "CloudController"]
+- ["So16UIViewControllerC", "CoreDataController"]
+- ["So16UIViewControllerC", "IndexPath"]
+- ["So16UIViewControllerC", "UIBarButtonItem"]
+- ["So16UIViewControllerC", "UITableView"]
+- ["So16UIViewControllerC", "UITextField"]
+- ["So16UIViewControllerC", "cancelButtonTapped"]
+- ["So16UIViewControllerC", "cloudController"]
+- ["So16UIViewControllerC", "coreDataController"]
+- ["So16UIViewControllerC", "delegate"]
+- !private ["So16UIViewControllerC", "dismiss"]
+- ["So16UIViewControllerC", "init"]
+- !private ["So16UIViewControllerC", "init"]
+- ["So16UIViewControllerC", "owningClass"]
+- ["So16UIViewControllerC", "save"]
+- ["So16UIViewControllerC", "saveButton"]
+- ["So16UIViewControllerC", "saveButtonTapped"]
+- ["So16UIViewControllerC", "tableView"]
+- ["So16UIViewControllerC", "textField"]
+- ["So16UIViewControllerC", "textFieldTextChanged"]
+- ["So16UIViewControllerC", "updateSaveButton"]
+- ["So16UIViewControllerC", "viewDidLoad"]
+- !private ["s30_CustomPlaygroundQuickLookableP", "isEmpty"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "isEmpty"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "isEmpty"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "isEmpty"]
+- !private ["s19_HasContiguousBytesP", "isEmpty"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "isEmpty"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Assignment"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "becomeFirstResponder"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ckRecord"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "cloudController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "coreDataController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "deselectRow"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dismiss"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isEmpty"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isEnabled"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "owningClass"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "recordID"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "save"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "saveButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "textField"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "updateSaveButton"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "viewDidLoad"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "zoneID"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Assignment"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "becomeFirstResponder"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ckRecord"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "cloudController"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "coreDataController"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "delegate"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "deselectRow"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "dismiss"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isEmpty"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isEnabled"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "owningClass"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "recordID"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "save"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "saveButton"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "text"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "textField"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "updateSaveButton"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "viewDidLoad"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "zoneID"]
+- !private ["s21_ObjectiveCBridgeableP", "becomeFirstResponder"]
+- !private ["s21_ObjectiveCBridgeableP", "ckRecord"]
+- !private ["s21_ObjectiveCBridgeableP", "isEmpty"]
+- !private ["s21_ObjectiveCBridgeableP", "isEnabled"]
+- !private ["s21_ObjectiveCBridgeableP", "managedContext"]
+- !private ["s21_ObjectiveCBridgeableP", "text"]
+- !private ["s21_ObjectiveCBridgeableP", "zoneID"]
+- !private ["So13CKRecordValueP", "isEmpty"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "becomeFirstResponder"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "deselectRow"]
+- !private ["s38__DefaultCustomPlaygroundQuickLookableP", "text"]
+depends-nominal:
+- "6Bubble32AddAssignmentTableViewControllerC"
+- "6Bubble40AddAssignmentTableViewControllerDelegateP"
+- !private "6Bubble10AssignmentC"
+- !private "SK"
+- !private "So15CALayerDelegateP"
+- !private "So8CKRecordC"
+- !private "So23CKRecordKeyValueSettingP"
+- !private "8CloudKit21CKRecordValueProtocolP"
+- "s7CVarArgP"
+- !private "6Bubble5ClassC"
+- !private "6Bubble15CloudControllerC"
+- !private "6Bubble15CloudUploadableP"
+- !private "Sl"
+- !private "SL"
+- !private "6Bubble18CoreDataControllerC"
+- !private "6Bubble18CoreDataUploadableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s23ExpressibleByNilLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "So10CKRecordIDC"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- "So8NSCodingP"
+- !private "So9NSCopyingP"
+- "So26NSExtensionRequestHandlingP"
+- !private "So20NSFetchRequestResultP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So15NSManagedObjectC"
+- !private "So16NSMutableCopyingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- !private "So8NSStringC"
+- !private "7Combine16ObservableObjectP"
+- !private "Sq"
+- !private "Sm"
+- !private "ST"
+- !private "SS"
+- !private "Sy"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "So29UIAccessibilityIdentificationP"
+- !private "So12UIAppearanceP"
+- "So21UIAppearanceContainerP"
+- !private "So15UIBarButtonItemC"
+- !private "So9UIBarItemC"
+- "So18UIContentContainerP"
+- !private "So30UIContentSizeCategoryAdjustingP"
+- !private "So9UIControlC"
+- !private "So17UICoordinateSpaceP"
+- !private "So23UIDataSourceTranslatingP"
+- !private "So13UIDynamicItemP"
+- "So18UIFocusEnvironmentP"
+- !private "So11UIFocusItemP"
+- !private "So20UIFocusItemContainerP"
+- !private "So30UIFocusItemScrollableContainerP"
+- !private "So10UIKeyInputP"
+- !private "So24UILargeContentViewerItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- !private "So12UIScrollViewC"
+- "So20UIScrollViewDelegateP"
+- !private "So35UISpringLoadedInteractionSupportingP"
+- "So16UIStateRestoringP"
+- !private "So11UITableViewC"
+- "So21UITableViewControllerC"
+- "So21UITableViewDataSourceP"
+- "So19UITableViewDelegateP"
+- !private "So15UITextDraggableP"
+- !private "So15UITextDroppableP"
+- !private "So11UITextFieldC"
+- !private "So11UITextInputP"
+- !private "So17UITextInputTraitsP"
+- !private "So34UITextPasteConfigurationSupportingP"
+- "So18UITraitEnvironmentP"
+- "So23UIUserActivityRestoringP"
+- !private "So6UIViewC"
+- "So16UIViewControllerC"
+- !private "s30_CustomPlaygroundQuickLookableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s19_HasContiguousBytesP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "So13CKRecordValueP"
+- !private "s38__DefaultCustomPlaygroundQuickLookableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreData.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreImage.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/QuartzCore.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Dispatch.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Metal.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Darwin.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreLocation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Foundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreFoundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreGraphics.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Swift.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/UIKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CloudKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Combine.framework/Modules/Combine.swiftmodule/arm64-apple-ios.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/ObjectiveC.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreData.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreImage.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/QuartzCore.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Dispatch.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Metal.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Darwin.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreLocation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Foundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreFoundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreGraphics.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Swift.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/UIKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CloudKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "d5161909e5dd74c180b20127462a61c3"

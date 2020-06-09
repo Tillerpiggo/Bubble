@@ -1,0 +1,522 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ToDo"
+provides-nominal:
+- "6Bubble4ToDoC"
+provides-member:
+- ["6Bubble4ToDoC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "??"
+- "Assignment"
+- "AssignmentPrecedence"
+- "Bool"
+- !private "BooleanLiteralType"
+- "CKRecord"
+- !private "CKRecordValue"
+- "CKRecordZone"
+- "CastingPrecedence"
+- "CloudUploadable"
+- "CoreDataUploadable"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- "NSEntityDescription"
+- !private "NSKeyedUnarchiver"
+- "NSManagedObject"
+- "NSManagedObjectContext"
+- "StringLiteralType"
+- "ToDo"
+- !private "UUID"
+- !private "print"
+depends-member:
+- !private ["6Bubble10AssignmentC", "ckRecord"]
+- !private ["6Bubble10AssignmentC", "deinit"]
+- !private ["6Bubble10AssignmentC", "owningClass"]
+- !private ["So8CKRecordC", "ID"]
+- !private ["So8CKRecordC", "encoded"]
+- ["So8CKRecordC", "init"]
+- !private ["So8CKRecordC", "recordID"]
+- !private ["So8CKRecordC", "subscript"]
+- !private ["So23CKRecordKeyValueSettingP", "ID"]
+- !private ["So23CKRecordKeyValueSettingP", "encoded"]
+- ["So23CKRecordKeyValueSettingP", "init"]
+- !private ["So23CKRecordKeyValueSettingP", "recordID"]
+- !private ["So23CKRecordKeyValueSettingP", "subscript"]
+- ["So12CKRecordZoneC", "ID"]
+- ["s7CVarArgP", "CKRecord"]
+- ["s7CVarArgP", "ID"]
+- !private ["s7CVarArgP", "NSEntityDescription"]
+- !private ["s7CVarArgP", "NSKeyedUnarchiver"]
+- !private ["s7CVarArgP", "UUID"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "assignment"]
+- ["s7CVarArgP", "ckRecord"]
+- ["s7CVarArgP", "coreData"]
+- !private ["s7CVarArgP", "encoded"]
+- !private ["s7CVarArgP", "encodedSystemFields"]
+- !private ["s7CVarArgP", "entity"]
+- !private ["s7CVarArgP", "finishDecoding"]
+- !private ["s7CVarArgP", "generateRecord"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "isCompleted"]
+- ["s7CVarArgP", "isSynced"]
+- !private ["s7CVarArgP", "owningClass"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "recordID"]
+- !private ["s7CVarArgP", "recordName"]
+- !private ["s7CVarArgP", "requiresSecureCoding"]
+- !private ["s7CVarArgP", "subscript"]
+- ["s7CVarArgP", "update"]
+- !private ["6Bubble5ClassC", "ckRecord"]
+- !private ["6Bubble5ClassC", "deinit"]
+- ["6Bubble15CloudUploadableP", "CKRecord"]
+- !private ["6Bubble15CloudUploadableP", "NSEntityDescription"]
+- !private ["6Bubble15CloudUploadableP", "NSKeyedUnarchiver"]
+- !private ["6Bubble15CloudUploadableP", "UUID"]
+- ["6Bubble15CloudUploadableP", ""]
+- !private ["6Bubble15CloudUploadableP", "assignment"]
+- ["6Bubble15CloudUploadableP", "ckRecord"]
+- ["6Bubble15CloudUploadableP", "coreData"]
+- !private ["6Bubble15CloudUploadableP", "encodedSystemFields"]
+- !private ["6Bubble15CloudUploadableP", "generateRecord"]
+- !private ["6Bubble15CloudUploadableP", "isCompleted"]
+- ["6Bubble15CloudUploadableP", "isSynced"]
+- !private ["6Bubble15CloudUploadableP", "owningClass"]
+- !private ["6Bubble15CloudUploadableP", "print"]
+- ["6Bubble15CloudUploadableP", "update"]
+- ["6Bubble18CoreDataUploadableP", "CKRecord"]
+- !private ["6Bubble18CoreDataUploadableP", "NSEntityDescription"]
+- !private ["6Bubble18CoreDataUploadableP", "NSKeyedUnarchiver"]
+- !private ["6Bubble18CoreDataUploadableP", "UUID"]
+- ["6Bubble18CoreDataUploadableP", ""]
+- !private ["6Bubble18CoreDataUploadableP", "assignment"]
+- ["6Bubble18CoreDataUploadableP", "ckRecord"]
+- ["6Bubble18CoreDataUploadableP", "coreData"]
+- !private ["6Bubble18CoreDataUploadableP", "encodedSystemFields"]
+- !private ["6Bubble18CoreDataUploadableP", "generateRecord"]
+- !private ["6Bubble18CoreDataUploadableP", "isCompleted"]
+- ["6Bubble18CoreDataUploadableP", "isSynced"]
+- !private ["6Bubble18CoreDataUploadableP", "owningClass"]
+- !private ["6Bubble18CoreDataUploadableP", "print"]
+- ["6Bubble18CoreDataUploadableP", "update"]
+- ["s28CustomDebugStringConvertibleP", "CKRecord"]
+- ["s28CustomDebugStringConvertibleP", "ID"]
+- !private ["s28CustomDebugStringConvertibleP", "NSEntityDescription"]
+- !private ["s28CustomDebugStringConvertibleP", "NSKeyedUnarchiver"]
+- !private ["s28CustomDebugStringConvertibleP", "UUID"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "assignment"]
+- ["s28CustomDebugStringConvertibleP", "ckRecord"]
+- ["s28CustomDebugStringConvertibleP", "coreData"]
+- !private ["s28CustomDebugStringConvertibleP", "encoded"]
+- !private ["s28CustomDebugStringConvertibleP", "encodedSystemFields"]
+- !private ["s28CustomDebugStringConvertibleP", "entity"]
+- !private ["s28CustomDebugStringConvertibleP", "finishDecoding"]
+- !private ["s28CustomDebugStringConvertibleP", "generateRecord"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "isCompleted"]
+- ["s28CustomDebugStringConvertibleP", "isSynced"]
+- !private ["s28CustomDebugStringConvertibleP", "owningClass"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "recordID"]
+- !private ["s28CustomDebugStringConvertibleP", "recordName"]
+- !private ["s28CustomDebugStringConvertibleP", "requiresSecureCoding"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- ["s28CustomDebugStringConvertibleP", "update"]
+- !private ["s28CustomDebugStringConvertibleP", "uuidString"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "uuidString"]
+- ["s23CustomStringConvertibleP", "CKRecord"]
+- ["s23CustomStringConvertibleP", "ID"]
+- !private ["s23CustomStringConvertibleP", "NSEntityDescription"]
+- !private ["s23CustomStringConvertibleP", "NSKeyedUnarchiver"]
+- !private ["s23CustomStringConvertibleP", "UUID"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "assignment"]
+- ["s23CustomStringConvertibleP", "ckRecord"]
+- ["s23CustomStringConvertibleP", "coreData"]
+- !private ["s23CustomStringConvertibleP", "encoded"]
+- !private ["s23CustomStringConvertibleP", "encodedSystemFields"]
+- !private ["s23CustomStringConvertibleP", "entity"]
+- !private ["s23CustomStringConvertibleP", "finishDecoding"]
+- !private ["s23CustomStringConvertibleP", "generateRecord"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "isCompleted"]
+- ["s23CustomStringConvertibleP", "isSynced"]
+- !private ["s23CustomStringConvertibleP", "owningClass"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "recordID"]
+- !private ["s23CustomStringConvertibleP", "recordName"]
+- !private ["s23CustomStringConvertibleP", "requiresSecureCoding"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- ["s23CustomStringConvertibleP", "update"]
+- !private ["s23CustomStringConvertibleP", "uuidString"]
+- !private ["Se", "init"]
+- !private ["Se", "uuidString"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
+- !private ["SE", "init"]
+- !private ["SE", "uuidString"]
+- ["SQ", "CKRecord"]
+- ["SQ", "ID"]
+- !private ["SQ", "NSEntityDescription"]
+- !private ["SQ", "NSKeyedUnarchiver"]
+- !private ["SQ", "UUID"]
+- ["SQ", ""]
+- !private ["SQ", "assignment"]
+- ["SQ", "ckRecord"]
+- ["SQ", "coreData"]
+- !private ["SQ", "encoded"]
+- !private ["SQ", "encodedSystemFields"]
+- !private ["SQ", "entity"]
+- !private ["SQ", "finishDecoding"]
+- !private ["SQ", "generateRecord"]
+- ["SQ", "init"]
+- !private ["SQ", "isCompleted"]
+- ["SQ", "isSynced"]
+- !private ["SQ", "owningClass"]
+- !private ["SQ", "print"]
+- !private ["SQ", "recordID"]
+- !private ["SQ", "recordName"]
+- !private ["SQ", "requiresSecureCoding"]
+- !private ["SQ", "subscript"]
+- ["SQ", "update"]
+- !private ["SQ", "uuidString"]
+- ["SH", "CKRecord"]
+- ["SH", "ID"]
+- !private ["SH", "NSEntityDescription"]
+- !private ["SH", "NSKeyedUnarchiver"]
+- !private ["SH", "UUID"]
+- ["SH", ""]
+- !private ["SH", "assignment"]
+- ["SH", "ckRecord"]
+- ["SH", "coreData"]
+- !private ["SH", "encoded"]
+- !private ["SH", "encodedSystemFields"]
+- !private ["SH", "entity"]
+- !private ["SH", "finishDecoding"]
+- !private ["SH", "generateRecord"]
+- ["SH", "init"]
+- !private ["SH", "isCompleted"]
+- ["SH", "isSynced"]
+- !private ["SH", "owningClass"]
+- !private ["SH", "print"]
+- !private ["SH", "recordID"]
+- !private ["SH", "recordName"]
+- !private ["SH", "requiresSecureCoding"]
+- !private ["SH", "subscript"]
+- ["SH", "update"]
+- !private ["SH", "uuidString"]
+- !private ["So10CKRecordIDC", "init"]
+- !private ["So10CKRecordIDC", "recordName"]
+- !private ["So7NSCoderC", "finishDecoding"]
+- !private ["So7NSCoderC", "init"]
+- !private ["So7NSCoderC", "requiresSecureCoding"]
+- ["So8NSCodingP", "ID"]
+- !private ["So8NSCodingP", "encoded"]
+- !private ["So8NSCodingP", "entity"]
+- ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "recordID"]
+- !private ["So8NSCodingP", "recordName"]
+- !private ["So8NSCodingP", "subscript"]
+- ["So9NSCopyingP", "ID"]
+- !private ["So9NSCopyingP", "encoded"]
+- !private ["So9NSCopyingP", "entity"]
+- ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "recordID"]
+- !private ["So9NSCopyingP", "recordName"]
+- !private ["So9NSCopyingP", "subscript"]
+- !private ["So19NSEntityDescriptionC", "entity"]
+- !private ["So17NSFastEnumerationP", "entity"]
+- ["So20NSFetchRequestResultP", "CKRecord"]
+- !private ["So20NSFetchRequestResultP", "NSEntityDescription"]
+- !private ["So20NSFetchRequestResultP", "NSKeyedUnarchiver"]
+- !private ["So20NSFetchRequestResultP", "UUID"]
+- ["So20NSFetchRequestResultP", ""]
+- !private ["So20NSFetchRequestResultP", "assignment"]
+- ["So20NSFetchRequestResultP", "ckRecord"]
+- ["So20NSFetchRequestResultP", "coreData"]
+- !private ["So20NSFetchRequestResultP", "encodedSystemFields"]
+- !private ["So20NSFetchRequestResultP", "generateRecord"]
+- !private ["So20NSFetchRequestResultP", "init"]
+- !private ["So20NSFetchRequestResultP", "isCompleted"]
+- ["So20NSFetchRequestResultP", "isSynced"]
+- !private ["So20NSFetchRequestResultP", "owningClass"]
+- !private ["So20NSFetchRequestResultP", "print"]
+- ["So20NSFetchRequestResultP", "update"]
+- !private ["So17NSKeyedUnarchiverC", "finishDecoding"]
+- !private ["So17NSKeyedUnarchiverC", "init"]
+- !private ["So17NSKeyedUnarchiverC", "requiresSecureCoding"]
+- ["So15NSManagedObjectC", "Assignment"]
+- ["So15NSManagedObjectC", "Bool"]
+- ["So15NSManagedObjectC", "CKRecord"]
+- !private ["So15NSManagedObjectC", "CKRecordValue"]
+- ["So15NSManagedObjectC", "CKRecordZone"]
+- ["So15NSManagedObjectC", "NSEntityDescription"]
+- !private ["So15NSManagedObjectC", "NSKeyedUnarchiver"]
+- ["So15NSManagedObjectC", "NSManagedObject"]
+- ["So15NSManagedObjectC", "NSManagedObjectContext"]
+- !private ["So15NSManagedObjectC", "UUID"]
+- ["So15NSManagedObjectC", ""]
+- !private ["So15NSManagedObjectC", "assignment"]
+- ["So15NSManagedObjectC", "ckRecord"]
+- ["So15NSManagedObjectC", "coreData"]
+- !private ["So15NSManagedObjectC", "encodedSystemFields"]
+- ["So15NSManagedObjectC", "generateRecord"]
+- ["So15NSManagedObjectC", "init"]
+- !private ["So15NSManagedObjectC", "isCompleted"]
+- ["So15NSManagedObjectC", "isSynced"]
+- !private ["So15NSManagedObjectC", "owningClass"]
+- !private ["So15NSManagedObjectC", "print"]
+- ["So15NSManagedObjectC", "update"]
+- ["So8NSObjectC", "Assignment"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "CKRecord"]
+- !private ["So8NSObjectC", "CKRecordValue"]
+- ["So8NSObjectC", "CKRecordZone"]
+- ["So8NSObjectC", "ID"]
+- ["So8NSObjectC", "NSEntityDescription"]
+- !private ["So8NSObjectC", "NSKeyedUnarchiver"]
+- ["So8NSObjectC", "NSManagedObject"]
+- ["So8NSObjectC", "NSManagedObjectContext"]
+- !private ["So8NSObjectC", "UUID"]
+- !private ["So8NSObjectC", "assignment"]
+- ["So8NSObjectC", "ckRecord"]
+- ["So8NSObjectC", "coreData"]
+- !private ["So8NSObjectC", "encoded"]
+- !private ["So8NSObjectC", "encodedSystemFields"]
+- !private ["So8NSObjectC", "entity"]
+- !private ["So8NSObjectC", "finishDecoding"]
+- ["So8NSObjectC", "generateRecord"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "isCompleted"]
+- ["So8NSObjectC", "isSynced"]
+- !private ["So8NSObjectC", "owningClass"]
+- !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "recordID"]
+- !private ["So8NSObjectC", "recordName"]
+- !private ["So8NSObjectC", "requiresSecureCoding"]
+- !private ["So8NSObjectC", "subscript"]
+- ["So8NSObjectC", "update"]
+- ["So8NSObjectP", "CKRecord"]
+- ["So8NSObjectP", "ID"]
+- !private ["So8NSObjectP", "NSEntityDescription"]
+- !private ["So8NSObjectP", "NSKeyedUnarchiver"]
+- !private ["So8NSObjectP", "UUID"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "assignment"]
+- ["So8NSObjectP", "ckRecord"]
+- ["So8NSObjectP", "coreData"]
+- !private ["So8NSObjectP", "encoded"]
+- !private ["So8NSObjectP", "encodedSystemFields"]
+- !private ["So8NSObjectP", "entity"]
+- !private ["So8NSObjectP", "finishDecoding"]
+- !private ["So8NSObjectP", "generateRecord"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "isCompleted"]
+- ["So8NSObjectP", "isSynced"]
+- !private ["So8NSObjectP", "owningClass"]
+- !private ["So8NSObjectP", "print"]
+- !private ["So8NSObjectP", "recordID"]
+- !private ["So8NSObjectP", "recordName"]
+- !private ["So8NSObjectP", "requiresSecureCoding"]
+- !private ["So8NSObjectP", "subscript"]
+- ["So8NSObjectP", "update"]
+- ["So14NSSecureCodingP", "ID"]
+- !private ["So14NSSecureCodingP", "encoded"]
+- ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "recordID"]
+- !private ["So14NSSecureCodingP", "recordName"]
+- !private ["So14NSSecureCodingP", "subscript"]
+- ["7Combine16ObservableObjectP", "CKRecord"]
+- !private ["7Combine16ObservableObjectP", "NSEntityDescription"]
+- !private ["7Combine16ObservableObjectP", "NSKeyedUnarchiver"]
+- !private ["7Combine16ObservableObjectP", "UUID"]
+- ["7Combine16ObservableObjectP", ""]
+- !private ["7Combine16ObservableObjectP", "assignment"]
+- ["7Combine16ObservableObjectP", "ckRecord"]
+- ["7Combine16ObservableObjectP", "coreData"]
+- !private ["7Combine16ObservableObjectP", "encodedSystemFields"]
+- !private ["7Combine16ObservableObjectP", "generateRecord"]
+- !private ["7Combine16ObservableObjectP", "init"]
+- !private ["7Combine16ObservableObjectP", "isCompleted"]
+- ["7Combine16ObservableObjectP", "isSynced"]
+- !private ["7Combine16ObservableObjectP", "owningClass"]
+- !private ["7Combine16ObservableObjectP", "print"]
+- ["7Combine16ObservableObjectP", "update"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "uuidString"]
+- !private ["ST", "ID"]
+- !private ["ST", "encoded"]
+- ["ST", "init"]
+- !private ["ST", "recordID"]
+- !private ["ST", "subscript"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
+- ["6Bubble4ToDoC", "Assignment"]
+- ["6Bubble4ToDoC", "Bool"]
+- ["6Bubble4ToDoC", "CKRecord"]
+- !private ["6Bubble4ToDoC", "CKRecordValue"]
+- ["6Bubble4ToDoC", "CKRecordZone"]
+- ["6Bubble4ToDoC", "NSEntityDescription"]
+- !private ["6Bubble4ToDoC", "NSKeyedUnarchiver"]
+- ["6Bubble4ToDoC", "NSManagedObject"]
+- ["6Bubble4ToDoC", "NSManagedObjectContext"]
+- !private ["6Bubble4ToDoC", "UUID"]
+- !private ["6Bubble4ToDoC", "assignment"]
+- ["6Bubble4ToDoC", "ckRecord"]
+- ["6Bubble4ToDoC", "coreData"]
+- ["6Bubble4ToDoC", "deinit"]
+- !private ["6Bubble4ToDoC", "encodedSystemFields"]
+- ["6Bubble4ToDoC", "generateRecord"]
+- ["6Bubble4ToDoC", "init"]
+- !private ["6Bubble4ToDoC", "isCompleted"]
+- ["6Bubble4ToDoC", "isSynced"]
+- !private ["6Bubble4ToDoC", "print"]
+- ["6Bubble4ToDoC", "update"]
+- !private ["10Foundation4UUIDV", "init"]
+- !private ["10Foundation4UUIDV", "uuidString"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "CKRecord"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "ID"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSEntityDescription"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSKeyedUnarchiver"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UUID"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "assignment"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "ckRecord"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "coreData"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "encoded"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "encodedSystemFields"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "entity"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "finishDecoding"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "generateRecord"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isCompleted"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "isSynced"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "owningClass"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "recordID"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "recordName"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "requiresSecureCoding"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "subscript"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "update"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "CKRecord"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ID"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "NSEntityDescription"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "NSKeyedUnarchiver"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UUID"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "assignment"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ckRecord"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "coreData"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "encoded"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "encodedSystemFields"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "entity"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "finishDecoding"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "generateRecord"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isCompleted"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isSynced"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "owningClass"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "recordID"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "recordName"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "requiresSecureCoding"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "subscript"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "update"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "uuidString"]
+depends-nominal:
+- !private "6Bubble10AssignmentC"
+- "So8CKRecordC"
+- "So23CKRecordKeyValueSettingP"
+- "So12CKRecordZoneC"
+- "s7CVarArgP"
+- !private "6Bubble5ClassC"
+- "6Bubble15CloudUploadableP"
+- "6Bubble18CoreDataUploadableP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "s26DefaultStringInterpolationV"
+- !private "SE"
+- "SQ"
+- "SH"
+- !private "So10CKRecordIDC"
+- !private "So7NSCoderC"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- !private "So19NSEntityDescriptionC"
+- !private "So17NSFastEnumerationP"
+- "So20NSFetchRequestResultP"
+- !private "So17NSKeyedUnarchiverC"
+- "So15NSManagedObjectC"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "So14NSSecureCodingP"
+- "7Combine16ObservableObjectP"
+- !private "10Foundation20ReferenceConvertibleP"
+- "ST"
+- !private "s27StringInterpolationProtocolP"
+- !private "s16TextOutputStreamP"
+- "6Bubble4ToDoC"
+- !private "10Foundation4UUIDV"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreData.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreImage.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/QuartzCore.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Dispatch.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Metal.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Darwin.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreLocation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Foundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreFoundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreGraphics.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Swift.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/UIKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CloudKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Combine.framework/Modules/Combine.swiftmodule/arm64-apple-ios.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/ObjectiveC.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreData.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreImage.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/QuartzCore.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Dispatch.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Metal.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Darwin.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreLocation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Foundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreFoundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreGraphics.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Swift.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/UIKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CloudKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "28116b69f3e99d7c30a9af36667663b2"

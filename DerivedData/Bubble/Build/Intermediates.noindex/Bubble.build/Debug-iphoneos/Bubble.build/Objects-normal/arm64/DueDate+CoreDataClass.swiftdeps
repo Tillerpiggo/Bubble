@@ -1,0 +1,350 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "DueDate"
+provides-nominal:
+- "6Bubble7DueDateC"
+provides-member:
+- ["6Bubble7DueDateC", ""]
+provides-dynamic-lookup:
+- "section"
+- "string"
+depends-top-level:
+- "AssignmentPrecedence"
+- !private "CKRecordValue"
+- "CastingPrecedence"
+- !private "Date"
+- "DueDate"
+- "DueDateType"
+- !private "FloatLiteralType"
+- "Int"
+- !private "IntegerLiteralType"
+- "NSDate"
+- "NSEntityDescription"
+- "NSManagedObject"
+- "NSManagedObjectContext"
+- "String"
+- !private "StringLiteralType"
+- !private "print"
+depends-member:
+- !private ["6Bubble10AssignmentC", "ckRecord"]
+- !private ["6Bubble10AssignmentC", "deinit"]
+- !private ["6Bubble10AssignmentC", "dueDateSection"]
+- !private ["So8CKRecordC", "subscript"]
+- !private ["So23CKRecordKeyValueSettingP", "subscript"]
+- !private ["s7CVarArgP", "DueDateType"]
+- !private ["s7CVarArgP", "NSEntityDescription"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "ckRecord"]
+- !private ["s7CVarArgP", "date"]
+- !private ["s7CVarArgP", "dueDateSection"]
+- !private ["s7CVarArgP", "dueDateType"]
+- !private ["s7CVarArgP", "entity"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "owningAssignment"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "section"]
+- !private ["s7CVarArgP", "subscript"]
+- !private ["s7CVarArgP", "updateCKRecordDueDate"]
+- !private ["s7CVarArgP", "updateDueDateType"]
+- !private ["6Bubble15CloudUploadableP", "ckRecord"]
+- !private ["6Bubble15CloudUploadableP", "dueDateSection"]
+- !private ["SL", "init"]
+- !private ["SL", "section"]
+- !private ["SL", "string"]
+- !private ["6Bubble18CoreDataUploadableP", "ckRecord"]
+- !private ["6Bubble18CoreDataUploadableP", "dueDateSection"]
+- !private ["s28CustomDebugStringConvertibleP", "DueDateType"]
+- !private ["s28CustomDebugStringConvertibleP", "NSEntityDescription"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "ckRecord"]
+- !private ["s28CustomDebugStringConvertibleP", "date"]
+- !private ["s28CustomDebugStringConvertibleP", "dueDateSection"]
+- !private ["s28CustomDebugStringConvertibleP", "dueDateType"]
+- !private ["s28CustomDebugStringConvertibleP", "entity"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "owningAssignment"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "section"]
+- !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s28CustomDebugStringConvertibleP", "updateCKRecordDueDate"]
+- !private ["s28CustomDebugStringConvertibleP", "updateDueDateType"]
+- !private ["s23CustomStringConvertibleP", "DueDateType"]
+- !private ["s23CustomStringConvertibleP", "NSEntityDescription"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "appendInterpolation"]
+- !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "ckRecord"]
+- !private ["s23CustomStringConvertibleP", "date"]
+- !private ["s23CustomStringConvertibleP", "dueDateSection"]
+- !private ["s23CustomStringConvertibleP", "dueDateType"]
+- !private ["s23CustomStringConvertibleP", "entity"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "owningAssignment"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "section"]
+- !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "updateCKRecordDueDate"]
+- !private ["s23CustomStringConvertibleP", "updateDueDateType"]
+- !private ["s26DefaultStringInterpolationV", "appendInterpolation"]
+- !private ["s26DefaultStringInterpolationV", "appendLiteral"]
+- !private ["6Bubble7DueDateC", "CKRecordValue"]
+- !private ["6Bubble7DueDateC", "Date"]
+- ["6Bubble7DueDateC", "DueDateType"]
+- ["6Bubble7DueDateC", "Int"]
+- ["6Bubble7DueDateC", "NSDate"]
+- ["6Bubble7DueDateC", "NSEntityDescription"]
+- ["6Bubble7DueDateC", "NSManagedObjectContext"]
+- ["6Bubble7DueDateC", "String"]
+- !private ["6Bubble7DueDateC", "date"]
+- ["6Bubble7DueDateC", "deinit"]
+- ["6Bubble7DueDateC", "dueDateChanged"]
+- ["6Bubble7DueDateC", "dueDateType"]
+- ["6Bubble7DueDateC", "init"]
+- !private ["6Bubble7DueDateC", "owningAssignment"]
+- !private ["6Bubble7DueDateC", "print"]
+- ["6Bubble7DueDateC", "section"]
+- ["6Bubble7DueDateC", "string"]
+- ["6Bubble7DueDateC", "updateCKRecordDueDate"]
+- ["6Bubble7DueDateC", "updateDueDateType"]
+- !private ["6Bubble11DueDateTypeO", "init"]
+- !private ["6Bubble11DueDateTypeO", "section"]
+- !private ["6Bubble11DueDateTypeO", "string"]
+- !private ["SQ", "DueDateType"]
+- !private ["SQ", "NSEntityDescription"]
+- ["SQ", ""]
+- !private ["SQ", "ckRecord"]
+- !private ["SQ", "date"]
+- !private ["SQ", "dueDateSection"]
+- !private ["SQ", "dueDateType"]
+- !private ["SQ", "entity"]
+- !private ["SQ", "init"]
+- !private ["SQ", "owningAssignment"]
+- !private ["SQ", "print"]
+- !private ["SQ", "section"]
+- !private ["SQ", "string"]
+- !private ["SQ", "subscript"]
+- !private ["SQ", "updateCKRecordDueDate"]
+- !private ["SQ", "updateDueDateType"]
+- !private ["SH", "DueDateType"]
+- !private ["SH", "NSEntityDescription"]
+- ["SH", ""]
+- !private ["SH", "ckRecord"]
+- !private ["SH", "date"]
+- !private ["SH", "dueDateSection"]
+- !private ["SH", "dueDateType"]
+- !private ["SH", "entity"]
+- !private ["SH", "init"]
+- !private ["SH", "owningAssignment"]
+- !private ["SH", "print"]
+- !private ["SH", "section"]
+- !private ["SH", "string"]
+- !private ["SH", "subscript"]
+- !private ["SH", "updateCKRecordDueDate"]
+- !private ["SH", "updateDueDateType"]
+- !private ["So8NSCodingP", "entity"]
+- !private ["So8NSCodingP", "subscript"]
+- !private ["So9NSCopyingP", "entity"]
+- !private ["So9NSCopyingP", "subscript"]
+- !private ["So19NSEntityDescriptionC", "entity"]
+- !private ["So17NSFastEnumerationP", "entity"]
+- !private ["So20NSFetchRequestResultP", "DueDateType"]
+- !private ["So20NSFetchRequestResultP", "NSEntityDescription"]
+- ["So20NSFetchRequestResultP", ""]
+- !private ["So20NSFetchRequestResultP", "ckRecord"]
+- !private ["So20NSFetchRequestResultP", "date"]
+- !private ["So20NSFetchRequestResultP", "dueDateSection"]
+- !private ["So20NSFetchRequestResultP", "dueDateType"]
+- !private ["So20NSFetchRequestResultP", "init"]
+- !private ["So20NSFetchRequestResultP", "owningAssignment"]
+- !private ["So20NSFetchRequestResultP", "print"]
+- !private ["So20NSFetchRequestResultP", "section"]
+- !private ["So20NSFetchRequestResultP", "updateCKRecordDueDate"]
+- !private ["So20NSFetchRequestResultP", "updateDueDateType"]
+- !private ["So15NSManagedObjectC", "CKRecordValue"]
+- !private ["So15NSManagedObjectC", "Date"]
+- ["So15NSManagedObjectC", "DueDateType"]
+- ["So15NSManagedObjectC", "Int"]
+- ["So15NSManagedObjectC", "NSDate"]
+- ["So15NSManagedObjectC", "NSEntityDescription"]
+- ["So15NSManagedObjectC", "NSManagedObjectContext"]
+- ["So15NSManagedObjectC", "String"]
+- ["So15NSManagedObjectC", ""]
+- !private ["So15NSManagedObjectC", "ckRecord"]
+- !private ["So15NSManagedObjectC", "date"]
+- ["So15NSManagedObjectC", "dueDateChanged"]
+- !private ["So15NSManagedObjectC", "dueDateSection"]
+- ["So15NSManagedObjectC", "dueDateType"]
+- ["So15NSManagedObjectC", "init"]
+- !private ["So15NSManagedObjectC", "owningAssignment"]
+- !private ["So15NSManagedObjectC", "print"]
+- ["So15NSManagedObjectC", "section"]
+- ["So15NSManagedObjectC", "string"]
+- ["So15NSManagedObjectC", "updateCKRecordDueDate"]
+- ["So15NSManagedObjectC", "updateDueDateType"]
+- !private ["So8NSObjectC", "CKRecordValue"]
+- !private ["So8NSObjectC", "Date"]
+- ["So8NSObjectC", "DueDateType"]
+- ["So8NSObjectC", "Int"]
+- ["So8NSObjectC", "NSDate"]
+- ["So8NSObjectC", "NSEntityDescription"]
+- ["So8NSObjectC", "NSManagedObjectContext"]
+- ["So8NSObjectC", "String"]
+- !private ["So8NSObjectC", "ckRecord"]
+- !private ["So8NSObjectC", "date"]
+- ["So8NSObjectC", "dueDateChanged"]
+- !private ["So8NSObjectC", "dueDateSection"]
+- ["So8NSObjectC", "dueDateType"]
+- !private ["So8NSObjectC", "entity"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "owningAssignment"]
+- !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "section"]
+- ["So8NSObjectC", "string"]
+- !private ["So8NSObjectC", "subscript"]
+- ["So8NSObjectC", "updateCKRecordDueDate"]
+- ["So8NSObjectC", "updateDueDateType"]
+- !private ["So8NSObjectP", "DueDateType"]
+- !private ["So8NSObjectP", "NSEntityDescription"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "ckRecord"]
+- !private ["So8NSObjectP", "date"]
+- !private ["So8NSObjectP", "dueDateSection"]
+- !private ["So8NSObjectP", "dueDateType"]
+- !private ["So8NSObjectP", "entity"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "owningAssignment"]
+- !private ["So8NSObjectP", "print"]
+- !private ["So8NSObjectP", "section"]
+- !private ["So8NSObjectP", "subscript"]
+- !private ["So8NSObjectP", "updateCKRecordDueDate"]
+- !private ["So8NSObjectP", "updateDueDateType"]
+- !private ["So14NSSecureCodingP", "subscript"]
+- !private ["7Combine16ObservableObjectP", "DueDateType"]
+- !private ["7Combine16ObservableObjectP", "NSEntityDescription"]
+- ["7Combine16ObservableObjectP", ""]
+- !private ["7Combine16ObservableObjectP", "ckRecord"]
+- !private ["7Combine16ObservableObjectP", "date"]
+- !private ["7Combine16ObservableObjectP", "dueDateSection"]
+- !private ["7Combine16ObservableObjectP", "dueDateType"]
+- !private ["7Combine16ObservableObjectP", "init"]
+- !private ["7Combine16ObservableObjectP", "owningAssignment"]
+- !private ["7Combine16ObservableObjectP", "print"]
+- !private ["7Combine16ObservableObjectP", "section"]
+- !private ["7Combine16ObservableObjectP", "updateCKRecordDueDate"]
+- !private ["7Combine16ObservableObjectP", "updateDueDateType"]
+- !private ["ST", "subscript"]
+- !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
+- !private ["s27StringInterpolationProtocolP", "appendLiteral"]
+- !private ["s16TextOutputStreamP", "appendInterpolation"]
+- !private ["s16TextOutputStreamP", "appendLiteral"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "DueDateType"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSEntityDescription"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ckRecord"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "date"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dueDateSection"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dueDateType"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "entity"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "owningAssignment"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "section"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "subscript"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "updateCKRecordDueDate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "updateDueDateType"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "DueDateType"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "NSEntityDescription"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ckRecord"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "date"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "dueDateSection"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "dueDateType"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "entity"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "owningAssignment"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "section"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "subscript"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "updateCKRecordDueDate"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "updateDueDateType"]
+depends-nominal:
+- !private "6Bubble10AssignmentC"
+- !private "So8CKRecordC"
+- !private "So23CKRecordKeyValueSettingP"
+- "s7CVarArgP"
+- !private "6Bubble15CloudUploadableP"
+- !private "SL"
+- !private "6Bubble18CoreDataUploadableP"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- !private "s26DefaultStringInterpolationV"
+- "6Bubble7DueDateC"
+- !private "6Bubble11DueDateTypeO"
+- "SQ"
+- "SH"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So19NSEntityDescriptionC"
+- !private "So17NSFastEnumerationP"
+- "So20NSFetchRequestResultP"
+- "So15NSManagedObjectC"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So14NSSecureCodingP"
+- "7Combine16ObservableObjectP"
+- !private "ST"
+- !private "s27StringInterpolationProtocolP"
+- !private "s16TextOutputStreamP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/ObjectiveC.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreData.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreImage.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/QuartzCore.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Dispatch.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Metal.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Darwin.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreLocation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Foundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreFoundation.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CoreGraphics.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/Swift.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/UIKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/CloudKit.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/lib/swift/SwiftOnoneSupport.swiftmodule/arm64.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Combine.framework/Modules/Combine.swiftmodule/arm64-apple-ios.swiftinterface"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/ObjectiveC.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreData.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreImage.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/QuartzCore.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Dispatch.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Metal.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Darwin.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreLocation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Foundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreFoundation.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CoreGraphics.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Swift.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/UIKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/CloudKit.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/SwiftOnoneSupport.swiftmodule/arm64.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/Combine.swiftmodule/arm64-apple-ios.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UserNotifications.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "7beadea2a1a5804131f773e95839592b"

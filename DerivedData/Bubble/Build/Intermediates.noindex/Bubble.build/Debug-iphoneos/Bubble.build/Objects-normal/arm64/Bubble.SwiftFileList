@@ -1,0 +1,49 @@
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Model/DueDate/DueDate+CoreDataClass.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Model/DueDate/DueDate+CoreDataProperties.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Model/CloudShare.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/UIExtension/UIApplication+Helpers.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/ClassTableViewController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View/Views/AddAssignmentView.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/iCloud/CloudUploadable.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View/TableViewCells/ClassTableViewCell.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Model/DueDate/DueDateType.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Model/CKRecord+Helpers.swift
+/Users/tylerg/Desktop/Bubble/ToDo+CoreDataClass.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/AddAssignmentViewController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/iCloud/CloudReachability.swift
+/Users/tylerg/Desktop/Bubble/Assignment+CoreDataClass.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/UIExtension/UINavigationBar+Helpers.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/UIExtension/UILabel+Helpers.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/UIExtension/UINavigationBar.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/AddObjectViewController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/Core\ Data/CoreDataStack.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/UIExtension/UIView+Helpers.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Old/AddClassTableViewController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/OtherExtensions/Date+Helpers.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/AssignmentViewController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View/Views/AddClassView.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View/Views/AddObjectView.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/UIExtension/UIImage+Helpers.swift
+/Users/tylerg/Desktop/Bubble/Class+CoreDataProperties.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View/TableViewCells/AssignmentTableViewCell.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/Core\ Data/CoreDataController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/AppDelegate.swift
+/Users/tylerg/Desktop/Bubble/Class+CoreDataClass.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View/Views/AssignmentHeaderFooterView.swift
+/Users/tylerg/Desktop/Bubble/ToDo+CoreDataProperties.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Old/AddAssignmentTableViewController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/iCloud/CloudKitErrorHandler.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/OtherExtensions/String+Helpers.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/TabBarController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/UIExtension/CAGradientLayer+Helpers.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View/Views/ProgressBarView.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/iCloud/CloudController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/ConnectionViewController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/UIExtension/UIColor+Helpers.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/ToDoTableViewController.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/DataCarrier.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View\ Controllers/ScheduleTableViewController.swift
+/Users/tylerg/Desktop/Bubble/Assignment+CoreDataProperties.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/RecordType.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/View/Views/ConnectionView.swift
+/Users/tylerg/Desktop/Bubble/MagnetHomeworkApp/Back-End/Core\ Data/CoreDataUploadable.swift
