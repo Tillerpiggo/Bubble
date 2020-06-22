@@ -87,7 +87,7 @@ class ProgressBarView: UIView {
     }
     
     private func updateColor() {
-        progressBarBackgroundView.backgroundColor = .red
+        progressBarBackgroundView.backgroundColor = color.withAlphaComponent(0.4)
         
         // Give gradient
         let gradient = CAGradientLayer()
@@ -96,7 +96,7 @@ class ProgressBarView: UIView {
         gradient.colors = [color, secondaryColor]
         
         //progressView.layer.insertSublayer(gradient, at: 0)
-        progressView.backgroundColor = .white
+        progressView.backgroundColor = color
     }
     
     private func roundCorners() {

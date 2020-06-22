@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 protocol ProgrammaticAddClassViewDelegate {
-    func addClass(withText text: String)
+    func addClass(withText text: String, color: Color)
     func didExpand()
     func didShrink()
 }
@@ -19,10 +19,10 @@ class ProgrammaticAddClassView: ProgrammaticView {
     
     var className: String?
     var delegate: ProgrammaticAddClassViewDelegate?
-    //var dynamicViewDelegate: DynamicViewDelegate?
+    var dynamicViewDelegate: DynamicViewDelegate?
     fileprivate var isExpanded: Bool = false
     
-    static let disabledColor: UIColor = UIColor(white: 0.825, alpha: 1.0)
+    let disabledColor: UIColor = UIColor(white: 0.825, alpha: 1.0)
     
     fileprivate let backgroundView: UIView = {
         let backgroundView = UIView()
@@ -30,11 +30,11 @@ class ProgrammaticAddClassView: ProgrammaticView {
         backgroundView.backgroundColor = .white
         
         // Round corners
-        backgroundView.layer.cornerRadius = 24
+        backgroundView.layer.cornerRadius = 18
         backgroundView.layer.masksToBounds = true
         
         // Add shadow
-        backgroundView.addDropShadow(color: .black, opacity: 0.10, radius: 8)
+        backgroundView.addDropShadow(color: .black, opacity: 0.08, radius: 5)
         
         return backgroundView
     }()
@@ -67,8 +67,7 @@ class ProgrammaticAddClassView: ProgrammaticView {
         let cancelButton = BouncyButton()
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let enabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 17, weight: .medium), .foregroundColor: UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)])
-        let disabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 17, weight: .medium), .foregroundColor: disabledColor])
+        let enabledCancelText = NSAttributedString(string: "Cancel", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .medium), .foregroundColor: UIColor(red: 1, green: 0.5, blue: 0.5, alpha: 1)])
         cancelButton.setAttributedTitle(enabledCancelText, for: .normal)
         cancelButton.isHidden = true
         cancelButton.layer.opacity = 0.0
@@ -78,15 +77,16 @@ class ProgrammaticAddClassView: ProgrammaticView {
         return cancelButton
     }()
     
-    private let doneButton: BouncyButton = {
+    private lazy var doneButton: BouncyButton = {
         let doneButton = BouncyButton()
+        let enabledDoneText: NSAttributedString = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: UIColor(red: 0.562, green: 0.711, blue: 1, alpha: 1)])
+        let disabledDoneText: NSAttributedString = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: disabledColor])
         doneButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        let enabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 17, weight: .bold), .foregroundColor: UIColor(red: 0.562, green: 0.711, blue: 1, alpha: 1)])
-        let disabledDoneText = NSAttributedString(string: "Done", attributes: [.font : UIFont.systemFont(ofSize: 17, weight: .bold), .foregroundColor: disabledColor])
         doneButton.setAttributedTitle(enabledDoneText, for: .normal)
+        doneButton.setAttributedTitle(disabledDoneText, for: .disabled)
         doneButton.isHidden = true
         doneButton.layer.opacity = 0.0
+        doneButton.isEnabled = false
         
         doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         
@@ -98,7 +98,11 @@ class ProgrammaticAddClassView: ProgrammaticView {
         titleTextView.translatesAutoresizingMaskIntoConstraints = false
         titleTextView.placeholder = "Enter class name..."
         titleTextView.delegate = self
+        titleTextView.dynamicViewDelegate = self
         titleTextView.isHidden = true
+        titleTextView.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        titleTextView.textColor = UIColor(white: 0.5, alpha: 1.0)
+        
         titleTextView.layer.opacity = 0.0
         titleTextView.isHidden = true
         
@@ -113,14 +117,43 @@ class ProgrammaticAddClassView: ProgrammaticView {
         return fillerView
     }()
     
-    private let colorPickerView: ColorPickerView = {
+    private lazy var colorPickerView: ColorPickerView = {
         let colorPickerView = ColorPickerView()
         colorPickerView.translatesAutoresizingMaskIntoConstraints = false
-        colorPickerView.backgroundColor = .blue
-        //colorPickerView.layer.opacity = 0.0
-        //colorPickerView.isHidden = true
+        colorPickerView.backgroundColor = .clear
+        colorPickerView.layer.opacity = 0.0
+        colorPickerView.isHidden = true
+        colorPickerView.delegate = self
         
         return colorPickerView
+    }()
+    
+    // This is the one on the left
+    private let colorTitleLabel: UILabel = {
+        let colorTitleLabel = UILabel()
+        colorTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        colorTitleLabel.textColor = UIColor(white: 0.342, alpha: 1.0)
+        colorTitleLabel.text = "Color"
+        colorTitleLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        colorTitleLabel.textAlignment = .left
+        colorTitleLabel.isHidden = true
+        colorTitleLabel.layer.opacity = 0.0
+        
+        return colorTitleLabel
+    }()
+    
+    // This is the one that changes color to match the selectedColor
+    private let colorLabel: UILabel = {
+        let colorLabel = UILabel()
+        colorLabel.translatesAutoresizingMaskIntoConstraints = false
+        colorLabel.textColor = UIColor(white: 0.8, alpha: 1.0)
+        colorLabel.text = "None"
+        colorLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        colorLabel.textAlignment = .right
+        colorLabel.isHidden = true
+        colorLabel.layer.opacity = 0.0
+        
+        return colorLabel
     }()
     
     override func setupView() {
@@ -140,7 +173,6 @@ class ProgrammaticAddClassView: ProgrammaticView {
     
     override func didMoveToSuperview() {
         addConstraints()
-        //titleTextViewHeightConstraint?.isActive = true
     }
     
     // MARK: - Expand and shrink
@@ -161,13 +193,17 @@ class ProgrammaticAddClassView: ProgrammaticView {
         self.cancelButton.layer.opacity = 0.0
         self.doneButton.layer.opacity = 0.0
         
-        
+        // TODO: Refactor this code into a hide([UIView]) function
         self.cancelButton.isHidden = false
         self.doneButton.isHidden = false
         self.titleTextView.isHidden = false
-        //self.colorPickerView.isHidden = false
+        self.colorPickerView.isHidden = false
+        self.colorLabel.isHidden = false
+        self.colorTitleLabel.isHidden = false
         
         self.expandButton.isEnabled = false
+        
+        self.titleTextView.select()
         //layoutIfNeeded()
         //setNeedsLayout()
         
@@ -181,11 +217,9 @@ class ProgrammaticAddClassView: ProgrammaticView {
             self.doneButton.layer.opacity = 1.0
             
             self.titleTextView.layer.opacity = 1.0
-            //self.colorPickerView.layer.opacity = 1.0
-            
-            
-            //self.dynamicViewDelegate?.sizeChanged()
-            //self.layoutIfNeeded()
+            self.colorPickerView.layer.opacity = 1.0
+            self.colorLabel.layer.opacity = 1.0
+            self.colorTitleLabel.layer.opacity = 1.0
             
             
             
@@ -212,9 +246,9 @@ class ProgrammaticAddClassView: ProgrammaticView {
             self.doneButton.layer.opacity = 0.0
             self.titleTextView.layer.opacity = 0.0
             self.colorPickerView.layer.opacity = 0.0
+            self.colorLabel.layer.opacity = 0.0
+            self.colorTitleLabel.layer.opacity = 0.0
             
-            //self.dynamicViewDelegate?.sizeChanged()
-            //self.layoutIfNeeded()
             self.delegate?.didShrink()
             
         }, completion: { [unowned self] (bool) in
@@ -236,14 +270,16 @@ extension ProgrammaticAddClassView: UITextViewDelegate {
     }
 }
 
-/*
+
 // MARK: - DynamicViewDelegate
 extension ProgrammaticAddClassView: DynamicViewDelegate {
     func sizeChanged() {
         dynamicViewDelegate?.sizeChanged()
+        
+        // Since this is called every time the text view is changed:
+        updateDoneButton()
     }
 }
- */
 
 // MARK: - Actions
 fileprivate extension ProgrammaticAddClassView {
@@ -257,7 +293,8 @@ fileprivate extension ProgrammaticAddClassView {
         expandButton.isEnabled = true
         
         // clear the text view
-        titleTextView.clear()
+        titleTextView.dismiss()
+        reset()
     }
     
     @objc func doneButtonPressed() {
@@ -265,7 +302,17 @@ fileprivate extension ProgrammaticAddClassView {
         expandButton.isEnabled = true
         
         // add a class
-        delegate?.addClass(withText: titleTextView.text)
+        delegate?.addClass(withText: titleTextView.text, color: colorPickerView.selectedColor!)
+        titleTextView.dismiss()
+        reset()
+    }
+}
+
+// MARK: - ColorPickerViewDelegate
+extension ProgrammaticAddClassView: ColorPickerViewDelegate {
+    func didSelect(color: Color) {
+        changeColorLabel(toColor: color)
+        updateDoneButton()
     }
 }
 
@@ -297,10 +344,11 @@ fileprivate extension ProgrammaticAddClassView {
         //self.addSubviews([backgroundView, expandButton])
         self.addSubview(backgroundView)
         
-        backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton, colorPickerView])
+        backgroundView.addSubviews([addClassLabel, titleTextView, cancelButton, doneButton, colorTitleLabel, colorLabel, colorPickerView])
     }
     
     // MARK: - Add Constraints
+    // Note - order matters, some of the constraints are dependent on the values of others
     func addConstraints() {
         addBackgroundViewConstraints()
         //addExpandButtonConstraints()
@@ -310,65 +358,85 @@ fileprivate extension ProgrammaticAddClassView {
         addDoneButtonConstraints()
         addTitleTextViewConstraints()
         addColorPickerCollectionViewConstraints()
-        //addFillerView()
+        addColorTitleLabelConstraints()
+        addColorLabelConstraints()
+        addColorTitleLabelConstraints()
     }
     
     func addBackgroundViewConstraints() {
         self.pinEdgesToView(backgroundView)
         backgroundView.accessibilityIdentifier = "backgroundView"
-        //backgroundView.addConstraints(top: addClassLabel.topAnchor, bottom: nil, leading: cancelButton.leadingAnchor, trailing: doneButton.trailingAnchor, topConstant: -20, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil)
-        
-        //backgroundView.addConstraints(top: nil, bottom: nil, leading: titleTextView.leadingAnchor, trailing: titleTextView.trailingAnchor, topConstant: 0, bottomConstant: 0, leadingConstant: -20, trailingConstant: -20, widthConstant: nil, heightConstant: nil, priority: 500)
     }
     
     func addAddClassLabelConstraints() {
-        //addClassLabel.addConstraints(top: backgroundView.topAnchor, bottom: nil, leading: cancelButton.trailingAnchor, trailing: doneButton.leadingAnchor, topConstant: 20, bottomConstant: 0, leadingConstant: 12, trailingConstant: 12, widthConstant: nil, heightConstant: nil, priority: 999)
-        addClassLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 20).isActive = true
+        addClassLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24).isActive = true
         addClassLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
     }
     
     func addExpandButtonConstraints() {
-        //expandButton.pinEdgesToView(self)
-        //backgroundView.pinEdgesToView(expandButton, priority: 1000)
-        //self.pinEdgesToView(expandButton)
         self.pinEdgesToView(expandButton)
     }
     
     // Random comment change
     
     func addCancelButtonConstraints() {
-        //cancelButton.addConstraints(top: nil, bottom: nil, leading: backgroundView.leadingAnchor, trailing: nil, topConstant: 0, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil, priority: 999)
         cancelButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         cancelButton.centerYAnchor.constraint(equalTo: addClassLabel.centerYAnchor).isActive = true
-        cancelButton.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 4).isActive = true
+        cancelButton.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 6).isActive = true
     }
     
     func addDoneButtonConstraints() {
-        //doneButton.addConstraints(top: nil, bottom: nil, leading: nil, trailing: backgroundView.trailingAnchor, topConstant: 14, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil, priority: 999)
         doneButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         doneButton.centerYAnchor.constraint(equalTo: addClassLabel.centerYAnchor).isActive = true
-        doneButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor).isActive = true
+        doneButton.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -2).isActive = true
     }
     
     func addTitleTextViewConstraints() {
-        //titleTextView.addConstraints(top: nil, bottom: backgroundView.bottomAnchor, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 16, bottomConstant: 16, leadingConstant: 20, trailingConstant: 20, widthConstant: nil, heightConstant: nil, priority: 999)
-        //titleTextView.addConstraints(top: addClassLabel.bottomAnchor, bottom: backgroundView.bottomAnchor, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 16, bottomConstant: 16, leadingConstant: 20, trailingConstant: 20, widthConstant: nil, heightConstant: nil, priority: 999)
-        //titleTextViewHeightConstraint = titleTextView.heightAnchor.constraint(equalToConstant: 0.0)
-        
-        titleTextView.topAnchor.constraint(equalTo: addClassLabel.bottomAnchor, constant: 20).isActive = true
+        titleTextView.topAnchor.constraint(equalTo: addClassLabel.bottomAnchor, constant: 24).isActive = true
         titleTextView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
         titleTextView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 72).isActive = true
-        titleTextView.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-        print("backgroundView.frame: \(backgroundView.frame)")
-        //titleTextView.addConstraints(top: nil, bottom: nil, leading: backgroundView.leadingAnchor, trailing: backgroundView.trailingAnchor, topConstant: 0, bottomConstant: 0, leadingConstant: 0, trailingConstant: 0, widthConstant: nil, heightConstant: nil)
-        //titleTextView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16).isActive = true
-        //titleTextView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16).isActive = true
     }
     
     func addColorPickerCollectionViewConstraints() {
-        colorPickerView.topAnchor.constraint(equalTo: titleTextView.bottomAnchor, constant: 16).isActive = true
+        colorPickerView.topAnchor.constraint(equalTo: colorTitleLabel.bottomAnchor, constant: 12).isActive = true
         colorPickerView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor).isActive = true
-        colorPickerView.widthAnchor.constraint(equalToConstant: titleTextView.bounds.width - 32.0).isActive = true
-        colorPickerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        colorPickerView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 102).isActive = true
+        colorPickerView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    }
+    
+    func addColorTitleLabelConstraints() {
+        colorTitleLabel.topAnchor.constraint(equalTo: titleTextView.bottomAnchor, constant: 20).isActive = true
+        colorTitleLabel.leftAnchor.constraint(equalTo: backgroundView.leftAnchor, constant: 24).isActive = true
+        colorTitleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
+    func addColorLabelConstraints() {
+        colorLabel.topAnchor.constraint(equalTo: colorTitleLabel.topAnchor).isActive = true
+        colorLabel.rightAnchor.constraint(equalTo: backgroundView.rightAnchor, constant: -24).isActive = true
+        colorLabel.heightAnchor.constraint(equalTo: colorTitleLabel.heightAnchor).isActive = true
+    }
+    
+    // Other helper methods:
+    func changeColorLabel(toColor color: Color) {
+        colorLabel.textColor = color.uiColor
+        colorLabel.text = color.name
+        
+        // TODO: - add a fading animation
+    }
+    
+    func updateDoneButton() {
+        if titleTextView.text != "", let _ = colorPickerView.selectedColor {
+            doneButton.isEnabled = true
+        } else {
+            doneButton.isEnabled = false
+        }
+    }
+    
+    func reset() {
+        doneButton.isEnabled = false
+        colorPickerView.deselectAll()
+        titleTextView.clear()
+        colorLabel.textColor = UIColor(white: 0.8, alpha: 1.0)
+        colorLabel.text = "None"
     }
 }

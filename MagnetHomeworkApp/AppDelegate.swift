@@ -68,6 +68,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             classCollectionViewController.coreDataController = coreDataController
         }
         
+        if let classViewController = window?.rootViewController as? ClassViewController {
+            classViewController.`class` = Class(withName: "Test Class", color: Color.red, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
+            classViewController.coreDataController = coreDataController
+        }
+        
+        /*
+        if let assignmentCollectionViewController = window?.rootViewController as? AssignmentCollectionViewController {
+            
+            
+            let testClass = Class(withName: "Test Class", color: Color.red, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
+            
+            /*
+            let assignments: [Assignment] = [
+                Assignment(withText: "Do your damn HW", managedContext: coreDataController.managedContext, owningClass: testClass, zoneID: cloudController.zoneID, toDoZoneID: cloudController.zoneID),
+                Assignment(withText: "Second thing", managedContext: coreDataController.managedContext, owningClass: testClass, zoneID: cloudController.zoneID, toDoZoneID: cloudController.zoneID),
+                Assignment(withText: "Third!", managedContext: coreDataController.managedContext, owningClass: testClass, zoneID: cloudController.zoneID, toDoZoneID: cloudController.zoneID)
+            ]
+            
+            for assignment in assignments {
+                // Modify model
+                testClass.addToAssignments(assignment)
+                assignment.owningClass = testClass
+                testClass.ckRecord["latestAssignment"] = assignment.text as CKRecordValue?
+                testClass.dateLastModified = NSDate()
+            }
+ */
+            
+            assignmentCollectionViewController.class = testClass
+            assignmentCollectionViewController.coreDataController = coreDataController
+        }
+ */
         
         // Try to register for notifications
         UNUserNotificationCenter.current().delegate = self

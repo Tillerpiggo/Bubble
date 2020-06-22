@@ -27,6 +27,15 @@
 		23484C6121866927007C5CCF /* AddClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23484C6021866927007C5CCF /* AddClassTableViewController.swift */; };
 		23484C64218963E0007C5CCF /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23484C63218963E0007C5CCF /* AssignmentViewController.swift */; };
 		23484C6621896B62007C5CCF /* AddAssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23484C6521896B62007C5CCF /* AddAssignmentTableViewController.swift */; };
+		234A414A249D8AF1006BD94F /* ClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A4149249D8AF1006BD94F /* ClassView.swift */; };
+		234A414C249D8B4D006BD94F /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A414B249D8B4D006BD94F /* ClassViewController.swift */; };
+		234A414E249D912C006BD94F /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A414D249D912C006BD94F /* NumberView.swift */; };
+		234A4150249DD830006BD94F /* ClassPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A414F249DD830006BD94F /* ClassPageViewController.swift */; };
+		234A4152249DDACC006BD94F /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A4151249DDACC006BD94F /* AssignmentTableViewController.swift */; };
+		234A4154249E9760006BD94F /* AssignmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A4153249E9760006BD94F /* AssignmentCollectionViewCell.swift */; };
+		234A4156249E9774006BD94F /* ProgrammaticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A4155249E9774006BD94F /* ProgrammaticTableViewCell.swift */; };
+		234A4158249EC7AA006BD94F /* AssignmentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A4157249EC7AA006BD94F /* AssignmentCollectionViewController.swift */; };
+		234A415A249FF888006BD94F /* ExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A4159249FF888006BD94F /* ExpandingTextView.swift */; };
 		234B7E6021C77B5F008D195F /* UIImage+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B7E5F21C77B5F008D195F /* UIImage+Helpers.swift */; };
 		23580D4B218E164100434DD9 /* ToDo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23580D49218E164100434DD9 /* ToDo+CoreDataClass.swift */; };
 		23580D4C218E164100434DD9 /* ToDo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23580D4A218E164100434DD9 /* ToDo+CoreDataProperties.swift */; };
@@ -43,6 +52,8 @@
 		238D15B92208CB6D00178183 /* ConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238D15B82208CB6D00178183 /* ConnectionView.xib */; };
 		238D15BB2208D78600178183 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D15BA2208D78600178183 /* ConnectionView.swift */; };
 		238D15BD2208D8D000178183 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D15BC2208D8D000178183 /* ConnectionViewController.swift */; };
+		238F4E86249738C7004B5154 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F4E85249738C7004B5154 /* Color.swift */; };
+		238F4E8824981264004B5154 /* ProgrammaticProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238F4E8724981264004B5154 /* ProgrammaticProgressBarView.swift */; };
 		239607D224273F3400AC4E00 /* RoundedExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239607D124273F3400AC4E00 /* RoundedExpandingTextView.swift */; };
 		239607D62428637A00AC4E00 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239607D52428637A00AC4E00 /* PlaceholderTextView.swift */; };
 		23A38B96242C2278004B07FD /* ClassCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A38B95242C2278004B07FD /* ClassCollectionViewController.swift */; };
@@ -114,6 +125,15 @@
 		23484C6021866927007C5CCF /* AddClassTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassTableViewController.swift; sourceTree = "<group>"; };
 		23484C63218963E0007C5CCF /* AssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
 		23484C6521896B62007C5CCF /* AddAssignmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentTableViewController.swift; sourceTree = "<group>"; };
+		234A4149249D8AF1006BD94F /* ClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassView.swift; sourceTree = "<group>"; };
+		234A414B249D8B4D006BD94F /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
+		234A414D249D912C006BD94F /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		234A414F249DD830006BD94F /* ClassPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPageViewController.swift; sourceTree = "<group>"; };
+		234A4151249DDACC006BD94F /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewController.swift; sourceTree = "<group>"; };
+		234A4153249E9760006BD94F /* AssignmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		234A4155249E9774006BD94F /* ProgrammaticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticTableViewCell.swift; sourceTree = "<group>"; };
+		234A4157249EC7AA006BD94F /* AssignmentCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCollectionViewController.swift; sourceTree = "<group>"; };
+		234A4159249FF888006BD94F /* ExpandingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingTextView.swift; sourceTree = "<group>"; };
 		234B7E5F21C77B5F008D195F /* UIImage+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Helpers.swift"; sourceTree = "<group>"; };
 		23580D49218E164100434DD9 /* ToDo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		23580D4A218E164100434DD9 /* ToDo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -134,6 +154,8 @@
 		238D15B82208CB6D00178183 /* ConnectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectionView.xib; sourceTree = "<group>"; };
 		238D15BA2208D78600178183 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		238D15BC2208D8D000178183 /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
+		238F4E85249738C7004B5154 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		238F4E8724981264004B5154 /* ProgrammaticProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticProgressBarView.swift; sourceTree = "<group>"; };
 		239607D124273F3400AC4E00 /* RoundedExpandingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedExpandingTextView.swift; sourceTree = "<group>"; };
 		239607D52428637A00AC4E00 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		23A38B95242C2278004B07FD /* ClassCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCollectionViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				23A38B95242C2278004B07FD /* ClassCollectionViewController.swift */,
+				234A4157249EC7AA006BD94F /* AssignmentCollectionViewController.swift */,
 				2329382121E3280F00E5FC69 /* TabBarController.swift */,
 				231BA77A232F0222008429E1 /* AddAssignmentViewController.swift */,
 				238D15BC2208D8D000178183 /* ConnectionViewController.swift */,
@@ -227,6 +250,9 @@
 				23CE667E219BCC0000B34042 /* ToDoTableViewController.swift */,
 				23484C63218963E0007C5CCF /* AssignmentViewController.swift */,
 				235E0B85219550D9005D3B9C /* ScheduleTableViewController.swift */,
+				234A414B249D8B4D006BD94F /* ClassViewController.swift */,
+				234A414F249DD830006BD94F /* ClassPageViewController.swift */,
+				234A4151249DDACC006BD94F /* AssignmentTableViewController.swift */,
 				23F4C9D821926CCC00D00D05 /* UIExtension */,
 				235E0B8721955626005D3B9C /* OtherExtensions */,
 			);
@@ -248,8 +274,10 @@
 			children = (
 				235E0B8D2198AE05005D3B9C /* ClassTableViewCell.swift */,
 				23A38B9B242D2686004B07FD /* ClassCollectionViewCell.swift */,
-				23580D53218E286600434DD9 /* AssignmentTableViewCell.swift */,
 				23A38BA1242DC4B2004B07FD /* AddClassCollectionViewCell.swift */,
+				23580D53218E286600434DD9 /* AssignmentTableViewCell.swift */,
+				234A4153249E9760006BD94F /* AssignmentCollectionViewCell.swift */,
+				234A4155249E9774006BD94F /* ProgrammaticTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -263,13 +291,17 @@
 				2310CF4221A8877E00A995FB /* AssignmentHeaderFooterView.swift */,
 				238D15BA2208D78600178183 /* ConnectionView.swift */,
 				23AB27DD2322AA54008C0FBD /* ProgressBarView.swift */,
+				238F4E8724981264004B5154 /* ProgrammaticProgressBarView.swift */,
 				231BA778232EFB0B008429E1 /* AddAssignmentView.swift */,
 				239607D124273F3400AC4E00 /* RoundedExpandingTextView.swift */,
+				234A4159249FF888006BD94F /* ExpandingTextView.swift */,
 				239607D52428637A00AC4E00 /* PlaceholderTextView.swift */,
 				23A38B9F242D62EA004B07FD /* BouncyButton.swift */,
 				23A38B9D242D4813004B07FD /* ProgrammaticAddClassView.swift */,
 				23DC6960247A547900C6DEF2 /* TestAddClassViewController.swift */,
 				23D8FCD8248F41790016F0D3 /* ColorPickerView.swift */,
+				234A4149249D8AF1006BD94F /* ClassView.swift */,
+				234A414D249D912C006BD94F /* NumberView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +318,7 @@
 		235E0B8C2197EE2C005D3B9C /* Old */ = {
 			isa = PBXGroup;
 			children = (
+				23D8FCDA248F4BBA0016F0D3 /* BubbleColor.swift */,
 				23484C6021866927007C5CCF /* AddClassTableViewController.swift */,
 				23484C6521896B62007C5CCF /* AddAssignmentTableViewController.swift */,
 			);
@@ -439,7 +472,7 @@
 			children = (
 				23484C552182250E007C5CCF /* CKRecord+Helpers.swift */,
 				23FED480225C50B70021A5AE /* CloudShare.swift */,
-				23D8FCDA248F4BBA0016F0D3 /* BubbleColor.swift */,
+				238F4E85249738C7004B5154 /* Color.swift */,
 				23CD10C12181A0800034FFA7 /* Class */,
 				23CD10C22181A0950034FFA7 /* Assignment */,
 				23580D4D218E164D00434DD9 /* ToDo */,
@@ -667,11 +700,14 @@
 			files = (
 				2340C4BB23215E70000E2B35 /* DueDate+CoreDataClass.swift in Sources */,
 				2340C4BC23215E70000E2B35 /* DueDate+CoreDataProperties.swift in Sources */,
+				234A415A249FF888006BD94F /* ExpandingTextView.swift in Sources */,
 				23FED481225C50B70021A5AE /* CloudShare.swift in Sources */,
 				23A38BA2242DC4B2004B07FD /* AddClassCollectionViewCell.swift in Sources */,
+				234A4154249E9760006BD94F /* AssignmentCollectionViewCell.swift in Sources */,
 				23C207EB2470F26500EA5051 /* Animator.swift in Sources */,
 				2310CF4921A9F6C400A995FB /* UIApplication+Helpers.swift in Sources */,
 				23A38B96242C2278004B07FD /* ClassCollectionViewController.swift in Sources */,
+				234A4152249DDACC006BD94F /* AssignmentTableViewController.swift in Sources */,
 				23484C5F21854A1E007C5CCF /* ClassTableViewController.swift in Sources */,
 				231BA779232EFB0B008429E1 /* AddAssignmentView.swift in Sources */,
 				23CD10AD2180413E0034FFA7 /* CloudUploadable.swift in Sources */,
@@ -686,6 +722,8 @@
 				23484C5A21822CA6007C5CCF /* Assignment+CoreDataClass.swift in Sources */,
 				23D8FCDB248F4BBA0016F0D3 /* BubbleColor.swift in Sources */,
 				235BEAC621AE455600ED4DD4 /* UINavigationBar+Helpers.swift in Sources */,
+				234A414C249D8B4D006BD94F /* ClassViewController.swift in Sources */,
+				234A414A249D8AF1006BD94F /* ClassView.swift in Sources */,
 				235E0B902199491F005D3B9C /* UILabel+Helpers.swift in Sources */,
 				23CD109921803C530034FFA7 /* MagnetHomeworkApp.xcdatamodeld in Sources */,
 				23F4C9E2219284A000D00D05 /* UINavigationBar.swift in Sources */,
@@ -697,7 +735,10 @@
 				235E0B8921955647005D3B9C /* Date+Helpers.swift in Sources */,
 				23484C64218963E0007C5CCF /* AssignmentViewController.swift in Sources */,
 				23CF36F5221A63F5003D2F43 /* AddClassView.swift in Sources */,
+				234A4156249E9774006BD94F /* ProgrammaticTableViewCell.swift in Sources */,
+				234A4150249DD830006BD94F /* ClassPageViewController.swift in Sources */,
 				2324191421AF843B0014916F /* AddObjectView.swift in Sources */,
+				234A4158249EC7AA006BD94F /* AssignmentCollectionViewController.swift in Sources */,
 				234B7E6021C77B5F008D195F /* UIImage+Helpers.swift in Sources */,
 				23CD10C52181A11F0034FFA7 /* Class+CoreDataProperties.swift in Sources */,
 				23580D54218E286600434DD9 /* AssignmentTableViewCell.swift in Sources */,
@@ -709,6 +750,7 @@
 				23580D4C218E164100434DD9 /* ToDo+CoreDataProperties.swift in Sources */,
 				23A38BA0242D62EA004B07FD /* BouncyButton.swift in Sources */,
 				23484C6621896B62007C5CCF /* AddAssignmentTableViewController.swift in Sources */,
+				238F4E86249738C7004B5154 /* Color.swift in Sources */,
 				23CD10AF21814F790034FFA7 /* CloudKitErrorHandler.swift in Sources */,
 				235E0B8B2197DF44005D3B9C /* String+Helpers.swift in Sources */,
 				2329382221E3280F00E5FC69 /* TabBarController.swift in Sources */,
@@ -717,9 +759,11 @@
 				239607D62428637A00AC4E00 /* PlaceholderTextView.swift in Sources */,
 				23AB27DE2322AA54008C0FBD /* ProgressBarView.swift in Sources */,
 				23CD10AA21803E4D0034FFA7 /* CloudController.swift in Sources */,
+				238F4E8824981264004B5154 /* ProgrammaticProgressBarView.swift in Sources */,
 				238D15BD2208D8D000178183 /* ConnectionViewController.swift in Sources */,
 				23F4C9DA2192704400D00D05 /* UIColor+Helpers.swift in Sources */,
 				23CE667F219BCC0000B34042 /* ToDoTableViewController.swift in Sources */,
+				234A414E249D912C006BD94F /* NumberView.swift in Sources */,
 				23ED7C08221895B60020DCA4 /* DataCarrier.swift in Sources */,
 				235E0B86219550D9005D3B9C /* ScheduleTableViewController.swift in Sources */,
 				23484C5B21822CA6007C5CCF /* Assignment+CoreDataProperties.swift in Sources */,
@@ -929,7 +973,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UBS5J9L934;
 				INFOPLIST_FILE = MagnetHomeworkApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -950,7 +994,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UBS5J9L934;
 				INFOPLIST_FILE = MagnetHomeworkApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

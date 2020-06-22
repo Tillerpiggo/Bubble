@@ -11,7 +11,7 @@ import UIKit
 
 class AddClassCollectionViewCell: UICollectionViewCell {
     
-    //var dynamicViewDelegate: DynamicViewDelegate?
+    var dynamicViewDelegate: DynamicViewDelegate?
     var delegate: ProgrammaticAddClassViewDelegate?
     
     let addClassView: ProgrammaticAddClassView = {
@@ -41,7 +41,7 @@ class AddClassCollectionViewCell: UICollectionViewCell {
         
         addContentViewConstraints()
         addAddClassViewConstraints()
-        //addClassView.dynamicViewDelegate = self
+        addClassView.dynamicViewDelegate = self
         addClassView.delegate = self
         //addButtonConstraints()
         
@@ -55,20 +55,18 @@ class AddClassCollectionViewCell: UICollectionViewCell {
     //override var intrinsicContentSize: CGSize { return CGSize(width: 1, height: 1) }
 }
 
-/*
 // MARK: - Dynamic View Delegate
 extension AddClassCollectionViewCell: DynamicViewDelegate {
     func sizeChanged() {
         dynamicViewDelegate?.sizeChanged()
     }
 }
- */
 
 // MARK: - ProgrammaticAddClassViewDelegate
 extension AddClassCollectionViewCell: ProgrammaticAddClassViewDelegate {
     
-    func addClass(withText text: String) {
-        delegate?.addClass(withText: text)
+    func addClass(withText text: String, color: Color) {
+        delegate?.addClass(withText: text, color: color)
     }
     
     func didShrink() {
@@ -94,8 +92,12 @@ fileprivate extension AddClassCollectionViewCell {
     func addAddClassViewConstraints() {
         // In relation to the contentView:
         
-        //addClassView.pinEdgesToView(contentView, withMargin: 12.0, priority: 999)
-        contentView.pinEdgesToView(addClassView, withMargin: -12.0)
+        
+        contentView.pinEdgesToView(addClassView, withMargin: -20.0)
+        addClassView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.0).isActive = true
+        addClassView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16.0).isActive = true
+        addClassView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.0).isActive = true
+        addClassView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20.0).isActive = true
     }
     
     /*

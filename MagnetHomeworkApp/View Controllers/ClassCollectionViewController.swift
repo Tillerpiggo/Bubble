@@ -17,24 +17,28 @@ protocol ClassCollectionViewControllerDelegate {
 
 // MARK: - ClassCollectionViewController
 // ClassTableViewController but it's programmatic and it's a collectionViewController.
-class ClassCollectionViewController: UICollectionViewController {
+class ClassCollectionViewController: UICollectionViewController, CollectionFetchedResultsControllerDelegate {
     
     var cloudController: CloudController!
     var coreDataController: CoreDataController!
     let addClassCollectionViewCellIdentifier = "AddClassViewCell"
+    let classCollectionViewCellIdentifier = "ClassCell"
     
-    private var blockOperation = BlockOperation()
+    internal var blockOperation = BlockOperation()
     
     // Add Class View
     private var isAddClassViewExpanded = false
-    private let addClassViewHeightShrunk: CGFloat = 86
-    private let addClassViewHeightExpanded: CGFloat = UIScreen.main.bounds.height - 200
+    private let addClassViewHeightShrunk: CGFloat = 102
+    private let addClassViewHeightExpanded: CGFloat = 400
     
     // MARK: - Properties
     var delegate: ClassCollectionViewControllerDelegate?
     
+    
     // This is where the magic happens - it is the source of the class data and where all the classes come from
     lazy var fetchedResultsController: NSFetchedResultsController<Class> = {
+        NSFetchedResultsController<NSFetchRequestResult>.deleteCache(withName: "Bubble2")
+        
         let fetchRequest: NSFetchRequest<Class> = Class.fetchRequest()
         let sortByCreationDate = NSSortDescriptor(key: #keyPath(Class.creationDate), ascending: true)
         fetchRequest.sortDescriptors = [sortByCreationDate]
@@ -43,7 +47,7 @@ class ClassCollectionViewController: UICollectionViewController {
             fetchRequest: fetchRequest,
             managedObjectContext: coreDataController.managedContext,
             sectionNameKeyPath: nil,
-            cacheName: "MagnetHomeworkApp"
+            cacheName: "Bubble2"
         )
         
         fetchedResultsController.delegate = self
@@ -62,8 +66,18 @@ class ClassCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView.register(AddClassCollectionViewCell.self, forCellWithReuseIdentifier: addClassCollectionViewCellIdentifier)
+        collectionView.register(ClassCollectionViewCell.self, forCellWithReuseIdentifier: classCollectionViewCellIdentifier)
         collectionView.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
         view.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
+        
+        // Clear it for testing purposes
+        DispatchQueue.main.async {
+            if let sectionInfo = self.fetchedResultsController.sections?[0], let classes = sectionInfo.objects as? [Class] {
+                for cellClass in classes {
+                    self.coreDataController.delete(cellClass)
+                }
+            }
+        }
         
         updateWithCloud()
         
@@ -83,7 +97,7 @@ class ClassCollectionViewController: UICollectionViewController {
 }
 
 // MARK: - NSFetchedResultsControllerDelegate
-
+/*
 extension ClassCollectionViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         // Rest blockOperation
@@ -113,6 +127,7 @@ extension ClassCollectionViewController: NSFetchedResultsControllerDelegate {
             break
         }
     }
+    
     
     // Change items
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?)
@@ -152,34 +167,49 @@ extension ClassCollectionViewController: NSFetchedResultsControllerDelegate {
         }, completion: nil)
     }
 }
+ */
+
+
 
 // MARK: - Data source and delegate
 extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1 // Temporary, use logic below afte addClassView is done
+        return 2
         
-        guard let sections = fetchedResultsController.sections else {
-            return 0
+        guard let sectionInfo = fetchedResultsController.sections?[0] else {
+            return 1
         }
         
-        return sections.count + 1 // +1 for the top section, the DueDateFilterView
+        if sectionInfo.numberOfObjects == 0 {
+            return 1
+        } else {
+            return 2
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-        
-        if section == 0 { return 1 }
-        
-        guard let sectionInfo = fetchedResultsController.sections?[section - 1] else {
-            return 0
+        if section == 0 {
+            guard let sectionInfo = fetchedResultsController.sections?[0] else {
+                return 0
+            }
+            
+            print("numberofobjects: \(sectionInfo.numberOfObjects)")
+            return sectionInfo.numberOfObjects
+        } else if section == 1 {
+            return 1
+        } else {
+            print("ERROR: Thing that should happen did in numberOfItemsInSection in classCollectionViewController")
+            return 0 // This shouldn't happen
         }
-        
-        return sectionInfo.numberOfObjects
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: isAddClassViewExpanded ? addClassViewHeightExpanded : addClassViewHeightShrunk)
+        if indexPath == IndexPath(row: 0, section: 1) {
+            return CGSize(width: collectionView.bounds.width, height: isAddClassViewExpanded ? addClassViewHeightExpanded : addClassViewHeightShrunk)
+        } else {
+            return CGSize(width: collectionView.bounds.width, height: 144)
+        }
     }
 
     
@@ -188,26 +218,39 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: Create Class cell programmatically, look up how to do this efficiently
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: addClassCollectionViewCellIdentifier, for: indexPath) as! AddClassCollectionViewCell
+        print("Indexpath: \(indexPath)")
+        if indexPath.section == 1 {
+            // TODO: Create Class cell programmatically, look up how to do this efficiently
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: addClassCollectionViewCellIdentifier, for: indexPath) as! AddClassCollectionViewCell
+            
+            cell.addClassView.expandButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+            cell.layoutIfNeeded()
+            
+            // TODO: Add an if statement to check that this is the addClassView (unless the other views happen to be dynamic)
+            //cell.dynamicViewDelegate = self
+            cell.delegate = self
+            cell.dynamicViewDelegate = self
         
-        //cell.contentView.widthAnchor.constraint(equalToConstant: 600.0).isActive = true
-        //cell.button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        
-        cell.addClassView.expandButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        cell.layoutIfNeeded()
-        
-        // TODO: Add an if statement to check that this is the addClassView (unless the other views happen to be dynamic)
-        //cell.dynamicViewDelegate = self
-        cell.delegate = self
-        
-        return cell
+            return cell
+        } else {
+            // Make another cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: classCollectionViewCellIdentifier, for: indexPath) as! ClassCollectionViewCell
+            cell.layoutIfNeeded()
+            
+            guard let sectionInfo = fetchedResultsController.sections?[0] else { return cell }
+            
+            if let cellClass = sectionInfo.objects?[indexPath.row] as? Class {
+                cell.configure(withClass: cellClass)
+            }
+            
+            return cell
+        }
     }
     
     
     @objc func buttonPressed() {
         print("Button pressed; target added in collectionViewControlller")
-        let addClassViewCell = collectionView.cellForItem(at: IndexPath(row: 0, section: 0)) as! AddClassCollectionViewCell
+        let addClassViewCell = collectionView.cellForItem(at: IndexPath(row: 0, section: 1)) as! AddClassCollectionViewCell
         addClassViewCell.expand()
         
         expandAddClassView()
@@ -215,7 +258,7 @@ extension ClassCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: Change to check for section later
-        if indexPath.row == fetchedResultsController.fetchedObjects?.count {
+        if indexPath.section == 1 {
             if let cell = collectionView.cellForItem(at: indexPath) as? AddClassCollectionViewCell {
                 cell.expand()
                 print("Detected it through didSelectItemAt")
@@ -255,8 +298,32 @@ extension ClassCollectionViewController: NotificationDelegate {
 // MARK: - ProgrammaticAddClassViewDelegate
 extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
     
-    func addClass(withText text: String) {
+    func addClass(withText text: String, color: Color) {
+        
         // TODO: - actually add a class
+        let newClass = Class(withName: text, assignments: [], color: color, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
+        
+        // Save change to Core Data
+        coreDataController.save()
+        
+        var cloudUploadables: [CloudUploadable] = [newClass]
+        newClass.isSynced = false
+        
+        // Save change to the Cloud
+        cloudController.save(&cloudUploadables, inDatabase: .private, recordChanged: { (updatedRecord) in
+            newClass.update(withRecord: updatedRecord)
+        }) { (error) in
+            guard let error = error as? CKError else { return }
+            switch error.code {
+            case .requestRateLimited, .zoneBusy, .serviceUnavailable:
+                break
+            default:
+                DispatchQueue.main.async {
+                    //self.alertUserOfFailure()
+                    self.coreDataController.save()
+                }
+            }
+        }
     }
     
     func didExpand() {
@@ -547,12 +614,84 @@ fileprivate extension ClassCollectionViewController {
     }
 }
 
-/*
 // MARK: - Dynamic View Delegate
 extension ClassCollectionViewController: DynamicViewDelegate {
     func sizeChanged() {
         self.collectionView.performBatchUpdates({})
     }
 }
- */
 
+// MARK: - CollectionFetchedResultsControllerDelegate
+protocol CollectionFetchedResultsControllerDelegate: UICollectionViewController, NSFetchedResultsControllerDelegate {
+    var blockOperation: BlockOperation { get set }
+}
+
+extension CollectionFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        // Rest blockOperation
+        blockOperation = BlockOperation()
+    }
+    
+    // Change sections
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType)
+    {
+        let sectionIndexSet = IndexSet(integer: sectionIndex)
+        
+        switch type {
+        case .insert:
+            blockOperation.addExecutionBlock {
+                self.collectionView.insertSections(sectionIndexSet)
+            }
+        case .delete:
+            blockOperation.addExecutionBlock {
+                self.collectionView.deleteSections(sectionIndexSet)
+            }
+        case .update:
+            blockOperation.addExecutionBlock {
+                self.collectionView.reloadSections(sectionIndexSet)
+            }
+        case .move:
+            assertionFailure() // This shouldn't happen
+            break
+        }
+    }
+    
+    
+    // Change items
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?)
+    {
+        // Each time this is called, add the appropriate action to the blockOperation
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { break }
+            
+            blockOperation.addExecutionBlock {
+                self.collectionView.insertItems(at: [newIndexPath])
+            }
+        case .delete:
+            guard let indexPath = indexPath else { break }
+            
+            blockOperation.addExecutionBlock {
+                self.collectionView?.deleteItems(at: [indexPath])
+            }
+        case .update:
+            guard let indexPath = indexPath else { break }
+            
+            blockOperation.addExecutionBlock {
+                self.collectionView?.reloadItems(at: [indexPath])
+            }
+        case .move:
+            guard let indexPath = indexPath, let newIndexPath = newIndexPath else { return }
+            
+            blockOperation.addExecutionBlock {
+                self.collectionView?.moveItem(at: indexPath, to: newIndexPath)
+            }
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        collectionView.performBatchUpdates({
+            self.blockOperation.start()
+        }, completion: nil)
+    }
+}

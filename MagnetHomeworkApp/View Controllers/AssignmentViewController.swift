@@ -26,7 +26,6 @@ class AssignmentViewController: ToDoTableViewController {
     
     var `class`: Class!
     
-    
     var delegate: AssignmentTableViewControllerDelegate?
     
     override var sectionNameKeyPath: String { return #keyPath(Assignment.dueDateString) }

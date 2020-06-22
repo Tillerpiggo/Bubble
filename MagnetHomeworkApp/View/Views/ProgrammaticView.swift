@@ -11,8 +11,9 @@
 
 import UIKit
 
+
 class ProgrammaticView: UIView {
-    // Use to initialize from code
+    // Use to initialize from code (or just init())
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()

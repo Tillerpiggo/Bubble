@@ -118,7 +118,7 @@ class AddAssignmentViewController: UIViewController {
 extension AddAssignmentViewController: AddAssignmentViewDelegate {
     func doneButtonPressed(withText text: String) {
         // Implement in subview
-        addAssignmentView.roundedExpandingTextView.textView.resignFirstResponder()
+        addAssignmentView.roundedExpandingTextView.dismiss()
         
         // Add an assignment and transfer that to the next delegate:
         

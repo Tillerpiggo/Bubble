@@ -1,8 +1,8 @@
 //
-//  TextField.swift
+//  ExpandingTextView.swift
 //  Bubble
 //
-//  Created by Tyler Gee on 3/21/20.
+//  Created by Tyler Gee on 6/21/20.
 //  Copyright © 2020 Beaglepig. All rights reserved.
 //
 
@@ -11,32 +11,20 @@ import UIKit
 // This is my custom textField with a rounded background and customization how I like it. It's just a textField with a background UIView...
 // It's just made for easy reusability and consistency throughout the app
 
-// Moved to ExpandingTextView.swift
+// A protocol for views that change in size.
+// TODO: - move this to a better location
+protocol DynamicViewDelegate {
+    func sizeChanged()
+}
+
+class ExpandingTextView: ProgrammaticView {
     // MARK: - Subviews
-    /*
-    lazy var textField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Allow this view to handle inputs
-        textField.delegate = self
-        
-        // Set textField visuals:
-        
-        // Set text properties
-        textField.defaultTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .semibold)]
-        textField.textColor = UIColor(white: 0.837, alpha: 1.0)
-        
-        return textField
-    }()
- */
-    /*
     var delegate: UITextViewDelegate?
     var dynamicViewDelegate: DynamicViewDelegate?
     var padding: CGFloat = 0
     private var lastEstimatedSize: CGSize?
     
-    lazy var textView: PlaceholderTextView = {
+    private lazy var textView: PlaceholderTextView = {
         let textView = PlaceholderTextView()
         textView.isScrollEnabled = false
         textView.textColor = UIColor(white: 0.3, alpha: 1.0)
@@ -63,30 +51,61 @@ import UIKit
         addConstraints()
     }
     
+    /*
     override func layoutSubviews() {
         setVisuals()
     }
+ */
     
+    /// Clears all text and updates the layout of the textView
     func clear() {
         textView.text = ""
         textView.setNeedsLayout()
     }
     
+    /// Becomes first responder; shows keyboard
     func select() {
         textView.becomeFirstResponder()
     }
     
+    /// Resigns first responder; dismisses keyboard
     func dismiss() {
         textView.resignFirstResponder()
     }
 
     var text: String {
-        return textView.text
+        get {
+            return textView.text
+        }
+        
+        set {
+            textView.text = newValue
+        }
+    }
+    
+    var font: UIFont? {
+        get {
+            return textView.font
+        }
+        
+        set {
+            textView.font = newValue
+        }
+    }
+    
+    var textColor: UIColor? {
+        get {
+            return textView.textColor
+        }
+        
+        set {
+            textView.textColor = newValue
+        }
     }
 }
 
 // MARK: - UITextFieldDelegate
-extension RoundedExpandingTextView: UITextFieldDelegate {
+extension ExpandingTextView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
@@ -117,7 +136,7 @@ extension RoundedExpandingTextView: UITextFieldDelegate {
 }
 
 // MARK: - Helper functions
-fileprivate extension RoundedExpandingTextView {
+fileprivate extension ExpandingTextView {
     
     func addSubviews() {
         addSubview(textView)
@@ -137,6 +156,7 @@ fileprivate extension RoundedExpandingTextView {
         textViewDidChange(textView)
     }
     
+    /*
     func setVisuals() {
         // This is doing most of the work that sets this view apart from UITextField
         
@@ -147,11 +167,12 @@ fileprivate extension RoundedExpandingTextView {
         // Set background color
         backgroundColor = UIColor(white: 0.971, alpha: 1.0)
     }
+ */
     
 }
 
 // Shoutout to https://www.youtube.com/watch?v=0Jb29c22xu8 - Let's Build That App
-extension RoundedExpandingTextView: UITextViewDelegate {
+extension ExpandingTextView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         let size = CGSize(width: self.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
@@ -192,16 +213,13 @@ extension RoundedExpandingTextView: UITextViewDelegate {
     }
 }
 
-class ThickRoundedExpandingTextView: RoundedExpandingTextView {
-    override var padding: CGFloat {
-        set {
-            super.padding = newValue
-        }
-        get {
-            return 8.0
-        }
+class RoundedExpandingTextView: ExpandingTextView {
+    override func layoutSubviews() {
+        // Round corners
+        layer.cornerRadius = 12
+        clipsToBounds = true
+        
+        // Set background color
+        backgroundColor = UIColor(white: 0.971, alpha: 1.0)
     }
 }
- */
-
-
