@@ -19,7 +19,7 @@ class CollectionPickerView: ProgrammaticView {
     var items: [Any?]
     var deselectedOpacity: Float = 0.4
     
-    private var isExpanded = false
+    private var isExpanded = true
     private var shrinkConstraints = [NSLayoutConstraint]()
     private var collectionViewHeightConstraint: NSLayoutConstraint?
     
@@ -62,6 +62,7 @@ class CollectionPickerView: ProgrammaticView {
         let expandIndicator = UIImageView(image: UIImage(named: "expandIndicatorShrunken")!)
         expandIndicator.translatesAutoresizingMaskIntoConstraints = false
         expandIndicator.contentMode = .scaleAspectFit
+        expandIndicator.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
         
         return expandIndicator
     }()
@@ -112,11 +113,11 @@ class CollectionPickerView: ProgrammaticView {
         collectionViewHeightConstraint?.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
     }
     
-    func toggleExpansion() {
+    func toggleExpansion(animated: Bool) {
         if isExpanded {
-            shrink(animated: true)
+            shrink(animated: animated)
         } else {
-            expand(animated: true)
+            expand(animated: animated)
         }
     }
 }

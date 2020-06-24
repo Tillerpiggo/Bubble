@@ -25,6 +25,7 @@ class CollectionPickerViewCell: ProgrammaticCollectionViewCell {
     override func setupView() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.pinEdgesToView(self)
+        contentView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32).isActive = true
     }
     
     func configure(with items: [Any?]) {
@@ -34,8 +35,8 @@ class CollectionPickerViewCell: ProgrammaticCollectionViewCell {
         layoutIfNeeded()
     }
     
-    func toggleExpansion() {
-        collectionPickerView?.toggleExpansion()
+    func toggleExpansion(animated: Bool) {
+        collectionPickerView?.toggleExpansion(animated: animated)
     }
 }
 

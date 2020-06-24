@@ -30,11 +30,9 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
         if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
             collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         }
- */
         
         registerCells()
         
@@ -44,12 +42,13 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.pinEdgesToView(view)
+        
+        collectionView.reloadData()
+        collectionView.layoutIfNeeded()
     }
     
     override func viewDidLayoutSubviews() {
-        if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
+        
     }
     
     // Datasource and delegate
@@ -73,10 +72,10 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionPickerViewCell
-        cell.toggleExpansion()
-        UIView.animate(withDuration: 0.5, animations: {
+        cell.toggleExpansion(animated: false)
+        UIView.animate(withDuration: 0.5) { [unowned self] in
             self.collectionViewLayout.invalidateLayout()
-        })
+        }
     }
 }
 
