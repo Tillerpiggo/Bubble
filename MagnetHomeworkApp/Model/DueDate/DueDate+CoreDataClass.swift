@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 import CloudKit
 
-
 public class DueDate: NSManagedObject {
 //    var dueDateType: DueDateType {
 //        let date = self.date! as Date
@@ -28,6 +27,27 @@ public class DueDate: NSManagedObject {
         print("OwningAssignment: \(owningAssignment?.dueDateSection)")
         print("Hello")
         return newDueDateType
+    }
+    
+    var weekdayString: String {
+        switch dueDateType {
+        case .unscheduled: return "Unscheduled"
+        case .dueToday: return "Today"
+        case .dueTomorrow: return "Tomorrow"
+        case .dueMonday: return "Mon"
+        case .dueTuesday: return "Tue"
+        case .dueWednesday: return "Wed"
+        case .dueThursday: return "Thu"
+        case .dueFriday: return "Fri"
+        case .dueSaturday: return "Sat"
+        case .dueSunday: return "Sun"
+        default: return "Someday"
+        }
+    }
+    
+    var dayOfTheMonth: Int {
+        let dayOfTheMonth = Calendar.current.dateComponents([.day], from: self.date as! Date)
+        return dayOfTheMonth.day ?? 0
     }
     
     func dueDateChanged() {
@@ -67,4 +87,42 @@ public class DueDate: NSManagedObject {
 //        self.dueDateType = DueDateType(withDueDate: date)
         updateDueDateType()
     }
+}
+
+// Temporary, until I refactor
+// Used for DueDatePickerView
+class DateModel {
+    
+    var date: NSDate
+    var dueDateType: DueDateType {
+        let date = self.date as Date?
+        return DueDateType(withDueDate: date)
+    }
+    
+    var weekdayString: String {
+        switch dueDateType {
+        case .unscheduled: return "Unscheduled"
+        case .dueToday: return "Today"
+        case .dueTomorrow: return "Tomorrow"
+        case .dueMonday: return "Mon"
+        case .dueTuesday: return "Tue"
+        case .dueWednesday: return "Wed"
+        case .dueThursday: return "Thu"
+        case .dueFriday: return "Fri"
+        case .dueSaturday: return "Sat"
+        case .dueSunday: return "Sun"
+        default: return "Someday"
+        }
+    }
+    
+    var dayOfTheMonth: Int {
+        let dayOfTheMonth = Calendar.current.dateComponents([.day], from: self.date as Date)
+        return dayOfTheMonth.day ?? 0
+    }
+    
+    init(withDate date: NSDate) {
+        self.date = date
+    }
+    
+    
 }

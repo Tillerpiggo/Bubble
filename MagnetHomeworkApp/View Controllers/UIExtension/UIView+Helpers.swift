@@ -48,28 +48,49 @@ extension UIView {
     }
     
     // Make it faster to add constraints
-    func addConstraints(top: NSLayoutAnchor<NSLayoutYAxisAnchor>?, bottom: NSLayoutAnchor<NSLayoutYAxisAnchor>?, leading: NSLayoutAnchor<NSLayoutXAxisAnchor>?, trailing: NSLayoutAnchor<NSLayoutXAxisAnchor>?, topConstant: CGFloat, bottomConstant: CGFloat, leadingConstant: CGFloat, trailingConstant: CGFloat, widthConstant: CGFloat?, heightConstant: CGFloat?, priority: Float? = nil) {
+    func addConstraints(
+        top: NSLayoutAnchor<NSLayoutYAxisAnchor>? = nil, topConstant: CGFloat? = nil,
+        bottom: NSLayoutAnchor<NSLayoutYAxisAnchor>? = nil, bottomConstant: CGFloat? = nil,
+        leading: NSLayoutAnchor<NSLayoutXAxisAnchor>? = nil, leadingConstant: CGFloat? = nil,
+        trailing: NSLayoutAnchor<NSLayoutXAxisAnchor>? = nil, trailingConstant: CGFloat? = nil,
+        centerX: NSLayoutAnchor<NSLayoutXAxisAnchor>? = nil,
+        centerY: NSLayoutAnchor<NSLayoutYAxisAnchor>? = nil,
+        widthConstant: CGFloat? = nil,
+        heightConstant: CGFloat? = nil,
+        priority: Float? = nil) {
         
-        if let top = top {
+        if let top = top, let topConstant = topConstant {
             let constraint = topAnchor.constraint(equalTo: top, constant: topConstant)
             if let priority = priority { constraint.priority = UILayoutPriority(rawValue: priority) }
             constraint.isActive = true
         }
         
-        if let bottom = bottom {
+        if let bottom = bottom, let bottomConstant = bottomConstant {
             let constraint = bottomAnchor.constraint(equalTo: bottom, constant: -1 * bottomConstant)
             if let priority = priority { constraint.priority = UILayoutPriority(rawValue: priority) }
             constraint.isActive = true
         }
         
-        if let leading = leading {
+        if let leading = leading, let leadingConstant = leadingConstant {
             let constraint = leadingAnchor.constraint(equalTo: leading, constant: leadingConstant)
             if let priority = priority { constraint.priority = UILayoutPriority(rawValue: priority) }
             constraint.isActive = true
         }
         
-        if let trailing = trailing {
+        if let trailing = trailing, let trailingConstant = trailingConstant {
             let constraint = trailingAnchor.constraint(equalTo: trailing, constant: -1 * trailingConstant)
+            if let priority = priority { constraint.priority = UILayoutPriority(rawValue: priority) }
+            constraint.isActive = true
+        }
+        
+        if let centerX = centerX {
+            let constraint = centerXAnchor.constraint(equalTo: centerX)
+            if let priority = priority { constraint.priority = UILayoutPriority(rawValue: priority) }
+            constraint.isActive = true
+        }
+        
+        if let centerY = centerY {
+            let constraint = centerYAnchor.constraint(equalTo: centerY)
             if let priority = priority { constraint.priority = UILayoutPriority(rawValue: priority) }
             constraint.isActive = true
         }

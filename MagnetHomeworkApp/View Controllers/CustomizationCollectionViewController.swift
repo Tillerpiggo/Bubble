@@ -1,0 +1,139 @@
+//
+//  CustomizationCollectionViewController.swift
+//  Bubble
+//
+//  Created by Tyler Gee on 6/23/20.
+//  Copyright © 2020 Beaglepig. All rights reserved.
+//
+
+import UIKit
+
+class CustomizationCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    // Remember to set classes
+    var classes: [Class]!
+    
+    // Subclass should override this property
+    var items: [[Any?]] {
+        return [[nil]]
+    }
+    
+    var selectedItems = [Any?]()
+    
+    private var collectionPickerViewCellIdentifier = "CollectionPickerViewCell"
+    
+    // Override
+    func registerCells() {
+        collectionView.register(CollectionPickerViewCell.self, forCellWithReuseIdentifier: collectionPickerViewCellIdentifier)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        /*
+        if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+ */
+        
+        registerCells()
+        
+        for _ in items {
+            selectedItems.append(nil)
+        }
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.pinEdgesToView(view)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+            collectionViewLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+    }
+    
+    // Datasource and delegate
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    // Override
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionPickerViewCellIdentifier, for: indexPath) as! CollectionPickerViewCell
+        
+        cell.configure(with: items[indexPath.row])
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CollectionPickerViewCell
+        cell.toggleExpansion()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.collectionViewLayout.invalidateLayout()
+        })
+    }
+}
+
+extension CustomizationCollectionViewController: CollectionPickerViewDelegate {
+    @objc func didSelect(_ item: Any?, collectionPickerView: CollectionPickerView) {
+        // Up to the subclass to override and implement
+        
+        // Generally, they should do a series of if let statements and insert the item in selectedItems appropriately
+    }
+}
+
+class AssignmentCustomizationCollectionViewController: CustomizationCollectionViewController {
+    
+    private var classCollectionPickerViewCellIdentifier = "ClassCollectionPickerViewCell"
+    private var dueDateCollectionPickerViewCellIdentifier = "DueDateCollectionPickerViewCell"
+    
+    override func registerCells() {
+        collectionView.register(ClassCollectionPickerViewCell.self, forCellWithReuseIdentifier: classCollectionPickerViewCellIdentifier)
+        collectionView.register(DueDateCollectionPickerViewCell.self, forCellWithReuseIdentifier: dueDateCollectionPickerViewCellIdentifier)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CollectionPickerViewCell
+        
+        // Possibly refactor this into an overridable function so you dont have to add configure and delegate into the mix
+        if indexPath.row == 0 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: classCollectionPickerViewCellIdentifier, for: indexPath) as! ClassCollectionPickerViewCell
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: dueDateCollectionPickerViewCellIdentifier, for: indexPath) as! DueDateCollectionPickerViewCell
+        }
+        
+        cell.configure(with: items[indexPath.row])
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    override var items: [[Any?]] {
+        return [
+            classes,
+            [
+                DateModel(withDate: NSDate(timeIntervalSinceNow: 0 * 86400)),
+                DateModel(withDate: NSDate(timeIntervalSinceNow: 1 * 86400)),
+                DateModel(withDate: NSDate(timeIntervalSinceNow: 2 * 86400)),
+                DateModel(withDate: NSDate(timeIntervalSinceNow: 3 * 86400)),
+                DateModel(withDate: NSDate(timeIntervalSinceNow: 4 * 86400)),
+                DateModel(withDate: NSDate(timeIntervalSinceNow: 5 * 86400)),
+                DateModel(withDate: NSDate(timeIntervalSinceNow: 6 * 86400))
+            ]
+        ]
+    }
+    
+    override func didSelect(_ item: Any?, collectionPickerView: CollectionPickerView) {
+        if let _ = collectionPickerView as? ClassPickerView {
+            selectedItems[0] = item
+        } else if let _ = collectionPickerView as? DatePickerView {
+            selectedItems[1] = item
+        }
+    }
+}

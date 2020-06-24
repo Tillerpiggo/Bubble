@@ -74,6 +74,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         /*
+        coreDataController.fetchClasses { (classes) in
+            if let classPickerViewController = self.window?.rootViewController as? TestClassPickerViewController {
+                classPickerViewController.classes = classes
+            }
+        }
+ */
+        if let classPickerViewController = self.window?.rootViewController as? TestClassPickerViewController {
+            classPickerViewController.classes = [
+                Class(withName: "Test Class", color: Color.red, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "Very berry long", color: Color.pink, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "Coolio", color: Color.blue, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "Lime", color: Color.lime, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "B", color: Color.lightBlue, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "Purple", color: Color.purple, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
+            ]
+        }
+        
+        if let datePickerViewController = self.window?.rootViewController as? TestDatePickerViewController {
+            datePickerViewController.dates = [
+                DueDate(withDate: NSDate(timeIntervalSinceNow: 0 * 86400), managedContext: coreDataController.managedContext),
+                DueDate(withDate: NSDate(timeIntervalSinceNow: 1 * 86400), managedContext: coreDataController.managedContext),
+                DueDate(withDate: NSDate(timeIntervalSinceNow: 2 * 86400), managedContext: coreDataController.managedContext),
+                DueDate(withDate: NSDate(timeIntervalSinceNow: 3 * 86400), managedContext: coreDataController.managedContext),
+                DueDate(withDate: NSDate(timeIntervalSinceNow: 4 * 86400), managedContext: coreDataController.managedContext),
+                DueDate(withDate: NSDate(timeIntervalSinceNow: 5 * 86400), managedContext: coreDataController.managedContext),
+                DueDate(withDate: NSDate(timeIntervalSinceNow: 6 * 86400), managedContext: coreDataController.managedContext)
+            ]
+        }
+        
+        if let controller = self.window?.rootViewController as? AssignmentCustomizationCollectionViewController {
+            controller.classes = [
+                Class(withName: "Test Class", color: Color.red, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "Very berry long", color: Color.pink, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "Coolio", color: Color.blue, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "Lime", color: Color.lime, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "B", color: Color.lightBlue, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                Class(withName: "Purple", color: Color.purple, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
+            ]
+        }
+        
+        /*
         if let assignmentCollectionViewController = window?.rootViewController as? AssignmentCollectionViewController {
             
             

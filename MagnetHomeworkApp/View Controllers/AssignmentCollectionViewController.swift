@@ -40,7 +40,7 @@ class AssignmentCollectionViewController: UICollectionViewController, Collection
         return `class`.ckRecord.recordID.recordName
     }
     
-    lazy var fetchedResultsController: NSFetchedResultsController<Assignment> = {
+    private lazy var fetchedResultsController: NSFetchedResultsController<Assignment> = {
         NSFetchedResultsController<NSFetchRequestResult>.deleteCache(withName: "Bubble2")
         
         let fetchRequest: NSFetchRequest<Assignment> = Assignment.fetchRequest()

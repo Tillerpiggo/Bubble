@@ -48,6 +48,12 @@
 		235E0B902199491F005D3B9C /* UILabel+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E0B8F2199491F005D3B9C /* UILabel+Helpers.swift */; };
 		236B762B2249C5E100AC92CC /* MagnetHomeworkAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236B762A2249C5E100AC92CC /* MagnetHomeworkAppTests.swift */; };
 		236B76332249C69E00AC92CC /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236B76322249C69E00AC92CC /* TestCoreDataStack.swift */; };
+		236BC5CD24A19C8F005CA7A4 /* CollectionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC5CC24A19C8E005CA7A4 /* CollectionPickerView.swift */; };
+		236BC5CF24A1A0BC005CA7A4 /* CollectionPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC5CE24A1A0BC005CA7A4 /* CollectionPickerViewCell.swift */; };
+		236BC5D124A1ABB2005CA7A4 /* TestClassPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC5D024A1ABB2005CA7A4 /* TestClassPickerViewController.swift */; };
+		236BC5D324A28DC6005CA7A4 /* PickableClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC5D224A28DC6005CA7A4 /* PickableClassCell.swift */; };
+		236BC5D524A28DCF005CA7A4 /* PickableDueDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC5D424A28DCF005CA7A4 /* PickableDueDateCell.swift */; };
+		236BC5D724A30DC0005CA7A4 /* CustomizationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */; };
 		23794AB122167A940056582B /* CloudReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23794AB022167A940056582B /* CloudReachability.swift */; };
 		238D15B92208CB6D00178183 /* ConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238D15B82208CB6D00178183 /* ConnectionView.xib */; };
 		238D15BB2208D78600178183 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D15BA2208D78600178183 /* ConnectionView.swift */; };
@@ -150,6 +156,12 @@
 		236B762A2249C5E100AC92CC /* MagnetHomeworkAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetHomeworkAppTests.swift; sourceTree = "<group>"; };
 		236B762C2249C5E100AC92CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		236B76322249C69E00AC92CC /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		236BC5CC24A19C8E005CA7A4 /* CollectionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPickerView.swift; sourceTree = "<group>"; };
+		236BC5CE24A1A0BC005CA7A4 /* CollectionPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPickerViewCell.swift; sourceTree = "<group>"; };
+		236BC5D024A1ABB2005CA7A4 /* TestClassPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClassPickerViewController.swift; sourceTree = "<group>"; };
+		236BC5D224A28DC6005CA7A4 /* PickableClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableClassCell.swift; sourceTree = "<group>"; };
+		236BC5D424A28DCF005CA7A4 /* PickableDueDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableDueDateCell.swift; sourceTree = "<group>"; };
+		236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationCollectionViewController.swift; sourceTree = "<group>"; };
 		23794AB022167A940056582B /* CloudReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudReachability.swift; sourceTree = "<group>"; };
 		238D15B82208CB6D00178183 /* ConnectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectionView.xib; sourceTree = "<group>"; };
 		238D15BA2208D78600178183 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
@@ -240,7 +252,9 @@
 		23484C6221866946007C5CCF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */,
 				23A38B95242C2278004B07FD /* ClassCollectionViewController.swift */,
+				236BC5D024A1ABB2005CA7A4 /* TestClassPickerViewController.swift */,
 				234A4157249EC7AA006BD94F /* AssignmentCollectionViewController.swift */,
 				2329382121E3280F00E5FC69 /* TabBarController.swift */,
 				231BA77A232F0222008429E1 /* AddAssignmentViewController.swift */,
@@ -277,7 +291,10 @@
 				23A38BA1242DC4B2004B07FD /* AddClassCollectionViewCell.swift */,
 				23580D53218E286600434DD9 /* AssignmentTableViewCell.swift */,
 				234A4153249E9760006BD94F /* AssignmentCollectionViewCell.swift */,
+				236BC5CE24A1A0BC005CA7A4 /* CollectionPickerViewCell.swift */,
 				234A4155249E9774006BD94F /* ProgrammaticTableViewCell.swift */,
+				236BC5D224A28DC6005CA7A4 /* PickableClassCell.swift */,
+				236BC5D424A28DCF005CA7A4 /* PickableDueDateCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -302,6 +319,7 @@
 				23D8FCD8248F41790016F0D3 /* ColorPickerView.swift */,
 				234A4149249D8AF1006BD94F /* ClassView.swift */,
 				234A414D249D912C006BD94F /* NumberView.swift */,
+				236BC5CC24A19C8E005CA7A4 /* CollectionPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -709,8 +727,10 @@
 				23A38B96242C2278004B07FD /* ClassCollectionViewController.swift in Sources */,
 				234A4152249DDACC006BD94F /* AssignmentTableViewController.swift in Sources */,
 				23484C5F21854A1E007C5CCF /* ClassTableViewController.swift in Sources */,
+				236BC5D124A1ABB2005CA7A4 /* TestClassPickerViewController.swift in Sources */,
 				231BA779232EFB0B008429E1 /* AddAssignmentView.swift in Sources */,
 				23CD10AD2180413E0034FFA7 /* CloudUploadable.swift in Sources */,
+				236BC5CF24A1A0BC005CA7A4 /* CollectionPickerViewCell.swift in Sources */,
 				235E0B8E2198AE06005D3B9C /* ClassTableViewCell.swift in Sources */,
 				23A38B9E242D4813004B07FD /* ProgrammaticAddClassView.swift in Sources */,
 				23BA8F202237FCD200441FE9 /* DueDateType.swift in Sources */,
@@ -725,6 +745,7 @@
 				234A414C249D8B4D006BD94F /* ClassViewController.swift in Sources */,
 				234A414A249D8AF1006BD94F /* ClassView.swift in Sources */,
 				235E0B902199491F005D3B9C /* UILabel+Helpers.swift in Sources */,
+				236BC5D724A30DC0005CA7A4 /* CustomizationCollectionViewController.swift in Sources */,
 				23CD109921803C530034FFA7 /* MagnetHomeworkApp.xcdatamodeld in Sources */,
 				23F4C9E2219284A000D00D05 /* UINavigationBar.swift in Sources */,
 				23332B0321AB1DD600111882 /* AddObjectViewController.swift in Sources */,
@@ -744,6 +765,8 @@
 				23580D54218E286600434DD9 /* AssignmentTableViewCell.swift in Sources */,
 				23CD10B121814F9B0034FFA7 /* CoreDataController.swift in Sources */,
 				23CD109121803C530034FFA7 /* AppDelegate.swift in Sources */,
+				236BC5CD24A19C8F005CA7A4 /* CollectionPickerView.swift in Sources */,
+				236BC5D324A28DC6005CA7A4 /* PickableClassCell.swift in Sources */,
 				239607D224273F3400AC4E00 /* RoundedExpandingTextView.swift in Sources */,
 				23CD10BD2181A0660034FFA7 /* Class+CoreDataClass.swift in Sources */,
 				2310CF4321A8877E00A995FB /* AssignmentHeaderFooterView.swift in Sources */,
@@ -759,6 +782,7 @@
 				239607D62428637A00AC4E00 /* PlaceholderTextView.swift in Sources */,
 				23AB27DE2322AA54008C0FBD /* ProgressBarView.swift in Sources */,
 				23CD10AA21803E4D0034FFA7 /* CloudController.swift in Sources */,
+				236BC5D524A28DCF005CA7A4 /* PickableDueDateCell.swift in Sources */,
 				238F4E8824981264004B5154 /* ProgrammaticProgressBarView.swift in Sources */,
 				238D15BD2208D8D000178183 /* ConnectionViewController.swift in Sources */,
 				23F4C9DA2192704400D00D05 /* UIColor+Helpers.swift in Sources */,

@@ -145,6 +145,7 @@ fileprivate extension ExpandingTextView {
     func addConstraints() {
         textView.translatesAutoresizingMaskIntoConstraints = false
         
+        /*
         // Array of constraints
         [
             textView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 6.0),
@@ -152,7 +153,14 @@ fileprivate extension ExpandingTextView {
             textView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: padding),
             textView.topAnchor.constraint(equalTo: self.topAnchor, constant: -1.0 * padding),
         ].forEach { $0.isActive = true }
+ */
         
+        textView.addConstraints(
+            top: self.topAnchor, topConstant: padding,
+            bottom: self.bottomAnchor, bottomConstant: padding,
+            leading: self.leadingAnchor, leadingConstant: padding,
+            trailing: self.trailingAnchor, trailingConstant: 6.0)
+            
         textViewDidChange(textView)
     }
     
