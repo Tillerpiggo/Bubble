@@ -106,11 +106,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if let controller = self.window?.rootViewController as? AssignmentCustomizationCollectionViewController {
             controller.classes = [
                 Class(withName: "Test Class", color: Color.red, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
-                Class(withName: "Very berry long", color: Color.pink, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
-                Class(withName: "Coolio", color: Color.blue, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
-                Class(withName: "Lime", color: Color.lime, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
-                Class(withName: "B", color: Color.lightBlue, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
-                Class(withName: "Purple", color: Color.purple, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
+                Class(withName: "Very berry long", color: Color.pink, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
+                //Class(withName: "Coolio", color: Color.blue, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                //Class(withName: "Lime", color: Color.lime, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                //Class(withName: "B", color: Color.lightBlue, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
+                //Class(withName: "Purple", color: Color.purple, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
             ]
         }
         

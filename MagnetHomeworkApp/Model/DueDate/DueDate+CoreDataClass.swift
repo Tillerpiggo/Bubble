@@ -115,6 +115,22 @@ class DateModel {
         }
     }
     
+    var string: String {
+        switch dueDateType {
+        case .unscheduled: return "Unscheduled"
+        case .dueToday: return "Today"
+        case .dueTomorrow: return "Tomorrow"
+        case .dueMonday: return "Monday"
+        case .dueTuesday: return "Tuesday"
+        case .dueWednesday: return "Wednesday"
+        case .dueThursday: return "Thursday"
+        case .dueFriday: return "Friday"
+        case .dueSaturday: return "Saturday"
+        case .dueSunday: return "Sunday"
+        default: return "Someday"
+        }
+    }
+    
     var dayOfTheMonth: Int {
         let dayOfTheMonth = Calendar.current.dateComponents([.day], from: self.date as Date)
         return dayOfTheMonth.day ?? 0

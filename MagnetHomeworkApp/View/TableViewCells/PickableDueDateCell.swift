@@ -19,7 +19,7 @@ class PickableDueDateCell: ProgrammaticCollectionViewCell, PickableItemCell {
         
         label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         label.textColor = UIColor(white: 0.558, alpha: 1.0)
-        label.textAlignment = .right
+        label.textAlignment = .center
         
         return label
     }()
@@ -89,17 +89,18 @@ class PickableDueDateCell: ProgrammaticCollectionViewCell, PickableItemCell {
             weekdayLabel.text = date.weekdayString
             dateLabel.text = "\(date.dayOfTheMonth)"
             
-            string = date.weekdayString
+            string = date.string
             
             color = UIColor(white: 0.367, alpha: 1.0)
             
             // Add constraints
-            weekdayLabel.widthAnchor.constraint(equalToConstant: weekdayLabel.sizeThatFits(weekdayLabel.bounds.size).width).isActive = true
-            let leading = weekdayLabel.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 8)
+            //weekdayLabel.widthAnchor.constraint(equalToConstant: weekdayLabel.sizeThatFits(weekdayLabel.bounds.size).width).isActive = true
+            
+            let leading = weekdayLabel.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 12)
             leading.priority = UILayoutPriority(rawValue: 500)
             leading.isActive = true
             
-            let trailing = weekdayLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: -8)
+            let trailing = weekdayLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: -12)
             trailing.priority = UILayoutPriority(rawValue: 500)
             trailing.isActive = true
         }

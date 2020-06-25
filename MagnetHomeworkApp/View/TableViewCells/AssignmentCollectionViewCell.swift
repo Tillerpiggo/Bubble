@@ -17,6 +17,14 @@ class AssignmentCollectionViewCell: ProgrammaticCollectionViewCell {
     
     var assignment: Assignment?
     
+    private lazy var assignmentView: AssignmentView = {
+        let assignmentView = AssignmentView()
+        assignmentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return assignmentView
+    }()
+    
+    /*
     // The background view
     private var bubbleView: UIView = {
         let bubbleView = UIView()
@@ -48,29 +56,39 @@ class AssignmentCollectionViewCell: ProgrammaticCollectionViewCell {
         
         return imageView
     }()
+ */
     
     func configure(withAssignment assignment: Assignment) {
-        let isCompleted = assignment.toDo?.isCompleted ?? false
-        let isCompletedImage = isCompleted ? UIImage(named: completed) : UIImage(named: incompleted)
-        isCompletedImageView.tintColor = assignment.owningClass!.color.uiColor
-        isCompletedImageView.image = isCompletedImage
-        
-        textView.text = assignment.text ?? ""
-        textView.textColor = isCompleted ? .lightGray : .textColor
-        
-        self.assignment = assignment
+           /*
+           let isCompleted = assignment.toDo?.isCompleted ?? false
+           let isCompletedImage = isCompleted ? UIImage(named: completed) : UIImage(named: incompleted)
+           isCompletedImageView.tintColor = assignment.owningClass!.color.uiColor
+           isCompletedImageView.image = isCompletedImage
+           
+           textView.text = assignment.text ?? ""
+           textView.textColor = isCompleted ? .lightGray : .textColor
+           
+           self.assignment = assignment
+    */
+        assignmentView.configure(withAssignment: assignment)
     }
     
     override func setupView() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
+        /*
         addSubviews()
         addConstraints()
+ */
+        addSubview(assignmentView)
+        self.pinEdgesToView(contentView, withMargin: -4.0)
+        contentView.pinEdgesToView(assignmentView)
     }
 }
 
 // Setup view helper methods
 extension AssignmentCollectionViewCell {
+    /*
     func addSubviews() {
         addSubview(bubbleView)
         bubbleView.addSubviews([textView, isCompletedImageView])
@@ -91,6 +109,7 @@ extension AssignmentCollectionViewCell {
             textView.trailingAnchor.constraint(equalTo: bubbleView.trailingAnchor, constant: -4)
         ])
     }
+ */
     
     //https://www.robertpieta.com/autosizing-full-width-cells/
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {

@@ -24,6 +24,8 @@ class PickableClassCell: ProgrammaticCollectionViewCell, PickableItemCell {
     
     override func setupView() {
         contentView.addSubview(label)
+        contentView.pinEdgesToView(self)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true

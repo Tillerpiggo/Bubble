@@ -17,11 +17,12 @@ class CollectionPickerView: ProgrammaticView {
     
     var delegate: CollectionPickerViewDelegate?
     var items: [Any?]
-    var deselectedOpacity: Float = 0.4
+    var deselectedOpacity: Float = 0.25
     
     private var isExpanded = true
     private var shrinkConstraints = [NSLayoutConstraint]()
     private var collectionViewHeightConstraint: NSLayoutConstraint?
+    private var selectedIndexPath: IndexPath?
     
     // Override these
     var title: String {
@@ -41,7 +42,7 @@ class CollectionPickerView: ProgrammaticView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .heavy)
-        titleLabel.textColor = UIColor(white: 0.75, alpha: 1.0)
+        titleLabel.textColor = UIColor(white: 0.5, alpha: 1.0)
         titleLabel.text = title
         
         return titleLabel
@@ -101,9 +102,9 @@ class CollectionPickerView: ProgrammaticView {
         self.backgroundColor = .white
         self.addDropShadow(color: .black, opacity: 0.1, radius: 20)
         
-        collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: collectionView.collectionViewLayout.collectionViewContentSize.height)
-        collectionViewHeightConstraint?.isActive = true
+        collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 40)
         collectionViewHeightConstraint?.priority = UILayoutPriority(rawValue: 999)
+        collectionViewHeightConstraint?.isActive = true
     }
     
     // TODO - possibly make a controller, move this heightAnchor code to didLayoutSubviews()
@@ -111,6 +112,7 @@ class CollectionPickerView: ProgrammaticView {
         super.layoutSubviews()
         
         collectionViewHeightConstraint?.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
+        print(collectionView.collectionViewLayout.collectionViewContentSize.height)
     }
     
     func toggleExpansion(animated: Bool) {
@@ -181,6 +183,10 @@ extension CollectionPickerView: UICollectionViewDelegateFlowLayout, UICollection
         cell.configure(with: items[indexPath.row])
         cell.contentView.layer.opacity = deselectedOpacity
         
+        if cell.isSelected {
+            cell.contentView.layer.opacity = 1.0
+        }
+        
         return cell
     }
     
@@ -193,9 +199,12 @@ extension CollectionPickerView: UICollectionViewDelegateFlowLayout, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? PickableItemCell {
             cell.contentView.layer.opacity = 1.0
+            //cell.addDropShadow(color: .black, opacity: 0.4, radius: 30)
             
             selectedItemLabel.text = cell.string
             selectedItemLabel.textColor = cell.color
+            
+            //selectedIndexPath = indexPath
         }
         
         delegate?.didSelect(items[indexPath.row], collectionPickerView: self)
@@ -204,6 +213,7 @@ extension CollectionPickerView: UICollectionViewDelegateFlowLayout, UICollection
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) {
             cell.contentView.layer.opacity = deselectedOpacity
+            //cell.removeDropShadow()
         }
     }
 }

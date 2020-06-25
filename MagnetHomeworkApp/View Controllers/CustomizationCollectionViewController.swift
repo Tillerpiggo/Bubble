@@ -47,10 +47,6 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
         collectionView.layoutIfNeeded()
     }
     
-    override func viewDidLayoutSubviews() {
-        
-    }
-    
     // Datasource and delegate
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -72,9 +68,13 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionPickerViewCell
-        cell.toggleExpansion(animated: false)
+        
+        cell.toggleExpansion(animated: true)
+        
+        collectionView.collectionViewLayout.invalidateLayout()
+            
         UIView.animate(withDuration: 0.5) { [unowned self] in
-            self.collectionViewLayout.invalidateLayout()
+            self.collectionView.layoutIfNeeded()
         }
     }
 }
@@ -115,16 +115,17 @@ class AssignmentCustomizationCollectionViewController: CustomizationCollectionVi
     
     override var items: [[Any?]] {
         return [
+            
             classes,
-            [
-                DateModel(withDate: NSDate(timeIntervalSinceNow: 0 * 86400)),
-                DateModel(withDate: NSDate(timeIntervalSinceNow: 1 * 86400)),
-                DateModel(withDate: NSDate(timeIntervalSinceNow: 2 * 86400)),
-                DateModel(withDate: NSDate(timeIntervalSinceNow: 3 * 86400)),
-                DateModel(withDate: NSDate(timeIntervalSinceNow: 4 * 86400)),
-                DateModel(withDate: NSDate(timeIntervalSinceNow: 5 * 86400)),
-                DateModel(withDate: NSDate(timeIntervalSinceNow: 6 * 86400))
-            ]
+           [
+               DateModel(withDate: NSDate(timeIntervalSinceNow: 0 * 86400)),
+               DateModel(withDate: NSDate(timeIntervalSinceNow: 1 * 86400)),
+               DateModel(withDate: NSDate(timeIntervalSinceNow: 2 * 86400)),
+               DateModel(withDate: NSDate(timeIntervalSinceNow: 3 * 86400)),
+               DateModel(withDate: NSDate(timeIntervalSinceNow: 4 * 86400)),
+               DateModel(withDate: NSDate(timeIntervalSinceNow: 5 * 86400)),
+               DateModel(withDate: NSDate(timeIntervalSinceNow: 6 * 86400))
+           ],
         ]
     }
     

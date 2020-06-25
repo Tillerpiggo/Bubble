@@ -14,30 +14,57 @@ protocol AddAssignmentViewControllerDelegate {
 
 class AddAssignmentViewController: UIViewController {
     
+    var delegate: AddAssignmentViewControllerDelegate?
+    
     var cloudController: CloudController!
     var coreDataController: CoreDataController!
     
     var addAssignmentViewHeightConstraint: NSLayoutConstraint = NSLayoutConstraint() // Placeholder value since inits are annoying. This must be set later
     
-    private var addAssignmentViewHeight: CGFloat = 60
-    var addAssignmentView = AddAssignmentView()
     
-    var delegate: AddAssignmentViewControllerDelegate?
+    //private var addAssignmentViewHeight: CGFloat = 60
     
     override var canBecomeFirstResponder: Bool { return true }
     override var inputAccessoryView: UIView? {
         return addAssignmentView
     }
-
-
+    
+    private lazy var addAssignmentButton: BouncyButton = {
+        let addAssignmentButton = BouncyButton()
+        addAssignmentButton.translatesAutoresizingMaskIntoConstraints = false
+        addAssignmentButton.cornerRadius = 32
+        addAssignmentButton.backgroundColor = .white
+        addAssignmentButton.addDropShadow(color: .black, opacity: 0.15, radius: 20)
+        addAssignmentButton.addTarget(self, action: #selector(addAssignmentButtonPressed), for: .touchUpInside)
+        addAssignmentButton.setImage(to: UIImage(named: "addSymbol")!)
+        
+        return addAssignmentButton
+    }()
+    
+    private lazy var addAssignmentView: AddAssignmentView = {
+        let addAssignmentView = AddAssignmentView()
+        addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
+        addAssignmentView.delegate = self
+        
+        return addAssignmentView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Add views:
-        view.addSubview(addAssignmentView)
         view.backgroundColor = .white
         
-        addAssignmentView.delegate = self
+        // Add views:
+        view.addSubview(addAssignmentView)
+        view.addSubview(addAssignmentButton)
+        
+        addAssignmentButton.addConstraints(
+            bottom: view.bottomAnchor, bottomConstant: 32,
+            centerX: view.centerXAnchor,
+            widthConstant: 64,
+            heightConstant: 64)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -46,12 +73,14 @@ class AddAssignmentViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    /*
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         
         // Configure views:
         addAssignmentViewConstraints()
     }
+ */
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,7 +96,12 @@ class AddAssignmentViewController: UIViewController {
         }
     }
     
+    @objc func addAssignmentButtonPressed() {
+        
+    }
     
+    
+    /*
     private func addAssignmentViewConstraints() {
         // Add constraints
         
@@ -81,23 +115,8 @@ class AddAssignmentViewController: UIViewController {
         print("SAFE AREA INSETS: \(view.safeAreaInsets.bottom)")
         //addAssignmentView.addConstraint(addAssignmentViewHeightConstraint)
     }
-    
-    /*
-    // MARK: - Keyboard Notifications
-    
-    @objc func keyboardWillShow(_ note: NSNotification) {
-        // Change height constraint to normal level (no padding)
-        addAssignmentViewHeightConstraint.constant = addAssignmentViewHeight
-        
-        print(note)
-    }
-    
-    @objc func keyboardWillHide(_ note: NSNotification) {
-        // Change height constraint to include padding (for iPhone X)
-        addAssignmentViewHeightConstraint.constant = addAssignmentViewHeight + view.safeAreaInsets.bottom
-    }
  */
-    
+    /*
     private func setVisuals() {
         // Add shadow to addAssignmentView
         
@@ -113,6 +132,7 @@ class AddAssignmentViewController: UIViewController {
         
         view.layer.insertSublayer(shadowLayer, above: addAssignmentView.layer)
     }
+ */
 }
 
 extension AddAssignmentViewController: AddAssignmentViewDelegate {
