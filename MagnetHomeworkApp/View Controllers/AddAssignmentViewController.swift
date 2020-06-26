@@ -41,6 +41,18 @@ class AddAssignmentViewController: UIViewController {
         return addAssignmentButton
     }()
     
+    
+    private lazy var addAssignmentView: NewAddAssignmentView = {
+        coreDataController.fetchClasses { (classes) in
+            let addAssignmentView = NewAddAssignmentView()
+                addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
+                addAssignmentView.delegate = self
+            
+            return addAssignmentView
+        }
+    }()
+    
+    /*
     private lazy var addAssignmentView: AddAssignmentView = {
         let addAssignmentView = AddAssignmentView()
         addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +60,7 @@ class AddAssignmentViewController: UIViewController {
         
         return addAssignmentView
     }()
+ */
     
     
     override func viewDidLoad() {
@@ -64,7 +77,11 @@ class AddAssignmentViewController: UIViewController {
             centerX: view.centerXAnchor,
             widthConstant: 64,
             heightConstant: 64)
-        
+        addAssignmentView.addConstraints(
+            bottom: view.bottomAnchor, bottomConstant: 0,
+            leading: view.leadingAnchor, leadingConstant: 0,
+            trailing: view.trailingAnchor, trailingConstant: 0)
+        addAssignmentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -97,7 +114,8 @@ class AddAssignmentViewController: UIViewController {
     }
     
     @objc func addAssignmentButtonPressed() {
-        
+        addAssignmentView.display()
+        //addAssignmentView.roundedExpandingTextView.select()
     }
     
     
@@ -135,8 +153,10 @@ class AddAssignmentViewController: UIViewController {
  */
 }
 
+
 extension AddAssignmentViewController: AddAssignmentViewDelegate {
     func doneButtonPressed(withText text: String) {
+        /*
         // Implement in subview
         addAssignmentView.roundedExpandingTextView.dismiss()
         
@@ -148,5 +168,7 @@ extension AddAssignmentViewController: AddAssignmentViewDelegate {
         
         // Add it
         //delegate?.addedAssignment(<#T##assignment: Assignment##Assignment#>)
+ */
     }
+    
 }

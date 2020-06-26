@@ -60,7 +60,7 @@ class AssignmentView: ProgrammaticView {
     }
     
     func select() {
-        textView.becomeFirstResponder()
+        textView.select()
     }
     
     override func setupView() {

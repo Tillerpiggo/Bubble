@@ -11,7 +11,7 @@ import UIKit
 class CustomizationCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // Remember to set classes
-    var classes: [Class]!
+    var classes: [Class]
     
     // Subclass should override this property
     var items: [[Any?]] {
@@ -45,6 +45,15 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
         
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
+    }
+    
+    init(collectionViewLayout layout: UICollectionViewLayout, classes: [Class]) {
+        self.classes = classes
+        super.init(collectionViewLayout: layout)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // Datasource and delegate

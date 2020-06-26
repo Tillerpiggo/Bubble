@@ -11,6 +11,7 @@ import UIKit
 class NewAddAssignmentView: ProgrammaticView {
     
     var delegate: AddAssignmentViewDelegate?
+    var classes: [Class]
     
     private lazy var backgroundView: UIView = {
         let backgroundView = UIView()
@@ -44,16 +45,30 @@ class NewAddAssignmentView: ProgrammaticView {
         return addButton
     }()
     
+    
     private lazy var assignmentCustomizationCollectionViewController: AssignmentCustomizationCollectionViewController = {
-        let controller = AssignmentCustomizationCollectionViewController()
+        let controller = AssignmentCustomizationCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout(), classes: classes)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         
         return controller
     }()
     
+    init(classes: [Class]) {
+        self.classes = classes
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func setupView() {
         addSubviews()
         addConstraints()
+    }
+    
+    func display() {
+        assignmentView.select()
     }
 }
 
@@ -76,6 +91,7 @@ fileprivate extension NewAddAssignmentView {
             leading: self.leadingAnchor, leadingConstant: 32,
             trailing: self.trailingAnchor, trailingConstant: 32)
         
+        
         assignmentCustomizationCollectionViewController.view.addConstraints(
             top: backgroundView.topAnchor, topConstant: 16,
             leading: backgroundView.leadingAnchor, leadingConstant: 0,
@@ -83,7 +99,7 @@ fileprivate extension NewAddAssignmentView {
         
         addButton.addConstraints(
             top: assignmentCustomizationCollectionViewController.view.bottomAnchor, topConstant: 16,
-            bottom: backgroundView.bottomAnchor, bottomConstant: 16,
+            bottom: backgroundView.bottomAnchor, bottomConstant: 0,
             centerX: backgroundView.centerXAnchor,
             widthConstant: 80,
             heightConstant: 50)
