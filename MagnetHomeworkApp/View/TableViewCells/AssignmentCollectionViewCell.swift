@@ -10,7 +10,7 @@ import UIKit
 
 class AssignmentCollectionViewCell: ProgrammaticCollectionViewCell {
     
-    override var intrinsicContentSize: CGSize { return CGSize(width: 1, height: 1) }
+    override var intrinsicContentSize: CGSize { return CGSize(width: 100, height: 50) }
     
     private let completed = "completedCircleTemplate"
     private let incompleted = "incompletedCircle2"

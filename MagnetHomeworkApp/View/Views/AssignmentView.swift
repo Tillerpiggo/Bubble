@@ -13,7 +13,7 @@ class AssignmentView: ProgrammaticView {
     // Let's see if this works...
     override var intrinsicContentSize: CGSize {
         //preferred content size, calculate it if some internal state changes
-        return CGSize(width: 1, height: 1)
+        return CGSize(width: 100, height: 100)
     }
     
     private let completed = "completedCircleTemplate"

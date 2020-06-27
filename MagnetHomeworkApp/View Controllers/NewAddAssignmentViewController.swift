@@ -8,7 +8,7 @@
 
 import UIKit
 
-/*
+
 protocol AddAssignmentViewControllerDelegate {
     func addedAssignment(_ assignment: Assignment)
 }
@@ -43,7 +43,12 @@ class AddAssignmentViewController: UIViewController {
         return addAssignmentButton
     }()
     
-    private var addAssignmentView: NewAddAssignmentView?
+    private lazy var addAssignmentView: NewAddAssignmentView = {
+        let addAssignmentView = NewAddAssignmentView()
+        addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return addAssignmentView
+    }()
     //private var addAssignmentView: AddAssignmentView = AddAssignmentView()
     /*
     private lazy var addAssignmentView: AddAssignmentView = {
@@ -53,14 +58,18 @@ class AddAssignmentViewController: UIViewController {
     
     
     
-    func initializeAddAssignmentView(completion: @escaping () -> Void) {
+    func configureAddAssignmentView() {
         coreDataController.fetchClasses { (classes) in
-            let addAssignmentView = NewAddAssignmentView(classes: classes)
-            addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
-            addAssignmentView.delegate = self
+            print("Classes: \(classes)")
+            self.addAssignmentView.setClasses(to: classes)
+            self.addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
+            self.addAssignmentView.delegate = self
+        
+            //self.addAssignmentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
             
-            self.addAssignmentView = addAssignmentView
-            completion()
+            //self.view.addSubview(self.addAssignmentView)
+            
+            //self.view.layoutSubviews()
         }
     }
     
@@ -82,32 +91,22 @@ class AddAssignmentViewController: UIViewController {
         
         // Add views:
         
+        self.view.addSubview(self.addAssignmentButton)
+            
+        self.addAssignmentButton.addConstraints(
+            bottom: self.view.bottomAnchor, bottomConstant: 32,
+            centerX: self.view.centerXAnchor,
+            widthConstant: 64,
+            heightConstant: 64)
+            
+        configureAddAssignmentView()
         
-        initializeAddAssignmentView { [unowned self] in
-            self.view.addSubview(self.addAssignmentView!)
-            self.view.addSubview(self.addAssignmentButton)
-            
-            
-            self.addAssignmentButton.addConstraints(
-                bottom: self.view.bottomAnchor, bottomConstant: 32,
-                centerX: self.view.centerXAnchor,
-                widthConstant: 64,
-                heightConstant: 64)
-            
-            self.addAssignmentView!.addConstraints(
-                bottom: self.view.bottomAnchor, bottomConstant: 0,
-                leading: self.view.leadingAnchor, leadingConstant: 0,
-                trailing: self.view.trailingAnchor, trailingConstant: 0)
-            self.addAssignmentView!.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
-        }
-        //view.addSubviews([addAssignmentView, addAssignmentButton])
-        //addAssignmentViewConstraints()
+        self.view.addSubview(self.addAssignmentView)
         
-//        self.addAssignmentButton.addConstraints(
-//        bottom: self.view.bottomAnchor, bottomConstant: 32,
-//        centerX: self.view.centerXAnchor,
-//        widthConstant: 64,
-//        heightConstant: 64)
+        self.addAssignmentView.addConstraints(
+        top: self.view.bottomAnchor, topConstant: 0,
+        leading: self.view.leadingAnchor, leadingConstant: 0,
+        trailing: self.view.trailingAnchor, trailingConstant: 0)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -115,15 +114,6 @@ class AddAssignmentViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self)
     }
-    
-    /*
-    override func viewSafeAreaInsetsDidChange() {
-        super.viewSafeAreaInsetsDidChange()
-        
-        // Configure views:
-        addAssignmentViewConstraints()
-    }
- */
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -140,63 +130,15 @@ class AddAssignmentViewController: UIViewController {
     }
     
     @objc func addAssignmentButtonPressed() {
-        guard let addAssignmentView = addAssignmentView else { return }
+        //guard let addAssignmentView = addAssignmentView else { return }
         addAssignmentView.display()
-        //addAssignmentView.roundedExpandingTextView.select()
     }
-    
-    
-    /*
-    private func addAssignmentViewConstraints() {
-        // Add constraints
-        
-        // addAssignmentView will be fine on its own after setting frame and making it the inputAccessoryView
-        addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
-        
-        addAssignmentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        addAssignmentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        
-        addAssignmentViewHeightConstraint = NSLayoutConstraint(item: addAssignmentView, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: .none, attribute: .height, multiplier: 1.0, constant: addAssignmentViewHeight)
-        print("SAFE AREA INSETS: \(view.safeAreaInsets.bottom)")
-        addAssignmentView.addConstraint(addAssignmentViewHeightConstraint)
-    }
- */
-    /*
-    private func setVisuals() {
-        // Add shadow to addAssignmentView
-        
-        
-        // Add shadow
-        let shadowLayer = CAShapeLayer()
-        shadowLayer.shadowOpacity = 0.2
-        shadowLayer.shadowRadius = 20
-        shadowLayer.shadowColor = UIColor.black.cgColor
-        shadowLayer.frame = addAssignmentView.frame
-        shadowLayer.path = UIBezierPath(roundedRect: addAssignmentView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 24, height: 24)).cgPath
-        //shadowLayer.path = roundedTopMaskLayer.path
-        
-        view.layer.insertSublayer(shadowLayer, above: addAssignmentView.layer)
-    }
-    */
 }
 
 
 extension AddAssignmentViewController: AddAssignmentViewDelegate {
     func doneButtonPressed(withText text: String) {
-        /*
-        // Implement in subview
-        addAssignmentView.roundedExpandingTextView.dismiss()
-        
-        // Add an assignment and transfer that to the next delegate:
-        
-        // Create the assignment
-        //let newAssignment = Assignment(withText: text, managedContext: coreDataController.managedContext, owningClass: <#T##Class#>, zoneID: <#T##CKRecordZone.ID#>, toDoZoneID: <#T##CKRecordZone.ID#>)
-        
-        
-        // Add it
-        //delegate?.addedAssignment(<#T##assignment: Assignment##Assignment#>)
- */
+
     }
     
 }
-*/

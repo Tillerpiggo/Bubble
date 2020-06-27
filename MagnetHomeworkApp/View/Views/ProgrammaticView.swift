@@ -20,7 +20,7 @@ class ProgrammaticView: UIView {
     }
     
     convenience init() {
-        self.init(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        self.init(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
         setupView()
     }
     

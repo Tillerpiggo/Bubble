@@ -41,10 +41,19 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
         }
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
         collectionView.pinEdgesToView(view)
         
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        guard let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        
+        collectionView.heightAnchor.constraint(equalToConstant: collectionViewLayout.collectionViewContentSize.height).isActive = true
     }
     
     init(collectionViewLayout layout: UICollectionViewLayout, classes: [Class]) {
