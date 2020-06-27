@@ -18,6 +18,7 @@ protocol DynamicViewDelegate {
 }
 
 class ExpandingTextView: ProgrammaticView {
+    
     // MARK: - Subviews
     var delegate: UITextViewDelegate?
     var dynamicViewDelegate: DynamicViewDelegate?

@@ -15,6 +15,12 @@ protocol BouncyButtonDelegate {
 
 class BouncyButton: ProgrammaticView {
     
+    // Let's see if this works...
+    override var intrinsicContentSize: CGSize {
+        //preferred content size, calculate it if some internal state changes
+        return CGSize(width: 1, height: 1)
+    }
+    
     var delegate: BouncyButtonDelegate?
     
     //let animator = Animator()

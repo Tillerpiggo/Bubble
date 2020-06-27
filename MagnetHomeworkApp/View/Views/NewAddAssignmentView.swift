@@ -11,7 +11,13 @@ import UIKit
 class NewAddAssignmentView: ProgrammaticView {
     
     var delegate: AddAssignmentViewDelegate?
-    var classes: [Class]
+    var classes: [Class]?
+    
+    override var intrinsicContentSize: CGSize {
+        //preferred content size, calculate it if some internal state changes
+        return CGSize(width: 1, height: 1)
+    }
+    
     
     private lazy var backgroundView: UIView = {
         let backgroundView = UIView()
@@ -34,8 +40,10 @@ class NewAddAssignmentView: ProgrammaticView {
         return assignmentView
     }()
     
+    
     private lazy var addButton: BouncyButton = {
         let addButton = BouncyButton()
+        addButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.cornerRadius = 16
         addButton.backgroundColor = UIColor(white: 0.8, alpha: 1.0)
         
@@ -44,7 +52,6 @@ class NewAddAssignmentView: ProgrammaticView {
         
         return addButton
     }()
-    
     
     private lazy var assignmentCustomizationCollectionViewController: AssignmentCustomizationCollectionViewController = {
         let controller = AssignmentCustomizationCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout(), classes: classes)
@@ -75,11 +82,14 @@ class NewAddAssignmentView: ProgrammaticView {
 // MARK: - Helper Methods
 fileprivate extension NewAddAssignmentView {
     func addSubviews() {
+        
         self.addSubviews([backgroundView, assignmentView])
         backgroundView.addSubviews([addButton, assignmentCustomizationCollectionViewController.view])
+        self.addSubviews([assignmentView])
     }
     
     func addConstraints() {
+        
         backgroundView.addConstraints(
             bottom: self.bottomAnchor, bottomConstant: 0,
             leading: self.leadingAnchor, leadingConstant: 0,
@@ -95,7 +105,8 @@ fileprivate extension NewAddAssignmentView {
         assignmentCustomizationCollectionViewController.view.addConstraints(
             top: backgroundView.topAnchor, topConstant: 16,
             leading: backgroundView.leadingAnchor, leadingConstant: 0,
-            trailing: backgroundView.trailingAnchor, trailingConstant: 0)
+            trailing: backgroundView.trailingAnchor, trailingConstant: 0,
+            heightConstant: 120)
         
         addButton.addConstraints(
             top: assignmentCustomizationCollectionViewController.view.bottomAnchor, topConstant: 16,
@@ -103,5 +114,7 @@ fileprivate extension NewAddAssignmentView {
             centerX: backgroundView.centerXAnchor,
             widthConstant: 80,
             heightConstant: 50)
+        //assignmentView.pinEdgesToView(self)
+        self.backgroundColor = .blue
     }
 }
