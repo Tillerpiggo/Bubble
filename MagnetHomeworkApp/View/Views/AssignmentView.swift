@@ -36,7 +36,7 @@ class AssignmentView: ProgrammaticView {
         return bubbleView
     }()
     
-    private var textView: ExpandingTextView = {
+    fileprivate var textView: ExpandingTextView = {
         let textView = ExpandingTextView()
         
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -94,5 +94,28 @@ extension AssignmentView {
             textView.bottomAnchor.constraint(equalTo: bubbleView.bottomAnchor, constant: -4),
             textView.trailingAnchor.constraint(equalTo: bubbleView.trailingAnchor, constant: -4)
         ])
+    }
+}
+
+// just like an assignment view, but it doesn't use an assignment, it merely holds the fields of an assignment.
+// It's basically a glorified textView
+class NewAssignmentView: AssignmentView {
+    
+    // fields that replace the actual assignment
+    var text: String = ""
+    
+    override func configure(withAssignment assignment: Assignment) {
+        return
+    }
+    
+    override func setupView() {
+        super.setupView()
+        textView.delegate = self
+    }
+}
+
+extension NewAssignmentView: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        text = textView.text
     }
 }

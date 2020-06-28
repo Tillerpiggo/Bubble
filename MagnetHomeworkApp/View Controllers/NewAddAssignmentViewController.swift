@@ -36,16 +36,16 @@ class AddAssignmentViewController: UIViewController {
         }
     }
     
-    private lazy var addAssignmentButton: BouncyButton = {
-        let addAssignmentButton = BouncyButton()
-        addAssignmentButton.translatesAutoresizingMaskIntoConstraints = false
-        addAssignmentButton.cornerRadius = 32
-        addAssignmentButton.backgroundColor = .white
-        addAssignmentButton.addDropShadow(color: .black, opacity: 0.15, radius: 20)
-        addAssignmentButton.addTarget(self, action: #selector(addAssignmentButtonPressed), for: .touchUpInside)
-        addAssignmentButton.setImage(to: UIImage(named: "addSymbol")!)
+    private lazy var plusButton: BouncyButton = {
+        let plusButton = BouncyButton()
+        plusButton.translatesAutoresizingMaskIntoConstraints = false
+        plusButton.cornerRadius = 32
+        plusButton.backgroundColor = .white
+        plusButton.addDropShadow(color: .black, opacity: 0.15, radius: 20)
+        plusButton.addTarget(self, action: #selector(plusButtonPressed), for: .touchUpInside)
+        plusButton.setImage(to: UIImage(named: "addSymbol")!)
         
-        return addAssignmentButton
+        return plusButton
     }()
     
     private var addAssignmentView: NewAddAssignmentView?
@@ -109,9 +109,9 @@ class AddAssignmentViewController: UIViewController {
         
         // Add views:
         
-        self.view.addSubview(self.addAssignmentButton)
+        self.view.addSubview(self.plusButton)
             
-        self.addAssignmentButton.addConstraints(
+        self.plusButton.addConstraints(
             bottom: self.view.bottomAnchor, bottomConstant: 32,
             centerX: self.view.centerXAnchor,
             widthConstant: 64,
@@ -149,7 +149,7 @@ class AddAssignmentViewController: UIViewController {
         }
     }
     
-    @objc func addAssignmentButtonPressed() {
+    @objc func plusButtonPressed() {
         guard let addAssignmentView = addAssignmentView else { return }
         
         reloadInputViews()
@@ -157,14 +157,20 @@ class AddAssignmentViewController: UIViewController {
         keyboardIsShowing = true
         
         addAssignmentView.display()
-        
     }
 }
 
 
 extension AddAssignmentViewController: AddAssignmentViewDelegate {
-    func doneButtonPressed(withText text: String) {
-
+    func addedAssignment(withText text: String, class owningClass: Class?, dueDate: DateModel) {
+        // TODO - make it so that if the class is nil, it will automatically use the "All Homework" class
+        guard let owningClass = owningClass else { return }
+        
+        let zoneID = owningClass.ckRecord.recordID.zoneID
+        let newAssignment = Assignment(withText: text, managedContext: coreDataController.managedContext, owningClass: owningClass, zoneID: zoneID, toDoZoneID: cloudController.zoneID)
+        delegate?.addedAssignment(newAssignment)
+        
+        
     }
     
 }
