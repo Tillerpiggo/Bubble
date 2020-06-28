@@ -11,12 +11,7 @@ import UIKit
 class NewAddAssignmentView: ProgrammaticView {
     
     var delegate: AddAssignmentViewDelegate?
-    
-    override var intrinsicContentSize: CGSize {
-        //preferred content size, calculate it if some internal state changes
-        return CGSize(width: 100, height: 200)
-    }
-    
+    var classes: [Class]
     
     private lazy var backgroundView: UIView = {
         let backgroundView = UIView()
@@ -35,61 +30,72 @@ class NewAddAssignmentView: ProgrammaticView {
         return assignmentView
     }()
     
-    
     private lazy var addButton: BouncyButton = {
         let addButton = BouncyButton()
         addButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.cornerRadius = 16
-        addButton.backgroundColor = UIColor(white: 0.8, alpha: 1.0)
+        addButton.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
         
-        let title = NSAttributedString(string: "Add", attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .heavy), .foregroundColor: UIColor(white: 0.3, alpha: 1.0)])
+        let title = NSAttributedString(string: "Add", attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .heavy), .foregroundColor: UIColor(white: 0.2, alpha: 1.0)])
         addButton.setAttributedTitle(title, for: .normal)
         
         return addButton
     }()
     
-    var assignmentCustomizationCollectionViewController: AssignmentCustomizationCollectionViewController?
+    //var assignmentCustomizationCollectionViewController: AssignmentCustomizationCollectionViewController?
     
+    /*
     func setClasses(to classes: [Class]) {
         initializeAssignmentCustomizationCollectionViewController(with: classes)
-        
-        backgroundView.addSubview(assignmentCustomizationCollectionViewController!.view)
-        
-        assignmentCustomizationCollectionViewController!.view.addConstraints(
-            top: backgroundView.topAnchor, topConstant: 16,
-            bottom: addButton.topAnchor, bottomConstant: 16,
-            leading: backgroundView.leadingAnchor, leadingConstant: 0,
-            trailing: backgroundView.trailingAnchor, trailingConstant: 0,
-            heightConstant: 300)
-        
-        let roundedTopMaskLayer = CAShapeLayer()
-        roundedTopMaskLayer.path = UIBezierPath(roundedRect: backgroundView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 24, height: 24)).cgPath
-        backgroundView.layer.mask = roundedTopMaskLayer
-        backgroundView.backgroundColor = .white
     }
+ */
     
+    /*
     private func initializeAssignmentCustomizationCollectionViewController(with classes: [Class]) {
         let controller = AssignmentCustomizationCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout(), classes: classes)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         assignmentCustomizationCollectionViewController = controller
     }
+ */
+    
+    private lazy var assignmentCustomizationCollectionViewController: AssignmentCustomizationCollectionViewController = {
+        let controller = AssignmentCustomizationCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout(), classes: classes)
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return controller
+    }()
     
     override func setupView() {
         addSubviews()
         addConstraints()
+        
+        backgroundView.backgroundColor = .white
+        
+        let roundedTopMaskLayer = CAShapeLayer()
+        roundedTopMaskLayer.path = UIBezierPath(roundedRect: backgroundView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 24, height: 24)).cgPath
+        //backgroundView.layer.mask = roundedTopMaskLayer
+        backgroundView.backgroundColor = .white
     }
     
     func display() {
         assignmentView.select()
+    }
+    
+    init(classes: [Class]) {
+        self.classes = classes
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
 // MARK: - Helper Methods
 fileprivate extension NewAddAssignmentView {
     func addSubviews() {
-        
         self.addSubviews([backgroundView, assignmentView])
-        backgroundView.addSubviews([addButton])
+        backgroundView.addSubviews([addButton, assignmentCustomizationCollectionViewController.view])
     }
     
     func addConstraints() {
@@ -113,6 +119,10 @@ fileprivate extension NewAddAssignmentView {
             widthConstant: 80,
             heightConstant: 50)
         
-        backgroundView.backgroundColor = .white
+        assignmentCustomizationCollectionViewController.view.addConstraints(
+            top: backgroundView.topAnchor, topConstant: 0,
+            bottom: addButton.topAnchor, bottomConstant: 0,
+            leading: backgroundView.leadingAnchor, leadingConstant: 0,
+            trailing: backgroundView.trailingAnchor, trailingConstant: 0)
     }
 }

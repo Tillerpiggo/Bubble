@@ -24,11 +24,16 @@ class AddAssignmentViewController: UIViewController {
     
     
     private var addAssignmentViewHeight: CGFloat = 60
+    private var keyboardIsShowing = false
     
     override var canBecomeFirstResponder: Bool { return true }
     override var inputAccessoryView: UIView? {
         print("inputAccessoryView: \(addAssignmentView)")
-        return addAssignmentView
+        if keyboardIsShowing {
+            return addAssignmentView
+        } else {
+            return nil
+        }
     }
     
     private lazy var addAssignmentButton: BouncyButton = {
@@ -43,12 +48,25 @@ class AddAssignmentViewController: UIViewController {
         return addAssignmentButton
     }()
     
+    private var addAssignmentView: NewAddAssignmentView?
+
+    private func initializeAddAssignmentView(with classes: [Class]) {
+        let addAssignmentView = NewAddAssignmentView(classes: classes)
+        addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
+        addAssignmentView.delegate = self
+        
+        self.addAssignmentView = addAssignmentView
+        
+    }
+    
+    /*
     private lazy var addAssignmentView: NewAddAssignmentView = {
         let addAssignmentView = NewAddAssignmentView()
         addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
         
         return addAssignmentView
     }()
+ */
     //private var addAssignmentView: AddAssignmentView = AddAssignmentView()
     /*
     private lazy var addAssignmentView: AddAssignmentView = {
@@ -56,8 +74,7 @@ class AddAssignmentViewController: UIViewController {
     }()
  */
     
-    
-    
+    /*
     func configureAddAssignmentView() {
         coreDataController.fetchClasses { (classes) in
             print("Classes: \(classes)")
@@ -72,6 +89,7 @@ class AddAssignmentViewController: UIViewController {
             //self.view.layoutSubviews()
         }
     }
+ */
     
     /*
     private lazy var addAssignmentView: AddAssignmentView = {
@@ -99,14 +117,16 @@ class AddAssignmentViewController: UIViewController {
             widthConstant: 64,
             heightConstant: 64)
             
-        configureAddAssignmentView()
-        
-        self.view.addSubview(self.addAssignmentView)
-        
-        self.addAssignmentView.addConstraints(
-        top: self.view.bottomAnchor, topConstant: 0,
-        leading: self.view.leadingAnchor, leadingConstant: 0,
-        trailing: self.view.trailingAnchor, trailingConstant: 0)
+        coreDataController.fetchClasses { [unowned self] (classes) in
+            self.initializeAddAssignmentView(with: classes)
+            
+            self.view.addSubview(self.addAssignmentView!)
+            
+            self.addAssignmentView!.addConstraints(
+                top: self.view.bottomAnchor, topConstant: 0,
+                leading: self.view.leadingAnchor, leadingConstant: 0,
+                trailing: self.view.trailingAnchor, trailingConstant: 0)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -130,8 +150,14 @@ class AddAssignmentViewController: UIViewController {
     }
     
     @objc func addAssignmentButtonPressed() {
-        //guard let addAssignmentView = addAssignmentView else { return }
+        guard let addAssignmentView = addAssignmentView else { return }
+        
+        reloadInputViews()
+        
+        keyboardIsShowing = true
+        
         addAssignmentView.display()
+        
     }
 }
 
