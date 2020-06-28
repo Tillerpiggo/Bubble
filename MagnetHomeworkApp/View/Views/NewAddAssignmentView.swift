@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddAssignmentViewDelegate {
+    func addedAssignment(withText text: String, class: Class?, dueDate: DateModel)
+}
+
 class NewAddAssignmentView: ProgrammaticView {
     
     var delegate: AddAssignmentViewDelegate?
@@ -23,8 +27,8 @@ class NewAddAssignmentView: ProgrammaticView {
         return backgroundView
     }()
     
-    private lazy var assignmentView: AssignmentView = {
-        let assignmentView = AssignmentView()
+    private lazy var assignmentView: NewAssignmentView = {
+        let assignmentView = NewAssignmentView()
         assignmentView.translatesAutoresizingMaskIntoConstraints = false
         
         return assignmentView
@@ -38,6 +42,7 @@ class NewAddAssignmentView: ProgrammaticView {
         
         let title = NSAttributedString(string: "Add", attributes: [.font: UIFont.systemFont(ofSize: 16, weight: .heavy), .foregroundColor: UIColor(white: 0.2, alpha: 1.0)])
         addButton.setAttributedTitle(title, for: .normal)
+        addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
         
         return addButton
     }()
@@ -79,6 +84,13 @@ class NewAddAssignmentView: ProgrammaticView {
     
     func display() {
         assignmentView.select()
+    }
+    
+    @objc func addButtonPressed() {
+        guard let owningClass = assignmentCustomizationCollectionViewController.selectedItems[0] as? Class else { return }
+        guard let dueDate = assignmentCustomizationCollectionViewController.selectedItems[1] as? DateModel else { return }
+        
+        delegate?.addedAssignment(withText: assignmentView.text, class: owningClass, dueDate: dueDate)
     }
     
     init(classes: [Class]) {
@@ -124,5 +136,9 @@ fileprivate extension NewAddAssignmentView {
             bottom: addButton.topAnchor, bottomConstant: 0,
             leading: backgroundView.leadingAnchor, leadingConstant: 0,
             trailing: backgroundView.trailingAnchor, trailingConstant: 0)
+    }
+    
+    func reset() {
+        
     }
 }

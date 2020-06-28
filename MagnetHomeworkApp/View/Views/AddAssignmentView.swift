@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol AddAssignmentViewDelegate {
-    func doneButtonPressed(withText text: String)
-}
-
 class AddAssignmentView: ProgrammaticView {
     
     // MARK: - Subviews
