@@ -127,6 +127,10 @@ public class Assignment: NSManagedObject, CloudUploadable {
         updateDueDateSection()
     }
     
+    convenience init(withText text: String, owningClass: Class, dataController: DataController) {
+        self.init(withText: text, managedContext: dataController.managedContext, owningClass: owningClass, zoneID: dataController.zoneID, toDoZoneID: dataController.zoneID)
+    }
+    
     init(fromRecord record: CKRecord, owningClass: Class, managedContext: NSManagedObjectContext) {
         let assignmentDescription = NSEntityDescription.entity(forEntityName: "Assignment", in: managedContext)
         super.init(entity: assignmentDescription!, insertInto: managedContext)

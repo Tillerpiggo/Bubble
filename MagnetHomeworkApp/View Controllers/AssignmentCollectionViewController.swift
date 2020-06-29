@@ -14,7 +14,8 @@ class AssignmentCollectionViewController: UICollectionViewController, Collection
     
     // MARK: - Properties
     
-    var coreDataController: CoreDataController!
+    //var coreDataController: CoreDataController!
+    var dataController: DataController!
     var `class`: Class!
     
     private var assignmentCollectionViewCellIdentifier = "AssignmentCell"
@@ -49,7 +50,7 @@ class AssignmentCollectionViewController: UICollectionViewController, Collection
         
         let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
-            managedObjectContext: coreDataController.managedContext,
+            managedObjectContext: dataController.managedContext,
             sectionNameKeyPath: sectionNameKeyPath,
             cacheName: cacheName()
         )

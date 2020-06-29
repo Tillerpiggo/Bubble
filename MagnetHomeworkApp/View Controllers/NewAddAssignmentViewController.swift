@@ -17,8 +17,9 @@ class AddAssignmentViewController: UIViewController {
     
     var delegate: AddAssignmentViewControllerDelegate?
     
-    var cloudController: CloudController!
-    var coreDataController: CoreDataController!
+    //var cloudController: CloudController!
+    //var coreDataController: CoreDataController!
+    var dataController: DataController!
     
     var addAssignmentViewHeightConstraint: NSLayoutConstraint = NSLayoutConstraint() // Placeholder value since inits are annoying. This must be set later
     
@@ -117,7 +118,7 @@ class AddAssignmentViewController: UIViewController {
             widthConstant: 64,
             heightConstant: 64)
             
-        coreDataController.fetchClasses { [unowned self] (classes) in
+        dataController.getLocallyStoredClasses { [unowned self] (classes) in
             self.initializeAddAssignmentView(with: classes)
             
             self.view.addSubview(self.addAssignmentView!)
@@ -138,12 +139,15 @@ class AddAssignmentViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.destination {
+            /*
         case let addObjectViewController as AddObjectViewController:
             addObjectViewController.cloudController = cloudController
             addObjectViewController.coreDataController = coreDataController
+ */
         case let classCollectionViewController as ClassCollectionViewController:
-            classCollectionViewController.cloudController = cloudController
-            classCollectionViewController.coreDataController = coreDataController
+            //classCollectionViewController.cloudController = cloudController
+            //classCollectionViewController.coreDataController = coreDataController
+            classCollectionViewController.dataController = dataController
         default:
             break
         }
@@ -167,7 +171,7 @@ extension AddAssignmentViewController: AddAssignmentViewDelegate {
         guard let owningClass = owningClass else { return }
         
         let zoneID = owningClass.ckRecord.recordID.zoneID
-        let newAssignment = Assignment(withText: text, managedContext: coreDataController.managedContext, owningClass: owningClass, zoneID: zoneID, toDoZoneID: cloudController.zoneID)
+        let newAssignment = Assignment(withText: text, owningClass: owningClass, dataController: dataController)
         delegate?.addedAssignment(newAssignment)
         
         

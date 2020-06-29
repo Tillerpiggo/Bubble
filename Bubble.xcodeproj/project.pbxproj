@@ -261,22 +261,22 @@
 		23484C6221866946007C5CCF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				236BC5D024A1ABB2005CA7A4 /* TestClassPickerViewController.swift */,
 				234A4157249EC7AA006BD94F /* AssignmentCollectionViewController.swift */,
-				2329382121E3280F00E5FC69 /* TabBarController.swift */,
 				231BA77A232F0222008429E1 /* NewAddAssignmentViewController.swift */,
 				230F582624A6B89100147AFD /* AddAssignmentViewController.swift */,
+				23A38B95242C2278004B07FD /* ClassCollectionViewController.swift */,
+				236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */,
+				23484C63218963E0007C5CCF /* AssignmentViewController.swift */,
+				234A414B249D8B4D006BD94F /* ClassViewController.swift */,
+				236BC5D024A1ABB2005CA7A4 /* TestClassPickerViewController.swift */,
+				2329382121E3280F00E5FC69 /* TabBarController.swift */,
 				238D15BC2208D8D000178183 /* ConnectionViewController.swift */,
 				23332B0221AB1DD600111882 /* AddObjectViewController.swift */,
 				23484C5E21854A1E007C5CCF /* ClassTableViewController.swift */,
 				23CE667E219BCC0000B34042 /* ToDoTableViewController.swift */,
 				235E0B85219550D9005D3B9C /* ScheduleTableViewController.swift */,
-				23A38B95242C2278004B07FD /* ClassCollectionViewController.swift */,
-				236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */,
-				23484C63218963E0007C5CCF /* AssignmentViewController.swift */,
-				234A414B249D8B4D006BD94F /* ClassViewController.swift */,
-				234A414F249DD830006BD94F /* ClassPageViewController.swift */,
 				234A4151249DDACC006BD94F /* AssignmentTableViewController.swift */,
+				234A414F249DD830006BD94F /* ClassPageViewController.swift */,
 				23F4C9D821926CCC00D00D05 /* UIExtension */,
 				235E0B8721955626005D3B9C /* OtherExtensions */,
 			);
@@ -313,14 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				23BDC67B2426C85A00736D39 /* ProgrammaticView.swift */,
-				2324191321AF843B0014916F /* AddObjectView.swift */,
-				23CF36F4221A63F5003D2F43 /* AddClassView.swift */,
-				2310CF4221A8877E00A995FB /* AssignmentHeaderFooterView.swift */,
-				238D15BA2208D78600178183 /* ConnectionView.swift */,
-				23AB27DD2322AA54008C0FBD /* ProgressBarView.swift */,
-				238F4E8724981264004B5154 /* ProgrammaticProgressBarView.swift */,
 				231BA778232EFB0B008429E1 /* AddAssignmentView.swift */,
-				239607D124273F3400AC4E00 /* RoundedExpandingTextView.swift */,
 				234A4159249FF888006BD94F /* ExpandingTextView.swift */,
 				239607D52428637A00AC4E00 /* PlaceholderTextView.swift */,
 				23A38B9F242D62EA004B07FD /* BouncyButton.swift */,
@@ -328,10 +321,17 @@
 				23DC6960247A547900C6DEF2 /* TestAddClassViewController.swift */,
 				23D8FCD8248F41790016F0D3 /* ColorPickerView.swift */,
 				234A4149249D8AF1006BD94F /* ClassView.swift */,
-				234A414D249D912C006BD94F /* NumberView.swift */,
 				236BC5CC24A19C8E005CA7A4 /* CollectionPickerView.swift */,
 				230F582224A559F600147AFD /* AssignmentView.swift */,
 				230F582424A55B6600147AFD /* NewAddAssignmentView.swift */,
+				234A414D249D912C006BD94F /* NumberView.swift */,
+				2324191321AF843B0014916F /* AddObjectView.swift */,
+				23CF36F4221A63F5003D2F43 /* AddClassView.swift */,
+				2310CF4221A8877E00A995FB /* AssignmentHeaderFooterView.swift */,
+				238D15BA2208D78600178183 /* ConnectionView.swift */,
+				23AB27DD2322AA54008C0FBD /* ProgressBarView.swift */,
+				238F4E8724981264004B5154 /* ProgrammaticProgressBarView.swift */,
+				239607D124273F3400AC4E00 /* RoundedExpandingTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

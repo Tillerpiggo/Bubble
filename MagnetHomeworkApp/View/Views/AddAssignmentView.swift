@@ -77,7 +77,7 @@ extension AddAssignmentView: UITextViewDelegate {
 
 extension AddAssignmentView: BouncyButtonDelegate {
     func buttonPressed(_ button: BouncyButton) {
-        delegate?.doneButtonPressed(withText: roundedExpandingTextView.text)
+        //delegate?.addedAssignment(withText: roundeDexpandingTextView.text, class: <#T##Class?#>, dueDate: <#T##DateModel#>)(withText: roundedExpandingTextView.text)
     }
 }
 

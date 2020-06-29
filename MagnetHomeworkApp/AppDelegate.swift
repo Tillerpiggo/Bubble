@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return coreDataController
     }()
     
+    lazy var dataController = {
+        return DataController(coreDataController: coreDataController, cloudController: cloudController)
+    }()
+    
     var notificationDelegate: NotificationDelegate?
     
     var classTableViewControllerReference: ClassTableViewController?
@@ -59,18 +63,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         */
         
         if let addAssignmentViewController = window?.rootViewController as? AddAssignmentViewController {
-            addAssignmentViewController.cloudController = cloudController
-            addAssignmentViewController.coreDataController = coreDataController
+            //addAssignmentViewController.cloudController = cloudController
+            //addAssignmentViewController.coreDataController = coreDataController
+            addAssignmentViewController.dataController = dataController
         }
         
         if let classCollectionViewController = window?.rootViewController as? ClassCollectionViewController {
-            classCollectionViewController.cloudController = cloudController
-            classCollectionViewController.coreDataController = coreDataController
+            //classCollectionViewController.cloudController = cloudController
+            //classCollectionViewController.coreDataController = coreDataController
+            classCollectionViewController.dataController = dataController
         }
         
         if let classViewController = window?.rootViewController as? ClassViewController {
             classViewController.`class` = Class(withName: "Test Class", color: Color.red, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
-            classViewController.coreDataController = coreDataController
+            //classViewController.coreDataController = coreDataController
+            classViewController.dataController = dataController
         }
         
         /*

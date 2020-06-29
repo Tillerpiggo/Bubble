@@ -12,10 +12,11 @@ import CoreData
 class ClassViewController: UIViewController {
     
     var `class`: Class!
-    var coreDataController: CoreDataController!
+    //var coreDataController: CoreDataController!
+    var dataController: DataController!
     
     lazy var classView: ClassView = {
-        let classView = ClassView(class: `class`, coreDataController: coreDataController)
+        let classView = ClassView(class: `class`, dataController: dataController)
         classView.translatesAutoresizingMaskIntoConstraints = false
         classView.addDropShadow(color: .black, opacity: 0.18, radius: 30)
         

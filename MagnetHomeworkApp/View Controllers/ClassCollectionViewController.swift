@@ -19,8 +19,10 @@ protocol ClassCollectionViewControllerDelegate {
 // ClassTableViewController but it's programmatic and it's a collectionViewController.
 class ClassCollectionViewController: UICollectionViewController, CollectionFetchedResultsControllerDelegate {
     
-    var cloudController: CloudController!
-    var coreDataController: CoreDataController!
+    //var cloudController: CloudController!
+    //var coreDataController: CoreDataController!
+    var dataController: DataController!
+    
     let addClassCollectionViewCellIdentifier = "AddClassViewCell"
     let classCollectionViewCellIdentifier = "ClassCell"
     
@@ -45,7 +47,7 @@ class ClassCollectionViewController: UICollectionViewController, CollectionFetch
         
         let fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
-            managedObjectContext: coreDataController.managedContext,
+            managedObjectContext: dataController.managedContext,
             sectionNameKeyPath: nil,
             cacheName: "Bubble2"
         )
@@ -74,7 +76,7 @@ class ClassCollectionViewController: UICollectionViewController, CollectionFetch
         DispatchQueue.main.async {
             if let sectionInfo = self.fetchedResultsController.sections?[0], let classes = sectionInfo.objects as? [Class] {
                 for cellClass in classes {
-                    self.coreDataController.delete(cellClass)
+                    self.dataController.delete(cellClass)
                 }
             }
         }
@@ -301,8 +303,10 @@ extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
     func addClass(withText text: String, color: Color) {
         
         // TODO: - actually add a class
-        let newClass = Class(withName: text, assignments: [], color: color, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID)
+        let newClass = Class(withName: text, assignments: [], color: color, dataController: dataController)
+        dataController.save(newClass)
         
+        /*
         // Save change to Core Data
         coreDataController.save()
         
@@ -324,6 +328,7 @@ extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
                 }
             }
         }
+ */
     }
     
     func didExpand() {
@@ -351,8 +356,15 @@ extension ClassCollectionViewController {
 
 // MARK: - Helper Methods
 
+fileprivate extension ClassCollectionViewController {
+    func updateWithCloud(completion: @escaping (Bool) -> Void = { (didFetchRecords) in }) {
+        dataController.syncWithCloud { (didFetchRecords) in
+            completion(didFetchRecords)
+        }
+    }
+}
 
-
+/*
 fileprivate extension ClassCollectionViewController {
     
     // MARK: Update with Cloud
@@ -587,7 +599,11 @@ fileprivate extension ClassCollectionViewController {
             }
         }
     }
-    
+}
+*/
+
+
+fileprivate extension ClassCollectionViewController {
     // MARK: - Other stuff
     func registerAsNotificationDelegate() {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate

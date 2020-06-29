@@ -15,7 +15,8 @@ class ClassView: ProgrammaticView {
     var `class`: Class
     
     // TODO: - refactor this out; the view shouldn't have to know about this (maybe use a view model? idk I have to learn what that is)
-    var coreDataController: CoreDataController
+    //var coreDataController: CoreDataController
+    var dataController: DataController
     
     private var bubbleView: UIView = {
         let bubbleView = UIView()
@@ -66,7 +67,7 @@ class ClassView: ProgrammaticView {
     
     private lazy var assignmentCollectionViewController: AssignmentCollectionViewController = {
         let assignmentCollectionViewController = AssignmentCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        assignmentCollectionViewController.coreDataController = coreDataController
+        assignmentCollectionViewController.dataController = dataController
         assignmentCollectionViewController.class = self.class
         assignmentCollectionViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -107,9 +108,9 @@ class ClassView: ProgrammaticView {
         
     }
     
-    init(`class`: Class, coreDataController: CoreDataController) {
+    init(`class`: Class, dataController: DataController) {
         self.`class` = `class`
-        self.coreDataController = coreDataController
+        self.dataController = dataController
         super.init(frame: .zero)
     }
     
