@@ -58,6 +58,7 @@
 		236BC5D524A28DCF005CA7A4 /* PickableDueDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC5D424A28DCF005CA7A4 /* PickableDueDateCell.swift */; };
 		236BC5D724A30DC0005CA7A4 /* CustomizationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */; };
 		23794AB122167A940056582B /* CloudReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23794AB022167A940056582B /* CloudReachability.swift */; };
+		237F1DE824A954A000E0DEF8 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237F1DE724A954A000E0DEF8 /* DataController.swift */; };
 		238D15B92208CB6D00178183 /* ConnectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238D15B82208CB6D00178183 /* ConnectionView.xib */; };
 		238D15BB2208D78600178183 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D15BA2208D78600178183 /* ConnectionView.swift */; };
 		238D15BD2208D8D000178183 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238D15BC2208D8D000178183 /* ConnectionViewController.swift */; };
@@ -169,6 +170,7 @@
 		236BC5D424A28DCF005CA7A4 /* PickableDueDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickableDueDateCell.swift; sourceTree = "<group>"; };
 		236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationCollectionViewController.swift; sourceTree = "<group>"; };
 		23794AB022167A940056582B /* CloudReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudReachability.swift; sourceTree = "<group>"; };
+		237F1DE724A954A000E0DEF8 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		238D15B82208CB6D00178183 /* ConnectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectionView.xib; sourceTree = "<group>"; };
 		238D15BA2208D78600178183 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		238D15BC2208D8D000178183 /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		23484C5721822945007C5CCF /* Back-End */ = {
 			isa = PBXGroup;
 			children = (
+				237F1DE724A954A000E0DEF8 /* DataController.swift */,
 				23CD10B221814FA10034FFA7 /* Core Data */,
 				23CD10AB218041120034FFA7 /* iCloud */,
 				23484C5C21822CEE007C5CCF /* RecordType.swift */,
@@ -772,6 +775,7 @@
 				234A4158249EC7AA006BD94F /* AssignmentCollectionViewController.swift in Sources */,
 				234B7E6021C77B5F008D195F /* UIImage+Helpers.swift in Sources */,
 				23CD10C52181A11F0034FFA7 /* Class+CoreDataProperties.swift in Sources */,
+				237F1DE824A954A000E0DEF8 /* DataController.swift in Sources */,
 				23580D54218E286600434DD9 /* AssignmentTableViewCell.swift in Sources */,
 				23CD10B121814F9B0034FFA7 /* CoreDataController.swift in Sources */,
 				23CD109121803C530034FFA7 /* AppDelegate.swift in Sources */,

@@ -132,13 +132,12 @@ class CloudController {
     // Saves the given cloud up
     func save(_ cloudUploadables: inout [CloudUploadable], inDatabase databaseType: DatabaseType, recordChanged: @escaping (CKRecord) -> Void, retryNumber: Int = 0, completion: @escaping (Error?) -> Void = { (error) in }) {
         
-        guard reachability.connection != .none else {
-            for (index, _) in cloudUploadables.enumerated() {
-                cloudUploadables[index].isSynced = false
-            }
-            
-            return
+        // Set all cloudUploadables isSynced to false
+        for (index, _) in cloudUploadables.enumerated() {
+            cloudUploadables[index].isSynced = false
         }
+        
+        guard reachability.connection != .none else { return }
         
         // Create and configure operation
         let operation = CKModifyRecordsOperation()
@@ -151,8 +150,6 @@ class CloudController {
         case .shared:
             operation.database = sharedDatabase
         }
-        
-        // Set all cloudUploadables isSynced to false
         
         // Map classes to records
         let recordsToSave = cloudUploadables.map() { $0.ckRecord }

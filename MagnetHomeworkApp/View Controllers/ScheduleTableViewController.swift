@@ -75,6 +75,7 @@ class ScheduleTableViewController: UITableViewController {
     // MARK: - Helper Methods
     
     func save() {
+        // TODO: make the ckrecord date directly tied to the other value, so that one changes, the other auotmatically does as well
         assignment.dueDate?.date = dueDate as NSDate?
         //assignment.updateDueDateSection()
         assignment.ckRecord["dueDate"] = dueDate as CKRecordValue?

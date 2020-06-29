@@ -119,6 +119,7 @@ public class Class: NSManagedObject, CloudUploadable {
         self.ckRecord = record
     }
     
+    /// Changes all of the fields of this Class to match the CKRecord
     func update(withRecord record: CKRecord) {
         self.name = record["name"] as? String
         self.colorInt = record["colorInt"] as! Int

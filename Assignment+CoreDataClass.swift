@@ -27,46 +27,46 @@ public class Assignment: NSManagedObject, CloudUploadable {
     }
     
 //    func calculateDueDateSection() -> String {
-////        guard toDo?.isCompleted ?? false == false else {
-////            return "Completed"
-////        }
-////
-////        guard let dueDate = dueDate as Date? else {
-////            return "Unscheduled"
-////        }
-////
-////        let calendar = Calendar(identifier: .gregorian)
-////        let components = calendar.dateComponents([.day], from: Date().firstSecond, to: dueDate.firstSecond)
-////
-////        guard let daysBetween = components.day else {
-////            return "Unscheduled"
-////        }
-////
-////        guard dueDate.firstSecond > Date().firstSecond else {
-////            return "Late"
-////        }
-////
-////        if daysBetween < 0 {
-////            return "Late"
-////        } else if daysBetween == 0 {
-////            return "Unscheduled"
-////        } else if daysBetween == 1 {
-////            return "Due Tomorrow"
-////        } else if Date().weekday >= .dueSunday && Date().weekday < .dueThursday {
-////            if daysBetween > 0 && daysBetween < 7 - Date().weekday { // Due Friday or earlier {
-////                return "Due This Week"
-////            } else {
-////                return "Due Later"
-////            }
-////        } else if Date().weekday >= 5 {
-////            if daysBetween > 0 && daysBetween <= 2 {
-////                return "Due This Monday"
-////            } else {
-////                return "Due Later"
-////            }
-////        } else {
-////            return "Due Later"
-////        }
+//        guard toDo?.isCompleted ?? false == false else {
+//            return "Completed"
+//        }
+//
+//        guard let dueDate = dueDate as Date? else {
+//            return "Unscheduled"
+//        }
+//
+//        let calendar = Calendar(identifier: .gregorian)
+//        let components = calendar.dateComponents([.day], from: Date().firstSecond, to: dueDate.firstSecond)
+//
+//        guard let daysBetween = components.day else {
+//            return "Unscheduled"
+//        }
+//
+//        guard dueDate.firstSecond > Date().firstSecond else {
+//            return "Late"
+//        }
+//
+//        if daysBetween < 0 {
+//            return "Late"
+//        } else if daysBetween == 0 {
+//            return "Unscheduled"
+//        } else if daysBetween == 1 {
+//            return "Due Tomorrow"
+//        } else if Date().weekday >= .dueSunday && Date().weekday < .dueThursday {
+//            if daysBetween > 0 && daysBetween < 7 - Date().weekday { // Due Friday or earlier {
+//                return "Due This Week"
+//            } else {
+//                return "Due Later"
+//            }
+//        } else if Date().weekday >= 5 {
+//            if daysBetween > 0 && daysBetween <= 2 {
+//                return "Due This Monday"
+//            } else {
+//                return "Due Later"
+//            }
+//        } else {
+//            return "Due Later"
+//        }
 //
 //        return "unimplemented"
 //    }
