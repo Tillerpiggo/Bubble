@@ -115,6 +115,11 @@ class CollectionPickerView: ProgrammaticView {
         print(collectionView.collectionViewLayout.collectionViewContentSize.height)
     }
     
+    func reset() {
+        shrink(animated: false)
+        collectionView.reloadData()
+    }
+    
     func toggleExpansion(animated: Bool) {
         if isExpanded {
             shrink(animated: animated)

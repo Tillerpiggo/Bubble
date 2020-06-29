@@ -95,6 +95,19 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
             self.collectionView.layoutIfNeeded()
         }
     }
+    
+    func reset() {
+        selectedItems = [Any?]()
+        
+        // Shrink and clear all of the cells
+        if let classCollectionPickerViewCell = collectionView(collectionView, cellForItemAt: IndexPath(row: 0, section: 0)) as? ClassCollectionPickerViewCell {
+            classCollectionPickerViewCell.reset()
+        }
+        
+        if let dueDateCollectionPickerViewCell = collectionView(collectionView, cellForItemAt: IndexPath(row: 0, section: 0)) as? DueDateCollectionPickerViewCell {
+            dueDateCollectionPickerViewCell.reset()
+        }
+    }
 }
 
 extension CustomizationCollectionViewController: CollectionPickerViewDelegate {

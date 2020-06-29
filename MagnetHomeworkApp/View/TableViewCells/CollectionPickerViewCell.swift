@@ -34,6 +34,10 @@ class CollectionPickerViewCell: ProgrammaticCollectionViewCell {
         collectionPickerView!.pinEdgesToView(contentView)
     }
     
+    func reset() {
+        collectionPickerView?.reset()
+    }
+    
     func toggleExpansion(animated: Bool) {
         collectionPickerView?.toggleExpansion(animated: animated)
     }

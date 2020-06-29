@@ -39,8 +39,6 @@ class ClassCollectionViewController: UICollectionViewController, CollectionFetch
     
     // This is where the magic happens - it is the source of the class data and where all the classes come from
     lazy var fetchedResultsController: NSFetchedResultsController<Class> = {
-        NSFetchedResultsController<NSFetchRequestResult>.deleteCache(withName: "Bubble2")
-        
         let fetchRequest: NSFetchRequest<Class> = Class.fetchRequest()
         let sortByCreationDate = NSSortDescriptor(key: #keyPath(Class.creationDate), ascending: true)
         fetchRequest.sortDescriptors = [sortByCreationDate]
@@ -53,6 +51,7 @@ class ClassCollectionViewController: UICollectionViewController, CollectionFetch
         )
         
         fetchedResultsController.delegate = self
+        
         
         do {
             try fetchedResultsController.performFetch()
@@ -72,6 +71,7 @@ class ClassCollectionViewController: UICollectionViewController, CollectionFetch
         collectionView.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
         view.backgroundColor = UIColor(white: 0.98, alpha: 1.0)
         
+        /*
         // Clear it for testing purposes
         DispatchQueue.main.async {
             if let sectionInfo = self.fetchedResultsController.sections?[0], let classes = sectionInfo.objects as? [Class] {
@@ -80,6 +80,7 @@ class ClassCollectionViewController: UICollectionViewController, CollectionFetch
                 }
             }
         }
+ */
         
         updateWithCloud()
         
@@ -95,6 +96,8 @@ class ClassCollectionViewController: UICollectionViewController, CollectionFetch
         
         collectionView.reloadData() // Remove for optimization?
         collectionView.pinEdgesToView(view)
+        
+        collectionView.keyboardDismissMode = .interactive
     }
 }
 
@@ -304,17 +307,17 @@ extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
         
         // TODO: - actually add a class
         let newClass = Class(withName: text, assignments: [], color: color, dataController: dataController)
-        dataController.save(newClass)
+        dataController.add(newClass)
         
         /*
         // Save change to Core Data
-        coreDataController.save()
+        dataController.coreDataController.save()
         
         var cloudUploadables: [CloudUploadable] = [newClass]
         newClass.isSynced = false
         
         // Save change to the Cloud
-        cloudController.save(&cloudUploadables, inDatabase: .private, recordChanged: { (updatedRecord) in
+        dataController.cloudController.save(&cloudUploadables, inDatabase: .private, recordChanged: { (updatedRecord) in
             newClass.update(withRecord: updatedRecord)
         }) { (error) in
             guard let error = error as? CKError else { return }
@@ -324,11 +327,11 @@ extension ClassCollectionViewController: ProgrammaticAddClassViewDelegate {
             default:
                 DispatchQueue.main.async {
                     //self.alertUserOfFailure()
-                    self.coreDataController.save()
+                    self.dataController.coreDataController.save()
                 }
             }
         }
- */
+*/
     }
     
     func didExpand() {

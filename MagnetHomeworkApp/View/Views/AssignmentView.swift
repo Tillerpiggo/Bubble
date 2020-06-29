@@ -38,7 +38,6 @@ class AssignmentView: ProgrammaticView {
     
     fileprivate var textView: ExpandingTextView = {
         let textView = ExpandingTextView()
-        
         textView.translatesAutoresizingMaskIntoConstraints = false
         
         return textView
@@ -67,6 +66,10 @@ class AssignmentView: ProgrammaticView {
     
     func select() {
         textView.select()
+    }
+    
+    func reset() {
+        textView.clear()
     }
     
     override func setupView() {
@@ -110,11 +113,8 @@ class NewAssignmentView: AssignmentView {
     
     override func setupView() {
         super.setupView()
-        textView.delegate = self
     }
-}
-
-extension NewAssignmentView: UITextViewDelegate {
+    
     func textViewDidChange(_ textView: UITextView) {
         text = textView.text
     }

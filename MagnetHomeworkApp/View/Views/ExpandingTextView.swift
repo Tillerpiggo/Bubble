@@ -66,7 +66,9 @@ class ExpandingTextView: ProgrammaticView {
     
     /// Becomes first responder; shows keyboard
     func select() {
-        textView.becomeFirstResponder()
+        DispatchQueue.main.async { [unowned self] in
+            self.textView.becomeFirstResponder()
+        }
     }
     
     /// Resigns first responder; dismisses keyboard
@@ -116,6 +118,7 @@ extension ExpandingTextView: UITextFieldDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
+            
             return false
         } else {
             return true
@@ -125,6 +128,7 @@ extension ExpandingTextView: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == "\n" {
             textField.resignFirstResponder()
+            endEditing(true)
             return false
         } else {
             return true

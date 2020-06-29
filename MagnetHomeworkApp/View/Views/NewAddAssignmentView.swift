@@ -86,6 +86,11 @@ class NewAddAssignmentView: ProgrammaticView {
         assignmentView.select()
     }
     
+    func reset() {
+        assignmentView.reset()
+        assignmentCustomizationCollectionViewController.reset()
+    }
+    
     @objc func addButtonPressed() {
         guard let owningClass = assignmentCustomizationCollectionViewController.selectedItems[0] as? Class else { return }
         guard let dueDate = assignmentCustomizationCollectionViewController.selectedItems[1] as? DateModel else { return }
@@ -136,9 +141,5 @@ fileprivate extension NewAddAssignmentView {
             bottom: addButton.topAnchor, bottomConstant: 0,
             leading: backgroundView.leadingAnchor, leadingConstant: 0,
             trailing: backgroundView.trailingAnchor, trailingConstant: 0)
-    }
-    
-    func reset() {
-        
     }
 }

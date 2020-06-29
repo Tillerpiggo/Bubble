@@ -626,6 +626,9 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTh-NM-dpM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="AeK-4q-ySv" kind="embed" id="uLT-BL-lWK"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="0.98317746350364965" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

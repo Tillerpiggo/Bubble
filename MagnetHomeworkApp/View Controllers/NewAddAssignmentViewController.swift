@@ -128,6 +128,9 @@ class AddAssignmentViewController: UIViewController {
                 leading: self.view.leadingAnchor, leadingConstant: 0,
                 trailing: self.view.trailingAnchor, trailingConstant: 0)
         }
+        
+        // Register for keyboard notifications:
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -161,6 +164,9 @@ class AddAssignmentViewController: UIViewController {
         keyboardIsShowing = true
         
         addAssignmentView.display()
+        becomeFirstResponder()
+        
+        print("NewAddAssignmentViewController is first responder: \(self.isFirstResponder)")
     }
 }
 
@@ -173,8 +179,17 @@ extension AddAssignmentViewController: AddAssignmentViewDelegate {
         let zoneID = owningClass.ckRecord.recordID.zoneID
         let newAssignment = Assignment(withText: text, owningClass: owningClass, dataController: dataController)
         delegate?.addedAssignment(newAssignment)
-        
-        
     }
     
+    private func dismissAddAssignmentView() {
+        resignFirstResponder()
+        keyboardIsShowing = false
+        reloadInputViews()
+        
+        addAssignmentView?.reset()
+    }
+    
+    @objc func keyboardWillHide() {
+        dismissAddAssignmentView()
+    }
 }

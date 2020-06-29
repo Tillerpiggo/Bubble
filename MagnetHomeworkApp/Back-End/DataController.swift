@@ -196,7 +196,27 @@ fileprivate extension DataController {
     }
     
     func saveClass(_ class: Class) {
-        // implement later
+        // Save change to Core Data
+        coreDataController.save()
+        
+        var cloudUploadables: [CloudUploadable] = [`class`]
+        `class`.isSynced = false
+        
+        // Save change to the Cloud
+        cloudController.save(&cloudUploadables, inDatabase: .private, recordChanged: { (updatedRecord) in
+            `class`.update(withRecord: updatedRecord)
+        }) { (error) in
+            guard let error = error as? CKError else { return }
+            switch error.code {
+            case .requestRateLimited, .zoneBusy, .serviceUnavailable:
+                break
+            default:
+                DispatchQueue.main.async { [unowned self] in
+                    //self.alertUserOfFailure()
+                    self.coreDataController.save()
+                }
+            }
+        }
     }
     
     func saveToDo(_ toDo: ToDo) {
