@@ -102,6 +102,10 @@ public class Class: NSManagedObject, CloudUploadable {
         }
     }
     
+    convenience init(withName name: String, assignments: [Assignment] = [Assignment](), color: Color, dataController: DataController) {
+        self.init(withName: name, assignments: assignments, color: color, managedContext: dataController.managedContext, zoneID: dataController.zoneID)
+    }
+    
     init(fromRecord record: CKRecord, managedContext: NSManagedObjectContext) {
         // Create entity
         let classDescription = NSEntityDescription.entity(forEntityName: "Class", in: managedContext)

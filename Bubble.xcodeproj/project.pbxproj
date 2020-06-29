@@ -261,8 +261,6 @@
 		23484C6221866946007C5CCF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */,
-				23A38B95242C2278004B07FD /* ClassCollectionViewController.swift */,
 				236BC5D024A1ABB2005CA7A4 /* TestClassPickerViewController.swift */,
 				234A4157249EC7AA006BD94F /* AssignmentCollectionViewController.swift */,
 				2329382121E3280F00E5FC69 /* TabBarController.swift */,
@@ -272,8 +270,10 @@
 				23332B0221AB1DD600111882 /* AddObjectViewController.swift */,
 				23484C5E21854A1E007C5CCF /* ClassTableViewController.swift */,
 				23CE667E219BCC0000B34042 /* ToDoTableViewController.swift */,
-				23484C63218963E0007C5CCF /* AssignmentViewController.swift */,
 				235E0B85219550D9005D3B9C /* ScheduleTableViewController.swift */,
+				23A38B95242C2278004B07FD /* ClassCollectionViewController.swift */,
+				236BC5D624A30DC0005CA7A4 /* CustomizationCollectionViewController.swift */,
+				23484C63218963E0007C5CCF /* AssignmentViewController.swift */,
 				234A414B249D8B4D006BD94F /* ClassViewController.swift */,
 				234A414F249DD830006BD94F /* ClassPageViewController.swift */,
 				234A4151249DDACC006BD94F /* AssignmentTableViewController.swift */,

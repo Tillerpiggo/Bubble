@@ -15,8 +15,8 @@
             timestampString = "589531274.432747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "generateRecord()"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,8 +222,8 @@
             timestampString = "589531274.433357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "init(fromRecord:managedContext:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -239,8 +239,8 @@
             timestampString = "589531274.433399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "Class"
             landmarkType = "3">
          </BreakpointContent>

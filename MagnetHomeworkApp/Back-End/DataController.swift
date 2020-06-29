@@ -11,12 +11,13 @@ import CoreData
 import CloudKit
 
 class DataController {
-    var coreDataController: CoreDataController
-    var cloudController: CloudController
     
-    init(coreDataController: CoreDataController, cloudController: CloudController) {
-        self.coreDataController = coreDataController
-        self.cloudController = cloudController
+    var managedContext: NSManagedObjectContext {
+        return coreDataController.managedContext
+    }
+    
+    var zoneID: CKRecordZone.ID {
+        return cloudController.zoneID
     }
     
     // Interface
@@ -51,6 +52,22 @@ class DataController {
             deleteClass(`class`)
         default: break
         }
+    }
+    
+    func getLocallyStoredClasses(completion: @escaping ([Class]) -> Void) {
+        coreDataController.fetchClasses { (classes) in
+            completion(classes)
+        }
+    }
+    
+    
+    
+    fileprivate var coreDataController: CoreDataController
+    fileprivate var cloudController: CloudController
+    
+    init(coreDataController: CoreDataController, cloudController: CloudController) {
+        self.coreDataController = coreDataController
+        self.cloudController = cloudController
     }
 }
 
