@@ -9,16 +9,8 @@
 import UIKit
 
 
-protocol AddAssignmentViewControllerDelegate {
-    func addedAssignment(_ assignment: Assignment)
-}
-
-class AddAssignmentViewController: UIViewController {
+class PlusAssignmentViewController: UIViewController {
     
-    var delegate: AddAssignmentViewControllerDelegate?
-    
-    //var cloudController: CloudController!
-    //var coreDataController: CoreDataController!
     var dataController: DataController!
     
     var addAssignmentViewHeightConstraint: NSLayoutConstraint = NSLayoutConstraint() // Placeholder value since inits are annoying. This must be set later
@@ -171,14 +163,14 @@ class AddAssignmentViewController: UIViewController {
 }
 
 
-extension AddAssignmentViewController: AddAssignmentViewDelegate {
+extension PlusAssignmentViewController: AddAssignmentViewDelegate {
     func addedAssignment(withText text: String, class owningClass: Class?, dueDate: DateModel) {
         // TODO - make it so that if the class is nil, it will automatically use the "All Homework" class
         guard let owningClass = owningClass else { return }
         
         let zoneID = owningClass.ckRecord.recordID.zoneID
         let newAssignment = Assignment(withText: text, owningClass: owningClass, dataController: dataController)
-        delegate?.addedAssignment(newAssignment)
+        dataController.add(newAssignment)
     }
     
     private func dismissAddAssignmentView() {
