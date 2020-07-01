@@ -49,6 +49,7 @@ class PlusButtonViewController: UIViewController {
         let addAssignmentView = NewAddAssignmentView(classes: classes)
         addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
         addAssignmentView.delegate = self
+        //addAssignmentView.presentationDelegate = self
         
         self.addAssignmentView = addAssignmentView
         
@@ -144,3 +145,11 @@ extension PlusButtonViewController: AddAssignmentViewDelegate {
         dismissAddAssignmentView()
     }
 }
+
+/*
+extension PlusButtonViewController: PresentationDelegate {
+    func present(_ viewController: UIViewController) {
+        self.present(viewController, animated: true)
+    }
+}
+ */

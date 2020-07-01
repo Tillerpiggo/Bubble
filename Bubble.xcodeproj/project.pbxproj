@@ -40,7 +40,7 @@
 		234A4158249EC7AA006BD94F /* AssignmentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A4157249EC7AA006BD94F /* AssignmentCollectionViewController.swift */; };
 		234A415A249FF888006BD94F /* ExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A4159249FF888006BD94F /* ExpandingTextView.swift */; };
 		234B1CDB24AC03A200702F1B /* ActionSheetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B1CDA24AC03A100702F1B /* ActionSheetPickerView.swift */; };
-		234B1CDD24AC364D00702F1B /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B1CDC24AC364D00702F1B /* PickerView.swift */; };
+		234B1CDF24AC376E00702F1B /* ActionSheetPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B1CDE24AC376E00702F1B /* ActionSheetPickerViewCell.swift */; };
 		234B7E6021C77B5F008D195F /* UIImage+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B7E5F21C77B5F008D195F /* UIImage+Helpers.swift */; };
 		23580D4B218E164100434DD9 /* ToDo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23580D49218E164100434DD9 /* ToDo+CoreDataClass.swift */; };
 		23580D4C218E164100434DD9 /* ToDo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23580D4A218E164100434DD9 /* ToDo+CoreDataProperties.swift */; };
@@ -150,7 +150,7 @@
 		234A4157249EC7AA006BD94F /* AssignmentCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentCollectionViewController.swift; sourceTree = "<group>"; };
 		234A4159249FF888006BD94F /* ExpandingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandingTextView.swift; sourceTree = "<group>"; };
 		234B1CDA24AC03A100702F1B /* ActionSheetPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetPickerView.swift; sourceTree = "<group>"; };
-		234B1CDC24AC364D00702F1B /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		234B1CDE24AC376E00702F1B /* ActionSheetPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetPickerViewCell.swift; sourceTree = "<group>"; };
 		234B7E5F21C77B5F008D195F /* UIImage+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Helpers.swift"; sourceTree = "<group>"; };
 		23580D49218E164100434DD9 /* ToDo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		23580D4A218E164100434DD9 /* ToDo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -301,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				235E0B8D2198AE05005D3B9C /* ClassTableViewCell.swift */,
+				234B1CDE24AC376E00702F1B /* ActionSheetPickerViewCell.swift */,
 				23A38B9B242D2686004B07FD /* ClassCollectionViewCell.swift */,
 				23A38BA1242DC4B2004B07FD /* AddClassCollectionViewCell.swift */,
 				23580D53218E286600434DD9 /* AssignmentTableViewCell.swift */,
@@ -326,7 +327,6 @@
 				23D8FCD8248F41790016F0D3 /* ColorPickerView.swift */,
 				234A4149249D8AF1006BD94F /* ClassView.swift */,
 				234B1CDA24AC03A100702F1B /* ActionSheetPickerView.swift */,
-				234B1CDC24AC364D00702F1B /* PickerView.swift */,
 				236BC5CC24A19C8E005CA7A4 /* CollectionPickerView.swift */,
 				230F582224A559F600147AFD /* AssignmentView.swift */,
 				230F582424A55B6600147AFD /* NewAddAssignmentView.swift */,
@@ -765,6 +765,7 @@
 				234A414A249D8AF1006BD94F /* ClassView.swift in Sources */,
 				235E0B902199491F005D3B9C /* UILabel+Helpers.swift in Sources */,
 				236BC5D724A30DC0005CA7A4 /* CustomizationCollectionViewController.swift in Sources */,
+				234B1CDF24AC376E00702F1B /* ActionSheetPickerViewCell.swift in Sources */,
 				23CD109921803C530034FFA7 /* MagnetHomeworkApp.xcdatamodeld in Sources */,
 				230F582524A55B6600147AFD /* NewAddAssignmentView.swift in Sources */,
 				23F4C9E2219284A000D00D05 /* UINavigationBar.swift in Sources */,
@@ -777,7 +778,6 @@
 				23484C64218963E0007C5CCF /* AssignmentViewController.swift in Sources */,
 				23CF36F5221A63F5003D2F43 /* AddClassView.swift in Sources */,
 				234A4156249E9774006BD94F /* ProgrammaticTableViewCell.swift in Sources */,
-				234B1CDD24AC364D00702F1B /* PickerView.swift in Sources */,
 				234A4150249DD830006BD94F /* ClassPageViewController.swift in Sources */,
 				2324191421AF843B0014916F /* AddObjectView.swift in Sources */,
 				234A4158249EC7AA006BD94F /* AssignmentCollectionViewController.swift in Sources */,

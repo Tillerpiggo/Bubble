@@ -8,6 +8,7 @@
 
 import UIKit
 
+/*
 class PickableClassCell: ProgrammaticCollectionViewCell, PickableItemCell {
     
     var string: String?
@@ -57,3 +58,5 @@ class PickableClassCell: ProgrammaticCollectionViewCell, PickableItemCell {
         }
     }
 }
+
+ */

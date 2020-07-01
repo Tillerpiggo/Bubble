@@ -15,6 +15,7 @@ protocol AddAssignmentViewDelegate {
 class NewAddAssignmentView: ProgrammaticView {
     
     var delegate: AddAssignmentViewDelegate?
+    var presentationDelegate: PresentationDelegate?
     var classes: [Class]
     
     private lazy var backgroundView: UIView = {
@@ -66,6 +67,7 @@ class NewAddAssignmentView: ProgrammaticView {
     private lazy var assignmentCustomizationCollectionViewController: AssignmentCustomizationCollectionViewController = {
         let controller = AssignmentCustomizationCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout(), classes: classes)
         controller.view.translatesAutoresizingMaskIntoConstraints = false
+        //controller.delegate = self
         
         return controller
     }()
@@ -107,6 +109,14 @@ class NewAddAssignmentView: ProgrammaticView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+/*
+extension NewAddAssignmentView: PresentationDelegate {
+    func present(_ viewController: UIViewController) {
+        presentationDelegate?.present(viewController)
+    }
+}
+ */
 
 // MARK: - Helper Methods
 fileprivate extension NewAddAssignmentView {

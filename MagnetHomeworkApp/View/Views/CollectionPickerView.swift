@@ -5,12 +5,10 @@
 //  Created by Tyler Gee on 6/22/20.
 //  Copyright © 2020 Beaglepig. All rights reserved.
 //
-
+/*
 import UIKit
 
-protocol PickerViewDelegate {
-    func didSelect(_ item: Any?, pickerView: CollectionPickerView)
-}
+
 
 /// When subclassing, override title, cellType, and reuseIdentifier
 class CollectionPickerView: ProgrammaticView {
@@ -291,4 +289,4 @@ class DatePickerView: CollectionPickerView {
     override var reuseIdentifier: String { return "DatePickerViewCell" }
     override var cellType: UICollectionViewCell.Type { return PickableDueDateCell.self }
 }
-
+*/

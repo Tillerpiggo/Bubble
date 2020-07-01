@@ -13,10 +13,18 @@ protocol PickableItem {
     var color: Color { get }
 }
 
+protocol PickerViewDelegate {
+    func didSelect(_ item: PickableItem?, title: String)
+    func present(_ viewController: UIViewController)
+}
+
 class ActionSheetPickerView: BouncyView {
     
     var delegate: PickerViewDelegate?
     var items: [PickableItem]
+    var title: String?
+    
+    var actionSheet = UIAlertController(title: "Select", message: nil, preferredStyle: .actionSheet)
     
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
@@ -45,6 +53,16 @@ class ActionSheetPickerView: BouncyView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setTitle(to title: String) {
+        titleLabel.text = title
+        self.title = title
+        actionSheet.title = "Select \(title.lowercased())"
+    }
+    
+    func presentActionSheet(from viewController: UIViewController) {
+        viewController.present(actionSheet, animated: true, completion: nil)
+    }
+    
     override func setupView() {
         addSubviews([titleLabel, selectedItemLabel])
         addConstraints()
@@ -53,6 +71,18 @@ class ActionSheetPickerView: BouncyView {
         self.layer.masksToBounds = true
         self.backgroundColor = .white
         self.addDropShadow(color: .black, opacity: 0.1, radius: 15)
+        
+        for item in items {
+            actionSheet.addAction(UIAlertAction(title: item.string, style: .default, handler: { [unowned self] (action) in
+                self.selectedItemLabel.text = item.string
+                self.selectedItemLabel.textColor = item.color.uiColor
+                self.delegate?.didSelect(item, title: self.title!)
+            }))
+        }
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        super.setupView()
     }
     
     private func addConstraints() {
@@ -69,12 +99,10 @@ class ActionSheetPickerView: BouncyView {
     
     override func tapped() {
         // Display action sheet
-        let actionSheet = UIAlertController(title: "Select class", message: nil, preferredStyle: .actionSheet)
-        
-        for item in items {
-            actionSheet.addAction(UIAlertAction(title: item.string, style: .default, handler: { (action) in
-                delegate?.didSelect(item, pickerView: self)
-            }))
-        }
+        delegate?.present(actionSheet)
+    }
+    
+    func reset() {
+        self.selectedItemLabel.text = "None"
     }
 }

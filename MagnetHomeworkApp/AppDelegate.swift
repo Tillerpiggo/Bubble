@@ -87,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
         }
  */
+        /*
         if let classPickerViewController = self.window?.rootViewController as? TestClassPickerViewController {
             classPickerViewController.classes = [
                 Class(withName: "Test Class", color: Color.red, managedContext: coreDataController.managedContext, zoneID: cloudController.zoneID),
@@ -109,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 DueDate(withDate: NSDate(timeIntervalSinceNow: 6 * 86400), managedContext: coreDataController.managedContext)
             ]
         }
+ */
         
         if let controller = self.window?.rootViewController as? AssignmentCustomizationCollectionViewController {
             controller.classes = [
