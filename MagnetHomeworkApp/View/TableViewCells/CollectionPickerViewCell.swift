@@ -8,9 +8,13 @@
 
 import UIKit
 
+class PickerViewCell: ProgrammaticCollectionViewCell {
+    
+}
+
 class CollectionPickerViewCell: ProgrammaticCollectionViewCell {
     
-    var delegate: CollectionPickerViewDelegate?
+    var delegate: PickerViewDelegate?
     
     var collectionPickerView: CollectionPickerView?
     
@@ -29,6 +33,7 @@ class CollectionPickerViewCell: ProgrammaticCollectionViewCell {
     }
     
     func configure(with items: [Any?]) {
+print("CELL CONFIGURING!")
         initializeCollectionPickerView(with: items)
         contentView.addSubview(collectionPickerView!)
         collectionPickerView!.pinEdgesToView(contentView)
@@ -41,11 +46,15 @@ class CollectionPickerViewCell: ProgrammaticCollectionViewCell {
     func toggleExpansion(animated: Bool) {
         collectionPickerView?.toggleExpansion(animated: animated)
     }
+    
+    override func prepareForReuse() {
+print("BEING REUSED!")
+    }
 }
 
-extension CollectionPickerViewCell: CollectionPickerViewDelegate {
-    func didSelect(_ item: Any?, collectionPickerView: CollectionPickerView) {
-        delegate?.didSelect(item, collectionPickerView: collectionPickerView)
+extension CollectionPickerViewCell: PickerViewDelegate {
+    func didSelect(_ item: Any?, pickerView: CollectionPickerView) {
+        delegate?.didSelect(item, pickerView: collectionPickerView!)
     }
 }
 

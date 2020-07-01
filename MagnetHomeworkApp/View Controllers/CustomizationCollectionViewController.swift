@@ -19,6 +19,7 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
     }
     
     var selectedItems = [Any?]()
+    var collectionViewHeight: NSLayoutConstraint?
     
     private var collectionPickerViewCellIdentifier = "CollectionPickerViewCell"
     
@@ -46,6 +47,9 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
         
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
+        
+        collectionViewHeight = collectionView.heightAnchor.constraint(equalToConstant: collectionViewLayout.collectionViewContentSize.height)
+        collectionViewHeight?.isActive = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,7 +57,9 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
         
         guard let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return }
         
-        collectionView.heightAnchor.constraint(equalToConstant: collectionViewLayout.collectionViewContentSize.height).isActive = true
+        UIView.animate(withDuration: 0.2) { [unowned self] in
+            self.collectionViewHeight?.constant = collectionViewLayout.collectionViewContentSize.height
+        }
     }
     
     init(collectionViewLayout layout: UICollectionViewLayout, classes: [Class]) {
@@ -84,20 +90,8 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! CollectionPickerViewCell
-        
-        cell.toggleExpansion(animated: true)
-        
-        collectionView.collectionViewLayout.invalidateLayout()
-            
-        UIView.animate(withDuration: 0.5) { [unowned self] in
-            self.collectionView.layoutIfNeeded()
-        }
-    }
-    
     func reset() {
-        selectedItems = [Any?]()
+        selectedItems = [Any?](repeating: nil, count: collectionView(collectionView, numberOfItemsInSection: 0))
         
         // Shrink and clear all of the cells
         if let classCollectionPickerViewCell = collectionView(collectionView, cellForItemAt: IndexPath(row: 0, section: 0)) as? ClassCollectionPickerViewCell {
@@ -110,13 +104,14 @@ class CustomizationCollectionViewController: UICollectionViewController, UIColle
     }
 }
 
-extension CustomizationCollectionViewController: CollectionPickerViewDelegate {
-    @objc func didSelect(_ item: Any?, collectionPickerView: CollectionPickerView) {
+extension CustomizationCollectionViewController: PickerViewDelegate {
+    @objc func didSelect(_ item: Any?, pickerView: CollectionPickerView) {
         // Up to the subclass to override and implement
         
         // Generally, they should do a series of if let statements and insert the item in selectedItems appropriately
     }
 }
+
 
 class AssignmentCustomizationCollectionViewController: CustomizationCollectionViewController {
     
@@ -164,11 +159,23 @@ class AssignmentCustomizationCollectionViewController: CustomizationCollectionVi
         ]
     }
     
-    override func didSelect(_ item: Any?, collectionPickerView: CollectionPickerView) {
-        if let _ = collectionPickerView as? ClassPickerView {
+    override func didSelect(_ item: Any?, pickerView: CollectionPickerView) {
+        if let _ = pickerView as? ClassPickerView {
             selectedItems[0] = item
-        } else if let _ = collectionPickerView as? DatePickerView {
+        } else if let _ = pickerView as? DatePickerView {
             selectedItems[1] = item
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CollectionPickerViewCell
+        
+        cell.toggleExpansion(animated: true)
+        
+        collectionView.collectionViewLayout.invalidateLayout()
+            
+        UIView.animate(withDuration: 0.5) { [unowned self] in
+            self.collectionView.layoutIfNeeded()
         }
     }
 }

@@ -163,5 +163,9 @@ extension Class: CoreDataUploadable {
     }
 }
 
+extension Class: PickableItem {
+    var string: String { return name ?? "" }
+}
+
 // Use init(rawValue:) to initialize from Int
 

@@ -62,10 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         */
         
-        if let addAssignmentViewController = window?.rootViewController as? AddAssignmentViewController {
+        if let plusButtonViewController = window?.rootViewController as? PlusButtonViewController {
             //addAssignmentViewController.cloudController = cloudController
             //addAssignmentViewController.coreDataController = coreDataController
-            addAssignmentViewController.dataController = dataController
+            plusButtonViewController.dataController = dataController
         }
         
         if let classCollectionViewController = window?.rootViewController as? ClassCollectionViewController {

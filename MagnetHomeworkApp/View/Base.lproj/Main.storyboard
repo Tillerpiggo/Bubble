@@ -616,10 +616,10 @@
             </objects>
             <point key="canvasLocation" x="-3736" y="708"/>
         </scene>
-        <!--Add Assignment View Controller-->
+        <!--Plus Button View Controller-->
         <scene sceneID="h0O-8z-VC0">
             <objects>
-                <viewController id="cvG-9t-5iJ" customClass="AddAssignmentViewController" customModule="Bubble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cvG-9t-5iJ" customClass="PlusButtonViewController" customModule="Bubble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Txu-cJ-hYu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

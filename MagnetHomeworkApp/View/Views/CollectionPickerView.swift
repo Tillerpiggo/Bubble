@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol CollectionPickerViewDelegate {
-    func didSelect(_ item: Any?, collectionPickerView: CollectionPickerView)
+protocol PickerViewDelegate {
+    func didSelect(_ item: Any?, pickerView: CollectionPickerView)
 }
 
 /// When subclassing, override title, cellType, and reuseIdentifier
 class CollectionPickerView: ProgrammaticView {
     
-    var delegate: CollectionPickerViewDelegate?
+    var delegate: PickerViewDelegate?
     var items: [Any?]
     var deselectedOpacity: Float = 0.25
     
@@ -212,7 +212,7 @@ extension CollectionPickerView: UICollectionViewDelegateFlowLayout, UICollection
             //selectedIndexPath = indexPath
         }
         
-        delegate?.didSelect(items[indexPath.row], collectionPickerView: self)
+        delegate?.didSelect(items[indexPath.row], pickerView: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

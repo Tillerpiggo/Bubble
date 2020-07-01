@@ -91,7 +91,7 @@ public class DueDate: NSManagedObject {
 
 // Temporary, until I refactor
 // Used for DueDatePickerView
-class DateModel {
+class DateModel: PickableItem {
     
     var date: NSDate
     var dueDateType: DueDateType {
@@ -115,6 +115,7 @@ class DateModel {
         }
     }
     
+    // Eventually add more details in a subclass or something to show an icon/just a string for the actual month and day
     var string: String {
         switch dueDateType {
         case .unscheduled: return "Unscheduled"
@@ -129,6 +130,10 @@ class DateModel {
         case .dueSunday: return "Sunday"
         default: return "Someday"
         }
+    }
+    
+    var color: Color {
+        return Color.gray
     }
     
     var dayOfTheMonth: Int {

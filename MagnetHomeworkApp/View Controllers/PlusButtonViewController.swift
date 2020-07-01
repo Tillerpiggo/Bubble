@@ -9,7 +9,7 @@
 import UIKit
 
 
-class PlusAssignmentViewController: UIViewController {
+class PlusButtonViewController: UIViewController {
     
     var dataController: DataController!
     
@@ -21,10 +21,12 @@ class PlusAssignmentViewController: UIViewController {
     
     override var canBecomeFirstResponder: Bool { return true }
     override var inputAccessoryView: UIView? {
-        print("inputAccessoryView: \(addAssignmentView)")
+        
         if keyboardIsShowing {
+            print("inputAccessoryView: \(addAssignmentView)")
             return addAssignmentView
         } else {
+            print("nil")
             return nil
         }
     }
@@ -51,49 +53,6 @@ class PlusAssignmentViewController: UIViewController {
         self.addAssignmentView = addAssignmentView
         
     }
-    
-    /*
-    private lazy var addAssignmentView: NewAddAssignmentView = {
-        let addAssignmentView = NewAddAssignmentView()
-        addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return addAssignmentView
-    }()
- */
-    //private var addAssignmentView: AddAssignmentView = AddAssignmentView()
-    /*
-    private lazy var addAssignmentView: AddAssignmentView = {
-        return AddAssignmentView()
-    }()
- */
-    
-    /*
-    func configureAddAssignmentView() {
-        coreDataController.fetchClasses { (classes) in
-            print("Classes: \(classes)")
-            self.addAssignmentView.setClasses(to: classes)
-            self.addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
-            self.addAssignmentView.delegate = self
-        
-            //self.addAssignmentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60).isActive = true
-            
-            //self.view.addSubview(self.addAssignmentView)
-            
-            //self.view.layoutSubviews()
-        }
-    }
- */
-    
-    /*
-    private lazy var addAssignmentView: AddAssignmentView = {
-        let addAssignmentView = AddAssignmentView()
-        addAssignmentView.translatesAutoresizingMaskIntoConstraints = false
-        addAssignmentView.delegate = self
-        
-        return addAssignmentView
-    }()
- */
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,6 +87,7 @@ class PlusAssignmentViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -157,26 +117,25 @@ class PlusAssignmentViewController: UIViewController {
         
         addAssignmentView.display()
         becomeFirstResponder()
-        
-        print("NewAddAssignmentViewController is first responder: \(self.isFirstResponder)")
     }
 }
 
 
-extension PlusAssignmentViewController: AddAssignmentViewDelegate {
+extension PlusButtonViewController: AddAssignmentViewDelegate {
     func addedAssignment(withText text: String, class owningClass: Class?, dueDate: DateModel) {
         // TODO - make it so that if the class is nil, it will automatically use the "All Homework" class
         guard let owningClass = owningClass else { return }
         
-        let zoneID = owningClass.ckRecord.recordID.zoneID
         let newAssignment = Assignment(withText: text, owningClass: owningClass, dataController: dataController)
         dataController.add(newAssignment)
     }
     
     private func dismissAddAssignmentView() {
-        resignFirstResponder()
+        becomeFirstResponder()
         keyboardIsShowing = false
         reloadInputViews()
+        
+        resignFirstResponder()
         
         addAssignmentView?.reset()
     }

@@ -16,6 +16,7 @@ enum Color: Int {
     case lime = 4
     case purple = 5
     case pink = 6
+    case gray = 7
     
     var uiColor: UIColor {
         switch self {
@@ -26,10 +27,13 @@ enum Color: Int {
         case .lime: return UIColor(red: 0.61, green: 1, blue: 0.74, alpha: 1)
         case .purple: return UIColor(red: 0.85, green: 0.66, blue: 1, alpha: 1)
         case .pink: return UIColor(red: 1, green: 0.47, blue: 0.63, alpha: 1)
+        case .gray: return UIColor(white: 0.7, alpha: 1)
         }
     }
     
     var uiColor2: UIColor {
+        return uiColor
+        /*
         switch self {
         case .orange: return Color.orange.uiColor
         case .red: return Color.red.uiColor
@@ -38,7 +42,9 @@ enum Color: Int {
         case .lime: return Color.lime.uiColor
         case .purple: return Color.purple.uiColor
         case .pink: return Color.pink.uiColor
+        case .gray: return Color.gray.uiColor
         }
+ */
     }
     
     var name: String {
@@ -50,6 +56,7 @@ enum Color: Int {
         case .lime: return "Lime"
         case .purple: return "Purple"
         case .pink: return "Pink"
+        case .gray: return "Gray"
         }
     }
 }

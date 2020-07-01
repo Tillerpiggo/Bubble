@@ -36,3 +36,40 @@ class ProgrammaticView: UIView {
         // This is where EVERYTHING is setup. Add subviews and configure them here.
     }
 }
+
+class BouncyView: ProgrammaticView {
+    override func setupView() {
+        // Add tap gesture recognizer
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        tapGestureRecognizer.numberOfTapsRequired = 1
+        addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
+                self.transform = CGAffineTransform(scaleX: 0.88, y: 0.88)
+            })
+        case .failed, .cancelled:
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
+                self.transform = .identity
+            })
+        case .recognized, .ended:
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseOut, animations: { [unowned self] in
+                self.transform = CGAffineTransform(scaleX: 1.015, y: 1.015)
+            }, completion: { (bool) in
+                UIView.animate(withDuration: 0.05, delay: 0.0, options: .curveEaseIn, animations: { [unowned self]  in
+                    self.transform = .identity
+                })
+            })
+            
+            tapped()
+        default: break
+        }
+    }
+    
+    func tapped() {
+        // override this method in subclasses
+    }
+}
